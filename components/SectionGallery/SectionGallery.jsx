@@ -15,7 +15,7 @@ const SectionGallery = () => {
 
   return (
     <section className="section sectiongallery">
-      <h3 className="heading-secondary">{t.common.gallery}</h3>
+      <h2 className="heading-secondary">{t.common.gallery}</h2>
 
       <div className="sectiongallery__albums">
         <GalleryAlbumCard

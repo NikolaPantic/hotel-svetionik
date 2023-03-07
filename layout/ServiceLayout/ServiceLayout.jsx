@@ -10,7 +10,7 @@ const ServiceLayout = ({
 }) => {
   return (
     <div className="servicelayout">
-      <h2 className="heading-secondary">{serviceLayoutHeading}</h2>
+      <h1 className="heading-secondary">{serviceLayoutHeading}</h1>
 
       {serviceLayoutText ? (
         <div className="servicelayout__text">

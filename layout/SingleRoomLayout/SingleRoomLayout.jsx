@@ -1,13 +1,19 @@
 import { useContext } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
-import ServiceLayout from "../../../layout/ServiceLayout/ServiceLayout";
-import RoomMiniCard from "../../../components/RoomMiniCard/RoomMiniCard";
-import roomsData from "../../../data/roomsData";
-import { FormContext } from "../../_app";
+import ServiceLayout from "../../layout/ServiceLayout/ServiceLayout";
+import RoomMiniCard from "../../components/RoomMiniCard/RoomMiniCard";
+import roomsData from "../../data/roomsData";
+import { FormContext } from "../../pages/_app";
+import en from "../../locales/en";
+import sr from "../../locales/sr";
 
-const PageRoom = ({ singleRoom }) => {
+const SingleRoomLayout = ({ singleRoom }) => {
+  const { locale } = useRouter();
+  const t = locale === "sr" ? sr : en;
+
   const openForm = useContext(FormContext);
   const data = roomsData();
 
@@ -33,25 +39,25 @@ const PageRoom = ({ singleRoom }) => {
             </div>
 
             <div className="room__description--info">
-              <h4>Osnovne informacije</h4>
+              <h4>{t.common.basicInfo}</h4>
               <table>
                 <tbody>
                   <tr>
                     <td>
-                      <strong>Broj osoba:</strong>{" "}
+                      <strong>{t.common.numberOfPersons}:</strong>{" "}
                       {
                         data.roomsBasicData[singleRoom].basicInfo
                           .numberOfPersons
                       }
                     </td>
                     <td>
-                      <strong>Tip ležaja:</strong>{" "}
+                      <strong>{t.common.bedType}:</strong>{" "}
                       {data.roomsBasicData[singleRoom].basicInfo.typeOfBed}
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <strong>Dodatni ležaj:</strong>{" "}
+                      <strong>{t.common.extraBed}:</strong>{" "}
                       <span>
                         {
                           data.roomsBasicData[singleRoom].basicInfo
@@ -60,13 +66,13 @@ const PageRoom = ({ singleRoom }) => {
                       </span>
                     </td>
                     <td>
-                      <strong>Pogled na reku:</strong>{" "}
+                      <strong>{t.common.riverView}:</strong>{" "}
                       {data.roomsBasicData[singleRoom].basicInfo.riverView}
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <h4>Sadržaj sobe</h4>
+              <h4>{t.common.roomContent}</h4>
               <ul className="room__description--info--list">
                 {data.roomsBasicData[singleRoom].roomContent.map((e) => (
                   <li
@@ -84,12 +90,12 @@ const PageRoom = ({ singleRoom }) => {
               className="navigationbutton navigationbutton__dark pulsate"
               onClick={openForm}
             >
-              Rezerviši odmah
+              {t.buttons.bookNow}
             </button>
           </div>
         </section>
         <section className="room__other-rooms">
-          <h4>Možda ste zainteresovani </h4>
+          <h4>{t.common.maybeInterested}</h4>
           <div className="room__other-rooms--list">
             {data.roomsCardData
               .filter((e) => e.key !== singleRoom)
@@ -107,40 +113,4 @@ const PageRoom = ({ singleRoom }) => {
   );
 };
 
-export const getStaticPaths = async () => {
-  return {
-    paths: [
-      { params: { singleRoom: "standardna-soba", locale: "sr" } },
-      { params: { singleRoom: "standardna-soba", locale: "en" } },
-      { params: { singleRoom: "soba-sa-dodatnim-lezajem", locale: "sr" } },
-      { params: { singleRoom: "soba-sa-dodatnim-lezajem", locale: "en" } },
-      {
-        params: { singleRoom: "superior-apartman-sa-djakuzijem", locale: "sr" },
-      },
-      {
-        params: { singleRoom: "superior-apartman-sa-djakuzijem", locale: "en" },
-      },
-    ],
-    fallback: false,
-  };
-};
-
-export async function getStaticProps(context) {
-  const path = context.params.singleRoom;
-  console.log(path);
-
-  const currentRoom = {
-    // "en/standardna-soba": "singleRoom",
-    "standardna-soba": "singleRoom",
-    "soba-sa-dodatnim-lezajem": "doubleRoom",
-    "superior-apartman-sa-djakuzijem": "superiorRoom",
-  };
-
-  return {
-    props: {
-      singleRoom: currentRoom[path],
-    },
-  };
-}
-
-export default PageRoom;
+export default SingleRoomLayout;

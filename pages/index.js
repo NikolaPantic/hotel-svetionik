@@ -25,7 +25,7 @@ export default function Home() {
         <meta property="og:site_name" content="Hotel Svetionik Obrenovac" />
         <meta
           property="og:description"
-          content="Hotel Svetionik se nalazi u Obrenovcu, 30 km od centra Beograda. Lociran je na samoj obali reke Save. Prijatan i miran, iz svoje ponude izdvaja izdavanje soba, organizaciju proslava, restoran na obali reke, vinski podrum i izdavanje brodske marine."
+          content="Hotel Svetionik je lociran na samoj obali reke Save. Prijatan i miran, iz svoje ponude izdvaja izdavanje soba, organizaciju proslava, restoran na obali, vinski podrum i brodsku marinu."
         />
       </Head>
       <article className="landingpage">

@@ -10,7 +10,7 @@ const SectionContact = () => {
 
   return (
     <section className="section sectioncontact">
-      <h3 className="heading-secondary">{t.common.contact}</h3>
+      <h2 className="heading-secondary">{t.common.contact}</h2>
 
       <p>
         {t.sections.contact.text1}{" "}

@@ -24,6 +24,16 @@ const en = {
     weddingCelebrations: "Wedding celebrations",
     checkOutOtherServices: "Check out our other services:",
     restaurantAndSummerGarden: "Restaurant and summer garden",
+    numberOfPersons: "Number of persons",
+    bedType: "Bed type",
+    extraBed: "Extra bed",
+    riverView: "River view",
+    yes: "yes",
+    no: "no",
+    onRequest: "on request",
+    basicInfo: "Basic info",
+    roomContent: "Room content",
+    maybeInterested: "Maybe you are interested",
   },
 
   carousel: {
@@ -49,6 +59,7 @@ const en = {
     checkOutGallery: "View gallery",
     close: "Close",
     goBack: "Go back",
+    bookNow: "Book now",
   },
   placeholders: {
     email: "Enter your e-mail",
@@ -78,10 +89,10 @@ const en = {
     email: "E-mail address:",
     phone: "Phone number:",
     message: "Message:",
-    roomType: "Room type",
-    arrivalDate: "Arrival date",
-    numberOfNights: "Number of nights",
-    notes: "Notes",
+    roomType: "Room type:",
+    arrivalDate: "Arrival date:",
+    numberOfNights: "Number of nights:",
+    notes: "Notes (optional):",
   },
 
   sections: {
@@ -103,6 +114,7 @@ const en = {
       text4: "or you can call us",
       text5: "by phone",
     },
+
     additionalServices: {
       heading: "Additional services",
       text: "In addition to accommodation, Hotel Svetionik offers the following services:",
@@ -224,7 +236,42 @@ const en = {
       text3:
         "The extra large apartment, designed for 1-8 people, is intended for complete relaxation. 2 French beds, 2 extra beds and a bathroom with a jacuzzi are the guarantee of that.",
     },
-    room: {},
+    roomInstance: {
+      roomContent: {
+        doubleBed: "double bed",
+        airConditioning: "Air conditioning",
+        wardrobe: "Wardrobe",
+        nightTable: "Night table",
+        bathroom: "Bathroom with shower",
+        hairdryer: "Hairdryer",
+        cosmetics: "Cosmetics",
+        desk: "Desk",
+        chair: "Chair",
+        jacuzzi: "Jacuzzi",
+      },
+
+      standardRoom: {
+        text1:
+          "A standard single room, with a capacity of 1-2 people, is equipped with an LCD TV with satellite and domestic channels, air conditioning, a mini bar (extra charge), a bedside table and a wardrobe. Smoking in the room is not allowed.",
+        text2:
+          "The bathroom has a shower cabin, equipped with a hairdryer, cosmetics and accessories for personal hygiene - soap, shower gel, shampoo and body lotion. Towels are changed every other day.",
+        text3: "Check-in is until 10:00, check-out is until 12:00.",
+      },
+      roomWithExtraBed: {
+        text1:
+          "Room with one double bed and one extra bed, capacity 1-4 people, has LCD TV with satellite and local channels, air conditioning, mini bar (extra charge), desk, 2 chairs, bedside table and wardrobe. Smoking in the room is not allowed.",
+        text2:
+          "The bathroom has a shower cabin, and is equipped with a hair dryer, cosmetics and accessories for personal hygiene - soap, shower gel, shampoo and body lotion. Towels are changed every other day.",
+        text3: "Check-in is until 10:00, check-out is until 12:00.",
+      },
+      superiorApartment: {
+        text1:
+          "Superior apartment with 2 double beds and 2 extra beds is an ideal solution for 1-8 people. It has LCD TV with satellite and domestic channels, air conditioning, mini bar (extra charge). Smoking in the room is not allowed.",
+        text2:
+          "The bathroom has a shower cabin, jacuzzi, hair dryer, cosmetics and accessories for personal hygiene - soap, shower gel, shampoo and body lotion. Towels are changed every other day.",
+        text3: "Check-in is until 10:00, check-out is until 12:00.",
+      },
+    },
     gallery: {
       subheading:
         "A small part of the atmosphere from our hotel recorded in the photos.",

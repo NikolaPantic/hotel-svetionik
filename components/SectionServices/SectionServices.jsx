@@ -14,9 +14,9 @@ const SectionServices = () => {
   const t = locale === "en" ? en : sr;
   return (
     <section className="section sectionservices">
-      <h3 className="heading-secondary">
+      <h2 className="heading-secondary">
         {t.sections.additionalServices.heading}
-      </h3>
+      </h2>
       <p>{t.sections.additionalServices.text}</p>
 
       <div className="sectionservices__services">

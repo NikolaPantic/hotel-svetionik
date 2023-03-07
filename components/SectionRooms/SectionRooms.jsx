@@ -17,7 +17,7 @@ const SectionRooms = () => {
   const openForm = useContext(FormContext);
   return (
     <section className="section sectionrooms">
-      <h3 className="heading-secondary">{t.common.rooms}</h3>
+      <h2 className="heading-secondary">{t.common.rooms}</h2>
       <div className="sectionrooms__text">
         <p>{t.sections.rooms.text1}</p>
         <p>

@@ -12,7 +12,7 @@ const PageLayout = ({
           backgroundImage: `linear-gradient(to right, rgba(153,153,153, 0.7), rgba(10,10,10, 0.7)), url(${backgroundImageUrl.src})`,
         }}
       >
-        <h2 className="heading-secondary">{heading}</h2>
+        <h1 className="heading-secondary">{heading}</h1>
         <p className="pagelayout__heading--summary">{pageLayoutSummary}</p>
       </div>
       <div className="pagelayout__content">{children}</div>

@@ -24,6 +24,16 @@ const sr = {
     weddingCelebrations: "Organizovanje proslava",
     checkOutOtherServices: "Pogledajte i naše ostale usluge:",
     restaurantAndSummerGarden: "Restoran i letnja bašta",
+    numberOfPersons: "Broj osoba",
+    bedType: "Tip ležaja",
+    extraBed: "Dodatni ležaj",
+    riverView: "Pogled na reku",
+    yes: "da",
+    no: "ne",
+    onRequest: "na upit",
+    basicInfo: "Osnovne informacije",
+    roomContent: "Sadržaj sobe",
+    maybeInterested: "Možda ste zainteresovani",
   },
   carousel: {
     slide1Subheading: "Dobrodošli!",
@@ -47,6 +57,7 @@ const sr = {
     checkOutGallery: "Pogledaj galeriju",
     close: "Zatvori",
     goBack: "Nazad",
+    bookNow: "Rezerviši odmah",
   },
   placeholders: {
     name: "Unesite ime",
@@ -79,7 +90,7 @@ const sr = {
     roomType: "Tip sobe:",
     arrivalDate: "Datum dolaska:",
     numberOfNights: "Broj noćenja:",
-    notes: "Napomena:",
+    notes: "Napomena (opciono):",
   },
 
   sections: {
@@ -219,7 +230,42 @@ const sr = {
       text3:
         "Ekstra veliki apartman, namenjen za 1-8 osoba, predviđen je za potpuno opuštanje. 2 francuska ležaja, 2 pomoćna ležaja i kupatilo sa đakuzijem su garant toga.",
     },
-    room: {},
+    roomInstance: {
+      roomContent: {
+        doubleBed: "francuski ležaj",
+        airConditioning: "Klima uređaj",
+        wardrobe: "Orman",
+        nightTable: "Noćni stočić",
+        bathroom: "Kupatilo sa tuš kabinom",
+        hairdryer: "Fen",
+        cosmetics: "Kozmetika",
+        desk: "Radni sto",
+        chair: "Stolica",
+        jacuzzi: "Đakuzi",
+      },
+
+      standardRoom: {
+        text1:
+          "Standardna jednokrevetna soba, kapaciteta 1-2 osobe, opremljena je LCD TV-om sa satelitskim i domaćim kanalima, klima uređajem, mini barom (dodatno se naplaćuje), noćnim stočićem i ormanom. Pušenje u sobi nije dozvoljeno.",
+        text2:
+          "Kupatilo je sa tuš kabinom, opremljeno fenom, kozmetikom i priborom za ličnu higijenu - sapun, gel za tuširanje, šampon i losion za telo. Peškiri se menjaju svakog drugog dana.",
+        text3: "Prijava je do 10:00, odjava do 12:00.",
+      },
+      roomWithExtraBed: {
+        text1:
+          "Soba sa jednim francuskim i jednim dodatnim ležajem, kapaciteta 1-4 osobe,poseduje LCD TV sa satelitskim i domaćim kanalima, klima uređaj, mini bar (dodatno se naplaćuje), radni sto, 2 stolice, noćni stočić i orman. Pušenje u sobi nije dozvoljeno.",
+        text2:
+          "U kupatilu se nalazi tuš kabina, i opremljeno je fenom, kozmetikom i priborom za ličnu higijenu - sapunom, gelom za tuširanje, šamponom i losionom za telo. Peškiri se menjaju svakog drugog dana.",
+        text3: "Prijava je do 10:00, odjava do 12:00.",
+      },
+      superiorApartment: {
+        text1:
+          "Superior apartman sa 2 francuska i 2 dodatna ležaja predstavlja idealno rešenje za 1-8 ljudi. Poseduje LCD TV sa satelitskim i domaćim kanalima, klima uređaj, mini bar (dodatno se naplaćuje). Pušenje u sobi nije dozvoljeno.",
+        text2:
+          "U kupatilu se nalazi tuš kabina, đakuzi, fen, kozmetika i pribor za ličnu higijenu - sapun, gel za tuširanje, šampon i losion za telo. Peškiri se menjaju svakog drugog dana.",
+        text3: "Prijava je do 10:00, odjava do 12:00.",
+      },
+    },
     gallery: {
       subheading:
         "Mali delić atmosfere iz našeg hotela zabeležen u fotografijama.",

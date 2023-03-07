@@ -16,13 +16,13 @@ const SectionNews = () => {
   return (
     <section className="sectionnews">
       <div className="sectionnews__container">
-        <h4 className="sectionnews__container--heading">{t.common.news}</h4>
+        <h2 className="sectionnews__container--heading">{t.common.news}</h2>
         <div className="sectionnews__container--content">
           <p>{t.sections.news.newsText}</p>
         </div>
       </div>
       <div className="sectionnews__container">
-        <h4 className="sectionnews__container--heading">Newsletter</h4>
+        <h2 className="sectionnews__container--heading">Newsletter</h2>
         <div className="sectionnews__container--content">
           <p>{t.sections.news.newsletterText1}</p>
           <form

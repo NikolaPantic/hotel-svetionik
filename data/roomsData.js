@@ -63,27 +63,45 @@ const RoomsData = () => {
   return {
     roomsBasicData: {
       singleRoom: {
-        heading: "Standardna soba",
+        heading: t.common.standardRoom,
         description: [
-          "Standardna jednokrevetna soba, kapaciteta 1-2 osobe, opremljena je LCD TV-om sa satelitskim i domaćim kanalima, klima uređajem, mini barom (dodatno se naplaćuje), noćnim stočićem i ormanom.  Pušenje u sobi nije dozvoljeno.",
-          "Kupatilo je sa tuš kabinom, opremljeno fenom, kozmetikom i priborom za licnu higijenu - sapun, gel za tuširanje, šampon i losion za telo. Peškiri se menjaju svakog drugog dana.",
-          " Prijava je do 10:00, odjava do 12:00",
+          t.pages.roomInstance.standardRoom.text1,
+          t.pages.roomInstance.standardRoom.text2,
+          t.pages.roomInstance.standardRoom.text3,
         ],
         basicInfo: {
           numberOfPersons: "1-2",
-          typeOfBed: "francuski ležaj",
-          extraBedIncluded: "ne",
-          riverView: "na upit",
+          typeOfBed: t.pages.roomInstance.roomContent.doubleBed,
+          extraBedIncluded: t.common.no,
+          riverView: t.common.onRequest,
         },
         roomContent: [
-          { icon: airConditioning, description: "Klima uređaj" },
+          {
+            icon: airConditioning,
+            description: t.pages.roomInstance.roomContent.airConditioning,
+          },
           { icon: tv, description: "LCD TV" },
           { icon: miniBar, description: "Mini bar" },
-          { icon: wardrobe, description: "Orman" },
-          { icon: table, description: "Noćni stočić" },
-          { icon: bathroom, description: "Kupatilo sa tuš kabinom" },
-          { icon: hairdryer, description: "Fen" },
-          { icon: cosmetics, description: "Kozmetika" },
+          {
+            icon: wardrobe,
+            description: t.pages.roomInstance.roomContent.wardrobe,
+          },
+          {
+            icon: table,
+            description: t.pages.roomInstance.roomContent.nightTable,
+          },
+          {
+            icon: bathroom,
+            description: t.pages.roomInstance.roomContent.bathroom,
+          },
+          {
+            icon: hairdryer,
+            description: t.pages.roomInstance.roomContent.hairdryer,
+          },
+          {
+            icon: cosmetics,
+            description: t.pages.roomInstance.roomContent.cosmetics,
+          },
         ],
         images: [
           singleRoomImage1,
@@ -96,29 +114,50 @@ const RoomsData = () => {
         ],
       },
       doubleRoom: {
-        heading: "Standardna soba sa dodatnim ležajem",
+        heading: t.common.roomWithExtraBed,
         description: [
-          "Soba sa jednim francuskim i jednim dodatnim ležajem, kapaciteta 1-4 osobe,poseduje LCD TV sa satelitskim i domaćim kanalima, klima uređaj, mini bar (dodatno se naplaćuje), radni sto, 2 stolice, noćni stočić i orman.  Pušenje u sobi nije dozvoljeno.",
-          "U kupatilu se nalazi tuš kabina, i opremljeno je fenom, kozmetikom i priborom za ličnu higijenu - sapunom, gelom za tuširanje, šamponom i losionom za telo. Peškiri se menjaju svakog drugog dana.",
-          " Prijava je do 10:00, odjava do 12:00",
+          t.pages.roomInstance.roomWithExtraBed.text1,
+          t.pages.roomInstance.roomWithExtraBed.text2,
+          t.pages.roomInstance.roomWithExtraBed.text3,
         ],
         basicInfo: {
           numberOfPersons: "1-4",
-          typeOfBed: "francuski ležaj",
-          extraBedIncluded: "da",
-          riverView: "na upit",
+          typeOfBed: t.pages.roomInstance.roomContent.doubleBed,
+          extraBedIncluded: t.common.yes,
+          riverView: t.common.onRequest,
         },
         roomContent: [
-          { icon: airConditioning, description: "Klima uređaj" },
+          {
+            icon: airConditioning,
+            description: t.pages.roomInstance.roomContent.airConditioning,
+          },
           { icon: tv, description: "LCD TV" },
           { icon: miniBar, description: "Mini bar" },
-          { icon: table, description: "Radni sto" },
-          { icon: chair, description: "Stolica x2" },
-          { icon: wardrobe, description: "Orman" },
-          { icon: table, description: "Noćni stočić" },
-          { icon: bathroom, description: "Kupatilo sa tuš kabinom" },
-          { icon: hairdryer, description: "Fen" },
-          { icon: cosmetics, description: "Kozmetika" },
+          { icon: table, description: t.pages.roomInstance.roomContent.desk },
+          {
+            icon: chair,
+            description: t.pages.roomInstance.roomContent.chair + " x2",
+          },
+          {
+            icon: wardrobe,
+            description: t.pages.roomInstance.roomContent.wardrobe,
+          },
+          {
+            icon: table,
+            description: t.pages.roomInstance.roomContent.nightTable,
+          },
+          {
+            icon: bathroom,
+            description: t.pages.roomInstance.roomContent.bathroom,
+          },
+          {
+            icon: hairdryer,
+            description: t.pages.roomInstance.roomContent.hairdryer,
+          },
+          {
+            icon: cosmetics,
+            description: t.pages.roomInstance.roomContent.cosmetics,
+          },
         ],
         images: [
           doubleRoomImage12,
@@ -139,30 +178,57 @@ const RoomsData = () => {
         ],
       },
       superiorRoom: {
-        heading: "Superior apartman sa đakuzijem",
+        heading: t.common.superiorApartment,
         description: [
-          "Superior apartman sa 2 francuska i 2 dodatna ležaja predstavlja idealno rešenje za 1-8 ljudi. Poseduje LCD TV sa satelitskim i domaćim kanalima, klima uređaj, mini bar (dodatno se naplaćuje).  Pušenje u sobi nije dozvoljeno.",
-          "U kupatilu se nalazi tuš kabina, đakuzi, fen, kozmetika i pribor za ličnu higijenu - sapun, gel za tuširanje, šampon i losion za telo. Peškiri se menjaju svakog drugog dana.",
-          " Prijava je do 10:00, odjava do 12:00",
+          t.pages.roomInstance.superiorApartment.text1,
+          t.pages.roomInstance.superiorApartment.text2,
+          t.pages.roomInstance.superiorApartment.text3,
         ],
         basicInfo: {
           numberOfPersons: "1-8",
-          typeOfBed: "francuski ležaj, x2",
-          extraBedIncluded: "da, x2",
-          riverView: "ne",
+          typeOfBed: t.pages.roomInstance.roomContent.doubleBed + ", x2",
+          extraBedIncluded: t.common.yes + ", x2",
+          riverView: t.common.no,
         },
         roomContent: [
-          { icon: airConditioning, description: "Klima uređaj" },
+          {
+            icon: airConditioning,
+            description: t.pages.roomInstance.roomContent.airConditioning,
+          },
           { icon: tv, description: "LCD TV" },
           { icon: miniBar, description: "Mini bar" },
-          { icon: table, description: "Radni sto" },
-          { icon: chair, description: "Stolica x2" },
-          { icon: wardrobe, description: "Orman" },
-          { icon: table, description: "Noćni stočić" },
-          { icon: bathroom, description: "Kupatilo sa tuš kabinom" },
-          { icon: hairdryer, description: "Fen" },
-          { icon: jacuzzi, description: "Đakuzi" },
-          { icon: cosmetics, description: "Kozmetika" },
+          {
+            icon: table,
+            description: t.pages.roomInstance.roomContent.desk,
+          },
+          {
+            icon: chair,
+            description: t.pages.roomInstance.roomContent.chair + " x2",
+          },
+          {
+            icon: wardrobe,
+            description: t.pages.roomInstance.roomContent.wardrobe,
+          },
+          {
+            icon: table,
+            description: t.pages.roomInstance.roomContent.nightTable,
+          },
+          {
+            icon: bathroom,
+            description: t.pages.roomInstance.roomContent.bathroom,
+          },
+          {
+            icon: hairdryer,
+            description: t.pages.roomInstance.roomContent.hairdryer,
+          },
+          {
+            icon: jacuzzi,
+            description: t.pages.roomInstance.roomContent.jacuzzi,
+          },
+          {
+            icon: cosmetics,
+            description: t.pages.roomInstance.roomContent.cosmetics,
+          },
         ],
         images: [
           superiorRoomImage1,
@@ -190,17 +256,17 @@ const RoomsData = () => {
     roomsCardData: [
       {
         key: "singleRoom",
-        description: "Standardna soba",
+        description: t.common.standardRoom,
         image: singleRoomImage2,
       },
       {
         key: "doubleRoom",
-        description: "Soba sa dodatnim ležajem",
+        description: t.common.roomWithExtraBed,
         image: doubleRoomImage2,
       },
       {
         key: "superiorRoom",
-        description: "Superior apartman sa đakuzijem",
+        description: t.common.superiorApartment,
         image: superiorRoomImage2,
       },
     ],

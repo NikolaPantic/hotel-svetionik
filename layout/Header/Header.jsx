@@ -89,10 +89,7 @@ const Header = ({ openForm }) => {
                 <ul className="header__navigation--rooms--list">
                   <li className="header__navigation--rooms--room">
                     <Link
-                      href={{
-                        pathname: "/usluge/sobe/[singleRoom]",
-                        query: { singleRoom: "standardna-soba" },
-                      }}
+                      href="/usluge/sobe/standardna-soba"
                       className="header__navigation--rooms--room-link"
                     >
                       {t.common.standardRoom}
@@ -100,10 +97,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="header__navigation--rooms--room">
                     <Link
-                      href={{
-                        pathname: "/usluge/sobe/[singleRoom]",
-                        query: { singleRoom: "soba-sa-dodatnim-lezajem" },
-                      }}
+                      href="/usluge/sobe/soba-sa-dodatnim-lezajem"
                       className="header__navigation--rooms--room-link"
                     >
                       {t.common.roomWithExtraBed}
@@ -111,12 +105,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="header__navigation--rooms--room">
                     <Link
-                      href={{
-                        pathname: "/usluge/sobe/[singleRoom]",
-                        query: {
-                          singleRoom: "superior-apartman-sa-djakuzijem",
-                        },
-                      }}
+                      href="/usluge/sobe/superior-apartman-sa-djakuzijem"
                       className="header__navigation--rooms--room-link"
                     >
                       {t.common.superiorApartment}
@@ -210,7 +199,7 @@ const Header = ({ openForm }) => {
             <ul className="mobileheader__navigation--list">
               <li className="mobileheader__navigation--list-item">
                 <Link
-                  href="/"
+                  href="/o-nama"
                   className="mobileheader__navigation--list-item-link"
                 >
                   {t.common.aboutUs}
@@ -225,7 +214,7 @@ const Header = ({ openForm }) => {
                 />
                 <div>
                   <Link
-                    href="/"
+                    href="/usluge"
                     className="mobileheader__navigation--list-item-link"
                   >
                     {t.common.services}
@@ -251,7 +240,7 @@ const Header = ({ openForm }) => {
                     />
                     <div>
                       <Link
-                        href="/"
+                        href="/usluge/sobe"
                         className="mobileheader__navigation--list-item-link "
                       >
                         {t.common.roomsBooking}
@@ -269,7 +258,7 @@ const Header = ({ openForm }) => {
                     <ul className="mobileheader__navigation--list mobileheader__navigation--list-rooms">
                       <li className="mobileheader__navigation--list-item">
                         <Link
-                          href="/"
+                          href="/usluge/sobe/standardna-soba"
                           className="mobileheader__navigation--list-item-link"
                         >
                           {t.common.standardRoom}
@@ -277,18 +266,18 @@ const Header = ({ openForm }) => {
                       </li>
                       <li className="mobileheader__navigation--list-item">
                         <Link
-                          href="/"
+                          href="/usluge/sobe/soba-sa dodatnim-lezajem"
                           className="mobileheader__navigation--list-item-link"
                         >
-                          {t.common.roomWithExtraBed}{" "}
+                          {t.common.roomWithExtraBed}
                         </Link>
                       </li>
                       <li className="mobileheader__navigation--list-item">
                         <Link
-                          href="/"
+                          href="/usluge/sobe/superior-apartman-sa-djakuzijem"
                           className="mobileheader__navigation--list-item-link"
                         >
-                          {t.common.superiorApartment}{" "}
+                          {t.common.superiorApartment}
                         </Link>
                       </li>
                       <li
@@ -309,7 +298,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="mobileheader__navigation--list-item">
                     <Link
-                      href="/"
+                      href="/usluge/proslave"
                       className="mobileheader__navigation--list-item-link"
                     >
                       {t.common.weddingCelebrations}
@@ -317,7 +306,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="mobileheader__navigation--list-item">
                     <Link
-                      href="/"
+                      href="/usluge/restoran"
                       className="mobileheader__navigation--list-item-link"
                     >
                       {t.common.restaurant}
@@ -325,7 +314,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="mobileheader__navigation--list-item">
                     <Link
-                      href="/"
+                      href="/usluge/vinski-podrum"
                       className="mobileheader__navigation--list-item-link"
                     >
                       {t.common.wineCellar}
@@ -333,7 +322,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="mobileheader__navigation--list-item">
                     <Link
-                      href="/"
+                      href="/usluge/brodska-marina"
                       className="mobileheader__navigation--list-item-link"
                     >
                       {t.common.shipMarina}
@@ -357,7 +346,7 @@ const Header = ({ openForm }) => {
               </li>
               <li className="mobileheader__navigation--list-item">
                 <Link
-                  href="/"
+                  href="/galerija"
                   className="mobileheader__navigation--list-item-link"
                 >
                   {t.common.gallery}
@@ -365,7 +354,7 @@ const Header = ({ openForm }) => {
               </li>
               <li className="mobileheader__navigation--list-item">
                 <Link
-                  href="/"
+                  href="/vesti"
                   className="mobileheader__navigation--list-item-link"
                 >
                   {t.common.news}
@@ -373,7 +362,7 @@ const Header = ({ openForm }) => {
               </li>
               <li className="mobileheader__navigation--list-item">
                 <Link
-                  href="/"
+                  href="/kontakt"
                   className="mobileheader__navigation--list-item-link"
                 >
                   {t.common.contact}
@@ -381,8 +370,9 @@ const Header = ({ openForm }) => {
               </li>
               <li className="mobileheader__navigation--list-item">
                 <Link
-                  href="/"
+                  href=""
                   className="mobileheader__navigation--list-item-link"
+                  onClick={openForm}
                 >
                   {t.common.booking}
                 </Link>
