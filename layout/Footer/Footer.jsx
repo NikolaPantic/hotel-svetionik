@@ -1,4 +1,4 @@
-import Link from "next/link";
+import TranslatedLink from "../../components/TranslatedLink/TranslatedLink";
 import { useRouter } from "next/router";
 import FooterSection from "../../components/FooterSection/FooterSection";
 import facebook from "../../public/svg/facebook.svg";
@@ -21,24 +21,30 @@ const Footer = () => {
           <p>{t.common.taxID}:1234567890</p>
         </FooterSection>
         <FooterSection footerSectionHeading={t.common.services}>
-          <Link className="clickable-link" href="/usluge/sobe">
+          <TranslatedLink className="clickable-link" href="/usluge/sobe">
             {t.common.roomsBooking}
-          </Link>
-          <Link className="clickable-link" href="/usluge/proslave">
+          </TranslatedLink>
+          <TranslatedLink className="clickable-link" href="/usluge/proslave">
             {t.common.weddingCelebrations}
-          </Link>
-          <Link className="clickable-link" href="/usluge/restoran">
+          </TranslatedLink>
+          <TranslatedLink className="clickable-link" href="/usluge/restoran">
             {t.common.restaurant}
-          </Link>
-          <Link className="clickable-link" href="/usluge/brodska-marina">
+          </TranslatedLink>
+          <TranslatedLink
+            className="clickable-link"
+            href="/usluge/brodska-marina"
+          >
             {t.common.shipMarina}
-          </Link>
-          <Link className="clickable-link" href="/usluge/vinski-podrum">
+          </TranslatedLink>
+          <TranslatedLink
+            className="clickable-link"
+            href="/usluge/vinski-podrum"
+          >
             {t.common.wineCellar}
-          </Link>
+          </TranslatedLink>
         </FooterSection>
         <FooterSection footerSectionHeading={t.common.rooms}>
-          <Link
+          <TranslatedLink
             className="clickable-link"
             href={{
               pathname: "/usluge/sobe/[singleRoom]",
@@ -46,8 +52,8 @@ const Footer = () => {
             }}
           >
             {t.common.standardRoom}
-          </Link>
-          <Link
+          </TranslatedLink>
+          <TranslatedLink
             className="clickable-link"
             href={{
               pathname: "/usluge/sobe/[singleRoom]",
@@ -55,8 +61,8 @@ const Footer = () => {
             }}
           >
             {t.common.roomWithExtraBed}
-          </Link>
-          <Link
+          </TranslatedLink>
+          <TranslatedLink
             className="clickable-link"
             href={{
               pathname: "/usluge/sobe/[singleRoom]",
@@ -64,41 +70,51 @@ const Footer = () => {
             }}
           >
             {t.common.superiorApartment}
-          </Link>
+          </TranslatedLink>
         </FooterSection>
         <FooterSection footerSectionHeading={t.common.contact}>
           <p>
             Hotel:{" "}
-            <Link className="clickable-link" href="tel:0651234567">
+            <a className="clickable-link" href="tel:0651234567">
               0651234567
-            </Link>
+            </a>
           </p>
           <p>
             {t.common.restaurant}:{" "}
-            <Link className="clickable-link" href="tel:0651234567">
+            <a className="clickable-link" href="tel:0651234567">
               0651234567
-            </Link>
+            </a>
           </p>
           <p>
             E-mail:{" "}
-            <Link
+            <a
               className="clickable-link"
               href="mailto:hotelsvetionik@gmail.com"
             >
               hotelsvetionik@gmail.com
-            </Link>
+            </a>
           </p>
         </FooterSection>
       </div>
       <div className="footer__social">
-        <Link className="clickable-link social" href="/">
+        <a
+          className="clickable-link social"
+          href="https://www.facebook.com/profile.php?id=100063594339967"
+          rel="noreferrer"
+          target="_blank"
+        >
           <Image src={facebook} alt="Facebook logo" />
           <span>Svetionik Obrenovac na Savi</span>
-        </Link>
-        <Link className="clickable-link social" href="/">
+        </a>
+        <a
+          className="clickable-link social"
+          href="https://www.instagram.com/svetionik_obrenovac_na_savi/"
+          rel="noreferrer"
+          target="_blank"
+        >
           <Image src={instagram} alt="Instagram logo" />
           <span>svetionik_obrenovac_na_savi</span>
-        </Link>
+        </a>
       </div>
 
       <span className="footer__rightsreserved">

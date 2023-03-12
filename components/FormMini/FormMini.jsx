@@ -9,7 +9,7 @@ const FormMini = () => {
 
   return (
     <section className="formmini">
-      <h3 className="formmini__heading">{t.form.subheading}</h3>
+      <h2 className="formmini__heading">{t.form.subheading}</h2>
       <form className="formmini__form">
         <FormField labelValue={t.form.name} placeholder={t.placeholders.name} />
         <FormField

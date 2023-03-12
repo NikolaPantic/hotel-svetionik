@@ -101,7 +101,7 @@ const sr = {
       text2:
         "Sa svojih 15 soba, restoranom i 2 sale za proslave, idealno je mesto za svaku priliku: beg od svakodnevnice, obeležavanje važnog datuma, poslovne sastanke, proslave...",
       text3:
-        "Ispred hotela se nalazi i dečije igralište, namenjeno nasim najmladjim gostima.",
+        "Ispred hotela se nalazi i dečije igralište, namenjeno našim najmlađim gostima.",
       text4: "Posetite nas i uverite se u naš kvalitet.",
     },
     rooms: {
@@ -196,7 +196,7 @@ const sr = {
         "su još jedan razlog da odaberete baš nas. Sva hrana koja ne bude utrošena do kraja večeri biće vam upakovana i prosleđena za poneti.",
       subheading10:
         "Prepustite se našem višegodišnjem iskustvu jer mi znamo koliko su vam proslave sa vašim dragim osobama značajne. Na vama je da odaberete dan, a na nama da vam pokažemo kako bajke još uvek postoje.",
-      section1Heading: "Svečana sala",
+      section1Heading: "Banket sala",
       section1Text1:
         "Banket sala, maksimalnog kapaciteta 400 sedećih mesta, predstavlja idealno mesto za obeležavanje vama važnog datuma.",
       section1Text2:
@@ -277,6 +277,72 @@ const sr = {
       subheading: "Kontakt informacije o hotelu.",
       findUsOnMap: "Nađite nas na mapi",
       contactForm: "Kontakt forma",
+    },
+  },
+  metadata: {
+    landingPage: {
+      title: "Svetionik Obrenovac na Savi | Hotel | Proslave | Restoran",
+      description:
+        "Udoban hotel za prenoćište? Proslava iz snova? Romantična večera pored reke? Sve na jednom mestu, u autentičnom ambijentu stvorenom samo za vas.",
+    },
+    aboutUs: {
+      title: "O nama | Hotel Svetionik Obrenovac",
+      description:
+        "Udaljen 30 km od Beograda, okružen vodom i zelenilom na samoj obali Save, hotel Svetionik predstavlja idealno mesto za odmor i opuštanje.",
+    },
+    services: {
+      title: "Usluge | Hotel Svetionik Obrenovac",
+      description:
+        "Od usluga nudimo izdavanje soba, organizaciju svih vrsta proslava, restoran nacionalne kuhinje, obilazak vinskog podruma i izdavanje brodske marine.",
+    },
+    rooms: {
+      title: "Sobe | Hotel Svetionik Obrenovac",
+      description:
+        " Smeštajni kapacitet od 15 soba: 6 standardnih, 7 sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sobe su udobne i svetle sa novim nameštajem.",
+    },
+    standardRoom: {
+      title: "Standardna soba",
+      description:
+        "Udobna soba kapaciteta 1-2 osobe. Poseduje francuski ležaj, LCD TV, klima uređaj, mini bar, fen kozmetiku u kupatilu.",
+    },
+    roomWithExtraBed: {
+      title: "Soba sa dodatnim ležajem",
+      description:
+        "Prostrana soba kapaciteta 1-4 osobe. 1 francuski i 1 dodatni ležaj, LCD TV, klima uređaj, mini bar, kupatilo sa tuš kabinom, fen, kozmetika u kupatilu.",
+    },
+    superiorApartment: {
+      title: "Superior apartman sa đakuzijem",
+      description:
+        "Luksuzni apartman kapaciteta do 8 osoba. Đakuzi, 2 francuska ležaja, 2 dodatna ležaja, LCD TV, mini bar, klima uređaj, fen, kozmetika u kupatilu.",
+    },
+    restaurant: {
+      title: "Restoran | Hotel Svetionik Obrenovac",
+      description:
+        "Smestite se pored reke i uživajte u našim specijalitetima: ribljim specijalitetima, bifteku, pastama, jelima sa roštilja... Pronađite svoj omiljeni ukus. ",
+    },
+    celebrations: {
+      title: "Proslave | Hotel Svetionik Obrenovac",
+      description:
+        "Organizujemo sve vrste proslava do 400 ljudi. Na raspolaganju su vam banket sala, klub sala, restoran i vinski podrum. Zakažite vaš termin na vreme.",
+    },
+    wineCellar: {
+      title: "Vinski podrum | Hotel Svetionik Obrenovac",
+      description:
+        "Smešten u suterenu hotela, sa više od 50 najkvalitetnijih sorti vina, vinski podrum predstavlja idealno mesto za intimne trenutke i savršeno uživanje.",
+    },
+    gallery: {
+      title: "Galerija | Hotel Svetionik Obrenovac",
+      description: "Galerija slika iz našeg hotela.",
+    },
+    news: {
+      title: "Vesti | Hotel Svetionik Obrenovac",
+      description:
+        "Budite u toku sa najnovijim dešavanjima u hotelu Svetionik.",
+    },
+    contact: {
+      title: "Kontakt | Hotel Svetionik Obrenovac",
+      description:
+        "Posetite nas na adresi Zabreških partizana 30, pozovite na broj 0641234567 ili pošaljite mejl na hotelsvetionik@gmail.com.",
     },
   },
 };

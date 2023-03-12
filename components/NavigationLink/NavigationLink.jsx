@@ -1,10 +1,9 @@
-import Link from "next/link";
-
+import TranslatedLink from "../TranslatedLink/TranslatedLink";
 const NavigationLink = ({ path = "/", navigationLinkLabel = "" }) => {
   return (
-    <Link href={path} className="navigationlink">
+    <TranslatedLink href={path} className="navigationlink">
       {navigationLinkLabel} &rarr;
-    </Link>
+    </TranslatedLink>
   );
 };
 

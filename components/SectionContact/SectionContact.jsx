@@ -1,4 +1,3 @@
-import Link from "next/link";
 import FormField from "../FormField/FormField";
 import { useRouter } from "next/router";
 import en from "../../locales/en";
@@ -14,22 +13,22 @@ const SectionContact = () => {
 
       <p>
         {t.sections.contact.text1}{" "}
-        <Link href="mailto:hotelsvetionik@gmail.com" className="backlink">
+        <a href="mailto:hotelsvetionik@gmail.com" className="backlink">
           {t.sections.contact.text2}
-        </Link>
+        </a>
         ,{" "}
-        <Link href="tel:+381641234567" className="backlink">
+        <a href="tel:+381641234567" className="backlink">
           {t.sections.contact.text3}
-        </Link>{" "}
+        </a>{" "}
         {t.sections.contact.text4}{" "}
-        <Link
+        <a
           href="https://goo.gl/maps/XMqbpMmLQgFx5qL29"
           target="_blank"
           rel="noreferrer"
           className="backlink"
         >
           {t.sections.contact.text5}
-        </Link>
+        </a>
         .
       </p>
 

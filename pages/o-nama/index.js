@@ -1,4 +1,4 @@
-import Link from "next/link";
+import TranslatedLink from "../../components/TranslatedLink/TranslatedLink";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import PageLayout from "../../layout/PageLayout/PageLayout";
@@ -21,24 +21,18 @@ const AboutUs = () => {
   return (
     <>
       <Head>
-        <title>O nama | Hotel Svetionik Obrenovac</title>
-        <meta name="title" content="O nama" />
-        <meta
-          name="description"
-          content="Nalazimo se na 30 km od Beograda, na samoj obali reke Save. Okruzeni vodom i zelenilom, predstavljamo idealno mesto za odmor i opustanje od svakodnevnog stresnog zivota. Prenocite u hotelu ili popijte kaficu pored reke u prijatnoj atmosferi uz ljubazno osoblje."
-        />
-        <meta
-          name="keywords"
-          content="reka Sava, hotel, Obrenovac, hotel Svetionik"
-        />
-        <meta property="og:title" content="O nama" />
+        <title>{t.metadata.aboutUs.title}</title>
+        <meta name="title" content={t.metadata.aboutUs.title} />
+        <meta name="description" content={t.metadata.aboutUs.description} />
+        <meta name="keywords" content="reka Sava, hotel, hotel Svetionik" />
+        <meta property="og:title" content={t.metadata.aboutUs.title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
         <meta property="og:site_name" content="" />
         <meta
           property="og:description"
-          content="Nalazimo se na 30 km od Beograda, na samoj obali reke Save. Okruzeni vodom i zelenilom, predstavljamo idealno mesto za odmor i opustanje od svakodnevnog stresnog zivota. Prenocite u hotelu ili popijte kaficu pored reke u prijatnoj atmosferi uz ljubazno osoblje."
+          content={t.metadata.aboutUs.description}
         />
       </Head>
       <article className="pageaboutus">
@@ -49,7 +43,7 @@ const AboutUs = () => {
         >
           <section className="pageaboutus__section">
             <div className="pageaboutus__content">
-              <h4 className="heading-small">{t.pages.about.section1Heading}</h4>
+              <h2 className="heading-small">{t.pages.about.section1Heading}</h2>
               <div className="pageaboutus__content--text">
                 <p> {t.pages.about.section1Text1}</p>
                 <p>
@@ -73,7 +67,7 @@ const AboutUs = () => {
               <Image src={wineCellar} alt="Hotel Svetionik vinski podrum" />
             </div>
             <div className="pageaboutus__content">
-              <h4 className="heading-small">{t.pages.about.section2Heading}</h4>
+              <h2 className="heading-small">{t.pages.about.section2Heading}</h2>
               <div className="pageaboutus__content--text">
                 <p>{t.pages.about.section2Text1}</p>
                 <p>{t.pages.about.section2Text2}</p>
@@ -81,9 +75,9 @@ const AboutUs = () => {
 
                 <p>
                   {`${t.pages.about.section2Text4} `}
-                  <Link href="/usluge" className="backlink">
+                  <TranslatedLink href="/usluge" className="backlink">
                     {t.pages.about.section2Text5}
-                  </Link>
+                  </TranslatedLink>
                   .
                 </p>
               </div>
@@ -91,7 +85,7 @@ const AboutUs = () => {
           </section>
           <section className="pageaboutus__section">
             <div className="pageaboutus__content">
-              <h4 className="heading-small">{t.pages.about.section3Heading}</h4>
+              <h2 className="heading-small">{t.pages.about.section3Heading}</h2>
               <div className="pageaboutus__content--text">
                 <p>{t.pages.about.section3Text1}</p>
                 <p>{t.pages.about.section3Text2}</p>

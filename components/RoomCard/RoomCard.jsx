@@ -22,7 +22,7 @@ const RoomCard = ({
       style={{ flexDirection: reversed ? "row-reverse" : "row" }}
     >
       <div className="roomcard__content">
-        <h4 className="heading-small">{roomCardHeading}</h4>
+        <h2 className="heading-small">{roomCardHeading}</h2>
         <p className="roomcard__content--text">{roomCardText}</p>
         <div className="roomcard__content--navigation">
           <button

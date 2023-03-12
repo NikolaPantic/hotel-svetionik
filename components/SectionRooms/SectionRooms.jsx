@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import NavigationLink from "../NavigationLink/NavigationLink";
 import RoomMiniCard from "../RoomMiniCard/RoomMiniCard";
 import singleRoom from "../../public/images/rooms/single/single-room-1.jpg";
@@ -26,9 +25,9 @@ const SectionRooms = () => {
             {t.sections.rooms.text3}
           </button>
           , {t.sections.rooms.text4}{" "}
-          <Link className="backlink" href="tel:+381641234567">
+          <a className="backlink" href="tel:+381641234567">
             {t.sections.rooms.text5}
-          </Link>
+          </a>
           .
         </p>
       </div>

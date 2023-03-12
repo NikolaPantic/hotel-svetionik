@@ -202,7 +202,7 @@ const en = {
         "are another reason to choose us. All food that is not consumed by the end of the evening will be packed and sent to you to take away.",
       subheading10:
         "Surrender to our many years of experience because we know how important celebrations with your loved ones are to you. It's up to you to choose the day, and it's up to us to show you how fairy tales still exist.",
-      section1Heading: "Wedding hall",
+      section1Heading: "Banquete hall",
       section1Text1:
         "The banquet hall, with a maximum capacity of 400 seats, is an ideal place to mark an important date for you.",
       section1Text2:
@@ -283,6 +283,71 @@ const en = {
       subheading: "Contact information about the hotel.",
       findUsOnMap: "Find us on map",
       contactForm: "Contact form",
+    },
+  },
+  metadata: {
+    landingPage: {
+      title: "Svetionik Obrenovac | Hotel | Celebrations | Restaurant",
+      description:
+        "A comfortable hotel to stay? Dream celebration? A romantic dinner by the river? All in one place, in an authentic environment made just for you.",
+    },
+    aboutUs: {
+      title: "About us | Hotel Svetionik Obrenovac",
+      description:
+        "Located 30 km from Belgrade, surrounded by water and greenery on the banks of the Sava, Hotel Svetionik is an ideal place for rest and relaxation.",
+    },
+    services: {
+      title: "Services | Hotel Svetionik Obrenovac",
+      description:
+        "We offer room rental, organization of all kinds of celebrations, national cuisine restaurant, wine cellar tour and boat marina rental.",
+    },
+    rooms: {
+      title: "Rooms | Hotel Svetionik Obrenovac",
+      description:
+        "Accommodation capacity of 15 rooms: 6 standard, 7 with an extra bed and 2 superior suites with jacuzzi. Rooms are comfortable and bright with new furniture.",
+    },
+    standardRoom: {
+      title: "Standard room",
+      description:
+        "Comfortable room for 1-2 people. It has LCD TV, air conditioning, mini bar, bathroom with shower, hairdryer, cosmetics in the bathroom.",
+    },
+    roomWithExtraBed: {
+      title: "Room with extra bed",
+      description:
+        "Spacious room for 1-4 people. The room has LCD TV, air conditioning, mini bar, bathroom with shower, hairdryer, cosmetics in the bathroom.",
+    },
+    superiorApartment: {
+      title: "Superior apartment with jacuzzi",
+      description:
+        "Spacious room for 1-4 people. The room has LCD TV, air conditioning, mini bar, bathroom with shower, hairdryer, cosmetics in the bathroom.",
+    },
+    restaurant: {
+      title: "Restaurant | Hotel Svetionik Obrenovac",
+      description:
+        "Sit by the river and enjoy our specialties: fish specialties, steak, pasta, grilled dishes... Find your favorite taste.",
+    },
+    celebrations: {
+      title: "Celebrations | Hotel Svetionik Obrenovac",
+      description:
+        "We organize all kinds of celebrations for up to 400 people. A banquet hall, a club hall, a restaurant and a wine cellar are available. Make your appointment on time.",
+    },
+    wineCellar: {
+      title: "Wine Cellar | Hotel Svetionik Obrenovac",
+      description:
+        "Located in the basement of the hotel, with more than 50 of the highest quality wines, the wine cellar is an ideal place for intimate moments and perfect enjoyment.",
+    },
+    gallery: {
+      title: "Gallery | Hotel Svetionik Obrenovac",
+      description: "Gallery of pictures from our hotel.",
+    },
+    news: {
+      title: "News | Hotel Svetionik Obrenovac",
+      description: "Stay up to date with the latest events at hotel Svetionik.",
+    },
+    contact: {
+      title: "Contact | Hotel Svetionik Obrenovac",
+      description:
+        "Visit us at Zabreških partizana 30, call 0641234567 or send an email to hotelsvetionik@gmail.com.",
     },
   },
 };

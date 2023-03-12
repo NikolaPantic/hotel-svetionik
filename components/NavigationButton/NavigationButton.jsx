@@ -1,12 +1,11 @@
-import Link from "next/link";
-
+import TranslatedLink from "../TranslatedLink/TranslatedLink";
 const NavigationButton = ({
   navigationButtonLabel = "label",
   darkMode = false,
   navigationButtonLink = "",
 }) => {
   return (
-    <Link
+    <TranslatedLink
       href={navigationButtonLink}
       className={
         darkMode
@@ -15,7 +14,7 @@ const NavigationButton = ({
       }
     >
       {navigationButtonLabel}
-    </Link>
+    </TranslatedLink>
   );
 };
 

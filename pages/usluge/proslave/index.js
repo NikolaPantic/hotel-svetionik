@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Link from "next/link";
+import TranslatedLink from "../../../components/TranslatedLink/TranslatedLink";
 import hall from "../../../assets/images/hotel-svetionik-1.jpg";
 import FormMini from "../../../components/FormMini/FormMini";
 import NavigationButton from "../../../components/NavigationButton/NavigationButton";
@@ -40,17 +40,17 @@ const Celebrations = () => {
         />
       </Head>
       <article className="pagecelebrations">
-        <h2 className="heading-secondary">{t.common.celebrations}</h2>
+        <h1 className="heading-secondary">{t.common.celebrations}</h1>
         <div className="pagecelebrations__introduction">
           <p>
             {t.pages.celebrations.subheading1}{" "}
-            <Link href="/usluge/restoran" className="backlink">
+            <TranslatedLink href="/usluge/restoran" className="backlink">
               {t.pages.celebrations.subheading2}
-            </Link>{" "}
+            </TranslatedLink>{" "}
             {t.pages.celebrations.subheading3}{" "}
-            <Link href="/usluge/vinski-podrum" className="backlink">
+            <TranslatedLink href="/usluge/vinski-podrum" className="backlink">
               {t.pages.celebrations.subheading4}
-            </Link>
+            </TranslatedLink>
             , {t.pages.celebrations.subheading5}{" "}
           </p>
           <p>
@@ -63,9 +63,9 @@ const Celebrations = () => {
         </div>
         <section className="pagecelebrations__hall">
           <div className="pagecelebrations__description">
-            <h4 className="heading-small">
+            <h2 className="heading-small">
               {t.pages.celebrations.section1Heading}
-            </h4>
+            </h2>
             <div className="pagecelebrations__description--text">
               <p>{t.pages.celebrations.section1Text1}</p>
               <p>{t.pages.celebrations.section1Text2}</p>
@@ -99,9 +99,9 @@ const Celebrations = () => {
             <Image src={hall} alt="hall" />
           </div>
           <div className="pagecelebrations__description">
-            <h4 className="heading-small">
+            <h2 className="heading-small">
               {t.pages.celebrations.section2Heading}
-            </h4>
+            </h2>
             <p className="pagecelebrations__description--text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab error
               dolorum dolores quod consectetur, dolor cupiditate ad inventore

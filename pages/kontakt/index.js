@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import PageLayout from "../../layout/PageLayout/PageLayout";
@@ -21,27 +20,18 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Kontakt | Hotel Svetionik Obrenovac</title>
-        <meta name="title" content="Kontakt | Hotel Svetionik Obrenovac" />
-        <meta
-          name="description"
-          content="Možete nas naći u ulici Zabreških partizana 30 u Obrenovcu, mejlom na hotelsvetionik@gmail.com, ili na broj telefona 0641234567. Dostupni smo svaki dan od 08:00 do 23:00."
-        />
-        <meta
-          name="keywords"
-          content="kontakt svetionik, broj svetionik obrenovac, broj hotel svetionik, email svetionik"
-        />
-        <meta
-          property="og:title"
-          content="Kontakt | Hotel Svetionik Obrenovac"
-        />
+        <title>{t.metadata.contact.title}</title>
+        <meta name="title" content={t.metadata.contact.title} />
+        <meta name="description" content={t.metadata.contact.description} />
+        <meta name="keywords" content="galerija, slike, slike hotel" />
+        <meta property="og:title" content={t.metadata.contact.title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
         <meta property="og:site_name" content="Hotel Svetionik Obrenovac" />
         <meta
           property="og:description"
-          content="Možete nas naći u ulici Zabreških partizana 30 u Obrenovcu, mejlom na hotelsvetionik@gmail.com, ili na broj telefona 0641234567. Dostupni smo svaki dan od 08:00 do 23:00."
+          content={t.metadata.contact.description}
         />
       </Head>
       <article className="pagecontact">
@@ -63,25 +53,25 @@ const Contact = () => {
               <div className="pagecontact__address--info">
                 <span className="pagecontact__address--card">
                   <Image src={mobileIcon} alt="mobile icon" /> Hotel:{" "}
-                  <Link className="backlink" href="tel:+381641234567">
+                  <a className="backlink" href="tel:+381641234567">
                     0641234567
-                  </Link>
+                  </a>
                 </span>
                 <span className="pagecontact__address--card">
                   <Image src={mobileIcon} alt="mobile icon" />{" "}
                   {t.common.restaurant}:{" "}
-                  <Link className="backlink" href="tel:+381641234567">
+                  <a className="backlink" href="tel:+381641234567">
                     0641234567
-                  </Link>
+                  </a>
                 </span>
                 <span className="pagecontact__address--card">
                   <Image src={mailIcon} alt="mail icon" />{" "}
-                  <Link
+                  <a
                     className="backlink"
                     href="mailto:hotelsvetionik@gmail.com"
                   >
                     hotelsvetionik@gmail.com
-                  </Link>
+                  </a>
                 </span>
               </div>
 
@@ -95,15 +85,22 @@ const Contact = () => {
               <div className="pagecontact__address--social">
                 <a
                   className="clickable-link social"
-                  href="fb://facewebmodal/f?href=https://it-it.facebook.com/fcbarcelona/"
+                  href="https://www.facebook.com/profile.php?id=100063594339967"
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   <Image src={facebook} alt="Facebook logo" />
                   <span>Svetionik Obrenovac na Savi</span>
                 </a>
-                <Link className="clickable-link social" href="/">
+                <a
+                  className="clickable-link social"
+                  href="https://www.instagram.com/svetionik_obrenovac_na_savi/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   <Image src={instagram} alt="Instagram logo" />
                   <span>svetionik_obrenovac_na_savi</span>
-                </Link>
+                </a>
               </div>
             </address>
             <div className="pagecontact__image">
@@ -111,7 +108,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="pagecontact__map">
-            <h4 className="heading-small">{t.pages.contact.findUsOnMap}</h4>
+            <h2 className="heading-small">{t.pages.contact.findUsOnMap}</h2>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2837.190561748924!2d20.19072301553119!3d44.67488687909958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a14e5d12a9d3d%3A0xf25f1bfe79ba3dfa!2z0KXQvtGC0LXQuyDQodCy0LXRgtC40L7QvdC40Lo!5e0!3m2!1ssr!2srs!4v1674165753674!5m2!1ssr!2srs"
               style={{ border: "0" }}
@@ -121,9 +118,9 @@ const Contact = () => {
               title="Hotel Svetionik mapa"
             />
           </div>
-          <h4 className="pagecontact__subheading heading-small">
+          <h2 className="pagecontact__subheading heading-small">
             {t.pages.contact.contactForm}
-          </h4>
+          </h2>
           <FormMini />
         </PageLayout>
       </article>

@@ -1,13 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
-
+import TranslatedLink from "../TranslatedLink/TranslatedLink";
 const RoomMiniCard = ({
   roomDescription,
   roomMiniCardLink = "/",
   roomMiniCardImage,
 }) => {
   return (
-    <Link href={roomMiniCardLink} className="roomminicard">
+    <TranslatedLink href={roomMiniCardLink} className="roomminicard">
       <div className="roomminicard__image">
         <Image
           src={roomMiniCardImage}
@@ -15,7 +14,7 @@ const RoomMiniCard = ({
         />
       </div>
       <span className="roomminicard__description">{roomDescription}</span>
-    </Link>
+    </TranslatedLink>
   );
 };
 

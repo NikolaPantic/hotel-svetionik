@@ -124,24 +124,18 @@ const Gallery = () => {
   return (
     <>
       <Head>
-        <title>Galerija | Hotel Svetionik Obrenovac</title>
-        <meta name="title" content="Galerija | Hotel Svetionik Obrenovac" />
-        <meta name="description" content="Galerija slika hotela Obrenovac." />
-        <meta
-          name="keywords"
-          content="galerija, slike, slike hotel, slike reka"
-        />
-        <meta
-          property="og:title"
-          content="Galerija | Hotel Svetionik Obrenovac"
-        />
+        <title>{t.metadata.gallery.title}</title>
+        <meta name="title" content={t.metadata.gallery.title} />
+        <meta name="description" content={t.metadata.gallery.description} />
+        <meta name="keywords" content="galerija, slike, slike hotel" />
+        <meta property="og:title" content={t.metadata.gallery.title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
         <meta property="og:site_name" content="Hotel Svetionik Obrenovac" />
         <meta
           property="og:description"
-          content="Galerija slika hotela Svetionik Obrenovac."
+          content={t.metadata.gallery.description}
         />
       </Head>
       <article className="pagegallery">
@@ -151,9 +145,9 @@ const Gallery = () => {
           pageLayoutSummary={t.pages.gallery.subheading}
         >
           <section className="pagegallery__album" id="restoran">
-            <h3 className="heading-small">
+            <h2 className="heading-small">
               {t.common.restaurantAndSummerGarden}
-            </h3>
+            </h2>
             <div className="pagegallery__album--carousel">
               <Carousel
                 images={restaurantImages}
@@ -162,13 +156,13 @@ const Gallery = () => {
             </div>
           </section>
           <section className="pagegallery__album" id="sobe">
-            <h3 className="heading-small">{t.common.rooms}</h3>
+            <h2 className="heading-small">{t.common.rooms}</h2>
             <div className="pagegallery__album--carousel">
               <Carousel images={roomsImages} shouldMaximizeOnClick={true} />
             </div>
           </section>
           <section className="pagegallery__album" id="#proslave">
-            <h3 className="heading-small">{t.common.weddingCelebrations}</h3>
+            <h2 className="heading-small">{t.common.weddingCelebrations}</h2>
             <div className="pagegallery__album--carousel">
               <Carousel
                 images={images}
@@ -178,13 +172,13 @@ const Gallery = () => {
             </div>
           </section>
           <section className="pagegallery__album" id="hrana">
-            <h3 className="heading-small">{t.common.food}</h3>
+            <h2 className="heading-small">{t.common.food}</h2>
             <div className="pagegallery__album--carousel">
               <Carousel images={images} shouldMaximizeOnClick={true} />
             </div>
           </section>
           <section className="pagegallery__album" id="vinski-podrum">
-            <h3 className="heading-small">{t.common.wineCellar}</h3>
+            <h2 className="heading-small">{t.common.wineCellar}</h2>
             <div className="pagegallery__album--carousel">
               <Carousel
                 images={wineCellarImages}
@@ -193,7 +187,7 @@ const Gallery = () => {
             </div>
           </section>
           <section className="pagegallery__album" id="nagrade">
-            <h3 className="heading-small">{t.common.awards}</h3>
+            <h2 className="heading-small">{t.common.awards}</h2>
             <div className="pagegallery__album--carousel">
               <Carousel images={images} shouldMaximizeOnClick={true} />
             </div>

@@ -15,24 +15,18 @@ const Rooms = () => {
   return (
     <>
       <Head>
-        <title>Sobe | Hotel Svetionik Obrenovac</title>
-        <meta name="title" content="Sobe | Hotel Svetionik Obrenovac" />
-        <meta
-          name="description"
-          content="Raspolažemo sa ukupnim smeštajnim kapacitetom od 15 soba: 6 standardnih, 7 soba sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sobe su udobne i svetle, sa novim nameštajem u njima."
-        />
-        <meta
-          name="keywords"
-          content="soba obrenovac, nocenje cena, hotel nocenje, soba cena"
-        />
-        <meta property="og:title" content="Sobe " />
+        <title>{t.metadata.rooms.title}</title>
+        <meta name="title" content={t.metadata.rooms.title} />
+        <meta name="description" content={t.metadata.rooms.description} />
+        <meta name="keywords" content="sobe, nocenje, apartman" />
+        <meta property="og:title" content={t.metadata.rooms.title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
         <meta property="og:site_name" content="Hotel Svetionik Obrenovac" />
         <meta
           property="og:description"
-          content="Raspolažemo sa ukupnim smeštajnim kapacitetom od 15 soba: 6 standardnih, 7 soba sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sobe su udobne i svetle, sa novim nameštajem u njima."
+          content={t.metadata.rooms.description}
         />
       </Head>
       <article className="pagerooms">

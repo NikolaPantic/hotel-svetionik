@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Link from "next/link";
+import TranslatedLink from "../../components/TranslatedLink/TranslatedLink";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import logo from "../../public/svg/logo.svg";
@@ -30,19 +30,19 @@ const Header = ({ openForm }) => {
             <div className="header__address--card--image">
               <Image src={phone} alt="phone" />
             </div>
-            <Link href="tel:065123457">0651234567</Link>
+            <a href="tel:065123457">0651234567</a>
           </div>
           <div className="header__address--card">
             <div className="header__address--card--image">
               <Image src={location} alt="phone" />
             </div>
-            <Link
+            <a
               href="https://goo.gl/maps/4wsqikzjxaRH22zQ7"
               rel="noreferrer"
               target="_blank"
             >
               Zabreških partizana 30, Obrenovac
-            </Link>
+            </a>
           </div>
           <div className="header__address--card">
             <div className="header__address--card--image">
@@ -68,73 +68,89 @@ const Header = ({ openForm }) => {
       <nav className="header__navigation">
         <ul className="header__navigation--items">
           <li className="header__navigation--item">
-            <Link href="/o-nama" className="header__navigation--item-link">
+            <TranslatedLink
+              href="/o-nama"
+              className="header__navigation--item-link"
+            >
               {t.common.aboutUs}
-            </Link>
+            </TranslatedLink>
           </li>
           <li className="header__navigation--item header__navigation--item--services">
-            <Link
+            <TranslatedLink
               href="/usluge"
               className="header__navigation--item-link header__navigation--item-link--services"
             >
               {t.common.services}
-            </Link>
+            </TranslatedLink>
             <span className="header__navigation--item-link--services--arrow">
               &#9658;
             </span>
 
             <ul className="header__navigation--item-link--services--list">
               <li className="header__navigation--item-link--services--list-item header__navigation--rooms">
-                <Link href="/usluge/sobe">{t.common.rooms} &#9658;</Link>
+                <TranslatedLink href="/usluge/sobe">
+                  {t.common.rooms} &#9658;
+                </TranslatedLink>
                 <ul className="header__navigation--rooms--list">
                   <li className="header__navigation--rooms--room">
-                    <Link
+                    <TranslatedLink
                       href="/usluge/sobe/standardna-soba"
                       className="header__navigation--rooms--room-link"
                     >
                       {t.common.standardRoom}
-                    </Link>
+                    </TranslatedLink>
                   </li>
                   <li className="header__navigation--rooms--room">
-                    <Link
+                    <TranslatedLink
                       href="/usluge/sobe/soba-sa-dodatnim-lezajem"
                       className="header__navigation--rooms--room-link"
                     >
                       {t.common.roomWithExtraBed}
-                    </Link>
+                    </TranslatedLink>
                   </li>
                   <li className="header__navigation--rooms--room">
-                    <Link
+                    <TranslatedLink
                       href="/usluge/sobe/superior-apartman-sa-djakuzijem"
                       className="header__navigation--rooms--room-link"
                     >
                       {t.common.superiorApartment}
-                    </Link>
+                    </TranslatedLink>
                   </li>
                 </ul>
               </li>
               <li className="header__navigation--item-link--services--list-item">
-                <Link href="/usluge/proslave">{t.common.celebrations}</Link>
+                <TranslatedLink href="/usluge/proslave">
+                  {t.common.celebrations}
+                </TranslatedLink>
               </li>
               <li className="header__navigation--item-link--services--list-item">
-                <Link href="/usluge/restoran">{t.common.restaurant}</Link>
+                <TranslatedLink href="/usluge/restoran">
+                  {t.common.restaurant}
+                </TranslatedLink>
               </li>
               <li className="header__navigation--item-link--services--list-item">
-                <Link href="/usluge/brodska-marina">{t.common.shipMarina}</Link>
+                <TranslatedLink href="/usluge/brodska-marina">
+                  {t.common.shipMarina}
+                </TranslatedLink>
               </li>
               <li className="header__navigation--item-link--services--list-item">
-                <Link href="/usluge/vinski-podrum">{t.common.wineCellar} </Link>
+                <TranslatedLink href="/usluge/vinski-podrum">
+                  {t.common.wineCellar}{" "}
+                </TranslatedLink>
               </li>
             </ul>
           </li>
 
           <li className="header__navigation--item">
-            <Link href="/galerija" className="header__navigation--item-link">
+            <TranslatedLink
+              href="/galerija"
+              className="header__navigation--item-link"
+            >
               {t.common.gallery}
-            </Link>
+            </TranslatedLink>
           </li>
           <li className="header__navigation--item header__navigation--item--logo">
-            <Link
+            <TranslatedLink
               href="/"
               className="header__navigation--item-link header__navigation--item-link--logo"
             >
@@ -145,34 +161,40 @@ const Header = ({ openForm }) => {
                   alt="Hotel Svetionik logo"
                 />
               </div>
-            </Link>
+            </TranslatedLink>
           </li>
           <li className="header__navigation--item">
-            <Link href="/vesti" className="header__navigation--item-link">
+            <TranslatedLink
+              href="/vesti"
+              className="header__navigation--item-link"
+            >
               {t.common.news}
-            </Link>
+            </TranslatedLink>
           </li>
 
           <li className="header__navigation--item">
-            <Link href="/kontakt" className="header__navigation--item-link">
+            <TranslatedLink
+              href="/kontakt"
+              className="header__navigation--item-link"
+            >
               {t.common.contact}
-            </Link>
+            </TranslatedLink>
           </li>
           <li className="header__navigation--item">
-            <Link
+            <TranslatedLink
               href=""
               className="header__navigation--item-link"
               onClick={openForm}
             >
               {t.common.booking}
-            </Link>
+            </TranslatedLink>
           </li>
         </ul>
       </nav>
       <div className="mobileheader__content">
-        <Link className="mobileheader__logo" href="/">
+        <TranslatedLink className="mobileheader__logo" href="/">
           <Image src={logo} alt="Hotel Svetionik logo" />
-        </Link>
+        </TranslatedLink>
         <nav className="mobileheader__navigation">
           <div className="mobileheader__navigation--hamburger">
             <input
@@ -198,12 +220,12 @@ const Header = ({ openForm }) => {
 
             <ul className="mobileheader__navigation--list">
               <li className="mobileheader__navigation--list-item">
-                <Link
+                <TranslatedLink
                   href="/o-nama"
                   className="mobileheader__navigation--list-item-link"
                 >
                   {t.common.aboutUs}
-                </Link>
+                </TranslatedLink>
               </li>
               <li className="mobileheader__navigation--list-item mobileheader__navigation--services">
                 <input
@@ -213,12 +235,12 @@ const Header = ({ openForm }) => {
                   id="services--toggle"
                 />
                 <div>
-                  <Link
+                  <TranslatedLink
                     href="/usluge"
                     className="mobileheader__navigation--list-item-link"
                   >
                     {t.common.services}
-                  </Link>
+                  </TranslatedLink>
                   <label
                     htmlFor="services--toggle"
                     className="mobileheader__navigation--list--arrow mobileheader__navigation--list-services--arrow"
@@ -239,12 +261,12 @@ const Header = ({ openForm }) => {
                       checked={isHamburgerOpened ? isRoomsListOpened : false}
                     />
                     <div>
-                      <Link
+                      <TranslatedLink
                         href="/usluge/sobe"
                         className="mobileheader__navigation--list-item-link "
                       >
                         {t.common.roomsBooking}
-                      </Link>
+                      </TranslatedLink>
 
                       <label
                         htmlFor="rooms--toggle"
@@ -257,28 +279,28 @@ const Header = ({ openForm }) => {
 
                     <ul className="mobileheader__navigation--list mobileheader__navigation--list-rooms">
                       <li className="mobileheader__navigation--list-item">
-                        <Link
+                        <TranslatedLink
                           href="/usluge/sobe/standardna-soba"
                           className="mobileheader__navigation--list-item-link"
                         >
                           {t.common.standardRoom}
-                        </Link>
+                        </TranslatedLink>
                       </li>
                       <li className="mobileheader__navigation--list-item">
-                        <Link
-                          href="/usluge/sobe/soba-sa dodatnim-lezajem"
+                        <TranslatedLink
+                          href="/usluge/sobe/soba-sa-dodatnim-lezajem"
                           className="mobileheader__navigation--list-item-link"
                         >
                           {t.common.roomWithExtraBed}
-                        </Link>
+                        </TranslatedLink>
                       </li>
                       <li className="mobileheader__navigation--list-item">
-                        <Link
+                        <TranslatedLink
                           href="/usluge/sobe/superior-apartman-sa-djakuzijem"
                           className="mobileheader__navigation--list-item-link"
                         >
                           {t.common.superiorApartment}
-                        </Link>
+                        </TranslatedLink>
                       </li>
                       <li
                         className="mobileheader__navigation--list-item"
@@ -297,36 +319,36 @@ const Header = ({ openForm }) => {
                     </ul>
                   </li>
                   <li className="mobileheader__navigation--list-item">
-                    <Link
+                    <TranslatedLink
                       href="/usluge/proslave"
                       className="mobileheader__navigation--list-item-link"
                     >
                       {t.common.weddingCelebrations}
-                    </Link>
+                    </TranslatedLink>
                   </li>
                   <li className="mobileheader__navigation--list-item">
-                    <Link
+                    <TranslatedLink
                       href="/usluge/restoran"
                       className="mobileheader__navigation--list-item-link"
                     >
                       {t.common.restaurant}
-                    </Link>
+                    </TranslatedLink>
                   </li>
                   <li className="mobileheader__navigation--list-item">
-                    <Link
+                    <TranslatedLink
                       href="/usluge/vinski-podrum"
                       className="mobileheader__navigation--list-item-link"
                     >
                       {t.common.wineCellar}
-                    </Link>
+                    </TranslatedLink>
                   </li>
                   <li className="mobileheader__navigation--list-item">
-                    <Link
+                    <TranslatedLink
                       href="/usluge/brodska-marina"
                       className="mobileheader__navigation--list-item-link"
                     >
                       {t.common.shipMarina}
-                    </Link>
+                    </TranslatedLink>
                   </li>
                   <li
                     className="mobileheader__navigation--list-item "
@@ -345,37 +367,37 @@ const Header = ({ openForm }) => {
                 </ul>
               </li>
               <li className="mobileheader__navigation--list-item">
-                <Link
+                <TranslatedLink
                   href="/galerija"
                   className="mobileheader__navigation--list-item-link"
                 >
                   {t.common.gallery}
-                </Link>
+                </TranslatedLink>
               </li>
               <li className="mobileheader__navigation--list-item">
-                <Link
+                <TranslatedLink
                   href="/vesti"
                   className="mobileheader__navigation--list-item-link"
                 >
                   {t.common.news}
-                </Link>
+                </TranslatedLink>
               </li>
               <li className="mobileheader__navigation--list-item">
-                <Link
+                <TranslatedLink
                   href="/kontakt"
                   className="mobileheader__navigation--list-item-link"
                 >
                   {t.common.contact}
-                </Link>
+                </TranslatedLink>
               </li>
               <li className="mobileheader__navigation--list-item">
-                <Link
+                <TranslatedLink
                   href=""
                   className="mobileheader__navigation--list-item-link"
                   onClick={openForm}
                 >
                   {t.common.booking}
-                </Link>
+                </TranslatedLink>
               </li>
               <li className="mobileheader__navigation--list-item">
                 <div className="mobileheader__navigation--language">

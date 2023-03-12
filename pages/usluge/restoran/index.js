@@ -16,27 +16,21 @@ const Restaurant = () => {
   return (
     <>
       <Head>
-        <title>Restoran | Hotel Svetionik Obrenovac</title>
-        <meta name="title" content="Restoran | Hotel Svetionik Obrenovac" />
-        <meta
-          name="description"
-          content="Restoran je tipa nacionalne kuhinje, sa naglaskom na ribljim specijalitetima. Sastoji se iz 2 dela: zatvorenog dela i letnje bašte. Nudimo širok izbor jela: riblji specijaliteti, paste, jela sa roštilja, biftek... Posetite nas i uverite se u naš kvalitet."
-        />
+        <title>{t.metadata.restaurant.title}</title>
+        <meta name="title" content={t.metadata.restaurant.title} />
+        <meta name="description" content={t.metadata.restaurant.description} />
         <meta
           name="keywords"
-          content="restoran, restoran Obrenovac, riba, biftek, rostilj obrenovac, reka sava"
+          content="restoran, riba, biftek, rostilj obrenovac"
         />
-        <meta
-          property="og:title"
-          content="Restoran | Hotel Svetionik Obrenovac"
-        />
+        <meta property="og:title" content={t.metadata.restaurant.title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
         <meta property="og:site_name" content="Hotel Svetionik Obrenovac" />
         <meta
           property="og:description"
-          content="Restoran je tipa nacionalne kuhinje, sa naglaskom na ribljim specijalitetima. Sastoji se iz 2 dela: zatvorenog dela i letnje bašte. Nudimo širok izbor jela: riblji specijaliteti, paste, jela sa roštilja, biftek... Posetite nas i uverite se u naš kvalitet."
+          content={t.metadata.restaurant.description}
         />
       </Head>
       <article className="pagerestaurant">

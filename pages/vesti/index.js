@@ -19,22 +19,16 @@ const News = () => {
   return (
     <>
       <Head>
-        <title>Vesti | Hotel Svetionik Obrenovac</title>
-        <meta name="title" content="Vesti | Hotel Svetionik Obrenovac" />
-        <meta
-          name="description"
-          content="Novosti i vesti iz hotela Obrenovac."
-        />
-        <meta name="keywords" content="vesti, hotel vesti" />
-        <meta property="og:title" content="Vesti | Hotel Svetionik Obrenovac" />
+        <title>{t.metadata.news.title}</title>
+        <meta name="title" content={t.metadata.news.title} />
+        <meta name="description" content={t.metadata.news.description} />
+        <meta name="keywords" content="vesti, vesti hotel" />
+        <meta property="og:title" content={t.metadata.news.title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
         <meta property="og:site_name" content="Hotel Svetionik Obrenovac" />
-        <meta
-          property="og:description"
-          content="Novosti i vesti iz hotela Obrenovac."
-        />
+        <meta property="og:description" content={t.metadata.news.description} />
       </Head>
       <article className="pagenews">
         <PageLayout
@@ -44,7 +38,7 @@ const News = () => {
         >
           <p className="pagenews__notification">{t.sections.news.newsText}</p>
           <div className="sectionnews__container">
-            <h4 className="sectionnews__container--heading">Newsletter</h4>
+            <h2 className="sectionnews__container--heading">Newsletter</h2>
             <div className="sectionnews__container--content">
               <p>{t.sections.news.newsletterText1}</p>
               <form

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import PageLayout from "../../layout/PageLayout/PageLayout";
@@ -18,7 +19,6 @@ import wineCellar1 from "../../public/images/wine-cellar/wine-cellar.jpg";
 import wineCellar2 from "../../public/images/wine-cellar/wine-cellar-4.jpg";
 import wineCellar3 from "../../public/images/wine-cellar/wine-cellar-hall.jpg";
 import wineCellar4 from "../../public/images/wine-cellar/wine-cellar-wall-1.jpg";
-import Head from "next/head";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
 
@@ -28,27 +28,21 @@ const Services = () => {
   return (
     <>
       <Head>
-        <title>Usluge | Hotel Svetionik Obrenovac</title>
-        <meta name="title" content="Usluge" />
-        <meta
-          name="description"
-          content="Od usluga nudimo izdavanje soba za noćenje, organizaciju svih vrsta proslava, restoran nacionalne kuhinje, obilazak vinskog podruma i izdavanje brodske marine."
-        />
+        <title>{t.metadata.services.title}</title>
+        <meta name="title" content={t.metadata.services.title} />
+        <meta name="description" content={t.metadata.services.description} />
         <meta
           name="keywords"
-          content="svadba cena, proslava, restoran Obrenovac, brodska marina, vinski podrum"
+          content="proslava, restoran, brodska marina, vinski podrum"
         />
-        <meta
-          property="og:title"
-          content="Usluge | Hotel Svetionik Obrenovac"
-        />
+        <meta property="og:title" content={t.metadata.services.title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
         <meta property="og:site_name" content="Hotel Svetionik Obrenovac" />
         <meta
           property="og:description"
-          content="Od usluga nudimo izdavanje soba za noćenje, organizaciju svih vrsta proslava, restoran nacionalne kuhinje, obilazak vinskog podruma i izdavanje brodske marine."
+          content={t.metadata.services.description}
         />
       </Head>
       <article className="pageservices">
@@ -58,7 +52,7 @@ const Services = () => {
           pageLayoutSummary={t.pages.services.subheading}
         >
           <section className="pageservices__section">
-            <h3 className="heading-small">{t.common.roomsBooking}</h3>
+            <h2 className="heading-small">{t.common.roomsBooking}</h2>
             <p className="pageservices__section--text">
               {t.pages.services.text1}
             </p>
@@ -99,7 +93,7 @@ const Services = () => {
             </div>
           </section>
           <section className="pageservices__section pageservices__section--celebrations">
-            <h3 className="heading-small">{t.common.celebrations}</h3>
+            <h2 className="heading-small">{t.common.celebrations}</h2>
             <p className="pageservices__section--text">
               {t.pages.services.text2}
             </p>
@@ -130,7 +124,7 @@ const Services = () => {
             </div>
           </section>
           <section className="pageservices__section">
-            <h3 className="heading-small">{t.common.restaurant}</h3>
+            <h2 className="heading-small">{t.common.restaurant}</h2>
             <p className="pageservices__section--text">
               {t.pages.services.text3}
             </p>
@@ -162,7 +156,7 @@ const Services = () => {
             </div>
           </section>
           <section className="pageservices__section pageservices__section--marina">
-            <h3 className="heading-small">{t.common.shipMarina}</h3>
+            <h2 className="heading-small">{t.common.shipMarina}</h2>
             <p className="pageservices__section--text">
               {t.pages.services.text4}
             </p>
@@ -193,7 +187,7 @@ const Services = () => {
             </div>
           </section>
           <section className="pageservices__section">
-            <h3 className="heading-small">{t.common.wineCellar}</h3>
+            <h2 className="heading-small">{t.common.wineCellar}</h2>
             <p className="pageservices__section--text">
               {t.pages.services.text5}
             </p>

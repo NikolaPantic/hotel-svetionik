@@ -17,30 +17,21 @@ const WineCellar = () => {
   return (
     <>
       <Head>
-        <title>Vinski podrum | Hotel Svetionik Obrenovac</title>
-        <meta
-          name="title"
-          content="Vinski podrum | Hotel Svetionik Obrenovac"
-        />
-        <meta
-          name="description"
-          content="Smešten u suterenu hotela, vinski podrum predstavlja idealno mesto za intimne trenutke i savršeno uživanje. Posedujemo više od 50 sorti vina najkvalitetnijih proizvođača. Takođe, ovde možete zakazati intimnu proslavu do 30 ljudi."
-        />
+        <title>{t.metadata.wineCellar.title}</title>
+        <meta name="title" content={t.metadata.wineCellar.title} />
+        <meta name="description" content={t.metadata.wineCellar.description} />
         <meta
           name="keywords"
-          content="vinski podrum, vinski podrum obrenovac, vino, proslava"
+          content="vinski podrum, vinski podrum obrenovac"
         />
-        <meta
-          property="og:title"
-          content="Vinski podrum | Hotel Svetionik Obrenovac"
-        />
+        <meta property="og:title" content={t.metadata.wineCellar.title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
         <meta property="og:site_name" content="Hotel Svetionik Obrenovac" />
         <meta
           property="og:description"
-          content="Smešten u suterenu hotela, vinski podrum predstavlja idealno mesto za intimne trenutke i savršeno uživanje. Posedujemo više od 50 sorti vina najkvalitetnijih proizvođača. Takođe, ovde možete zakazati intimnu proslavu do 30 ljudi."
+          content={t.metadata.wineCellar.description}
         />
       </Head>
       <article className="pagewinecellar">

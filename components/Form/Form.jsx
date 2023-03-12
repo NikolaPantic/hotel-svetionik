@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Link from "next/link";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
 
@@ -110,22 +109,22 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
           </form>
           <p className="form__content--intro">
             {t.form.text2}{" "}
-            <Link className="backlink" href="tel:+381641234567">
+            <a className="backlink" href="tel:+381641234567">
               0641234567
-            </Link>
+            </a>
             . {t.form.text3}{" "}
-            <Link className="backlink" href="tel:+381641234567">
+            <a className="backlink" href="tel:+381641234567">
               0641234567
-            </Link>
+            </a>
             .
           </p>
         </div>
         <p className="form__footer">
           <strong>{t.form.text4}:</strong> {t.form.text5}
-          <Link className="backlink" href="tel:+381641234567">
+          <a className="backlink" href="tel:+381641234567">
             {" "}
             0641234567
-          </Link>
+          </a>
           .
         </p>
       </div>

@@ -1,10 +1,9 @@
-import Link from "next/link";
-
+import TranslatedLink from "../TranslatedLink/TranslatedLink";
 const ReservationLink = ({ labelText = "label" }) => {
   return (
-    <Link href="/" className="reservationlink">
+    <TranslatedLink href="/" className="reservationlink">
       {labelText}
-    </Link>
+    </TranslatedLink>
   );
 };
 
