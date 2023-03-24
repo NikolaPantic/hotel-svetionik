@@ -91,6 +91,10 @@
       align-self: stretch;
     }
 
+    &--invalid-field {
+      border: 1px solid red;
+    }
+
     &--heading {
       text-transform: uppercase;
       padding: 1rem 0;
@@ -153,10 +157,14 @@
         outline: none;
         background-color: rgba($color-grey-light, 0.4);
         border-radius: 0.5rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
 
         &::placeholder {
           font-size: 0.8rem;
+        }
+
+        @media only screen and (max-width: 768px) {
+          font-size: 1.2rem;
         }
       }
     }
@@ -172,14 +180,13 @@
       }
 
       & > select {
-        padding: 5px 0.5rem;
+        padding: 0.5rem;
         border: none;
         outline: none;
         background-color: rgba($color-grey-light, 0.4);
         border-radius: 0.5rem;
 
-        @media only screen and (max-width: 1024px) {
-          height: 2rem;
+        @media only screen and (max-width: 768px) {
           font-size: 1.2rem;
         }
       }

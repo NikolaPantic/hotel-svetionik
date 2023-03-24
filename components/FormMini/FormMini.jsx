@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 // import emailjs from "@emailjs/browser";
 import FormField from "../FormField/FormField";
+import FormStatus from "../FormStatus/FormStatus";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
 
@@ -14,6 +15,7 @@ const FormMini = () => {
   const [email, setEmail] = useState({ value: "", invalid: false });
   const [message, setMessage] = useState({ value: "", invalid: false });
   const [isEmailSent, setIsEmailSent] = useState(false);
+  const [isEmailSentSuccessfuly, setIsEmailSentSuccessfuly] = useState(false);
 
   const phoneValidation = (phone) => {
     return /[0-9]{9,13}/.test(phone);
@@ -23,59 +25,85 @@ const FormMini = () => {
     return /[\.a-z0-9]+@[a-z]+\.[a-z]{2,4}/.test(email);
   };
 
-  const buttonIsAllowed =
+  const onlyLettersAndSpaces = (string) => {
+    return /^[A-Za-z\s]*$/.test(string);
+  };
+
+  const handleFormSubmission = () => {
+    if (isEmailSentSuccessfuly) {
+      setIsEmailSent(false);
+      setIsEmailSentSuccessfuly(false);
+      setName((prevState) => ({ ...prevState, ["value"]: "" }));
+      setPhone((prevState) => ({ ...prevState, ["value"]: "" }));
+      setEmail((prevState) => ({ ...prevState, ["value"]: "" }));
+      setMessage((prevState) => ({ ...prevState, ["value"]: "" }));
+    } else {
+      sendEmail();
+    }
+  };
+
+  const submitButtonIsClickable =
+    onlyLettersAndSpaces(name) &&
     phoneValidation(phone.value) &&
     emailValidation(email.value) &&
-    name &&
-    message &&
-    phone &&
-    message;
+    name.value &&
+    message.value &&
+    phone.value &&
+    email.value;
 
-  // const sendEmail = () => {
-  //   if (
-  //     name.value !== "" &&
-  //     onlyLettersAndSpaces(name.value) &&
-  //     phoneValidation(phone.value) &&
-  //     emailValidation(email.value) &&
-  //     message.value !== ""
-  //   ) {
-  //     setName((prevState) => ({ ...prevState, ["invalid"]: false }));
-  //     setEmail((prevState) => ({ ...prevState, ["invalid"]: false }));
-  //     setPhone((prevState) => ({ ...prevState, ["invalid"]: false }));
-  //     setMessage((prevState) => ({ ...prevState, ["invalid"]: false }));
+  const sendEmail = () => {
+    if (
+      name.value !== "" &&
+      onlyLettersAndSpaces(name.value) &&
+      phoneValidation(phone.value) &&
+      emailValidation(email.value) &&
+      message.value !== ""
+    ) {
+      setName((prevState) => ({ ...prevState, ["invalid"]: false }));
+      setEmail((prevState) => ({ ...prevState, ["invalid"]: false }));
+      setPhone((prevState) => ({ ...prevState, ["invalid"]: false }));
+      setMessage((prevState) => ({ ...prevState, ["invalid"]: false }));
 
-  //     emailjs
-  //       .sendForm(
-  //         "contact_service",
-  //         "contact_form",
-  //         "#form",
-  //         "yRSlAyjSNYF9CjZxT"
-  //       )
-  //       .then(() => {
-  //         setIsEmailSent(true);
-  //       })
-  //       .catch();
-  //   }
-  //   if (!onlyLettersAndSpaces(firstName.value) || name.value === "") {
-  //     setName((prevState) => ({ ...prevState, ["invalid"]: true }));
-  //   }
-  //   if (!phoneValidation(phone.value)) {
-  //     setPhone((prevState) => ({ ...prevState, ["invalid"]: true }));
-  //   }
-  //   if (!emailValidation(email.value)) {
-  //     setEmail((prevState) => ({ ...prevState, ["invalid"]: true }));
-  //   }
-  //   if (message.value == "") {
-  //     setMessage((prevState) => ({ ...prevState, ["invalid"]: true }));
-  //   }
-  // };
+      alert("Message sent!");
+      setIsEmailSent(true);
+      setIsEmailSentSuccessfuly(true);
+      // emailjs
+      //   .sendForm(
+      //     "contact_service",
+      //     "contact_form",
+      //     "#form",
+      //     "yRSlAyjSNYF9CjZxT"
+      //   )
+      //   .then(() => {
+      //     setIsEmailSent(true);
+      //   })
+      //   .catch();
+    }
+    if (!onlyLettersAndSpaces(name.value) || name.value === "") {
+      setName((prevState) => ({ ...prevState, ["invalid"]: true }));
+    }
+    if (!phoneValidation(phone.value)) {
+      setPhone((prevState) => ({ ...prevState, ["invalid"]: true }));
+    }
+    if (!emailValidation(email.value)) {
+      setEmail((prevState) => ({ ...prevState, ["invalid"]: true }));
+    }
+    if (message.value == "") {
+      setMessage((prevState) => ({ ...prevState, ["invalid"]: true }));
+    }
+  };
 
   return (
     <section className="formmini">
       <h2 className="formmini__heading">{t.form.subheading}</h2>
-      <form className="formmini__form">
+      <form
+        className="formmini__form"
+        onSubmit={(e) => e.preventDefault()}
+        autoComplete="off"
+      >
         <FormField
           labelValue={t.form.name}
+          fieldValue={name.value}
           placeholder={t.placeholders.name}
           onChangeFunction={(e) => {
             if (name.invalid) {
@@ -90,9 +118,11 @@ const FormMini = () => {
               ["value"]: e.target.value.trim(),
             }));
           }}
+          invalidField={name.invalid}
         />
         <FormField
           labelValue={t.form.phone}
+          fieldValue={phone.value}
           placeholder={t.placeholders.phone}
           onChangeFunction={(e) => {
             if (phone.invalid) {
@@ -107,9 +137,11 @@ const FormMini = () => {
               ["value"]: e.target.value.trim(),
             }));
           }}
+          invalidField={phone.invalid}
         />
         <FormField
           labelValue={t.form.email}
+          fieldValue={email.value}
           placeholder={t.placeholders.email}
           onChangeFunction={(e) => {
             if (email.invalid) {
@@ -124,9 +156,11 @@ const FormMini = () => {
               ["value"]: e.target.value.trim(),
             }));
           }}
+          invalidField={email.invalid}
         />
         <FormField
           labelValue={t.form.message}
+          fieldValue={message.value}
           wide={true}
           placeholder={t.placeholders.message}
           onChangeFunction={(e) => {
@@ -142,17 +176,25 @@ const FormMini = () => {
               ["value"]: e.target.value.trim(),
             }));
           }}
+          invalidField={message.invalid}
         />
-
-        <button
-          className={
-            buttonIsAllowed
-              ? "navigationbutton navigationbutton__dark"
-              : "navigationbutton navigationbutton__dark navigationbutton__disabled"
-          }
-        >
-          {t.buttons.submit}
-        </button>
+        {isEmailSent ? (
+          <FormStatus
+            formIsSuccessfulySubmitted={isEmailSentSuccessfuly}
+            handleFormSubmission={handleFormSubmission}
+          />
+        ) : (
+          <button
+            onClick={sendEmail}
+            className={
+              submitButtonIsClickable
+                ? "navigationbutton navigationbutton__dark"
+                : "navigationbutton navigationbutton__dark navigationbutton__disabled"
+            }
+          >
+            {t.buttons.submit}
+          </button>
+        )}
       </form>
     </section>
   );

@@ -104,6 +104,7 @@ const SingleRoomLayout = ({ singleRoom }) => {
                   key={e.description}
                   roomDescription={e.description}
                   roomMiniCardImage={e.image}
+                  roomMiniCardLink={e.link}
                 />
               ))}
           </div>

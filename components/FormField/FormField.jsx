@@ -1,5 +1,7 @@
 const FormField = ({
   wide = false,
+  invalidField,
+  fieldValue,
   labelValue,
   placeholder = "Placeholder",
   onChangeFunction = () => {},
@@ -11,16 +13,26 @@ const FormField = ({
         <input
           type="text"
           id={labelValue}
-          className="formfield--text"
+          className={
+            invalidField
+              ? "formfield--text formfield--text__invalid"
+              : "formfield--text"
+          }
           placeholder={placeholder}
           onChange={onChangeFunction}
+          value={fieldValue}
         />
       ) : (
         <textarea
           placeholder={placeholder}
+          value={fieldValue}
           name="area"
           id={labelValue}
-          className="formfield--text formfield--text-area"
+          className={
+            invalidField
+              ? "formfield--text formfield--text-area formfield--text__invalid"
+              : "formfield--text formfield--text-area"
+          }
           onChange={onChangeFunction}
         ></textarea>
       )}

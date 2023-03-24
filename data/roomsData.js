@@ -258,16 +258,19 @@ const RoomsData = () => {
         key: "singleRoom",
         description: t.common.standardRoom,
         image: singleRoomImage2,
+        link: "/usluge/sobe/standardna-soba",
       },
       {
         key: "doubleRoom",
         description: t.common.roomWithExtraBed,
         image: doubleRoomImage2,
+        link: "/usluge/sobe/soba-sa-dodatnim-lezajem",
       },
       {
         key: "superiorRoom",
         description: t.common.superiorApartment,
         image: superiorRoomImage2,
+        link: "/usluge/sobe/superior-apartman-sa-djakuzijem",
       },
     ],
   };
