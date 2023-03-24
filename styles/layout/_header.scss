@@ -104,7 +104,6 @@
     position: relative;
     width: 80%;
     flex: 2;
-    text-transform: uppercase;
 
     @media only screen and (max-width: 1024px) {
       display: none;
@@ -202,6 +201,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      text-transform: uppercase;
 
       &:hover {
         border-bottom: 1px solid $color-white;

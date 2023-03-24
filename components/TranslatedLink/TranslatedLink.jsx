@@ -17,6 +17,12 @@ const pathTranslations = {
       "/services/rooms/room-with-extra-bed",
     "/usluge/sobe/superior-apartman-sa-djakuzijem":
       "/services/rooms/superior-apartment-with-jacuzzi",
+    "/galerija#hrana": "/gallery#food",
+    "/galerija#restoran": "/gallery#restaurant",
+    "/galerija#proslave": "/gallery#celebrations",
+    "/galerija#vinski-podrum": "/gallery#wine-cellar",
+    "/galerija#nagrade": "/gallery#awards",
+    "/galerija#sobe": "/gallery#rooms",
   },
 };
 

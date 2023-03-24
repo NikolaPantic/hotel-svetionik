@@ -106,8 +106,8 @@ const sr = {
     },
     rooms: {
       text1:
-        "Hotel raspolaže sa 15 smestajnih jedinica, smestajnog kapaciteta 1-8 ljudi. Prijava boravka je od 12:00, odjava do 10:00.",
-      text2: "Formu za rezervaciju mozete popuniti klikom",
+        "Hotel raspolaže sa 15 smeštajnih jedinica, smeštajnog kapaciteta 1-8 ljudi. Prijava boravka je od 12:00, odjava do 10:00.",
+      text2: "Formu za rezervaciju možete popuniti klikom",
       text3: "ovde",
       text4: "ili nas možete",
       text5: "pozvati telefonom",

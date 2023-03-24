@@ -1,3 +1,4 @@
+import Head from "next/head";
 import PageLayout from "../../layout/PageLayout/PageLayout";
 import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
@@ -53,7 +54,34 @@ import roomImage12 from "../../public/images/rooms/superior/superior-room-3.jpg"
 import roomImage13 from "../../public/images/rooms/superior/superior-room-beds.jpg";
 import roomImage14 from "../../public/images/rooms/superior/superior-room-bathroom.jpg";
 import roomImage15 from "../../public/images/rooms/superior/superior-room-bathroom-2.jpg";
-import Head from "next/head";
+
+import foodImage from "../../public/images/food/food-salad.jpg";
+import foodImage1 from "../../public/images/food/food-salad-2.jpg";
+import foodImage2 from "../../public/images/food/food-sandwich.jpg";
+import foodImage3 from "../../public/images/food/food-sandwich-2.jpg";
+import foodImage4 from "../../public/images/food/food-breakfast.jpg";
+import foodImage5 from "../../public/images/food/food-specialty.jpg";
+import foodImage6 from "../../public/images/food/food-specialty-2.jpg";
+import foodImage7 from "../../public/images/food/food-specialty-3.jpg";
+import foodImage8 from "../../public/images/food/food-fish.jpg";
+import foodImage9 from "../../public/images/food/food-fish-2.jpg";
+import foodImage10 from "../../public/images/food/food-fish-3.jpg";
+import foodImage11 from "../../public/images/food/food-pasta.jpg";
+import foodImage12 from "../../public/images/food/food-pasta-2.jpg";
+import foodImage13 from "../../public/images/food/food-cevapcici.jpg";
+import foodImage14 from "../../public/images/food/food-chicken.jpg";
+import foodImage15 from "../../public/images/food/food-meat.jpg";
+import foodImage16 from "../../public/images/food/food-cake.jpg";
+import foodImage17 from "../../public/images/food/food-and-wine.jpg";
+import foodImage18 from "../../public/images/food/food-and-wine-2.jpg";
+import foodImage19 from "../../public/images/food/food-and-wine-3.jpg";
+import foodImage20 from "../../public/images/food/food-and-wine-4.jpg";
+import foodImage21 from "../../public/images/food/food-and-wine-5.jpg";
+import foodImage22 from "../../public/images/food/food-and-wine-6.jpg";
+import foodImage23 from "../../public/images/food/food-and-wine-7.jpg";
+import foodImage24 from "../../public/images/food/food-and-wine-8.jpg";
+import foodImage25 from "../../public/images/food/food-rakija.jpg";
+import foodImage26 from "../../public/images/food/food-rakija-2.jpg";
 
 import { useRouter } from "next/router";
 import en from "../../locales/en";
@@ -64,6 +92,36 @@ const Gallery = () => {
   const t = locale === "en" ? en : sr;
 
   const images = [food, food, food];
+
+  const foodImages = [
+    foodImage,
+    foodImage1,
+    foodImage2,
+    foodImage3,
+    foodImage4,
+    foodImage5,
+    foodImage6,
+    foodImage7,
+    foodImage8,
+    foodImage9,
+    foodImage10,
+    foodImage11,
+    foodImage12,
+    foodImage13,
+    foodImage14,
+    foodImage15,
+    foodImage16,
+    foodImage17,
+    foodImage18,
+    foodImage19,
+    foodImage20,
+    foodImage21,
+    foodImage22,
+    foodImage23,
+    foodImage24,
+    foodImage25,
+    foodImage26,
+  ];
 
   const restaurantImages = [
     restaurant1,
@@ -161,7 +219,7 @@ const Gallery = () => {
               <Carousel images={roomsImages} shouldMaximizeOnClick={true} />
             </div>
           </section>
-          <section className="pagegallery__album" id="#proslave">
+          <section className="pagegallery__album" id="proslave">
             <h2 className="heading-small">{t.common.weddingCelebrations}</h2>
             <div className="pagegallery__album--carousel">
               <Carousel
@@ -174,7 +232,7 @@ const Gallery = () => {
           <section className="pagegallery__album" id="hrana">
             <h2 className="heading-small">{t.common.food}</h2>
             <div className="pagegallery__album--carousel">
-              <Carousel images={images} shouldMaximizeOnClick={true} />
+              <Carousel images={foodImages} shouldMaximizeOnClick={true} />
             </div>
           </section>
           <section className="pagegallery__album" id="vinski-podrum">

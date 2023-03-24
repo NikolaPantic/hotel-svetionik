@@ -26,11 +26,12 @@ const SectionGallery = () => {
         <GalleryAlbumCard
           imageSrc={restaurant}
           albumDescription={t.common.restaurant}
+          albumCardNavigation="/galerija#vinski-podrum"
         />
         <GalleryAlbumCard
           imageSrc={food}
           albumDescription={t.common.food}
-          albumCardNavigation="/galerija#hrana"
+          albumCardNavigation={`/galerija#hrana`}
         />
         <GalleryAlbumCard
           imageSrc={wineCellar}

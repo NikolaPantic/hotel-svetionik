@@ -68,6 +68,36 @@ const nextConfig = {
         destination: "/en/usluge/sobe/superior-apartman-sa-djakuzijem",
         locale: false,
       },
+      {
+        source: "/en/gallery#rooms",
+        destination: "/en/galerija#sobe",
+        locale: false,
+      },
+      {
+        source: "/en/gallery#celebrations",
+        destination: "/en/galerija#proslave",
+        locale: false,
+      },
+      {
+        source: "/en/gallery#restaurant",
+        destination: "/en/galerija#restoran",
+        locale: false,
+      },
+      {
+        source: "/en/gallery#wine-cellar",
+        destination: "/en/galerija#vinski-podrum",
+        locale: false,
+      },
+      {
+        source: "/en/gallery#awards",
+        destination: "/en/galerija#nagrade",
+        locale: false,
+      },
+      {
+        source: "/en/gallery#food",
+        destination: "/en/galerija#hrana",
+        locale: false,
+      },
     ];
   },
 };

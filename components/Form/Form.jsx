@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
 
@@ -6,6 +7,15 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
   const { locale } = useRouter();
   const t = locale === "en" ? en : sr;
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(0);
+  const [roomType, setRoomType] = useState("");
+  const [arrivalDate, setArrivalDate] = useState("");
+  const [numberOfNights, setNumberOfNights] = useState(0);
+
+  const todayDate = new Date().toISOString().split("T")[0];
   return (
     <div
       className={formVisibility ? "form" : "form__hidden"}
@@ -36,6 +46,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   id="first-name"
                   type="text"
                   placeholder={t.placeholders.firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
               <div className="form__data--card">
@@ -44,6 +55,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   type="text"
                   id="last-name"
                   placeholder={t.placeholders.lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
               <div className="form__data--card">
@@ -52,6 +64,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   id="e-mail"
                   type="text"
                   placeholder={t.placeholders.email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="form__data--card">
@@ -60,25 +73,37 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   id="phone"
                   type="text"
                   placeholder={t.placeholders.phone}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
               </div>
             </div>
             <div className="form__data--room-data">
               <div className="form__data--card form__data--room-card">
                 <label htmlFor="room-type">{t.form.roomType}</label>
-                <select id="room-type" type="text">
+                <select
+                  id="room-type"
+                  type="text"
+                  onChange={(e) => setRoomType(e.target.value)}
+                >
                   <option value=""></option>
-                  <option value="single">{t.common.standardRoom}</option>
-                  <option value="double">{t.common.roomWithExtraBed}</option>
-                  <option value="superior">{t.common.superiorApartment}</option>
+                  <option value="standardna soba">
+                    {t.common.standardRoom}
+                  </option>
+                  <option value="soba sa dodatnim ležajem">
+                    {t.common.roomWithExtraBed}
+                  </option>
+                  <option value="superior apartman">
+                    {t.common.superiorApartment}
+                  </option>
                 </select>
               </div>{" "}
               <div className="form__data--card form__data--room-card form__data--calendar-card">
                 <label htmlFor="arrival-date">{t.form.arrivalDate}</label>
                 <input
                   id="arrival-date"
-                  placeholder="Izaberite datum"
                   type="date"
+                  min={todayDate}
+                  onChange={(e) => setArrivalDate(e.target.value)}
                 />
               </div>{" "}
               <div className="form__data--card form__data--room-card">
@@ -89,7 +114,8 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   id="number-of-nights"
                   type="number"
                   min="1"
-                  placeholder="Broj noćenja"
+                  placeholder={t.placeholders.numberOfNights}
+                  onChange={(e) => setNumberOfNights(e.target.value)}
                 />
               </div>
               <div className="form__data--card form__data--additional-info">
@@ -102,7 +128,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
             </div>
             <button
               type="submit"
-              className="navigationbutton navigationbutton__dark"
+              className="navigationbutton navigationbutton__dark navigationbutton__disabled"
             >
               {t.buttons.submit}
             </button>

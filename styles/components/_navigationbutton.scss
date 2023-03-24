@@ -16,4 +16,13 @@
     color: $color-white;
     background-color: $color-black;
   }
+
+  &__disabled {
+    opacity: 0.6;
+
+    &:hover {
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
 }

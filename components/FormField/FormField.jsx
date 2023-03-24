@@ -2,6 +2,7 @@ const FormField = ({
   wide = false,
   labelValue,
   placeholder = "Placeholder",
+  onChangeFunction = () => {},
 }) => {
   return (
     <div className="formfield">
@@ -12,6 +13,7 @@ const FormField = ({
           id={labelValue}
           className="formfield--text"
           placeholder={placeholder}
+          onChange={onChangeFunction}
         />
       ) : (
         <textarea
@@ -19,6 +21,7 @@ const FormField = ({
           name="area"
           id={labelValue}
           className="formfield--text formfield--text-area"
+          onChange={onChangeFunction}
         ></textarea>
       )}
     </div>

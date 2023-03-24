@@ -253,6 +253,9 @@ const Header = ({ openForm }) => {
                 </div>
 
                 <ul className="mobileheader__navigation--list">
+                  <li className="mobileheader__navigation--heading">
+                    {t.common.services}
+                  </li>
                   <li className="mobileheader__navigation--list-item mobileheader__navigation--rooms">
                     <input
                       type="checkbox"
@@ -278,6 +281,9 @@ const Header = ({ openForm }) => {
                     </div>
 
                     <ul className="mobileheader__navigation--list mobileheader__navigation--list-rooms">
+                      <li className="mobileheader__navigation--heading">
+                        {t.common.roomsBooking}
+                      </li>
                       <li className="mobileheader__navigation--list-item">
                         <TranslatedLink
                           href="/usluge/sobe/standardna-soba"

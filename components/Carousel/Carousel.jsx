@@ -27,7 +27,7 @@ const CarouselComponent = () => {
             <h1 className="heading-primary">Hotel Svetionik Obrenovac</h1>
             <span className="sub-heading">{t.carousel.slide1Subheading}</span>
           </div>
-          <ReservationLink labelText={t.buttons.moreAboutUs} />
+          <ReservationLink labelText={t.buttons.moreAboutUs} path="/o-nama" />
         </div>
       </div>
       <div className="carousel__item carousel__item--2">
@@ -36,7 +36,10 @@ const CarouselComponent = () => {
             <h2 className="heading-primary">{t.carousel.slide2Heading}</h2>
             <span className="sub-heading">{t.carousel.slide2Subheading}</span>
           </div>
-          <ReservationLink labelText={t.buttons.weddingHalls} />
+          <ReservationLink
+            labelText={t.buttons.weddingHalls}
+            path="/usluge/proslave"
+          />
         </div>
       </div>
       <div className="carousel__item carousel__item--3">
@@ -45,7 +48,10 @@ const CarouselComponent = () => {
             <h2 className="heading-primary">{t.carousel.slide3Heading}</h2>
             <span className="sub-heading">{t.carousel.slide3Subheading}</span>
           </div>
-          <ReservationLink labelText={t.buttons.findOutMore} />
+          <ReservationLink
+            labelText={t.buttons.findOutMore}
+            path="/usluge/restoran"
+          />
         </div>
       </div>
       <div className="carousel__item carousel__item--4">
@@ -54,7 +60,10 @@ const CarouselComponent = () => {
             <h2 className="heading-primary">{t.carousel.slide4Heading}</h2>
             <span className="sub-heading">{t.carousel.slide4Subheading}</span>
           </div>
-          <ReservationLink labelText={t.buttons.checkOutRooms} />
+          <ReservationLink
+            labelText={t.buttons.checkOutRooms}
+            path="/usluge/sobe"
+          />
         </div>
       </div>
     </Carousel>
