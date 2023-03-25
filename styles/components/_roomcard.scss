@@ -48,7 +48,8 @@
       @media only screen and (max-width: 768px) {
         flex-direction: column;
         align-self: stretch;
-        & a {
+        & a,
+        & button {
           margin: 2%;
         }
       }
