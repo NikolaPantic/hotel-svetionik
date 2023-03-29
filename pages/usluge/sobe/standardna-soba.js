@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import SingleRoomLayout from "../../../layout/singleRoomLayout/SingleRoomLayout";
+import SingleRoomLayout from "../../../layout/SingleRoomLayout/SingleRoomLayout";
 
 import sr from "../../../locales/sr";
 import en from "../../../locales/en";
