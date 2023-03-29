@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import PageLayout from "../../layout/PageLayout/PageLayout";
 import NavigationButton from "../../components/NavigationButton/NavigationButton";
 import FormMini from "../../components/FormMini/FormMini";
-import gallery from "../../assets/images//gallery.jpg";
 import reservation from "../../public/images/reservation.jpg";
 import room1 from "../../public/images/rooms/single/single-room.jpg";
 import room2 from "../../public/images/rooms/double/double-room.jpg";

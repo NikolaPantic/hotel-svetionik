@@ -79,7 +79,12 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(to left, rgba(229, 229, 225, 0.9), rgba(153, 153, 153, 0.3)), url("../../public/images/background.jpg");
+  background-image: linear-gradient(
+      to left,
+      rgba(229, 229, 225, 0.9),
+      rgba(153, 153, 153, 0.3)
+    ),
+    url("../../public/images/background.jpg");
   background-attachment: fixed;
 }
 
@@ -240,7 +245,8 @@ h6 {
   transition: all 0.2s;
   border-bottom: 1px solid transparent;
 }
-.clickable-link:hover, .clickable-link:active {
+.clickable-link:hover,
+.clickable-link:active {
   border-bottom: 1px solid #e5e5e1;
 }
 @media only screen and (max-width: 768px) {
@@ -495,14 +501,16 @@ p {
     padding: 1rem 0;
   }
 }
-.form__data--basic-data, .form__data--room-data {
+.form__data--basic-data,
+.form__data--room-data {
   display: flex;
   align-items: center;
   align-self: stretch;
   flex-wrap: wrap;
 }
 @media only screen and (max-width: 1024px) {
-  .form__data--basic-data, .form__data--room-data {
+  .form__data--basic-data,
+  .form__data--room-data {
     flex-direction: column;
     align-self: stretch;
   }
@@ -518,11 +526,13 @@ p {
     width: 80%;
   }
 }
-.form__data--card > label, .form__data--card > input {
+.form__data--card > label,
+.form__data--card > input {
   padding: 0.5rem;
 }
 @media only screen and (max-width: 1024px) {
-  .form__data--card > label, .form__data--card > input {
+  .form__data--card > label,
+  .form__data--card > input {
     padding: 1rem;
   }
 }
@@ -673,7 +683,12 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   color: #e5e5e1;
-  background-image: linear-gradient(to bottom right, rgba(26, 19, 19, 0.4), rgba(26, 19, 19, 0.4)), url("../../public/images/reservation.jpg");
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(26, 19, 19, 0.4),
+      rgba(26, 19, 19, 0.4)
+    ),
+    url("../../public/images/reservation.jpg");
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -1074,7 +1089,8 @@ p {
     flex-direction: column;
     align-self: stretch;
   }
-  .roomcard__content--navigation a, .roomcard__content--navigation button {
+  .roomcard__content--navigation a,
+  .roomcard__content--navigation button {
     margin: 2%;
   }
 }
@@ -1181,7 +1197,12 @@ p {
 }
 
 .sectionaboutus {
-  background-image: linear-gradient(to right, rgba(229, 229, 225, 0.8), rgba(229, 229, 225, 0.8)), url("../../public/images/hotel-background.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(229, 229, 225, 0.8),
+      rgba(229, 229, 225, 0.8)
+    ),
+    url("../../public/images/hotel-background.jpg");
 }
 .sectionaboutus__content {
   flex: 1;
@@ -1302,7 +1323,12 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to right, rgba(229, 229, 225, 0.8), rgba(229, 229, 225, 0.8)), url("../../public/images/phones-background.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(229, 229, 225, 0.8),
+      rgba(229, 229, 225, 0.8)
+    ),
+    url("../../public/images/phones-background.jpg");
 }
 .sectioncontact > p {
   margin-bottom: 2rem;
@@ -1340,7 +1366,13 @@ p {
 }
 .sectioncontact__form-and-info--form {
   background-color: #92253f;
-  background-image: linear-gradient(to right bottom, rgba(146, 37, 63, 0.8), 90%, rgba(222, 61, 98, 0.8)), url("../../public/images/contact-form-background.jpg");
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(146, 37, 63, 0.8),
+      90%,
+      rgba(222, 61, 98, 0.8)
+    ),
+    url("../../public/images/contact-form-background.jpg");
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -1374,7 +1406,12 @@ p {
 }
 
 .sectiongallery {
-  background-image: linear-gradient(to right, rgba(229, 229, 225, 0.6), rgba(229, 229, 225, 0.6)), url("../../assets/images/gallery.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(229, 229, 225, 0.6),
+      rgba(229, 229, 225, 0.6)
+    ),
+    url("../../public/images/gallery.jpg");
 }
 .sectiongallery__albums {
   display: flex;
@@ -1391,7 +1428,12 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to right, rgba(229, 229, 225, 0.8), rgba(229, 229, 225, 0.8)), url("../../public/images/news.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(229, 229, 225, 0.8),
+      rgba(229, 229, 225, 0.8)
+    ),
+    url("../../public/images/news.jpg");
 }
 @media only screen and (max-width: 768px) {
   .sectionnews {
@@ -1481,7 +1523,12 @@ p {
 
 .sectionrooms {
   justify-content: space-around;
-  background-image: linear-gradient(to right, rgba(229, 229, 225, 0.6), rgba(229, 229, 225, 0.6)), url("../../assets/images/pexels-pixabay-271639.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(229, 229, 225, 0.6),
+      rgba(229, 229, 225, 0.6)
+    ),
+    url("../../public/images/pexels-pixabay-271639.jpg");
 }
 .sectionrooms__text {
   text-align: center;
@@ -1505,7 +1552,12 @@ p {
 }
 
 .sectionservices {
-  background-image: linear-gradient(to right, rgba(229, 229, 225, 0.8), rgba(229, 229, 225, 0.8)), url("../../assets/images/pexels-dmitry-zvolskiy-1721927.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(229, 229, 225, 0.8),
+      rgba(229, 229, 225, 0.8)
+    ),
+    url("../../public/images/pexels-dmitry-zvolskiy-1721927.jpg");
 }
 .sectionservices__services {
   flex: 1;
@@ -1852,7 +1904,12 @@ p {
 .header__navigation--rooms--room {
   color: #333;
   padding: 1rem 0.5rem;
-  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #92253f 50%);
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    #92253f 50%
+  );
   background-size: 235%;
   transition: all 0.4s;
 }
@@ -1937,7 +1994,12 @@ p {
 }
 .header__navigation--item-link--services--list-item {
   padding: 1rem 2rem;
-  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #92253f 50%);
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    #92253f 50%
+  );
   background-size: 225%;
   transition: all 0.4s;
 }
@@ -2031,11 +2093,13 @@ p {
   color: #e5e5e1;
   padding: 1rem;
 }
-.mobileheader__navigation--services li a, .mobileheader__navigation--rooms li a {
+.mobileheader__navigation--services li a,
+.mobileheader__navigation--rooms li a {
   text-transform: none;
   font-weight: 400;
 }
-.mobileheader__navigation--services > div, .mobileheader__navigation--rooms > div {
+.mobileheader__navigation--services > div,
+.mobileheader__navigation--rooms > div {
   height: 100%;
   width: 100%;
   display: flex;
@@ -2065,7 +2129,9 @@ p {
   width: 40px;
   height: 40px;
 }
-.mobileheader__navigation--hamburger--button > span, .mobileheader__navigation--hamburger--button > span::before, .mobileheader__navigation--hamburger--button > span::after {
+.mobileheader__navigation--hamburger--button > span,
+.mobileheader__navigation--hamburger--button > span::before,
+.mobileheader__navigation--hamburger--button > span::after {
   display: block;
   position: absolute;
   width: 100%;
@@ -2157,13 +2223,13 @@ p {
   width: auto;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   opacity: 0;
   top: -100vh;
   position: absolute;
 }
 
-input[type=checkbox]:checked ~ ul {
+input[type="checkbox"]:checked ~ ul {
   right: 0;
 }
 
@@ -2680,10 +2746,20 @@ input[type=checkbox]:checked ~ ul {
   border-radius: 0.5rem;
 }
 .pageservices__section--celebrations {
-  background-image: linear-gradient(to bottom right, rgba(153, 153, 153, 0.7), rgba(51, 51, 51, 0.7)), url("../../public/images/wedding-hall.jpg");
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(153, 153, 153, 0.7),
+      rgba(51, 51, 51, 0.7)
+    ),
+    url("../../public/images/wedding-hall.jpg");
 }
 .pageservices__section--marina {
-  background-image: linear-gradient(to bottom right, rgba(153, 153, 153, 0.7), rgba(51, 51, 51, 0.7)), url("../../public/images/driving.jpg");
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(153, 153, 153, 0.7),
+      rgba(51, 51, 51, 0.7)
+    ),
+    url("../../public/images/driving.jpg");
 }
 .pageservices__section--text {
   text-align: center;
@@ -2769,11 +2845,13 @@ input[type=checkbox]:checked ~ ul {
     flex-direction: column-reverse;
   }
 }
-.room__carousel, .room__description {
+.room__carousel,
+.room__description {
   flex: 0 0 45%;
 }
 @media only screen and (max-width: 1024px) {
-  .room__carousel, .room__description {
+  .room__carousel,
+  .room__description {
     flex: auto;
   }
 }
@@ -2934,4 +3012,4 @@ input[type=checkbox]:checked ~ ul {
   .pagewinecellar__images > img {
     width: 98%;
   }
-}/*# sourceMappingURL=globals.css.map */
+} /*# sourceMappingURL=globals.css.map */
