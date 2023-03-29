@@ -102,7 +102,7 @@ const sr = {
       text1:
         "Hotel Svetionik se nalazi u Obrenovcu, 30 km od Beograda, na samoj obali reke Save.",
       text2:
-        "Sa svojih 15 soba, restoranom i 2 sale za proslave, idealno je mesto za svaku priliku: beg od svakodnevnice, obeležavanje važnog datuma, poslovne sastanke, proslave...",
+        "Sa svojih 15 smeštajnih jedinica, restoranom i 2 sale za proslave, idealno je mesto za svaku priliku: beg od svakodnevnice, obeležavanje važnog datuma, poslovne sastanke, proslave...",
       text3:
         "Ispred hotela se nalazi i dečije igralište, namenjeno našim najmlađim gostima.",
       text4: "Posetite nas i uverite se u naš kvalitet.",
@@ -229,8 +229,9 @@ const sr = {
     },
     rooms: {
       subheading1:
-        "Raspolažemo sa ukupnim kapacitetom smeštaja od 15 soba: 6 standardnih soba, 7 soba sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sve sobe poseduju mini bar, LCD TV sa domacim i stranim kanalima, klimu i fen.",
-      subheading2: "Prijava boravka je od 12:00, odjava do 10:00.",
+        "Raspolažemo sa ukupnim kapacitetom smeštaja od 15 smeštajnih jedinica: 6 standardnih soba, 7 soba sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sve sobe poseduju mini bar, LCD TV sa domacim i stranim kanalima, klimu i fen.",
+      subheading2:
+        "Radno vreme recepcije je od 08:00 do 23:00, dolazak gostiju od 23:00 do 08:00 je moguć samo uz prethodno potvrđenu rezervaciju. Prijava boravka je od 12:00, odjava do 10:00.",
       text1:
         "Svetla i udobna soba kapaciteta 1-2 osobe. Za savršen odmor i miran san.",
       text2:
@@ -312,7 +313,7 @@ const sr = {
     rooms: {
       title: "Sobe | Hotel Svetionik Obrenovac",
       description:
-        " Smeštajni kapacitet od 15 soba: 6 standardnih, 7 sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sobe su udobne i svetle sa novim nameštajem.",
+        " Smeštajni kapacitet od 15 smeštajnih jedinica: 6 standardnih, 7 sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sobe su udobne i svetle sa novim nameštajem.",
     },
     standardRoom: {
       title: "Standardna soba",

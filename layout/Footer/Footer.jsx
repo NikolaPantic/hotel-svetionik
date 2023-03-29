@@ -12,7 +12,9 @@ import {
   displayedInfoPhoneNumber,
   restaurantPhoneNumber,
   displayedRestaurantPhoneNumber,
-  ema,
+  bookingPhoneNumber,
+  displayedBookingPhoneNumber,
+  taxId,
   hotelEmailAddress,
 } from "../../data/hotelData";
 
@@ -27,7 +29,9 @@ const Footer = () => {
           <p>Hotel Svetionik D.O.O.</p>
           <p>Zabreških Partizana 30</p>
           <p>11500, Obrenovac</p>
-          <p>{t.common.taxID}:20591161</p>
+          <p>
+            {t.common.taxID}:{taxId}
+          </p>
         </FooterSection>
         <FooterSection footerSectionHeading={t.common.services}>
           <TranslatedLink className="clickable-link" href="/usluge/sobe">
@@ -92,6 +96,12 @@ const Footer = () => {
             {t.common.restaurant}:{" "}
             <a className="clickable-link" href={`tel:${restaurantPhoneNumber}`}>
               {displayedRestaurantPhoneNumber}
+            </a>
+          </p>
+          <p>
+            {t.common.roomsBooking}:{" "}
+            <a className="clickable-link" href={`tel:${bookingPhoneNumber}`}>
+              {displayedBookingPhoneNumber}
             </a>
           </p>
           <p>

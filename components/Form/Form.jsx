@@ -9,6 +9,8 @@ import {
   infoPhoneNumber,
   restaurantPhoneNumber,
   displayedRestaurantPhoneNumber,
+  bookingPhoneNumber,
+  displayedBookingPhoneNumber,
 } from "../../data/hotelData";
 
 const Form = ({ formVisibility, closeForm = () => {} }) => {
@@ -242,7 +244,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                     phoneNumber.invalid ? "form__data--invalid-field" : null
                   }
                   id="phone"
-                  type="text"
+                  type="tel"
                   placeholder={t.placeholders.phone}
                   onChange={(e) => {
                     if (phoneNumber.invalid) {
@@ -270,7 +272,6 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   }
                   value={roomType.value}
                   id="room-type"
-                  type="text"
                   onChange={(e) => {
                     if (roomType.invalid) {
                       setRoomType((prevState) => ({
@@ -405,9 +406,9 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
         </div>
         <p className="form__footer">
           <strong>{t.form.text4}:</strong> {t.form.text5}
-          <a className="backlink" href={`tel:${infoPhoneNumber}`}>
+          <a className="backlink" href={`tel:${bookingPhoneNumber}`}>
             {" "}
-            {displayedInfoPhoneNumber}
+            {displayedBookingPhoneNumber}
           </a>
           .
         </p>

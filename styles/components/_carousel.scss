@@ -5,6 +5,12 @@
   font-size: 1.5rem;
   line-height: normal;
 
+  @media only screen and (max-width: 768px) {
+    .control-dots {
+      display: none;
+    }
+  }
+
   &__item {
     height: 80vh;
     width: 100%;
@@ -14,6 +20,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: 768px) {
+      height: 50vh;
+    }
 
     &--text {
       height: 50%;
@@ -27,7 +37,7 @@
       animation: showUp 3s;
 
       @media only screen and (max-width: 768px) {
-        height: 70%;
+        height: 100%;
         background-color: rgba($color-primary, 0.4);
       }
 
