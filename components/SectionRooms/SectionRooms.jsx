@@ -8,7 +8,7 @@ import superiorRoom from "../../public/images/rooms/superior/superior-room-1.jpg
 import { FormContext } from "../../pages/_app";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
-import { infoPhoneNumber } from "../../data/hotelData";
+import { bookingPhoneNumber } from "../../data/hotelData";
 
 const SectionRooms = () => {
   const { locale } = useRouter();
@@ -26,7 +26,7 @@ const SectionRooms = () => {
             {t.sections.rooms.text3}
           </button>
           , {t.sections.rooms.text4}{" "}
-          <a className="backlink" href={`tel:${infoPhoneNumber}`}>
+          <a className="backlink" href={`tel:${bookingPhoneNumber}`}>
             {t.sections.rooms.text5}
           </a>
           .
