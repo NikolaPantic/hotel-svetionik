@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import sr from "../../../locales/sr";
 import en from "../../../locales/en";
 
-import SingleRoomLayout from "../../../layout/singleRoomLayout/SingleRoomLayout";
+import SingleRoomLayout from "../../../layout/SingleRoomLayout/SingleRoomLayout";
 const SuperiorApartment = () => {
   const { locale } = useRouter();
   const t = locale === "sr" ? sr : en;
