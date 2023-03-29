@@ -104,7 +104,11 @@ const en = {
       text1:
         "The hotel is located in Obrenovac, 30 km from Belgrade, on the very bank of the river.",
       text2:
+<<<<<<< HEAD
         "With its 15 accomodation units, a restaurant and 2 wedding halls, it is an ideal place for any occasion: escape from everyday life, marking an important date, business meetings, celebrations...",
+=======
+        "With its 15 rooms, a restaurant and 2 wedding halls, it is an ideal place for any occasion: escape from everyday life, marking an important date, business meetings, celebrations...",
+>>>>>>> 763cc23d034a1197ca59c1460cf510f7d3652cc9
       text3:
         "There is also a children's playground in front of the hotel, intended for our youngest guests.",
       text4: "Visit us and see for yourself our quality.",
@@ -234,9 +238,14 @@ const en = {
     },
     rooms: {
       subheading1:
+<<<<<<< HEAD
         "We have a total accommodation capacity of 15 accommodation units: 6 standard rooms, 7 rooms with an extra bed and 2 superior suites with a jacuzzi. All rooms have a mini bar, LCD TV with domestic and foreign channels, air conditioning and a hairdryer.",
       subheading2:
         "Reception hours are from 08:00 to 23:00, the arrival of guests between 23:00 and 08:00 is possible only with a previously confirmed reservation. Check-in is from 12:00, check-out is until 10:00.",
+=======
+        "We have a total accommodation capacity of 15 rooms: 6 standard rooms, 7 rooms with an extra bed and 2 superior apartments with jacuzzi. All rooms have a mini bar, LCD TV with domestic and foreign channels, air conditioning and hair dryer.",
+      subheading2: "Check-in is from 12:00, check-out is until 10:00.",
+>>>>>>> 763cc23d034a1197ca59c1460cf510f7d3652cc9
       text1:
         "Bright and comfortable room for 1-2 people. For a perfect rest and peaceful sleep.",
       text2:
@@ -319,7 +328,11 @@ const en = {
     rooms: {
       title: "Rooms | Hotel Svetionik Obrenovac",
       description:
+<<<<<<< HEAD
         "Accommodation capacity of 15 accomodation units: 6 standard, 7 with an extra bed and 2 superior suites with jacuzzi. Rooms are comfortable and bright with new furniture.",
+=======
+        "Accommodation capacity of 15 rooms: 6 standard, 7 with an extra bed and 2 superior suites with jacuzzi. Rooms are comfortable and bright with new furniture.",
+>>>>>>> 763cc23d034a1197ca59c1460cf510f7d3652cc9
     },
     standardRoom: {
       title: "Standard room",
