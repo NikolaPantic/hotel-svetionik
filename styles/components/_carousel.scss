@@ -33,12 +33,14 @@
       justify-content: space-around;
       padding: 1rem 2rem;
       background-color: rgba($color-primary, 0.8);
+
       border-radius: 0.5rem;
       animation: showUp 3s;
 
       @media only screen and (max-width: 768px) {
         height: 100%;
-        background-color: rgba($color-primary, 0.4);
+        width: 100%;
+        background-color: rgba($color-grey-dark, 0.4);
       }
 
       & > span {
