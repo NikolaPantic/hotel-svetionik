@@ -1411,7 +1411,7 @@ p {
       rgba(229, 229, 225, 0.6),
       rgba(229, 229, 225, 0.6)
     ),
-    url("../../public/images/gallery.jpg");
+    url("../../assets/images/gallery.jpg");
 }
 .sectiongallery__albums {
   display: flex;
@@ -1528,7 +1528,7 @@ p {
       rgba(229, 229, 225, 0.6),
       rgba(229, 229, 225, 0.6)
     ),
-    url("../../public/images/pexels-pixabay-271639.jpg");
+    url("../../assets/images/pexels-pixabay-271639.jpg");
 }
 .sectionrooms__text {
   text-align: center;
@@ -1557,7 +1557,7 @@ p {
       rgba(229, 229, 225, 0.8),
       rgba(229, 229, 225, 0.8)
     ),
-    url("../../public/images/pexels-dmitry-zvolskiy-1721927.jpg");
+    url("../../assets/images/pexels-dmitry-zvolskiy-1721927.jpg");
 }
 .sectionservices__services {
   flex: 1;
