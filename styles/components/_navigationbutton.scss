@@ -1,0 +1,28 @@
+.navigationbutton {
+  text-align: center;
+  transition: all 0.8s;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: rgba($color-grey-light, 0.8);
+  border-radius: 0.5rem;
+  border-color: $color-grey-light;
+  padding: 1rem 2rem;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__dark {
+    color: $color-white;
+    background-color: $color-black;
+  }
+
+  &__disabled {
+    opacity: 0.8;
+
+    &:hover {
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
+}

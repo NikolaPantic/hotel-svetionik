@@ -1,0 +1,20 @@
+.sectionservices {
+  background-image: linear-gradient(
+      to right,
+      rgba($color-white, 0.8),
+      rgba($color-white, 0.8)
+    ),
+    url("../../public/images/pexels-dmitry-zvolskiy-1721927.jpg");
+
+  &__services {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.sectioncontact {
+  @include centerBackgroundImage;
+  background-image: linear-gradient(
+      to right,
+      rgba($color-white, 0.8),
+      rgba($color-white, 0.8)
+    ),
+    url("../../public/images/phones-background.jpg");
+
+  & > p {
+    margin-bottom: 2rem;
+    @media only screen and (max-width: 768px) {
+      width: 95%;
+      text-align: center;
+    }
+  }
+  &__content {
+    align-self: stretch;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 1024px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__form-and-info {
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 45%;
+
+    @media only screen and (max-width: 1024px) {
+      align-self: stretch;
+    }
+
+    &--form {
+      background-image: linear-gradient(
+          to top,
+          rgba($color-grey-dark, 0.8),
+          90%,
+          rgba($color-grey-light, 0.8)
+        ),
+        url("../../public/images/contact-form-background.jpg");
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 0 0 50%;
+      padding: 2rem;
+      width: 70%;
+      position: relative;
+
+      @media only screen and (max-width: 768px) {
+        width: 80%;
+      }
+    }
+  }
+
+  &__map {
+    flex: 0 0 45%;
+    align-self: stretch;
+    overflow: hidden;
+    border-radius: 1rem;
+
+    @media only screen and (max-width: 1024px) {
+      flex: auto;
+      height: 40vh;
+      padding: 2rem 0;
+    }
+
+    & > iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

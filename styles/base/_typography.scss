@@ -1,0 +1,151 @@
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Moon+Dance&display=swap";
+
+html {
+  @media only screen and (min-width: 2000px) {
+    font-size: 125%;
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: $color-grey-dark;
+}
+
+p {
+  @media only screen and (max-width: 768px) {
+    // font-size: 1.2rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+}
+.heading-primary {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.sub-heading {
+  font-family: "Moon Dance", cursive;
+  font-size: 2rem;
+}
+
+.heading-secondary {
+  text-align: center;
+  font-family: "Moon Dance", cursive;
+  margin: 3rem auto;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+
+  @media only screen and (max-width: 1024px) {
+    margin: 2rem 0;
+  }
+}
+
+.heading-tertiary {
+  margin: 3rem auto;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
+.heading-small {
+  font-family: "Moon Dance", cursive;
+
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sectionnews__container--heading {
+  font-family: "Moon Dance", cursive;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+.roomminicard__description {
+  font-family: "Moon Dance", cursive;
+}
+
+.roomcard__content--heading {
+  color: $color-grey-dark;
+  font-size: 2rem;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.roomcard__content--text {
+  color: $color-white;
+}
+
+.galleryalbumcard,
+.galleryalbumcard a {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $color-white;
+}
+
+.galleryalbumcard__description {
+  font-size: 1.5rem;
+}
+
+.galleryalbumcard__navigation {
+  font-size: 0.6rem;
+  color: $color-white !important;
+}
+
+.footer {
+  color: $color-white;
+}
+
+.footersection__heading {
+  font-size: 1.2rem;
+}
+
+.footer__rightsreserved {
+  font-size: 0.8rem;
+}
+
+.clickable-link {
+  color: $color-white;
+  transition: all 0.2s;
+  border-bottom: 1px solid transparent;
+
+  &:hover,
+  &:active {
+    border-bottom: 1px solid $color-white;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.backlink {
+  color: $color-primary;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px solid $color-primary;
+  }
+  &:active {
+    color: $color-primary-light;
+  }
+}
+
+button {
+  font: initial;
+  font-family: "Lato", sans-serif;
+}
+
+p {
+  text-indent: 0.5rem;
+}

@@ -1,0 +1,65 @@
+.carousel {
+  overflow: hidden;
+  color: $color-white;
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: normal;
+
+  &__item {
+    height: 80vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--text {
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding: 1rem 2rem;
+      background-color: rgba($color-primary, 0.8);
+      border-radius: 0.5rem;
+      animation: showUp 3s;
+
+      @media only screen and (max-width: 768px) {
+        height: 70%;
+        background-color: rgba($color-primary, 0.4);
+      }
+
+      & > span {
+        font-size: 1.2rem;
+      }
+      & > a {
+        font-size: 1rem;
+      }
+    }
+
+    &--heading {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--1 {
+      background-image: url("../../public/images/hotel/hotel-svetionik-1.jpg");
+    }
+    &--2 {
+      background-image: url("../../public/images/celebrations/banquet-hall-background.jpg");
+    }
+
+    &--3 {
+      background-image: url("../../public/images/restaurant/restaurant-outside-view-1.jpg");
+    }
+
+    &--4 {
+      background-image: url("../../public/images/rooms/double/double-room-card.jpg");
+    }
+  }
+}

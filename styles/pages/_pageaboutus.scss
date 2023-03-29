@@ -1,0 +1,66 @@
+.pageaboutus {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+
+  &__section {
+    padding: 2rem;
+    display: flex;
+    align-self: stretch;
+
+    @media only screen and (max-width: 1024px) {
+      flex-direction: column;
+
+      &:nth-child(2n) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      padding: 2rem 0;
+    }
+  }
+
+  &__content {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+
+    &--heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &--text {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 2rem;
+
+      @media only screen and (max-width: 768px) {
+        padding: 2rem 0;
+      }
+    }
+  }
+
+  &__images {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > img {
+      width: 48%;
+      height: auto;
+      margin: 1%;
+
+      @media only screen and (max-width: 768px) {
+        width: 98%;
+      }
+    }
+  }
+}

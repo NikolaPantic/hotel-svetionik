@@ -1,0 +1,22 @@
+.formstatus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__text {
+    color: green;
+    font-size: 1.2rem;
+
+    &--invalid {
+      color: red;
+    }
+  }
+
+  &__action {
+    border-bottom: 1px solid $color-grey-light;
+    font-size: 1rem;
+    cursor: pointer;
+    color: $color-grey-light;
+  }
+}

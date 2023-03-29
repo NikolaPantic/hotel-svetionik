@@ -1,0 +1,28 @@
+.listservicecardmini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  align-self: stretch;
+
+  & > h4 {
+    text-align: center;
+    padding: 2rem 0;
+    font-family: "Moon Dance", cursive;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: 1024px) {
+      font-size: 1.5em;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+
+    @media only screen and (max-width: 1024px) {
+      flex-wrap: wrap;
+    }
+  }
+}

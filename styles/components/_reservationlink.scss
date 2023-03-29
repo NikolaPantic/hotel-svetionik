@@ -1,0 +1,23 @@
+.reservationlink {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-white;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  border: 1px solid $color-white;
+  border-radius: 1rem;
+  background-image: linear-gradient(to right, $color-primary, $color-black);
+  transition: all 0.2s;
+
+  &:hover {
+    animation: none;
+    transform: scale(1.05);
+    box-shadow: 0 0 5px 0 $color-black;
+    background-image: linear-gradient(to left, $color-primary, $color-black);
+  }
+
+  &:active {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}

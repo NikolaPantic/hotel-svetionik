@@ -1,0 +1,30 @@
+.sectionrooms {
+  justify-content: space-around;
+  background-image: linear-gradient(
+      to right,
+      rgba($color-white, 0.6),
+      rgba($color-white, 0.6)
+    ),
+    url("../../public/images/pexels-pixabay-271639.jpg");
+
+  &__text {
+    text-align: center;
+    width: 95%;
+    padding: 1rem;
+
+    & button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+  }
+  &__rooms {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    @media only screen and (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.formmini {
+  @include centerBackgroundImage;
+  color: $color-white;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-black, 0.4),
+      rgba($color-black, 0.4)
+    ),
+    url("../../public/images/reservation.jpg");
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+
+  &__heading {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  &__form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: 1024px) {
+      width: 80%;
+    }
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}

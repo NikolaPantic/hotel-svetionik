@@ -1,0 +1,104 @@
+.roomcard {
+  height: 40vh;
+  border-top: 3px solid white;
+  display: flex;
+  align-self: stretch;
+  justify-content: space-evenly;
+
+  @media only screen and (max-width: 1024px) {
+    padding: 2rem 0;
+    height: 50vh;
+    flex-direction: column !important;
+  }
+  @media only screen and (max-width: 768px) {
+    min-height: 90vh;
+  }
+
+  &:last-child {
+    border-bottom: 3px solid white;
+  }
+
+  &__content {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &--text {
+      color: $color-black;
+
+      max-width: 80%;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    &--navigation {
+      align-self: stretch;
+      display: flex;
+      justify-content: space-evenly;
+      transition: all 1s;
+
+      @media only screen and (max-width: 1024px) {
+        padding: 2rem 0;
+      }
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        align-self: stretch;
+        & a,
+        & button {
+          margin: 2%;
+        }
+      }
+    }
+  }
+
+  &__image {
+    flex: 0 0 50%;
+    align-self: stretch;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    & > a {
+      transition: all 1s;
+      position: absolute;
+      transform: scale(0);
+
+      @media only screen and (max-width: 1024px) {
+        bottom: 10%;
+        transform: scale(1);
+      }
+
+      @media only screen and (max-width: 768px) {
+        bottom: 50%;
+        transform: translateY(50%);
+      }
+    }
+
+    & > img {
+      transition: all 1s;
+      width: 100%;
+      height: auto;
+    }
+
+    &:hover > img {
+      filter: blur(3px);
+      transform: scale(1.1);
+
+      @media only screen and (max-width: 1024px) {
+        filter: none;
+        transform: none;
+      }
+    }
+
+    &:hover > a {
+      transform: scale(1);
+    }
+  }
+}

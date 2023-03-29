@@ -1,0 +1,89 @@
+.pagecelebrations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+
+  &__introduction {
+    max-width: 70%;
+
+    @media only screen and (max-width: 1024px) {
+      max-width: 90%;
+    }
+  }
+
+  &__hall {
+    padding: 2rem 0;
+    align-self: stretch;
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 60vh;
+
+    @media only screen and (max-width: 1024px) {
+      flex-direction: column;
+      min-height: 30vh;
+
+      &:nth-child(2n) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__description {
+    padding: 2rem 0;
+    flex: 0 0 45%;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    &--text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @media only screen and (max-width: 1024px) {
+        padding: 2rem 0;
+      }
+    }
+
+    &--buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+
+      @media only screen and (max-width: 1024px) {
+        width: 30%;
+      }
+      @media only screen and (max-width: 768px) {
+        width: 95%;
+        flex-direction: column;
+
+        & a {
+          margin: 2%;
+        }
+      }
+    }
+  }
+
+  &__images {
+    flex: 0 0 45%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: 768px) {
+      flex: auto;
+    }
+
+    & > img {
+      width: 48%;
+      height: auto;
+      margin: 1%;
+      @media only screen and (max-width: 768px) {
+        width: 98%;
+      }
+    }
+  }
+}

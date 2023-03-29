@@ -1,0 +1,47 @@
+.footer {
+  padding: 1rem 0;
+  width: 100%;
+  min-height: 30vh;
+  background-color: $color-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__sections {
+    width: 100%;
+    display: flex;
+    flex: 1;
+
+    @media only screen and (max-width: 1024px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__social {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      padding: 2rem 0;
+    }
+
+    & > a {
+      transition: all 0.5s;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+
+      & > span {
+        padding: 5px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

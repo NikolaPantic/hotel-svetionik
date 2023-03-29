@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $color-grey-dark;
+}
+
+p {
+  margin: 3px 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(
+      to left,
+      rgba($color-white, 0.9),
+      rgba($color-grey-light, 0.3)
+    ),
+    url("../../public/images/background.jpg");
+  background-attachment: fixed;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.pulsate {
+  transition: all 0.5s;
+  animation: pulsate 2s infinite;
+
+  &:hover {
+    animation: none;
+  }
+}
+
+.social {
+  transition: all 0.5s;
+  border: none !important;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.section-buttons {
+  padding: 2rem 0;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 1024px) {
+    width: 50%;
+  }
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 95%;
+    & a {
+      align-self: stretch;
+      margin: 2%;
+    }
+  }
+}
