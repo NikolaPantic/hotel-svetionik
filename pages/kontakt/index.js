@@ -19,11 +19,8 @@ import {
   restaurantPhoneNumber,
   displayedRestaurantPhoneNumber,
   hotelEmailAddress,
-<<<<<<< HEAD
   displayedBookingPhoneNumber,
   bookingPhoneNumber,
-=======
->>>>>>> 763cc23d034a1197ca59c1460cf510f7d3652cc9
 } from "../../data/hotelData";
 
 const Contact = () => {
@@ -78,7 +75,6 @@ const Contact = () => {
                   </a>
                 </span>
                 <span className="pagecontact__address--card">
-<<<<<<< HEAD
                   <Image src={mobileIcon} alt="mobile icon" />{" "}
                   {t.common.roomsBooking}:{" "}
                   <a className="backlink" href={`tel:${bookingPhoneNumber}`}>
@@ -87,9 +83,6 @@ const Contact = () => {
                 </span>
                 <span className="pagecontact__address--card">
                   <Image src={mailIcon} alt="mail icon" /> E-mail:
-=======
-                  <Image src={mailIcon} alt="mail icon" />{" "}
->>>>>>> 763cc23d034a1197ca59c1460cf510f7d3652cc9
                   <a className="backlink" href={`mailto:${hotelEmailAddress}`}>
                     {hotelEmailAddress}
                   </a>

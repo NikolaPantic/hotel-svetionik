@@ -5,15 +5,12 @@
   font-size: 1.5rem;
   line-height: normal;
 
-<<<<<<< HEAD
   @media only screen and (max-width: 768px) {
     .control-dots {
       display: none;
     }
   }
 
-=======
->>>>>>> 763cc23d034a1197ca59c1460cf510f7d3652cc9
   &__item {
     height: 80vh;
     width: 100%;
@@ -24,13 +21,10 @@
     align-items: center;
     justify-content: center;
 
-<<<<<<< HEAD
     @media only screen and (max-width: 768px) {
       height: 50vh;
     }
 
-=======
->>>>>>> 763cc23d034a1197ca59c1460cf510f7d3652cc9
     &--text {
       height: 50%;
       display: flex;
@@ -43,11 +37,7 @@
       animation: showUp 3s;
 
       @media only screen and (max-width: 768px) {
-<<<<<<< HEAD
         height: 100%;
-=======
-        height: 70%;
->>>>>>> 763cc23d034a1197ca59c1460cf510f7d3652cc9
         background-color: rgba($color-primary, 0.4);
       }
 
