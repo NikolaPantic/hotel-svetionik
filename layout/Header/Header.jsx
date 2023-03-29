@@ -2,7 +2,7 @@ import { useState } from "react";
 import TranslatedLink from "../../components/TranslatedLink/TranslatedLink";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import logo from "../../public/svg/logo.svg";
+import logo from "../../public/svg/hotel-svetionik-logo-original.svg";
 import flagSerbia from "../../public/svg/32px-Flag_of_Serbia.svg.png";
 import flagBritain from "../../public/svg/english.png";
 import phone from "../../public/svg/mobile.svg";
@@ -11,10 +11,26 @@ import clock from "../../public/svg/clock2.svg";
 import sr from "../../locales/sr";
 import en from "../../locales/en";
 
+import {
+  displayedInfoPhoneNumber,
+  infoPhoneNumber,
+} from "../../data/hotelData";
+
 const Header = ({ openForm }) => {
   const [isHamburgerOpened, setIsHamburgerOpened] = useState(false);
   const [isServicesListOpened, setIsServicesListOpened] = useState(false);
   const [isRoomsListOpened, setIsRoomsListOpened] = useState(false);
+
+  const closeHamburgerMenu = () => {
+    if (isServicesListOpened) {
+      setIsServicesListOpened(false);
+    }
+    if (isRoomsListOpened) {
+      setIsRoomsListOpened(false);
+    }
+
+    setIsHamburgerOpened(false);
+  };
 
   const { locale, push } = useRouter();
   const t = locale === "sr" ? sr : en;
@@ -30,7 +46,7 @@ const Header = ({ openForm }) => {
             <div className="header__address--card--image">
               <Image src={phone} alt="phone" />
             </div>
-            <a href="tel:065123457">0651234567</a>
+            <a href={`tel:${infoPhoneNumber}`}>{displayedInfoPhoneNumber}</a>
           </div>
           <div className="header__address--card">
             <div className="header__address--card--image">
@@ -192,7 +208,11 @@ const Header = ({ openForm }) => {
         </ul>
       </nav>
       <div className="mobileheader__content">
-        <TranslatedLink className="mobileheader__logo" href="/">
+        <TranslatedLink
+          className="mobileheader__logo"
+          href="/"
+          onClick={closeHamburgerMenu}
+        >
           <Image src={logo} alt="Hotel Svetionik logo" />
         </TranslatedLink>
         <nav className="mobileheader__navigation">
@@ -221,6 +241,7 @@ const Header = ({ openForm }) => {
             <ul className="mobileheader__navigation--list">
               <li className="mobileheader__navigation--list-item">
                 <TranslatedLink
+                  onClick={closeHamburgerMenu}
                   href="/o-nama"
                   className="mobileheader__navigation--list-item-link"
                 >
@@ -236,6 +257,7 @@ const Header = ({ openForm }) => {
                 />
                 <div>
                   <TranslatedLink
+                    onClick={closeHamburgerMenu}
                     href="/usluge"
                     className="mobileheader__navigation--list-item-link"
                   >
@@ -265,6 +287,7 @@ const Header = ({ openForm }) => {
                     />
                     <div>
                       <TranslatedLink
+                        onClick={closeHamburgerMenu}
                         href="/usluge/sobe"
                         className="mobileheader__navigation--list-item-link "
                       >
@@ -286,6 +309,7 @@ const Header = ({ openForm }) => {
                       </li>
                       <li className="mobileheader__navigation--list-item">
                         <TranslatedLink
+                          onClick={closeHamburgerMenu}
                           href="/usluge/sobe/standardna-soba"
                           className="mobileheader__navigation--list-item-link"
                         >
@@ -294,6 +318,7 @@ const Header = ({ openForm }) => {
                       </li>
                       <li className="mobileheader__navigation--list-item">
                         <TranslatedLink
+                          onClick={closeHamburgerMenu}
                           href="/usluge/sobe/soba-sa-dodatnim-lezajem"
                           className="mobileheader__navigation--list-item-link"
                         >
@@ -302,6 +327,7 @@ const Header = ({ openForm }) => {
                       </li>
                       <li className="mobileheader__navigation--list-item">
                         <TranslatedLink
+                          onClick={closeHamburgerMenu}
                           href="/usluge/sobe/superior-apartman-sa-djakuzijem"
                           className="mobileheader__navigation--list-item-link"
                         >
@@ -326,6 +352,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="mobileheader__navigation--list-item">
                     <TranslatedLink
+                      onClick={closeHamburgerMenu}
                       href="/usluge/proslave"
                       className="mobileheader__navigation--list-item-link"
                     >
@@ -334,6 +361,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="mobileheader__navigation--list-item">
                     <TranslatedLink
+                      onClick={closeHamburgerMenu}
                       href="/usluge/restoran"
                       className="mobileheader__navigation--list-item-link"
                     >
@@ -342,6 +370,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="mobileheader__navigation--list-item">
                     <TranslatedLink
+                      onClick={closeHamburgerMenu}
                       href="/usluge/vinski-podrum"
                       className="mobileheader__navigation--list-item-link"
                     >
@@ -350,6 +379,7 @@ const Header = ({ openForm }) => {
                   </li>
                   <li className="mobileheader__navigation--list-item">
                     <TranslatedLink
+                      onClick={closeHamburgerMenu}
                       href="/usluge/brodska-marina"
                       className="mobileheader__navigation--list-item-link"
                     >
@@ -374,6 +404,7 @@ const Header = ({ openForm }) => {
               </li>
               <li className="mobileheader__navigation--list-item">
                 <TranslatedLink
+                  onClick={closeHamburgerMenu}
                   href="/galerija"
                   className="mobileheader__navigation--list-item-link"
                 >
@@ -382,6 +413,7 @@ const Header = ({ openForm }) => {
               </li>
               <li className="mobileheader__navigation--list-item">
                 <TranslatedLink
+                  onClick={closeHamburgerMenu}
                   href="/vesti"
                   className="mobileheader__navigation--list-item-link"
                 >
@@ -390,6 +422,7 @@ const Header = ({ openForm }) => {
               </li>
               <li className="mobileheader__navigation--list-item">
                 <TranslatedLink
+                  onClick={closeHamburgerMenu}
                   href="/kontakt"
                   className="mobileheader__navigation--list-item-link"
                 >
@@ -400,7 +433,9 @@ const Header = ({ openForm }) => {
                 <TranslatedLink
                   href=""
                   className="mobileheader__navigation--list-item-link"
-                  onClick={openForm}
+                  onClick={() => {
+                    openForm(), closeHamburgerMenu();
+                  }}
                 >
                   {t.common.booking}
                 </TranslatedLink>

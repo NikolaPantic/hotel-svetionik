@@ -12,7 +12,7 @@
   &:hover {
     animation: none;
     transform: scale(1.05);
-    box-shadow: 0 0.5rem 2rem $color-black;
+    box-shadow: 0 0 5px 0 $color-black;
     background-image: linear-gradient(to left, $color-primary, $color-black);
   }
 

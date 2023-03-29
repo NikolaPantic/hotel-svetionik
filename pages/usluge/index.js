@@ -10,7 +10,10 @@ import room1 from "../../public/images/rooms/single/single-room.jpg";
 import room2 from "../../public/images/rooms/double/double-room.jpg";
 import room3 from "../../public/images/rooms/superior/superior-room-bathroom-2.jpg";
 import room4 from "../../public/images/rooms/superior/superior-room-beds.jpg";
-import weddingHall from "../../public/images/wedding-hall.jpg";
+import weddingHall from "../../public/images/celebrations/banquet-hall-1.jpg";
+import weddingHall1 from "../../public/images/celebrations/banquet-hall-5.jpg";
+import weddingHall2 from "../../public/images/celebrations/banquet-hall-7.jpg";
+import weddingHall3 from "../../public/images/celebrations/banquet-hall-2.jpg";
 import restaurant1 from "../../public/images/restaurant/restaurant-inside-3.jpg";
 import restaurant2 from "../../public/images/restaurant/restaurant-inside-7.jpg";
 import restaurant3 from "../../public/images/restaurant/restaurant-outside-1.jpg";
@@ -19,6 +22,10 @@ import wineCellar1 from "../../public/images/wine-cellar/wine-cellar.jpg";
 import wineCellar2 from "../../public/images/wine-cellar/wine-cellar-4.jpg";
 import wineCellar3 from "../../public/images/wine-cellar/wine-cellar-hall.jpg";
 import wineCellar4 from "../../public/images/wine-cellar/wine-cellar-wall-1.jpg";
+import boatMarina from "../../public/images/boat-marina/boat-marina.jpg";
+import boatMarina1 from "../../public/images/boat-marina/boat-marina-1.jpg";
+import boatMarina2 from "../../public/images/boat-marina/boat-marina-2.jpg";
+import boatMarina3 from "../../public/images/boat-marina/boat-marina-3.jpg";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
 
@@ -99,16 +106,16 @@ const Services = () => {
             </p>
             <div className="pageservices__section--images">
               <div className="pageservices__section--images--single-image">
-                <Image src={weddingHall} alt="Hotel Svetionik svečana sala" />
+                <Image src={weddingHall3} alt="Hotel Svetionik svečana sala" />
+              </div>
+              <div className="pageservices__section--images--single-image">
+                <Image src={weddingHall1} alt="Hotel Svetionik svečana sala" />
               </div>
               <div className="pageservices__section--images--single-image">
                 <Image src={weddingHall} alt="Hotel Svetionik svečana sala" />
               </div>
               <div className="pageservices__section--images--single-image">
-                <Image src={weddingHall} alt="Hotel Svetionik svečana sala" />
-              </div>
-              <div className="pageservices__section--images--single-image">
-                <Image src={weddingHall} alt="Hotel Svetionik svečana sala" />
+                <Image src={weddingHall2} alt="Hotel Svetionik svečana sala" />
               </div>
             </div>
             <div className="pageservices__section--buttons">
@@ -162,29 +169,23 @@ const Services = () => {
             </p>
             <div className="pageservices__section--images">
               <div className="pageservices__section--images--single-image">
-                <Image src={gallery} alt="Hotel Svetionik brodska marina" />
+                <Image src={boatMarina} alt="Hotel Svetionik brodska marina" />
               </div>
               <div className="pageservices__section--images--single-image">
-                <Image src={gallery} alt="Hotel Svetionik brodska marina" />
+                <Image src={boatMarina1} alt="Hotel Svetionik brodska marina" />
               </div>
               <div className="pageservices__section--images--single-image">
-                <Image src={gallery} alt="Hotel Svetionik brodska marina" />
+                <Image src={boatMarina3} alt="Hotel Svetionik brodska marina" />
               </div>
               <div className="pageservices__section--images--single-image">
-                <Image src={gallery} alt="Hotel Svetionik brodska marina" />
+                <Image src={boatMarina2} alt="Hotel Svetionik brodska marina" />
               </div>
             </div>
-            <div className="pageservices__section--buttons">
-              <NavigationButton
-                navigationButtonLabel={t.buttons.details}
-                darkMode={true}
-                navigationButtonLink="/usluge/brodska-marina"
-              />
-              <NavigationButton
-                navigationButtonLabel={t.common.gallery}
-                navigationButtonLink="/galerija#marina"
-              />
-            </div>
+            <NavigationButton
+              navigationButtonLabel={t.buttons.details}
+              darkMode={true}
+              navigationButtonLink="/usluge/brodska-marina"
+            />
           </section>
           <section className="pageservices__section">
             <h2 className="heading-small">{t.common.wineCellar}</h2>

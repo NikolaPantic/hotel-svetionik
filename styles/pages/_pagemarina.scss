@@ -3,18 +3,19 @@
   flex-direction: column;
   align-items: center;
 
+  & .navigationbutton {
+    margin: 1rem;
+  }
+
   &__images {
     display: flex;
     flex-wrap: wrap;
 
     & > img {
-      width: 23%;
+      width: 48%;
       height: auto;
       margin: 1%;
 
-      @media only screen and (max-width: 1024px) {
-        width: 48%;
-      }
       @media only screen and (max-width: 768px) {
         width: 98%;
       }

@@ -9,6 +9,8 @@ import restaurant3 from "../../../public/images/restaurant/restaurant-outside-vi
 import Head from "next/head";
 import en from "../../../locales/en";
 import sr from "../../../locales/sr";
+import { restaurantPhoneNumber } from "../../../data/hotelData";
+import { smoothScrollToForm } from "../../../helpers/helperFunctions";
 
 const Restaurant = () => {
   const { locale } = useRouter();
@@ -47,7 +49,7 @@ const Restaurant = () => {
             {" "}
             <NavigationButton
               navigationButtonLabel={t.common.contact}
-              navigationButtonLink="tel:+381641234567"
+              onButtonClick={smoothScrollToForm}
               darkMode={true}
             />
             <NavigationButton

@@ -1,3 +1,5 @@
+import { displayedInfoPhoneNumber, hotelEmailAddress } from "../data/hotelData";
+
 const en = {
   common: {
     workingTime: "Working time",
@@ -34,6 +36,7 @@ const en = {
     basicInfo: "Basic info",
     roomContent: "Room content",
     maybeInterested: "Maybe you are interested",
+    info: "Info",
   },
 
   carousel: {
@@ -123,9 +126,9 @@ const en = {
       card2Text:
         "Restaurant with a capacity of up to 150 seats. Sitting inside or outside by the river. A varied menu with a rich selection of drinks.",
       card3Text:
-        "Boat marina 100m long. The possibility of renting on a daily and monthly basis.",
+        "Boat marina with boat dock. The possibility of renting on a daily and monthly basis.",
       card4Text:
-        "Wine cellar with more than 50 different varieties of top quality wines.",
+        "Wine cellar with more than 60 different varieties of top quality wines.",
     },
     news: {
       newsText: "We will let you know as soon as we have new news!",
@@ -171,21 +174,21 @@ const en = {
       section3Text2:
         'At 600 meters from the hotel, there is a bus station for city bus 860MV, which departs from the main bus station and runs on the highway via the airport and the "Miloš Veliki" highway.',
       section3Text3:
-        "We are 30 km from the center of Belgrade and 15 km from the center of Surčin.",
+        "We are 30 km from the center of Belgrade and 20 km from the center of Surčin.",
     },
     services: {
       subheading:
         "We offer room booking, restaurant service, organization of all kinds of celebrations, wine cellar and boat marina rental.",
       text1:
-        "15 accommodation units, capacity from 1 to 8 persons. Free wi-fi, satellite TV program, mini bar. Accommodation for children up to 2 years old is free.",
+        "15 accommodation units, capacity from 1 to 8 persons. Free wi-fi, satellite TV program, mini bar.",
       text2:
         "Organization of all kinds of celebrations for up to 400 people. 2 wedding halls, wine cellar and restaurant (open and closed type).",
       text3:
         "Serbian national cuisine restaurant with a wide selection of food, with an emphasis on fish specialties. A wide range of domestic and foreign drinks, alcoholic and non-alcoholic.",
       text4:
-        "Boat marina 100m long, the possibility of accommodating 10 ships at the same time.",
+        "Boat marina with boat dock, the possibility of accommodating multiple ships at the same time.",
       text5:
-        "Wine cellar with more than 50 varieties of wines from renowned domestic and foreign producers.",
+        "Wine cellar with more than 60 varieties of wines from renowned domestic and foreign producers.",
     },
     celebrations: {
       subheading1:
@@ -208,6 +211,10 @@ const en = {
       section1Text2:
         "Equipped with the latest technical lighting, its own kitchen and exclusive details, it offers great opportunities for organizing all kinds of events.",
       section2Heading: "Club hall",
+      section2Text1:
+        "The club hall, with a maximum capacity of 120 seats, is the perfect solution for celebrations, business presentations, larger formal lunches, or any event important to you.",
+      section2Text2:
+        "With a position 20 m below the water level of the Sava River, separated from the restaurant area and the hotel, the club hall offers a sense of peace and intimacy, necessary for the organization of your events and festivities.",
     },
     restaurant: {
       subheading1:
@@ -215,15 +222,15 @@ const en = {
       subheading2:
         "The restaurant is known for its rich menu of national cuisine, prepared by excellent chefs. There is plenty of everything: from appetizers with prosciutto, kulen, cream, tobacco crackers and bacon, to the main course which can be grilled, steak, hanger steak, pasta, spaghetti, house specialty... Numerous satisfied guests are pleased to point out that the location of the restaurant on the river is an ideal combination with our top dishes from different types of fish: catfish, perch, trout, bream, carp...",
       subheading3:
-        "The drink menu is rich and includes more than 50 varieties of top quality wines from domestic and foreign producers, as well as other alcoholic and non-alcoholic drinks of domestic and foreign production.",
+        "The drink menu is rich and includes more than 60 varieties of top quality wines from domestic and foreign producers, as well as other alcoholic and non-alcoholic drinks of domestic and foreign production.",
     },
     wineCellar: {
       subheading1:
         "The wine cellar is the true pearl of our hotel. Hidden in the basement, isolated from all external events, it is an oasis of peace for everyone who wants to enjoy in a glass of good wine. With our staff who will guide you through the cellar and present the best quality wines, we will make your stay unforgettable.",
       subheading2:
-        "Here you can find wines of the lorem lorem lorem lorem lorem variety, from producers such as lorem lorem lorem lorem",
+        "At our place you can enjoy the tastes of wine houses Milić, PIK Oplenac, Trivanović, Lastar, Doja... Relax your senses and enjoy the varieties of wine Tamjanika, Grašac, Pinot Grigio, Shiraz, Cabernet Sauvignon, as well as many others. In our cellar there are more than 60 varieties of the most diverse wines, adapted to everyone's taste. Visit us and find a wine to your taste.",
       subheading3:
-        "The wine cellar is an ideal place for intimate celebrations of up to 30 people. Make an appointment on time, let's share beautiful moments together, all you have to do is enjoy yourself.",
+        "The wine cellar is also an ideal place for intimate celebrations of up to 30 people. Make an appointment on time, let's share beautiful moments together, all you have to do is enjoy.",
     },
     rooms: {
       subheading1:
@@ -236,6 +243,13 @@ const en = {
       text3:
         "The extra large apartment, designed for 1-8 people, is intended for complete relaxation. 2 French beds, 2 extra beds and a bathroom with a jacuzzi are the guarantee of that.",
     },
+    boatMarina: {
+      subheading1:
+        "For guests who have decided to come to us by water, we have secured a place for your vessel in our boat marina. The boat marina with a boat dock is located just below the restaurant, at the foot of the summer garden, so you will have an eye on your boat while you enjoy the rich offer of our cuisine. Part of the pier is reserved for ships that are anchored there all summer. There is also the possibility of renting a space for your vessel for several days.",
+      subheading2:
+        "Visit us from the Sava River, anchor safely and enjoy lunch, a drink or your favorite delicacy from our restaurant with a wonderful view.",
+    },
+
     roomInstance: {
       roomContent: {
         doubleBed: "double bed",
@@ -266,7 +280,7 @@ const en = {
       },
       superiorApartment: {
         text1:
-          "Superior apartment with 2 double beds and 2 extra beds is an ideal solution for 1-8 people. It has LCD TV with satellite and domestic channels, air conditioning, mini bar (extra charge). Smoking in the room is not allowed.",
+          "Superior apartment with 2 double beds and 2 extra beds is an ideal solution for 1-8 people. It has LCD TV with satellite and domestic channels, air conditioning, mini bar (extra charge). With the reservation of this apartment, you get a bottle of champagne as a gift. Smoking in the room is not allowed.",
         text2:
           "The bathroom has a shower cabin, jacuzzi, hair dryer, cosmetics and accessories for personal hygiene - soap, shower gel, shampoo and body lotion. Towels are changed every other day.",
         text3: "Check-in is until 10:00, check-out is until 12:00.",
@@ -334,7 +348,12 @@ const en = {
     wineCellar: {
       title: "Wine Cellar | Hotel Svetionik Obrenovac",
       description:
-        "Located in the basement of the hotel, with more than 50 of the highest quality wines, the wine cellar is an ideal place for intimate moments and perfect enjoyment.",
+        "Located in the basement of the hotel, with more than 60 of the highest quality wines, the wine cellar is an ideal place for intimate moments and perfect enjoyment.",
+    },
+    boatMarina: {
+      title: "Boat marina | Hotel Svetionik Obrenovac",
+      description:
+        "Anchor the vessel safely in our marina, and enjoy the view of the Sava river. Free stay of the vessel for hotel guests.",
     },
     gallery: {
       title: "Gallery | Hotel Svetionik Obrenovac",
@@ -346,8 +365,7 @@ const en = {
     },
     contact: {
       title: "Contact | Hotel Svetionik Obrenovac",
-      description:
-        "Visit us at Zabreških partizana 30, call 0641234567 or send an email to hotelsvetionik@gmail.com.",
+      description: `Visit us at Zabreških partizana 30, call ${displayedInfoPhoneNumber} or send an email to ${hotelEmailAddress}.`,
     },
   },
 };

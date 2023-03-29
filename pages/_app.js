@@ -14,7 +14,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/svg/logo.svg" />
+        <link rel="icon" href="/svg/hotel-svetionik-logo.png" />
+        <meta property="og:image" content="/svg/hotel-svetionik-logo.png" />
       </Head>
       <div className="app">
         <Form

@@ -9,6 +9,7 @@ import wineCellar3 from "../../../public/images/wine-cellar/wine-cellar-hall.jpg
 import wineCellar4 from "../../../public/images/wine-cellar/wine-cellar-wine-bottle.jpg";
 import en from "../../../locales/en";
 import sr from "../../../locales/sr";
+import { smoothScrollToForm } from "../../../helpers/helperFunctions";
 
 const WineCellar = () => {
   const { locale } = useRouter();
@@ -46,8 +47,8 @@ const WineCellar = () => {
         >
           <div className="section-buttons">
             <NavigationButton
-              navigationButtonLabel={t.buttons.callUs}
-              navigationButtonLink="tel:+381641234567"
+              navigationButtonLabel={t.common.contact}
+              onButtonClick={smoothScrollToForm}
               darkMode={true}
             />
             <NavigationButton

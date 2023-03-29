@@ -6,12 +6,20 @@ import FormMini from "../../components/FormMini/FormMini";
 import phone from "../../public/images/phones-background.jpg";
 import mobileIcon from "../../public/svg/mobile-dark.svg";
 import mailIcon from "../../public/svg/mail-dark.svg";
-import logo from "../../public/svg/logo.svg";
+import logo from "../../public/svg/hotel-svetionik-logo-red.svg";
 import facebook from "../../public/svg/facebook.svg";
 import instagram from "../../public/svg/instagram.svg";
 import reservation from "../../public/images/reservation.jpg";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
+
+import {
+  displayedInfoPhoneNumber,
+  infoPhoneNumber,
+  restaurantPhoneNumber,
+  displayedRestaurantPhoneNumber,
+  hotelEmailAddress,
+} from "../../data/hotelData";
 
 const Contact = () => {
   const { locale } = useRouter();
@@ -52,25 +60,22 @@ const Contact = () => {
               <span>11500, Obrenovac</span>
               <div className="pagecontact__address--info">
                 <span className="pagecontact__address--card">
-                  <Image src={mobileIcon} alt="mobile icon" /> Hotel:{" "}
-                  <a className="backlink" href="tel:+381641234567">
-                    0641234567
+                  <Image src={mobileIcon} alt="mobile icon" /> {t.common.info}:{" "}
+                  <a className="backlink" href={`tel:${infoPhoneNumber}`}>
+                    {displayedInfoPhoneNumber}
                   </a>
                 </span>
                 <span className="pagecontact__address--card">
                   <Image src={mobileIcon} alt="mobile icon" />{" "}
                   {t.common.restaurant}:{" "}
-                  <a className="backlink" href="tel:+381641234567">
-                    0641234567
+                  <a className="backlink" href={`tel:${restaurantPhoneNumber}`}>
+                    {displayedRestaurantPhoneNumber}
                   </a>
                 </span>
                 <span className="pagecontact__address--card">
                   <Image src={mailIcon} alt="mail icon" />{" "}
-                  <a
-                    className="backlink"
-                    href="mailto:hotelsvetionik@gmail.com"
-                  >
-                    hotelsvetionik@gmail.com
+                  <a className="backlink" href={`mailto:${hotelEmailAddress}`}>
+                    {hotelEmailAddress}
                   </a>
                 </span>
               </div>

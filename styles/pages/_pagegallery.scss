@@ -5,12 +5,12 @@
   justify-content: space-between;
   align-self: stretch;
 
-  .pagegallery__album {
+  &__album {
     &:first-child {
       padding-top: 2rem;
     }
 
-    & > h3 {
+    & > h2 {
       margin: 1rem 0;
     }
 

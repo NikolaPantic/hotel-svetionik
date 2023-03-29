@@ -20,11 +20,11 @@
 
   &__invalid-email {
     & > input {
-      border: 1px solid red !important;
+      border: 1px solid $color-red !important;
     }
     &:after {
       font-size: 0.8rem;
-      color: red;
+      color: $color-red;
       width: 100%;
       position: absolute;
       bottom: -30%;

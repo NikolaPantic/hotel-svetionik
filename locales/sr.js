@@ -1,3 +1,5 @@
+import { displayedInfoPhoneNumber, hotelEmailAddress } from "../data/hotelData";
+
 const sr = {
   common: {
     workingTime: "Radno vreme",
@@ -34,6 +36,7 @@ const sr = {
     basicInfo: "Osnovne informacije",
     roomContent: "Sadržaj sobe",
     maybeInterested: "Možda ste zainteresovani",
+    info: "Informacije",
   },
   carousel: {
     slide1Subheading: "Dobrodošli!",
@@ -116,13 +119,13 @@ const sr = {
       heading: "Dodatne usluge",
       text: "",
       card1Text:
-        "Organizacija svih vrsta proslava od 30 do 400 ljudi. 2 sale za proslave, mogućnost organizovanja proslava u restoranu ili vinskom podrumu.",
+        "Organizacija svih vrsta proslava do 400 ljudi. 2 sale za proslave, mogućnost organizovanja proslava u restoranu ili vinskom podrumu.",
       card2Text:
         "Restoran kapaciteta do 150 mesta. Sedenje unutra ili napolju uz reku. Raznovrsni meni uz bogatu ponudu pića.",
       card3Text:
-        "Brodska marina dužine 100m. Mogućnost iznajmljivanja na dnevnom i mesečnom nivou.",
+        "Brodska marina sa pristanom za čamce. Mogućnost iznajmljivanja na dnevnom i mesečnom nivou.",
       card4Text:
-        "Vinski podrum sa više od 50 različitih sorti vina vrhunskog kvaliteta.",
+        "Vinski podrum sa više od 60 različitih sorti vina vrhunskog kvaliteta.",
     },
     news: {
       newsText: "Obavestićemo vas čim izađu nove vesti!",
@@ -136,6 +139,7 @@ const sr = {
       text3: "pozovite telefonom",
       text4: "ili nas",
       text5: "posetite lično.",
+      formHeading: "Kontakt forma",
     },
   },
   pages: {
@@ -165,21 +169,21 @@ const sr = {
       section3Text2:
         'Na 600 metara od hotela nalazi se okretnica gradskog autobusa 860MV, koji polazi sa glavne autobuske stanice i saobraća autoputem preko aerodroma i autoputa "Miloš Veliki".',
       section3Text3:
-        "Udaljeni smo 30 km od centra Beograda i 15 km od centra Surčina.",
+        "Udaljeni smo 30 km od centra Beograda i 20 km od centra Surčina.",
     },
     services: {
       subheading:
         "Od usluga nudimo izdavanje soba, restoransku uslugu, organizovanje svih vrsta proslava, vinski podrum i iznajmljivanje brodske marine.",
       text1:
-        "15 smeštajnih jedinica, kapaciteta od 1 do 8 osoba. Besplatan wi-fi, satelitski TV program, mini bar. Smeštaj za decu do 2 godine je besplatan.",
+        "15 smeštajnih jedinica, kapaciteta od 1 do 8 osoba. Besplatan wi-fi, satelitski TV program, mini bar.",
       text2:
         "Organizacija svih vrsta proslava do 400 ljudi. 2 svečane sale, vinski podrum i restoran (otvorenog i zatvorenog tipa).",
       text3:
         "Restoran nacionalne kuhinje sa raznovrsnim izborom hrane, sa naglaskom na specijalitete od ribe. Bogata ponuda domaćih i stranih pića, alkoholnih i bezalkoholnih.",
       text4:
-        "Brodska marina dužine 100m, mogućnost smeštanja 10 brodova istovremeno.",
+        "Brodska marina sa pristanom za čamce, mogućnost smeštanja više plovila istovremeno.",
       text5:
-        "Vinski podrum sa više od 50 sorti vina renomiranih domaćih i stranih proizvođača.",
+        "Vinski podrum sa više od 60 sorti vina renomiranih domaćih i stranih proizvođača.",
     },
     celebrations: {
       subheading1:
@@ -202,6 +206,10 @@ const sr = {
       section1Text2:
         "Opremljena najnovijom tehničkom rasvetom, sopstvenom kuhinjom i ekskluzivnim detaljima, pruža velike mogućnosti za organizaciju svih vrsta događaja.",
       section2Heading: "Klub sala",
+      section2Text1:
+        "Klub sala, sa maksimalnim kapacitetom od 120 sedećih mesta, predstavlja savršeno rešenje za proslave, poslovne prezentacije, veće svečane ručkove, ili neki vama bitan događaj.",
+      section2Text2:
+        "Sa pozicijom od 20 m ispod vodostaja reke Save, izdvojena od restoranskog dela i hotela, klub sala nudi osećaj mira i intimnosti, potrebnog za organizaciju vaših dešavanja i svečanosti.",
     },
     restaurant: {
       subheading1:
@@ -209,15 +217,15 @@ const sr = {
       subheading2:
         "Restoran je poznat po bogatom meniju nacionalne kuhinje, koju spremaju vrsni kuvari. Svega ima u izobilju: od predjela sa pršutom, kulenom, kajmakom, duvan čvarcima i slaninom, preko glavnog jela koje može biti sa roštilja, biftek, vešalica, pasta, špageti, specijalitet kuće... Mnogobrojni zadovoljni gosti sa zadovoljstvom ističu da položaj restorana na reci predstavlja idealnu kombinaciju sa našim vrhunskim jelima od različitih vrsta ribe: som, smuđ, pastrmka, kečiga, šaran...",
       subheading3:
-        "Karta pića je bogata i obuhvata više od 50 sorti vrhunskih vina domaćih i stranih proizvođača, kao i druga alkoholna i bezalkoholna pića domaće i strane proizvodnje.",
+        "Karta pića je bogata i obuhvata više od 60 sorti vrhunskih vina domaćih i stranih proizvođača, kao i druga alkoholna i bezalkoholna pića domaće i strane proizvodnje.",
     },
     wineCellar: {
       subheading1:
         "Vinski podrum predstavlja pravi biser našeg hotela. Sakriven u suterenu, izolovan od svih spoljašnjih dešavanja, predstavlja oazu mira za sve koji žele da uživaju na miru u čaši dobrog vina. Uz naše osoblje koje će vas provesti kroz podrum i prezentovati najkvalitetnija vina, učinićemo vaš boravak nezaboravnim.",
       subheading2:
-        "Ovde možete naći vina sorti lorem lorem lorem lorem lorem, od proizvođača kao što su lorem lorem lorem lorem",
+        "Kod nas možete uživati u ukusima vinskih kuća Milić, PIK Oplenac, Trivanović, Lastar, Doja... Opustite svoja čula i uživajte u sortama vina kao što su Tamjanika, Grašac, Pinot Grigio, Shiraz, Cabernet Sauvignon, kao i u mnogim drugim. U našem podrumu se nalazi više od 60 sorti najraznovrsnijih vina, prilagođenih svačijem ukusu. Posetite nas i pronađite vino po vašem ukusu.",
       subheading3:
-        "Vinski podrum je idealno mesto za intimne proslave do 30 ljudi. Zakažite termin na vreme, podelimo zajedno lepe trenutke, na vama ostaje samo da uživate.",
+        "Vinski podrum je takođe idealno mesto za intimne proslave do 30 ljudi. Zakažite termin na vreme, podelimo zajedno lepe trenutke, na vama ostaje samo da uživate.",
     },
     rooms: {
       subheading1:
@@ -229,6 +237,12 @@ const sr = {
         "Prostrana soba kapaciteta 1-4 osobe. Dodatni ležaj koji može da se razvuče u krevet pruža osećaj totalnog komfora.",
       text3:
         "Ekstra veliki apartman, namenjen za 1-8 osoba, predviđen je za potpuno opuštanje. 2 francuska ležaja, 2 pomoćna ležaja i kupatilo sa đakuzijem su garant toga.",
+    },
+    boatMarina: {
+      subheading1:
+        "Za goste koji su se odlučili da dođu vodenim putem do nas, obezbedili smo mesto za vaše plovilo u našoj brodskoj marini. Brodska marina sa pristanom za čamce nalazi se tik ispod restorana, u podnožju letnje bašte, tako da će vam plovilo biti na oku dok uživate u bogatoj ponudi naše kuhinje. Deo pristaništa je rezervisan za brodove koji su tu usidreni celo leto. Takođe, postoji i mogućnost višednevnog iznajmljivanja mesta za vaše plovilo.",
+      subheading2:
+        "Posetite nas sa reke Save, bezbedno se usidrite i uz predivan pogled uživajte u ručku, piću ili omiljenoj poslastici iz našeg restorana.",
     },
     roomInstance: {
       roomContent: {
@@ -260,7 +274,7 @@ const sr = {
       },
       superiorApartment: {
         text1:
-          "Superior apartman sa 2 francuska i 2 dodatna ležaja predstavlja idealno rešenje za 1-8 ljudi. Poseduje LCD TV sa satelitskim i domaćim kanalima, klima uređaj, mini bar (dodatno se naplaćuje). Pušenje u sobi nije dozvoljeno.",
+          "Superior apartman sa 2 francuska i 2 dodatna ležaja predstavlja idealno rešenje za 1-8 ljudi. Poseduje LCD TV sa satelitskim i domaćim kanalima, klima uređaj, mini bar (dodatno se naplaćuje). Uz rezervaciju ovog apartmana, na poklon dobijate flašu šampanjca. Pušenje u sobi nije dozvoljeno.",
         text2:
           "U kupatilu se nalazi tuš kabina, đakuzi, fen, kozmetika i pribor za ličnu higijenu - sapun, gel za tuširanje, šampon i losion za telo. Peškiri se menjaju svakog drugog dana.",
         text3: "Prijava je do 10:00, odjava do 12:00.",
@@ -328,7 +342,12 @@ const sr = {
     wineCellar: {
       title: "Vinski podrum | Hotel Svetionik Obrenovac",
       description:
-        "Smešten u suterenu hotela, sa više od 50 najkvalitetnijih sorti vina, vinski podrum predstavlja idealno mesto za intimne trenutke i savršeno uživanje.",
+        "Smešten u suterenu hotela, sa više od 60 najkvalitetnijih sorti vina, vinski podrum predstavlja idealno mesto za intimne trenutke i savršeno uživanje.",
+    },
+    boatMarina: {
+      title: "Brodska marina | Hotel Svetionik Obrenovac",
+      description:
+        "Bezbedno usidrite plovilo u našoj brodskoj marini, i uživajte u pogledu na reku Savu. Besplatan boravak plovila za goste hotela.",
     },
     gallery: {
       title: "Galerija | Hotel Svetionik Obrenovac",
@@ -341,8 +360,7 @@ const sr = {
     },
     contact: {
       title: "Kontakt | Hotel Svetionik Obrenovac",
-      description:
-        "Posetite nas na adresi Zabreških partizana 30, pozovite na broj 0641234567 ili pošaljite mejl na hotelsvetionik@gmail.com.",
+      description: `Posetite nas na adresi Zabreških partizana 30, pozovite na broj ${displayedInfoPhoneNumber} ili pošaljite mejl na ${hotelEmailAddress}.`,
     },
   },
 };

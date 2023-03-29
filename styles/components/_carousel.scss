@@ -15,10 +15,6 @@
     align-items: center;
     justify-content: center;
 
-    @media only screen and (max-width: 768px) {
-      height: 60vh;
-    }
-
     &--text {
       height: 50%;
       display: flex;
@@ -55,7 +51,7 @@
       background-image: url("../../public/images/hotel/hotel-svetionik-1.jpg");
     }
     &--2 {
-      background-image: url("../../assets/images/hotel-svetionik-1.jpg");
+      background-image: url("../../public/images/celebrations/banquet-hall-background.jpg");
     }
 
     &--3 {

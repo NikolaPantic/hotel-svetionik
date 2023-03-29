@@ -39,7 +39,13 @@
     }
 
     &--form {
-      background-color: $color-primary;
+      background-image: linear-gradient(
+          to top,
+          rgba($color-grey-dark, 0.8),
+          90%,
+          rgba($color-grey-light, 0.8)
+        ),
+        url("../../public/images/contact-form-background.jpg");
       border-radius: 0.5rem;
       display: flex;
       flex-direction: column;

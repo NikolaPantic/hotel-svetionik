@@ -7,6 +7,15 @@ import Image from "next/image";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
 
+import {
+  infoPhoneNumber,
+  displayedInfoPhoneNumber,
+  restaurantPhoneNumber,
+  displayedRestaurantPhoneNumber,
+  ema,
+  hotelEmailAddress,
+} from "../../data/hotelData";
+
 const Footer = () => {
   const { locale } = useRouter();
   const t = locale === "sr" ? sr : en;
@@ -18,7 +27,7 @@ const Footer = () => {
           <p>Hotel Svetionik D.O.O.</p>
           <p>Zabreških Partizana 30</p>
           <p>11500, Obrenovac</p>
-          <p>{t.common.taxID}:1234567890</p>
+          <p>{t.common.taxID}:20591161</p>
         </FooterSection>
         <FooterSection footerSectionHeading={t.common.services}>
           <TranslatedLink className="clickable-link" href="/usluge/sobe">
@@ -74,24 +83,21 @@ const Footer = () => {
         </FooterSection>
         <FooterSection footerSectionHeading={t.common.contact}>
           <p>
-            Hotel:{" "}
-            <a className="clickable-link" href="tel:0651234567">
-              0651234567
+            {t.common.info}:{" "}
+            <a className="clickable-link" href={`tel:${infoPhoneNumber}`}>
+              {displayedInfoPhoneNumber}
             </a>
           </p>
           <p>
             {t.common.restaurant}:{" "}
-            <a className="clickable-link" href="tel:0651234567">
-              0651234567
+            <a className="clickable-link" href={`tel:${restaurantPhoneNumber}`}>
+              {displayedRestaurantPhoneNumber}
             </a>
           </p>
           <p>
             E-mail:{" "}
-            <a
-              className="clickable-link"
-              href="mailto:hotelsvetionik@gmail.com"
-            >
-              hotelsvetionik@gmail.com
+            <a className="clickable-link" href={`mailto:${hotelEmailAddress}`}>
+              {hotelEmailAddress}
             </a>
           </p>
         </FooterSection>

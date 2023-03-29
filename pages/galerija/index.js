@@ -38,6 +38,8 @@ import wineCellar11 from "../../public/images/wine-cellar/wine-cellar-wall.jpg";
 import wineCellar12 from "../../public/images/wine-cellar/wine-cellar-wall-1.jpg";
 import wineCellar13 from "../../public/images/wine-cellar/wine-cellar-bench.jpg";
 import wineCellar14 from "../../public/images/wine-cellar/wine-cellar-wine-bottle.jpg";
+import wineCellar15 from "../../public/images/celebrations/wine-cellar-celebration-5.jpg";
+import wineCellar16 from "../../public/images/celebrations/wine-cellar-celebration-4.jpg";
 
 import roomImage1 from "../../public/images/rooms/single/single-room-card.jpg";
 import roomImage2 from "../../public/images/rooms/single/single-room.jpg";
@@ -82,6 +84,29 @@ import foodImage23 from "../../public/images/food/food-and-wine-7.jpg";
 import foodImage24 from "../../public/images/food/food-and-wine-8.jpg";
 import foodImage25 from "../../public/images/food/food-rakija.jpg";
 import foodImage26 from "../../public/images/food/food-rakija-2.jpg";
+
+import celebrationsImage from "../../public/images/celebrations/banquet-hall.jpg";
+import celebrationsImage1 from "../../public/images/celebrations/banquet-hall-1.jpg";
+import celebrationsImage2 from "../../public/images/celebrations/banquet-hall-2.jpg";
+import celebrationsImage3 from "../../public/images/celebrations/banquet-hall-3.jpg";
+import celebrationsImage4 from "../../public/images/celebrations/banquet-hall-5.jpg";
+import celebrationsImage5 from "../../public/images/celebrations/banquet-hall-6.jpg";
+import celebrationsImage6 from "../../public/images/celebrations/banquet-hall-7.jpg";
+import celebrationsImage7 from "../../public/images/celebrations/banquet-hall-8.jpg";
+import celebrationsImage8 from "../../public/images/celebrations/banquet-hall-9.jpg";
+import celebrationsImage9 from "../../public/images/celebrations/banquet-hall-10.jpg";
+import celebrationsImage10 from "../../public/images/celebrations/banquet-hall-11.jpg";
+import celebrationsImage11 from "../../public/images/celebrations/banquet-hall-12.jpg";
+import celebrationsImage12 from "../../public/images/celebrations/banquet-hall-13.jpg";
+import celebrationsImage13 from "../../public/images/celebrations/banquet-hall-wedding.jpg";
+import celebrationsImage14 from "../../public/images/celebrations/banquet-hall-wedding-1.jpg";
+import celebrationsImage15 from "../../public/images/celebrations/club-hall.jpg";
+import celebrationsImage16 from "../../public/images/celebrations/club-hall-1.jpg";
+import celebrationsImage17 from "../../public/images/celebrations/wine-cellar-celebration.jpg";
+import celebrationsImage18 from "../../public/images/celebrations/wine-cellar-celebration-1.jpg";
+import celebrationsImage19 from "../../public/images/celebrations/wine-cellar-celebration-2.jpg";
+import celebrationsImage20 from "../../public/images/celebrations/wine-cellar-celebration-3.jpg";
+import celebrationsImage21 from "../../public/images/celebrations/wine-cellar-celebration-6.jpg";
 
 import { useRouter } from "next/router";
 import en from "../../locales/en";
@@ -155,6 +180,8 @@ const Gallery = () => {
     wineCellar7,
     wineCellar8,
     wineCellar10,
+    wineCellar15,
+    wineCellar16,
     wineCellar11,
     wineCellar12,
     wineCellar13,
@@ -177,6 +204,31 @@ const Gallery = () => {
     roomImage13,
     roomImage14,
     roomImage15,
+  ];
+
+  const celebrationsImages = [
+    celebrationsImage,
+    celebrationsImage1,
+    celebrationsImage2,
+    celebrationsImage3,
+    celebrationsImage4,
+    celebrationsImage5,
+    celebrationsImage6,
+    celebrationsImage7,
+    celebrationsImage8,
+    celebrationsImage9,
+    celebrationsImage10,
+    celebrationsImage11,
+    celebrationsImage12,
+    celebrationsImage13,
+    celebrationsImage14,
+    celebrationsImage15,
+    celebrationsImage16,
+    celebrationsImage17,
+    celebrationsImage18,
+    celebrationsImage19,
+    celebrationsImage20,
+    celebrationsImage21,
   ];
 
   return (
@@ -202,6 +254,16 @@ const Gallery = () => {
           backgroundImageUrl={gallery}
           pageLayoutSummary={t.pages.gallery.subheading}
         >
+          <section className="pagegallery__album" id="proslave">
+            <h2 className="heading-small">{t.common.weddingCelebrations}</h2>
+            <div className="pagegallery__album--carousel">
+              <Carousel
+                images={celebrationsImages}
+                shouldMaximizeOnClick={true}
+                shouldLazyLoad={false}
+              />
+            </div>
+          </section>
           <section className="pagegallery__album" id="restoran">
             <h2 className="heading-small">
               {t.common.restaurantAndSummerGarden}
@@ -213,22 +275,7 @@ const Gallery = () => {
               />
             </div>
           </section>
-          <section className="pagegallery__album" id="sobe">
-            <h2 className="heading-small">{t.common.rooms}</h2>
-            <div className="pagegallery__album--carousel">
-              <Carousel images={roomsImages} shouldMaximizeOnClick={true} />
-            </div>
-          </section>
-          <section className="pagegallery__album" id="proslave">
-            <h2 className="heading-small">{t.common.weddingCelebrations}</h2>
-            <div className="pagegallery__album--carousel">
-              <Carousel
-                images={images}
-                shouldMaximizeOnClick={true}
-                shouldLazyLoad={false}
-              />
-            </div>
-          </section>
+
           <section className="pagegallery__album" id="hrana">
             <h2 className="heading-small">{t.common.food}</h2>
             <div className="pagegallery__album--carousel">
@@ -244,12 +291,18 @@ const Gallery = () => {
               />
             </div>
           </section>
-          <section className="pagegallery__album" id="nagrade">
+          <section className="pagegallery__album" id="sobe">
+            <h2 className="heading-small">{t.common.rooms}</h2>
+            <div className="pagegallery__album--carousel">
+              <Carousel images={roomsImages} shouldMaximizeOnClick={true} />
+            </div>
+          </section>
+          {/* <section className="pagegallery__album" id="nagrade">
             <h2 className="heading-small">{t.common.awards}</h2>
             <div className="pagegallery__album--carousel">
               <Carousel images={images} shouldMaximizeOnClick={true} />
             </div>
-          </section>
+          </section> */}
         </PageLayout>
       </article>
     </>

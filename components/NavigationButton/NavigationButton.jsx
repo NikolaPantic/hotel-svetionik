@@ -3,9 +3,11 @@ const NavigationButton = ({
   navigationButtonLabel = "label",
   darkMode = false,
   navigationButtonLink = "",
+  onButtonClick = () => {},
 }) => {
   return (
     <TranslatedLink
+      onClick={onButtonClick}
       href={navigationButtonLink}
       className={
         darkMode

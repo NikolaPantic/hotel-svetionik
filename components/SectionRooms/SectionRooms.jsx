@@ -8,12 +8,13 @@ import superiorRoom from "../../public/images/rooms/superior/superior-room-1.jpg
 import { FormContext } from "../../pages/_app";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
+import { infoPhoneNumber } from "../../data/hotelData";
 
 const SectionRooms = () => {
   const { locale } = useRouter();
   const t = locale === "en" ? en : sr;
-
   const openForm = useContext(FormContext);
+
   return (
     <section className="section sectionrooms">
       <h2 className="heading-secondary">{t.common.rooms}</h2>
@@ -25,7 +26,7 @@ const SectionRooms = () => {
             {t.sections.rooms.text3}
           </button>
           , {t.sections.rooms.text4}{" "}
-          <a className="backlink" href="tel:+381641234567">
+          <a className="backlink" href={`tel:${infoPhoneNumber}`}>
             {t.sections.rooms.text5}
           </a>
           .

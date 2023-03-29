@@ -2,8 +2,8 @@ import GalleryAlbumCard from "../GalleryAlbumCard/GalleryAlbumCard";
 import NavigationLink from "../NavigationLink/NavigationLink";
 import wineCellar from "../../public/images/wine-cellar/wine-cellar-hall-1.jpg";
 import restaurant from "../../public/images/restaurant/restaurant-inside-4.jpg";
-import food from "../../public/images/food.jpg";
-import weddingHall from "../../public/images/wedding-hall.jpg";
+import food from "../../public/images/food/food-cake.jpg";
+import weddingHall from "../../public//images/celebrations/banquet-hall-3.jpg";
 import certificate from "../../public/images/certificate.jpg";
 import { useRouter } from "next/router";
 import en from "../../locales/en";
@@ -38,11 +38,11 @@ const SectionGallery = () => {
           albumDescription={t.common.wineCellar}
           albumCardNavigation="/galerija#restoran"
         />
-        <GalleryAlbumCard
+        {/* <GalleryAlbumCard
           imageSrc={certificate}
           albumDescription={t.common.awards}
           albumCardNavigation="/galerija#nagrade"
-        />
+        /> */}
       </div>
 
       <NavigationLink

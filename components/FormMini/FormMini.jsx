@@ -94,7 +94,7 @@ const FormMini = () => {
   };
 
   return (
-    <section className="formmini">
+    <section className="formmini" id="form-mini">
       <h2 className="formmini__heading">{t.form.subheading}</h2>
       <form
         className="formmini__form"

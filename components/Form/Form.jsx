@@ -4,6 +4,13 @@ import FormStatus from "../FormStatus/FormStatus";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
 
+import {
+  displayedInfoPhoneNumber,
+  infoPhoneNumber,
+  restaurantPhoneNumber,
+  displayedRestaurantPhoneNumber,
+} from "../../data/hotelData";
+
 const Form = ({ formVisibility, closeForm = () => {} }) => {
   const { locale } = useRouter();
   const t = locale === "en" ? en : sr;
@@ -386,21 +393,21 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
           </form>
           <p className="form__content--intro">
             {t.form.text2}{" "}
-            <a className="backlink" href="tel:+381641234567">
-              0641234567
+            <a className="backlink" href={`tel:${restaurantPhoneNumber}`}>
+              {displayedRestaurantPhoneNumber}
             </a>
             . {t.form.text3}{" "}
-            <a className="backlink" href="tel:+381641234567">
-              0641234567
+            <a className="backlink" href={`tel:${infoPhoneNumber}`}>
+              {displayedInfoPhoneNumber}
             </a>
             .
           </p>
         </div>
         <p className="form__footer">
           <strong>{t.form.text4}:</strong> {t.form.text5}
-          <a className="backlink" href="tel:+381641234567">
+          <a className="backlink" href={`tel:${infoPhoneNumber}`}>
             {" "}
-            0641234567
+            {displayedInfoPhoneNumber}
           </a>
           .
         </p>

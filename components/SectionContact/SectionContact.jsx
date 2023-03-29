@@ -2,10 +2,96 @@ import FormField from "../FormField/FormField";
 import { useRouter } from "next/router";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
+import { useState } from "react";
+import FormStatus from "../FormStatus/FormStatus";
+import {
+  hotelEmailAddress,
+  infoPhoneNumber,
+  displayedInfoPhoneNumber,
+  restaurantPhoneNumber,
+  displayedRestaurantPhoneNumber,
+} from "../../data/hotelData";
 
 const SectionContact = () => {
   const { locale } = useRouter();
   const t = locale === "en" ? en : sr;
+
+  const [name, setName] = useState({ value: "", invalid: false });
+  const [phone, setPhone] = useState({ value: "", invalid: false });
+  const [email, setEmail] = useState({ value: "", invalid: false });
+  const [message, setMessage] = useState({ value: "", invalid: false });
+  const [isEmailSent, setIsEmailSent] = useState(false);
+  const [isEmailSentSuccessfuly, setIsEmailSentSuccessfuly] = useState(false);
+
+  const phoneValidation = (phone) => {
+    return /[0-9]{9,13}/.test(phone);
+  };
+
+  const emailValidation = (email) => {
+    return /[\.a-z0-9]+@[a-z]+\.[a-z]{2,4}/.test(email);
+  };
+
+  const onlyLettersAndSpaces = (string) => {
+    return /^[A-Za-z\s]*$/.test(string);
+  };
+
+  const handleFormSubmission = () => {
+    if (isEmailSentSuccessfuly) {
+      setIsEmailSent(false);
+      setIsEmailSentSuccessfuly(false);
+      setName((prevState) => ({ ...prevState, ["value"]: "" }));
+      setPhone((prevState) => ({ ...prevState, ["value"]: "" }));
+      setEmail((prevState) => ({ ...prevState, ["value"]: "" }));
+      setMessage((prevState) => ({ ...prevState, ["value"]: "" }));
+    } else {
+      sendEmail();
+    }
+  };
+
+  const submitButtonIsClickable =
+    name.value && message.value && phone.value && email.value;
+
+  const sendEmail = () => {
+    if (
+      name.value !== "" &&
+      onlyLettersAndSpaces(name.value) &&
+      phoneValidation(phone.value) &&
+      emailValidation(email.value) &&
+      message.value !== ""
+    ) {
+      setName((prevState) => ({ ...prevState, ["invalid"]: false }));
+      setEmail((prevState) => ({ ...prevState, ["invalid"]: false }));
+      setPhone((prevState) => ({ ...prevState, ["invalid"]: false }));
+      setMessage((prevState) => ({ ...prevState, ["invalid"]: false }));
+
+      alert("Message sent!");
+      setIsEmailSent(true);
+      setIsEmailSentSuccessfuly(true);
+      // emailjs
+      //   .sendForm(
+      //     "contact_service",
+      //     "contact_form",
+      //     "#form",
+      //     "yRSlAyjSNYF9CjZxT"
+      //   )
+      //   .then(() => {
+      //     setIsEmailSent(true);
+      //   })
+      //   .catch();
+    }
+    if (!onlyLettersAndSpaces(name.value) || name.value === "") {
+      setName((prevState) => ({ ...prevState, ["invalid"]: true }));
+    }
+    if (!phoneValidation(phone.value)) {
+      setPhone((prevState) => ({ ...prevState, ["invalid"]: true }));
+    }
+    if (!emailValidation(email.value)) {
+      setEmail((prevState) => ({ ...prevState, ["invalid"]: true }));
+    }
+    if (message.value == "") {
+      setMessage((prevState) => ({ ...prevState, ["invalid"]: true }));
+    }
+  };
 
   return (
     <section className="section sectioncontact">
@@ -13,11 +99,11 @@ const SectionContact = () => {
 
       <p>
         {t.sections.contact.text1}{" "}
-        <a href="mailto:hotelsvetionik@gmail.com" className="backlink">
+        <a href={`mailto:${hotelEmailAddress}`} className="backlink">
           {t.sections.contact.text2}
         </a>
         ,{" "}
-        <a href="tel:+381641234567" className="backlink">
+        <a href={`tel:${infoPhoneNumber}`} className="backlink">
           {t.sections.contact.text3}
         </a>{" "}
         {t.sections.contact.text4}{" "}
@@ -46,29 +132,106 @@ const SectionContact = () => {
           ></iframe>
         </div>
         <div className="sectioncontact__form-and-info">
-          <form className="sectioncontact__form-and-info--form">
-            <h4 className="heading-small">{t.sections.contact.formHeading}</h4>
+          <form
+            className="sectioncontact__form-and-info--form"
+            onSubmit={(e) => e.preventDefault()}
+            autoComplete="off"
+          >
+            <h3 className="heading-small">{t.sections.contact.formHeading}</h3>
             <FormField
               labelValue={t.form.name}
+              fieldValue={name.value}
               placeholder={t.placeholders.name}
-            />
-            <FormField
-              labelValue={t.form.email}
-              placeholder={t.placeholders.email}
+              onChangeFunction={(e) => {
+                if (name.invalid) {
+                  setName((prevState) => ({
+                    ...prevState,
+                    ["invalid"]: false,
+                  }));
+                }
+
+                setName((prevState) => ({
+                  ...prevState,
+                  ["value"]: e.target.value.trim(),
+                }));
+              }}
+              invalidField={name.invalid}
             />
             <FormField
               labelValue={t.form.phone}
+              fieldValue={phone.value}
               placeholder={t.placeholders.phone}
+              onChangeFunction={(e) => {
+                if (phone.invalid) {
+                  setPhone((prevState) => ({
+                    ...prevState,
+                    ["invalid"]: false,
+                  }));
+                }
+
+                setPhone((prevState) => ({
+                  ...prevState,
+                  ["value"]: e.target.value.trim(),
+                }));
+              }}
+              invalidField={phone.invalid}
+            />
+            <FormField
+              labelValue={t.form.email}
+              fieldValue={email.value}
+              placeholder={t.placeholders.email}
+              onChangeFunction={(e) => {
+                if (email.invalid) {
+                  setEmail((prevState) => ({
+                    ...prevState,
+                    ["invalid"]: false,
+                  }));
+                }
+
+                setEmail((prevState) => ({
+                  ...prevState,
+                  ["value"]: e.target.value.trim(),
+                }));
+              }}
+              invalidField={email.invalid}
             />
             <FormField
               labelValue={t.form.message}
+              fieldValue={message.value}
               wide={true}
               placeholder={t.placeholders.message}
-            />
+              onChangeFunction={(e) => {
+                if (message.invalid) {
+                  setMessage((prevState) => ({
+                    ...prevState,
+                    ["invalid"]: false,
+                  }));
+                }
 
-            <button className="navigationbutton navigationbutton__dark">
-              {t.buttons.submit}
-            </button>
+                setMessage((prevState) => ({
+                  ...prevState,
+                  ["value"]: e.target.value.trim(),
+                }));
+              }}
+              invalidField={message.invalid}
+            />
+            {isEmailSent ? (
+              <FormStatus
+                formIsSuccessfulySubmitted={isEmailSentSuccessfuly}
+                handleFormSubmission={handleFormSubmission}
+              />
+            ) : (
+              <button
+                onClick={sendEmail}
+                className={
+                  submitButtonIsClickable
+                    ? "navigationbutton navigationbutton__dark"
+                    : "navigationbutton navigationbutton__dark navigationbutton__disabled"
+                }
+              >
+                {t.buttons.submit}
+              </button>
+            )}
           </form>
         </div>
       </div>
