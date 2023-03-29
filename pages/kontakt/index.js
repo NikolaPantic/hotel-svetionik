@@ -82,7 +82,7 @@ const Contact = () => {
                   </a>
                 </span>
                 <span className="pagecontact__address--card">
-                  <Image src={mailIcon} alt="mail icon" /> E-mail:
+                  <Image src={mailIcon} alt="mail icon" />
                   <a className="backlink" href={`mailto:${hotelEmailAddress}`}>
                     {hotelEmailAddress}
                   </a>

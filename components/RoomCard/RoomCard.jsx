@@ -44,7 +44,7 @@ const RoomCard = ({
         />
         <NavigationButton
           navigationButtonLabel={t.buttons.checkOutGallery}
-          navigationButtonLink="/galerija"
+          navigationButtonLink="/galerija#sobe"
         />
       </div>
     </div>
