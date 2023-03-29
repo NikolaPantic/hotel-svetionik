@@ -3,7 +3,7 @@ import PageLayout from "../../layout/PageLayout/PageLayout";
 import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
 import food from "../../public/images/food.jpg";
-import gallery from "../../assets/images//gallery.jpg";
+import gallery from "../../public/images/gallery.jpg";
 
 import restaurant1 from "../../public/images/restaurant/restaurant-inside-3.jpg";
 import restaurant2 from "../../public/images/restaurant/restaurant-inside-2.jpg";

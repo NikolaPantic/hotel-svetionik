@@ -26,7 +26,7 @@ const SectionGallery = () => {
         <GalleryAlbumCard
           imageSrc={restaurant}
           albumDescription={t.common.restaurant}
-          albumCardNavigation="/galerija#vinski-podrum"
+          albumCardNavigation="/galerija#restoran"
         />
         <GalleryAlbumCard
           imageSrc={food}
@@ -36,7 +36,7 @@ const SectionGallery = () => {
         <GalleryAlbumCard
           imageSrc={wineCellar}
           albumDescription={t.common.wineCellar}
-          albumCardNavigation="/galerija#restoran"
+          albumCardNavigation="/galerija#vinski-podrum"
         />
         {/* <GalleryAlbumCard
           imageSrc={certificate}
