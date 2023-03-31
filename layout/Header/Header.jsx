@@ -2,7 +2,7 @@ import { useState } from "react";
 import TranslatedLink from "../../components/TranslatedLink/TranslatedLink";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import logo from "../../public/svg/hotel-svetionik-logo-original.svg";
+import logo from "../../public/svg/hotel-svetionik-logo-white.svg";
 import flagSerbia from "../../public/svg/32px-Flag_of_Serbia.svg.png";
 import flagBritain from "../../public/svg/english.png";
 import phone from "../../public/svg/mobile.svg";
