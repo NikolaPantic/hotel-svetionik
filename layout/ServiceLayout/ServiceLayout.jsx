@@ -14,9 +14,9 @@ const ServiceLayout = ({
 
       {serviceLayoutText ? (
         <div className="servicelayout__text">
-          {serviceLayoutText.map((e) => (
+          {serviceLayoutText.map((e, i) => (
             <>
-              <p key={e}>{e}</p>
+              <p key={i}>{e}</p>
               <br />
             </>
           ))}

@@ -223,6 +223,7 @@ const en = {
         "The restaurant is known for its rich menu of national cuisine, prepared by excellent chefs. There is plenty of everything: from appetizers with prosciutto, kulen, cream, tobacco crackers and bacon, to the main course which can be grilled, steak, hanger steak, pasta, spaghetti, house specialty... Numerous satisfied guests are pleased to point out that the location of the restaurant on the river is an ideal combination with our top dishes from different types of fish: catfish, perch, trout, bream, carp...",
       subheading3:
         "The drink menu is rich and includes more than 60 varieties of top quality wines from domestic and foreign producers, as well as other alcoholic and non-alcoholic drinks of domestic and foreign production.",
+      menuText: "View the entire restaurant offer",
     },
     wineCellar: {
       subheading1:

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import ServiceLayout from "../../../layout/ServiceLayout/ServiceLayout";
@@ -6,10 +7,9 @@ import food from "../../../public/images/food.jpg";
 import restaurant1 from "../../../public/images/restaurant/restaurant-inside-5.jpg";
 import restaurant2 from "../../../public/images/restaurant/restaurant-outside-5.jpg";
 import restaurant3 from "../../../public/images/restaurant/restaurant-outside-view.jpg";
-import Head from "next/head";
+import foodMenuIcon from "../../../public/svg/food-menu.svg";
 import en from "../../../locales/en";
 import sr from "../../../locales/sr";
-import { restaurantPhoneNumber } from "../../../data/hotelData";
 import { smoothScrollToForm } from "../../../helpers/helperFunctions";
 
 const Restaurant = () => {
@@ -45,6 +45,15 @@ const Restaurant = () => {
             t.pages.restaurant.subheading3,
           ]}
         >
+          <a
+            className="backlink pagerestaurant__menu"
+            href="/assets/hotel-svetionik-jelovnik.pdf"
+            target="_blank"
+            download
+          >
+            <Image src={foodMenuIcon} alt="Food menu icon" />
+            <p>{t.pages.restaurant.menuText}</p>
+          </a>
           <div className="section-buttons">
             {" "}
             <NavigationButton
@@ -57,7 +66,6 @@ const Restaurant = () => {
               navigationButtonLink="/galerija#restoran"
             />
           </div>
-
           <section className="pagerestaurant__images">
             <Image src={food} alt="hrana" />
             <Image src={restaurant3} alt="Hotel Svetionik letnja bašta" />

@@ -218,6 +218,7 @@ const sr = {
         "Restoran je poznat po bogatom meniju nacionalne kuhinje, koju spremaju vrsni kuvari. Svega ima u izobilju: od predjela sa pršutom, kulenom, kajmakom, duvan čvarcima i slaninom, preko glavnog jela koje može biti sa roštilja, biftek, vešalica, pasta, špageti, specijalitet kuće... Mnogobrojni zadovoljni gosti sa zadovoljstvom ističu da položaj restorana na reci predstavlja idealnu kombinaciju sa našim vrhunskim jelima od različitih vrsta ribe: som, smuđ, pastrmka, kečiga, šaran...",
       subheading3:
         "Karta pića je bogata i obuhvata više od 60 sorti vrhunskih vina domaćih i stranih proizvođača, kao i druga alkoholna i bezalkoholna pića domaće i strane proizvodnje.",
+      menuText: "Pogledajte celokupnu ponudu restorana",
     },
     wineCellar: {
       subheading1:
