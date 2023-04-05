@@ -28,8 +28,8 @@ const FormField = ({
         <textarea
           placeholder={placeholder}
           value={fieldValue}
-          name="area"
-          id={labelValue}
+          name={fieldId}
+          id={fieldId}
           className={
             invalidField
               ? "formfield--text formfield--text-area formfield--text__invalid"
