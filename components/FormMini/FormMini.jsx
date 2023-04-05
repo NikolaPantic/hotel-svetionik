@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import FormField from "../FormField/FormField";
 import FormStatus from "../FormStatus/FormStatus";
 import en from "../../locales/en";
@@ -43,7 +43,7 @@ const FormMini = () => {
   };
 
   const submitButtonIsClickable =
-    onlyLettersAndSpaces(name) &&
+    onlyLettersAndSpaces(name.value) &&
     phoneValidation(phone.value) &&
     emailValidation(email.value) &&
     name.value &&
@@ -64,20 +64,21 @@ const FormMini = () => {
       setPhone((prevState) => ({ ...prevState, ["invalid"]: false }));
       setMessage((prevState) => ({ ...prevState, ["invalid"]: false }));
 
-      alert("Message sent!");
-      setIsEmailSent(true);
-      setIsEmailSentSuccessfuly(true);
-      // emailjs
-      //   .sendForm(
-      //     "contact_service",
-      //     "contact_form",
-      //     "#form",
-      //     "yRSlAyjSNYF9CjZxT"
-      //   )
-      //   .then(() => {
-      //     setIsEmailSent(true);
-      //   })
-      //   .catch();
+      emailjs
+        .sendForm(
+          "contact_service",
+          "contact_form",
+          "#form-mini",
+          "yRSlAyjSNYF9CjZxT"
+        )
+        .then(() => {
+          setIsEmailSent(true);
+          setIsEmailSentSuccessfuly(true);
+        })
+        .catch(() => {
+          setIsEmailSent(true);
+          setIsEmailSentSuccessfuly(false);
+        });
     }
     if (!onlyLettersAndSpaces(name.value) || name.value === "") {
       setName((prevState) => ({ ...prevState, ["invalid"]: true }));
@@ -97,6 +98,7 @@ const FormMini = () => {
     <section className="formmini" id="form-mini">
       <h2 className="formmini__heading">{t.form.subheading}</h2>
       <form
+        id="form-mini"
         className="formmini__form"
         onSubmit={(e) => e.preventDefault()}
         autoComplete="off"
@@ -115,10 +117,11 @@ const FormMini = () => {
 
             setName((prevState) => ({
               ...prevState,
-              ["value"]: e.target.value.trim(),
+              ["value"]: e.target.value,
             }));
           }}
           invalidField={name.invalid}
+          fieldId="name"
         />
         <FormField
           labelValue={t.form.phone}
@@ -138,6 +141,7 @@ const FormMini = () => {
             }));
           }}
           invalidField={phone.invalid}
+          fieldId="phone"
         />
         <FormField
           labelValue={t.form.email}
@@ -157,6 +161,7 @@ const FormMini = () => {
             }));
           }}
           invalidField={email.invalid}
+          fieldId="email"
         />
         <FormField
           labelValue={t.form.message}
@@ -173,10 +178,11 @@ const FormMini = () => {
 
             setMessage((prevState) => ({
               ...prevState,
-              ["value"]: e.target.value.trim(),
+              ["value"]: e.target.value,
             }));
           }}
           invalidField={message.invalid}
+          fieldId="message"
         />
         {isEmailSent ? (
           <FormStatus

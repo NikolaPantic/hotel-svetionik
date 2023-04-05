@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import PageLayout from "../../layout/PageLayout/PageLayout";
 import hotel from "../../public/images/hotel/hotel-svetionik-mini.jpg";
+import hotelBackgroundImage from "../../public/images/hotel/hotel-svetionik.jpg";
 import hotel2 from "../../public/images/hotel/hotel-svetionik-2-mini.jpg";
 import garden from "../../public/images/restaurant/restaurant-outside-8.jpg";
 import food from "../../public/images/food/food-breakfast.jpg";
@@ -38,7 +39,7 @@ const AboutUs = () => {
       <article className="pageaboutus">
         <PageLayout
           heading={t.common.aboutUs}
-          backgroundImageUrl={hotel}
+          backgroundImageUrl={hotelBackgroundImage}
           pageLayoutSummary={t.pages.about.subheading}
         >
           <section className="pageaboutus__section">

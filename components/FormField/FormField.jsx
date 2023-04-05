@@ -3,16 +3,18 @@ const FormField = ({
   invalidField,
   fieldValue,
   labelValue,
+  fieldId,
   placeholder = "Placeholder",
   onChangeFunction = () => {},
 }) => {
   return (
     <div className="formfield">
-      <label htmlFor={labelValue}>{labelValue}</label>
+      <label htmlFor={fieldId}>{labelValue}</label>
       {!wide ? (
         <input
           type="text"
-          id={labelValue}
+          id={fieldId}
+          name={fieldId}
           className={
             invalidField
               ? "formfield--text formfield--text__invalid"

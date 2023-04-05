@@ -1,16 +1,11 @@
 import FormField from "../FormField/FormField";
 import { useRouter } from "next/router";
+import emailjs from "@emailjs/browser";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
 import { useState } from "react";
 import FormStatus from "../FormStatus/FormStatus";
-import {
-  hotelEmailAddress,
-  infoPhoneNumber,
-  displayedInfoPhoneNumber,
-  restaurantPhoneNumber,
-  displayedRestaurantPhoneNumber,
-} from "../../data/hotelData";
+import { hotelEmailAddress, infoPhoneNumber } from "../../data/hotelData";
 
 const SectionContact = () => {
   const { locale } = useRouter();
@@ -64,20 +59,24 @@ const SectionContact = () => {
       setPhone((prevState) => ({ ...prevState, ["invalid"]: false }));
       setMessage((prevState) => ({ ...prevState, ["invalid"]: false }));
 
-      alert("Message sent!");
-      setIsEmailSent(true);
-      setIsEmailSentSuccessfuly(true);
-      // emailjs
-      //   .sendForm(
-      //     "contact_service",
-      //     "contact_form",
-      //     "#form",
-      //     "yRSlAyjSNYF9CjZxT"
-      //   )
-      //   .then(() => {
-      //     setIsEmailSent(true);
-      //   })
-      //   .catch();
+      // alert("Message sent!");
+      // setIsEmailSent(true);
+      // setIsEmailSentSuccessfuly(true);
+      emailjs
+        .sendForm(
+          "contact_service",
+          "contact_form",
+          "#contact-form-mini",
+          "yRSlAyjSNYF9CjZxT"
+        )
+        .then(() => {
+          setIsEmailSent(true);
+          setIsEmailSentSuccessfuly(true);
+        })
+        .catch(() => {
+          setIsEmailSent(true);
+          setIsEmailSentSuccessfuly(false);
+        });
     }
     if (!onlyLettersAndSpaces(name.value) || name.value === "") {
       setName((prevState) => ({ ...prevState, ["invalid"]: true }));
@@ -133,6 +132,7 @@ const SectionContact = () => {
         </div>
         <div className="sectioncontact__form-and-info">
           <form
+            id="contact-form-mini"
             className="sectioncontact__form-and-info--form"
             onSubmit={(e) => e.preventDefault()}
             autoComplete="off"
@@ -141,6 +141,7 @@ const SectionContact = () => {
             <FormField
               labelValue={t.form.name}
               fieldValue={name.value}
+              fieldId="name"
               placeholder={t.placeholders.name}
               onChangeFunction={(e) => {
                 if (name.invalid) {
@@ -160,6 +161,7 @@ const SectionContact = () => {
             <FormField
               labelValue={t.form.phone}
               fieldValue={phone.value}
+              fieldId="phone"
               placeholder={t.placeholders.phone}
               onChangeFunction={(e) => {
                 if (phone.invalid) {
@@ -178,6 +180,7 @@ const SectionContact = () => {
             />
             <FormField
               labelValue={t.form.email}
+              fieldId="email"
               fieldValue={email.value}
               placeholder={t.placeholders.email}
               onChangeFunction={(e) => {
@@ -198,6 +201,7 @@ const SectionContact = () => {
             <FormField
               labelValue={t.form.message}
               fieldValue={message.value}
+              field="message"
               wide={true}
               placeholder={t.placeholders.message}
               onChangeFunction={(e) => {

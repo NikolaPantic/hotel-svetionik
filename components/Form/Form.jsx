@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import FormStatus from "../FormStatus/FormStatus";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
@@ -96,20 +97,21 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
       setArrivalDate((prevState) => ({ ...prevState, ["invalid"]: false }));
       setNumberOfNights((prevState) => ({ ...prevState, ["invalid"]: false }));
 
-      alert("Message sent!");
-      setIsEmailSent(true);
-      setIsEmailSentSuccessfuly(true);
-      // emailjs
-      //   .sendForm(
-      //     "contact_service",
-      //     "contact_form",
-      //     "#form",
-      //     "yRSlAyjSNYF9CjZxT"
-      //   )
-      //   .then(() => {
-      //     setIsEmailSent(true);
-      //   })
-      //   .catch();
+      emailjs
+        .sendForm(
+          "contact_service",
+          "reservation_template",
+          "#form",
+          "yRSlAyjSNYF9CjZxT"
+        )
+        .then(() => {
+          setIsEmailSent(true);
+          setIsEmailSentSuccessfuly(true);
+        })
+        .catch(() => {
+          setIsEmailSent(true);
+          setIsEmailSentSuccessfuly(false);
+        });
     }
     if (!onlyLettersAndSpaces(firstName.value) || firstName.value === "") {
       setFirstName((prevState) => ({ ...prevState, ["invalid"]: true }));
@@ -159,6 +161,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
             <p>{t.form.text1}</p>
           </div>
           <form
+            id="form"
             className="form__data"
             onSubmit={(e) => e.preventDefault()}
             autoComplete="off"
@@ -171,6 +174,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                     firstName.invalid ? "form__data--invalid-field" : null
                   }
                   id="first-name"
+                  name="first-name"
                   type="text"
                   placeholder={t.placeholders.firstName}
                   onChange={(e) => {
@@ -197,6 +201,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   }
                   type="text"
                   id="last-name"
+                  name="last-name"
                   placeholder={t.placeholders.lastName}
                   onChange={(e) => {
                     if (lastName.invalid) {
@@ -215,10 +220,11 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                 />
               </div>
               <div className="form__data--card">
-                <label htmlFor="e-mail">E-mail:</label>
+                <label htmlFor="email">E-mail:</label>
                 <input
                   className={email.invalid ? "form__data--invalid-field" : null}
-                  id="e-mail"
+                  id="email"
+                  name="email"
                   type="text"
                   placeholder={t.placeholders.email}
                   onChange={(e) => {
@@ -244,6 +250,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                     phoneNumber.invalid ? "form__data--invalid-field" : null
                   }
                   id="phone"
+                  name="phone"
                   type="tel"
                   placeholder={t.placeholders.phone}
                   onChange={(e) => {
@@ -272,6 +279,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   }
                   value={roomType.value}
                   id="room-type"
+                  name="room-type"
                   onChange={(e) => {
                     if (roomType.invalid) {
                       setRoomType((prevState) => ({
@@ -306,6 +314,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   }
                   value={arrivalDate.value}
                   id="arrival-date"
+                  name="arrival-date"
                   type="date"
                   min={todayDate}
                   onChange={(e) => {
@@ -333,6 +342,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   }
                   value={numberOfNights.value}
                   id="number-of-nights"
+                  name="number-of-nights"
                   type="number"
                   min="1"
                   placeholder={t.placeholders.numberOfNights}
@@ -369,6 +379,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                   }}
                   value={notes.value}
                   id="additional-info"
+                  name="additional-info"
                   placeholder={t.placeholders.notes}
                 />
               </div>
