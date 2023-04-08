@@ -76,8 +76,7 @@
       }
 
       @media only screen and (max-width: 768px) {
-        bottom: 50%;
-        transform: translateY(50%);
+        bottom: 20%;
       }
     }
 
@@ -98,7 +97,7 @@
     }
 
     &:hover > a {
-      transform: translateY(50%) scale(1);
+      transform: scale(1);
     }
   }
 }

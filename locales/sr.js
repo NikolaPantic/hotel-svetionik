@@ -230,7 +230,7 @@ const sr = {
     },
     rooms: {
       subheading1:
-        "Raspolažemo sa ukupnim kapacitetom smeštaja od 15 smeštajnih jedinica: 6 standardnih soba, 7 soba sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sve sobe poseduju mini bar, LCD TV sa domacim i stranim kanalima, klimu i fen.",
+        "Raspolažemo sa ukupnim kapacitetom smeštaja od 15 smeštajnih jedinica: 6 standardnih soba, 7 soba sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sve sobe poseduju mini bar, LCD TV sa domaćim i stranim kanalima, klimu i fen.",
       subheading2:
         "Radno vreme recepcije je od 08:00 do 23:00, dolazak gostiju od 23:00 do 08:00 je moguć samo uz prethodno potvrđenu rezervaciju. Prijava boravka je od 12:00, odjava do 10:00.",
       text1:

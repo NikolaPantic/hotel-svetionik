@@ -61,17 +61,30 @@
 
     &--1 {
       background-image: url("../../public/images/hotel/hotel-svetionik-1.jpg");
+
+      @media only screen and (max-width: 768px) {
+        background-image: url("../../public/images/hotel/hotel-svetionik-1-medium.jpg");
+      }
     }
     &--2 {
       background-image: url("../../public/images/celebrations/banquet-hall-background.jpg");
+      @media only screen and (max-width: 768px) {
+        background-image: url("../../public/images/celebrations/banquet-hall-background-medium.jpg");
+      }
     }
 
     &--3 {
       background-image: url("../../public/images/restaurant/restaurant-outside-view-1.jpg");
+      @media only screen and (max-width: 768px) {
+        background-image: url("../../public/images/restaurant/restaurant-outside-view-1.jpg");
+      }
     }
 
     &--4 {
       background-image: url("../../public/images/rooms/double/double-room-card.jpg");
+      @media only screen and (max-width: 768px) {
+        background-image: url("../../public/images/rooms/double/double-room-card.jpg");
+      }
     }
   }
 }

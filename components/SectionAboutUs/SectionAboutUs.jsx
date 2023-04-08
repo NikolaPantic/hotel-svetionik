@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import svetionik from "../../public/images/hotel/hotel-svetionik.jpg";
-import svetionik2 from "../../public/images/restaurant/restaurant-outside-menu.jpg";
-import svetionik3 from "../../public/images/wine-cellar/wine-cellar-wine-bottle.jpg";
+import svetionik from "../../public/images/hotel/hotel-svetionik-medium.jpg";
+import svetionik2 from "../../public/images/restaurant/restaurant-outside-menu-medium.jpg";
+import svetionik3 from "../../public/images/wine-cellar/wine-cellar-wine-bottle-medium.jpg";
 import NavigationButton from "../NavigationButton/NavigationButton";
 import en from "../../locales/en";
 import sr from "../../locales/sr";

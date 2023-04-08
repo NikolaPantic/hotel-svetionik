@@ -1,9 +1,9 @@
 import GalleryAlbumCard from "../GalleryAlbumCard/GalleryAlbumCard";
 import NavigationLink from "../NavigationLink/NavigationLink";
-import wineCellar from "../../public/images/wine-cellar/wine-cellar-hall-1.jpg";
-import restaurant from "../../public/images/restaurant/restaurant-inside-4.jpg";
-import food from "../../public/images/food/food-cake.jpg";
-import weddingHall from "../../public//images/celebrations/banquet-hall-3.jpg";
+import wineCellar from "../../public/images/wine-cellar/wine-cellar-hall-1-medium.jpg";
+import restaurant from "../../public/images/restaurant/restaurant-inside-4-medium.jpg";
+import food from "../../public/images/food/food-cake-medium.jpg";
+import weddingHall from "../../public//images/celebrations/banquet-hall-3-medium.jpg";
 import certificate from "../../public/images/certificate.jpg";
 import { useRouter } from "next/router";
 import en from "../../locales/en";
