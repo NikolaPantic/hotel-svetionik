@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import DOMPurify from "dompurify";
 import emailjs from "@emailjs/browser";
 import FormField from "../FormField/FormField";
 import FormStatus from "../FormStatus/FormStatus";
@@ -69,7 +70,7 @@ const FormMini = () => {
           "contact_service",
           "contact_form",
           "#form-mini",
-          "yRSlAyjSNYF9CjZxT"
+          process.env.NEXT_PUBLIC_FORMJS_PUBLIC_KEY
         )
         .then(() => {
           setIsEmailSent(true);
@@ -114,10 +115,10 @@ const FormMini = () => {
                 ["invalid"]: false,
               }));
             }
-
+            const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
             setName((prevState) => ({
               ...prevState,
-              ["value"]: e.target.value,
+              ["value"]: sanitizedValue,
             }));
           }}
           invalidField={name.invalid}
@@ -134,10 +135,10 @@ const FormMini = () => {
                 ["invalid"]: false,
               }));
             }
-
+            const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
             setPhone((prevState) => ({
               ...prevState,
-              ["value"]: e.target.value.trim(),
+              ["value"]: sanitizedValue,
             }));
           }}
           invalidField={phone.invalid}
@@ -154,10 +155,10 @@ const FormMini = () => {
                 ["invalid"]: false,
               }));
             }
-
+            const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
             setEmail((prevState) => ({
               ...prevState,
-              ["value"]: e.target.value.trim(),
+              ["value"]: sanitizedValue,
             }));
           }}
           invalidField={email.invalid}
@@ -175,10 +176,10 @@ const FormMini = () => {
                 ["invalid"]: false,
               }));
             }
-
+            const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
             setMessage((prevState) => ({
               ...prevState,
-              ["value"]: e.target.value,
+              ["value"]: sanitizedValue,
             }));
           }}
           invalidField={message.invalid}

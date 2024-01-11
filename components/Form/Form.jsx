@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import DOMPurify from 'dompurify';
 import emailjs from "@emailjs/browser";
 import FormStatus from "../FormStatus/FormStatus";
 import en from "../../locales/en";
@@ -102,7 +103,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
           "contact_service",
           "reservation_template",
           "#form",
-          "yRSlAyjSNYF9CjZxT"
+          process.env.NEXT_PUBLIC_FORMJS_PUBLIC_KEY
         )
         .then(() => {
           setIsEmailSent(true);
@@ -184,10 +185,10 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
                     setFirstName((prevState) => ({
                       ...prevState,
-                      ["value"]: e.target.value.trim(),
+                      ["value"]: sanitizedValue,
                     }));
                   }}
                   value={firstName.value}
@@ -210,10 +211,11 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
 
                     setLastName((prevState) => ({
                       ...prevState,
-                      ["value"]: e.target.value.trim(),
+                      ["value"]: sanitizedValue,
                     }));
                   }}
                   value={lastName.value}
@@ -234,10 +236,10 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
                     setEmail((prevState) => ({
                       ...prevState,
-                      ["value"]: e.target.value.trim(),
+                      ["value"]: sanitizedValue,
                     }));
                   }}
                   value={email.value}
@@ -260,10 +262,10 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
                     setPhoneNumber((prevState) => ({
                       ...prevState,
-                      ["value"]: e.target.value.trim(),
+                      ["value"]: sanitizedValue,
                     }));
                   }}
                   value={phoneNumber.value}
@@ -353,10 +355,10 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value);
                     setNumberOfNights((prevState) => ({
                       ...prevState,
-                      ["value"]: e.target.value,
+                      ["value"]:sanitizedValue,
                     }));
                   }}
                 />
@@ -371,10 +373,10 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
                     setNotes((prevState) => ({
                       ...prevState,
-                      ["value"]: e.target.value.trim(),
+                      ["value"]: sanitizedValue,
                     }));
                   }}
                   value={notes.value}
