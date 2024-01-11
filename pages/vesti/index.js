@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import DOMPurify from "dompurify";
 import PageLayout from "../../layout/PageLayout/PageLayout";
 import news from "../../public/images/news.jpg";
 import en from "../../locales/en";
@@ -66,7 +67,8 @@ const News = () => {
                         setInvalidEmail(false);
                       }
                       setSuccessfulEmail(false);
-                      setEmail(e.target.value);
+                      const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+                      setEmail(sanitizedValue);
                     }}
                   />
                 </div>
