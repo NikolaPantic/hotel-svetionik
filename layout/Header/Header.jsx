@@ -72,16 +72,19 @@ const Header = ({ openForm }) => {
           </div>
         </div>
       </address>
-      <div className="header__language">
-        <button onClick={() => setLocale("sr")}>
-          <Image src={flagSerbia} alt="Serbian flag" />
-        </button>
-
-        <button onClick={() => setLocale("en")}>
-          <Image src={flagBritain} alt="British flag" />
-        </button>
-      </div>
-      <nav className="header__navigation">
+      
+      <nav className="header__navigation container">
+            <TranslatedLink
+              href="/"
+            >
+                <Image
+                  className="header__logo"
+                  src={logo}
+                  width={'auto'}
+                  height={50}
+                  alt="Hotel Svetionik logo"
+                />
+            </TranslatedLink>
         <ul className="header__navigation--items">
           <li className="header__navigation--item">
             <TranslatedLink
@@ -165,28 +168,15 @@ const Header = ({ openForm }) => {
               {t.common.gallery}
             </TranslatedLink>
           </li>
-          <li className="header__navigation--item header__navigation--item--logo">
-            <TranslatedLink
-              href="/"
-              className="header__navigation--item-link header__navigation--item-link--logo"
-            >
-              <div className="header__navigation--logo">
-                <Image
-                  className="header__navigation--image"
-                  src={logo}
-                  alt="Hotel Svetionik logo"
-                />
-              </div>
-            </TranslatedLink>
-          </li>
-          <li className="header__navigation--item">
+         
+          {/* <li className="header__navigation--item">
             <TranslatedLink
               href="/vesti"
               className="header__navigation--item-link"
             >
               {t.common.news}
             </TranslatedLink>
-          </li>
+          </li> */}
 
           <li className="header__navigation--item">
             <TranslatedLink
@@ -206,7 +196,18 @@ const Header = ({ openForm }) => {
             </TranslatedLink>
           </li>
         </ul>
+
+        <div className="header__language">
+        <button onClick={() => setLocale("sr")}>
+          <Image src={flagSerbia} alt="Serbian flag" />
+        </button>
+
+        <button onClick={() => setLocale("en")}>
+          <Image src={flagBritain} alt="British flag" />
+        </button>
+      </div>
       </nav>
+
       <div className="mobileheader__content">
         <TranslatedLink
           className="mobileheader__logo"

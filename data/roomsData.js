@@ -222,12 +222,12 @@ const RoomsData = () => {
             description: t.pages.roomInstance.roomContent.hairdryer,
           },
           {
-            icon: jacuzzi,
-            description: t.pages.roomInstance.roomContent.jacuzzi,
-          },
-          {
             icon: cosmetics,
             description: t.pages.roomInstance.roomContent.cosmetics,
+          },
+          {
+            icon: jacuzzi,
+            description: t.pages.roomInstance.roomContent.jacuzzi,
           },
         ],
         images: [

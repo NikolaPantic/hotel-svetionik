@@ -36,13 +36,11 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(
-      to left,
-      rgba($color-white, 0.9),
-      rgba($color-grey-light, 0.3)
-    ),
-    url("../../public/images/background.jpg");
-  background-attachment: fixed;
+
+}
+
+.container{
+  max-width:1200px;
 }
 
 .hidden {

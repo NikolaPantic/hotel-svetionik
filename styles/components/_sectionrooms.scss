@@ -1,12 +1,25 @@
-.sectionrooms {
+.section-rooms {
   justify-content: space-around;
-  background-image: linear-gradient(
-      to right,
-      rgba($color-white, 0.6),
-      rgba($color-white, 0.6)
-    ),
-    url("../../public/images/pexels-pixabay-271639.jpg");
 
+  .heading-secondary{
+position: relative;
+
+&:before,&:after{
+    content:"";
+position: absolute;
+height:100%;
+width:40%;
+top:50%;
+left:0;
+border-top: 1px solid black;
+}
+&:after{
+  right:0;
+  left:auto;
+}
+}
+  
+  
   &__text {
     width: 95%;
     padding: 1rem;
@@ -18,9 +31,11 @@
     }
   }
   &__rooms {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+        width: 100%;
+    
 
     @media only screen and (max-width: 768px) {
       flex-wrap: wrap;

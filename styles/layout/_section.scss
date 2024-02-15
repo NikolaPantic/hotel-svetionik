@@ -1,14 +1,5 @@
 .section {
-  @include centerBackgroundImage;
-  min-height: 80vh;
   padding: 1rem 0;
   width: 100%;
 
-  @media only screen and (min-width: 2000px) {
-    min-height: 60vh;
-  }
-
-  @media only screen and (max-width: 1024px) {
-    min-height: 50vh;
-  }
 }

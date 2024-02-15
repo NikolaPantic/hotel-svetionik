@@ -1,10 +1,5 @@
 .sectiongallery {
-  background-image: linear-gradient(
-      to right,
-      rgba($color-white, 0.6),
-      rgba($color-white, 0.6)
-    ),
-    url("../../public/images/gallery.jpg");
+
 
   &__albums {
     display: flex;

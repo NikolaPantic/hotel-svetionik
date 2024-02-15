@@ -16,10 +16,7 @@
   }
 
   &__language {
-    position: absolute;
     color: $color-white;
-    right: 2%;
-    bottom: 2.5vh;
     display: flex;
 
     @media only screen and (max-width: 1024px) {
@@ -99,11 +96,26 @@
     }
   }
 
+&__logo{
+
+      transition: all 0.5s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    
+  
+}
+
   &__navigation {
+    padding:2rem auto;
     height: 10vh;
     position: relative;
-    width: 80%;
+    width: 100%;
     flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     @media only screen and (max-width: 1024px) {
       display: none;
@@ -121,7 +133,7 @@
         border: 1px solid $color-grey-light;
         border-top: none;
         background-color: $color-white;
-        width: 100%;
+        width: 10rem;
         position: absolute;
         right: -101%;
         top: 0;
@@ -171,6 +183,7 @@
     }
 
     &--item {
+      padding:1rem;
       flex: 1;
       position: relative;
       height: 100%;
@@ -223,9 +236,9 @@
         &--list {
           font-size: 0.8rem;
           text-align: left;
-          width: 100%;
+          width: 10rem;
           position: absolute;
-          top: 10vh;
+          top: 12.5vh;
           background-color: $color-white;
           transform: scaleY(0);
           transform-origin: top;
@@ -263,22 +276,7 @@
       }
     }
 
-    &--logo {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      & > img {
-        width: 70%;
-        height: auto;
-        transition: all 0.5s;
-
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
-    }
+   
 
     &--image {
       height: 100%;

@@ -16,9 +16,9 @@ const SectionRooms = () => {
   const openForm = useContext(FormContext);
 
   return (
-    <section className="section sectionrooms">
+    <section className="section section-rooms container">
       <h2 className="heading-secondary">{t.common.rooms}</h2>
-      <div className="sectionrooms__text">
+      <div className="section-rooms__text">
         <p>{t.sections.rooms.text1}</p>
         <p>
           {t.sections.rooms.text2}{" "}
@@ -32,7 +32,7 @@ const SectionRooms = () => {
           .
         </p>
       </div>
-      <div className="sectionrooms__rooms">
+      <div className="section-rooms__rooms">
         <RoomMiniCard
           roomDescription={t.common.standardRoom}
           roomMiniCardImage={singleRoom}

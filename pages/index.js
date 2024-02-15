@@ -30,10 +30,23 @@ export default function Home() {
           content={t.metadata.landingPage.title}
         />
       </Head>
-      <article className="landingpage">
+      <article className="landing-page">
         <CarouselComponent />
         <SectionAboutUs />
+        <div className="fixed-image"/>
         <SectionRooms />
+        <div className="ads">
+        <div className="fixed-image"/>
+        <div className="sticky"><h3>Heading</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p></div>
+        <div className="fixed-image"/>
+          
+        </div>
+        <div className="fixed-image-2"/>
+        <div className="fixed-image"/>
+
+
         <SectionServices />
         <SectionGallery />
         <SectionNews />
