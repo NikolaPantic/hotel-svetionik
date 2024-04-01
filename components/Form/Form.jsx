@@ -185,7 +185,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value);
                     setFirstName((prevState) => ({
                       ...prevState,
                       ["value"]: sanitizedValue,
@@ -211,7 +211,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value);
 
                     setLastName((prevState) => ({
                       ...prevState,
@@ -373,7 +373,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value);
                     setNotes((prevState) => ({
                       ...prevState,
                       ["value"]: sanitizedValue,
