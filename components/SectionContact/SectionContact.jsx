@@ -114,7 +114,6 @@ const SectionContact = () => {
         >
           {t.sections.contact.text5}
         </a>
-        .
       </p>
 
       <div className="sectioncontact__content">

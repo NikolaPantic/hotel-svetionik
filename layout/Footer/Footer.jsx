@@ -34,23 +34,23 @@ const Footer = () => {
           </p>
         </FooterSection>
         <FooterSection footerSectionHeading={t.common.services}>
-          <TranslatedLink className="clickable-link" href="/usluge/sobe">
+          <TranslatedLink className="backlink--light" href="/usluge/sobe">
             {t.common.roomsBooking}
           </TranslatedLink>
-          <TranslatedLink className="clickable-link" href="/usluge/proslave">
+          <TranslatedLink className="backlink--light" href="/usluge/proslave">
             {t.common.weddingCelebrations}
           </TranslatedLink>
-          <TranslatedLink className="clickable-link" href="/usluge/restoran">
+          <TranslatedLink className="backlink--light" href="/usluge/restoran">
             {t.common.restaurant}
           </TranslatedLink>
           <TranslatedLink
-            className="clickable-link"
+            className="backlink--light"
             href="/usluge/brodska-marina"
           >
             {t.common.shipMarina}
           </TranslatedLink>
           <TranslatedLink
-            className="clickable-link"
+            className="backlink--light"
             href="/usluge/vinski-podrum"
           >
             {t.common.wineCellar}
@@ -58,7 +58,7 @@ const Footer = () => {
         </FooterSection>
         <FooterSection footerSectionHeading={t.common.rooms}>
           <TranslatedLink
-            className="clickable-link"
+            className="backlink--light"
             href={{
               pathname: "/usluge/sobe/[singleRoom]",
               query: { singleRoom: "standardna-soba" },
@@ -67,7 +67,7 @@ const Footer = () => {
             {t.common.standardRoom}
           </TranslatedLink>
           <TranslatedLink
-            className="clickable-link"
+            className="backlink--light"
             href={{
               pathname: "/usluge/sobe/[singleRoom]",
               query: { singleRoom: "soba-sa-dodatnim-lezajem" },
@@ -76,7 +76,7 @@ const Footer = () => {
             {t.common.roomWithExtraBed}
           </TranslatedLink>
           <TranslatedLink
-            className="clickable-link"
+            className="backlink--light"
             href={{
               pathname: "/usluge/sobe/[singleRoom]",
               query: { singleRoom: "superior-apartman-sa-djakuzijem" },
@@ -88,25 +88,28 @@ const Footer = () => {
         <FooterSection footerSectionHeading={t.common.contact}>
           <p>
             {t.common.info}:{" "}
-            <a className="clickable-link" href={`tel:${infoPhoneNumber}`}>
+            <a className="backlink--light" href={`tel:${infoPhoneNumber}`}>
               {displayedInfoPhoneNumber}
             </a>
           </p>
           <p>
             {t.common.restaurant}:{" "}
-            <a className="clickable-link" href={`tel:${restaurantPhoneNumber}`}>
+            <a
+              className="backlink--light"
+              href={`tel:${restaurantPhoneNumber}`}
+            >
               {displayedRestaurantPhoneNumber}
             </a>
           </p>
           <p>
             {t.common.roomsBooking}:{" "}
-            <a className="clickable-link" href={`tel:${bookingPhoneNumber}`}>
+            <a className="backlink--light" href={`tel:${bookingPhoneNumber}`}>
               {displayedBookingPhoneNumber}
             </a>
           </p>
           <p>
             E-mail:{" "}
-            <a className="clickable-link" href={`mailto:${hotelEmailAddress}`}>
+            <a className="backlink--light" href={`mailto:${hotelEmailAddress}`}>
               {hotelEmailAddress}
             </a>
           </p>
@@ -114,7 +117,7 @@ const Footer = () => {
       </div>
       <div className="footer__social">
         <a
-          className="clickable-link social"
+          className="backlink--light social"
           href="https://www.facebook.com/profile.php?id=100063594339967"
           rel="noreferrer"
           target="_blank"
@@ -123,7 +126,7 @@ const Footer = () => {
           <span>Svetionik Obrenovac na Savi</span>
         </a>
         <a
-          className="clickable-link social"
+          className="backlink--light social"
           href="https://www.instagram.com/svetionik_obrenovac_na_savi/"
           rel="noreferrer"
           target="_blank"

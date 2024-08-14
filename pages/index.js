@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import CarouselComponent from "../components/Carousel/Carousel";
+import HeroSection from "../components/HeroSection/HeroSection.jsx";
 import SectionAboutUs from "../components/SectionAboutUs/SectionAboutUs.jsx";
 import SectionRooms from "../components/SectionRooms/SectionRooms";
 import SectionServices from "../components/SectionServices/SectionServices";
@@ -9,6 +9,9 @@ import SectionNews from "../components/SectionNews/SectionNews";
 import SectionContact from "../components/SectionContact/SectionContact";
 import sr from "../locales/sr";
 import en from "../locales/en";
+import TextWithBackgroundImage from "../components/TextWithBackgroundImage/TextWithBackgroundImage.jsx";
+import SectionHotelContent from "../components/SectionHotelContent/SectionHotelContent.jsx";
+import SectionAboutHotel from "../components/SectionAboutHotel/SectionAboutHotel.jsx";
 
 export default function Home() {
   const { locale } = useRouter();
@@ -31,25 +34,15 @@ export default function Home() {
         />
       </Head>
       <article className="landing-page">
-        <CarouselComponent />
+        <HeroSection />
         <SectionAboutUs />
-        <div className="fixed-image"/>
+        <SectionAboutHotel />
+        <SectionHotelContent />
         <SectionRooms />
-        <div className="ads">
-        <div className="fixed-image"/>
-        <div className="sticky"><h3>Heading</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p></div>
-        <div className="fixed-image"/>
-          
-        </div>
-        <div className="fixed-image-2"/>
-        <div className="fixed-image"/>
-
-
+        <TextWithBackgroundImage />
         <SectionServices />
         <SectionGallery />
-        <SectionNews />
+        {/* <SectionNews /> */}
         <SectionContact />
       </article>
     </div>

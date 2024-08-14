@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TranslatedLink from "../../components/TranslatedLink/TranslatedLink";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -8,18 +8,45 @@ import flagBritain from "../../public/svg/english.png";
 import phone from "../../public/svg/mobile.svg";
 import location from "../../public/svg/location.svg";
 import clock from "../../public/svg/clock2.svg";
+import facebook from "../../public/svg/facebook.svg";
+import instagram from "../../public/svg/instagram.svg";
 import sr from "../../locales/sr";
 import en from "../../locales/en";
 
 import {
+  bookingPhoneNumber,
+  displayedBookingPhoneNumber,
   displayedInfoPhoneNumber,
+  displayedRestaurantPhoneNumber,
+  hotelEmailAddress,
   infoPhoneNumber,
+  restaurantPhoneNumber,
 } from "../../data/hotelData";
+import ServicesSubmenu from "../../components/ServicesSubmenu/ServicesSubmenu";
 
 const Header = ({ openForm }) => {
   const [isHamburgerOpened, setIsHamburgerOpened] = useState(false);
   const [isServicesListOpened, setIsServicesListOpened] = useState(false);
   const [isRoomsListOpened, setIsRoomsListOpened] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+  const servicesSubmenuHeight = useRef();
+  const roomsSubmenuHeight = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const closeHamburgerMenu = () => {
     if (isServicesListOpened) {
@@ -39,9 +66,9 @@ const Header = ({ openForm }) => {
   };
 
   return (
-    <header className="header">
+    <header className={scrolling ? "header header--scrolled" : "header"}>
       <address className="header__address">
-        <div className="header__address--container">
+        <div className="header__address--container container">
           <div className="header__address--card">
             <div className="header__address--card--image">
               <Image src={phone} alt="phone" />
@@ -72,20 +99,14 @@ const Header = ({ openForm }) => {
           </div>
         </div>
       </address>
-      
+
       <nav className="header__navigation container">
-            <TranslatedLink
-              href="/"
-            >
-                <Image
-                  className="header__logo"
-                  src={logo}
-                  width={'auto'}
-                  height={50}
-                  alt="Hotel Svetionik logo"
-                />
-            </TranslatedLink>
         <ul className="header__navigation--items">
+          <li className="header__navigation--item">
+            <TranslatedLink href="/" className="header__navigation--item-link">
+              {t.common.home}
+            </TranslatedLink>
+          </li>
           <li className="header__navigation--item">
             <TranslatedLink
               href="/o-nama"
@@ -101,63 +122,9 @@ const Header = ({ openForm }) => {
             >
               {t.common.services}
             </TranslatedLink>
-            <span className="header__navigation--item-link--services--arrow">
-              &#9658;
-            </span>
+            <span className="down-arrow"></span>
 
-            <ul className="header__navigation--item-link--services--list">
-              <li className="header__navigation--item-link--services--list-item header__navigation--rooms">
-                <TranslatedLink href="/usluge/sobe">
-                  {t.common.rooms} &#9658;
-                </TranslatedLink>
-                <ul className="header__navigation--rooms--list">
-                  <li className="header__navigation--rooms--room">
-                    <TranslatedLink
-                      href="/usluge/sobe/standardna-soba"
-                      className="header__navigation--rooms--room-link"
-                    >
-                      {t.common.standardRoom}
-                    </TranslatedLink>
-                  </li>
-                  <li className="header__navigation--rooms--room">
-                    <TranslatedLink
-                      href="/usluge/sobe/soba-sa-dodatnim-lezajem"
-                      className="header__navigation--rooms--room-link"
-                    >
-                      {t.common.roomWithExtraBed}
-                    </TranslatedLink>
-                  </li>
-                  <li className="header__navigation--rooms--room">
-                    <TranslatedLink
-                      href="/usluge/sobe/superior-apartman-sa-djakuzijem"
-                      className="header__navigation--rooms--room-link"
-                    >
-                      {t.common.superiorApartment}
-                    </TranslatedLink>
-                  </li>
-                </ul>
-              </li>
-              <li className="header__navigation--item-link--services--list-item">
-                <TranslatedLink href="/usluge/proslave">
-                  {t.common.celebrations}
-                </TranslatedLink>
-              </li>
-              <li className="header__navigation--item-link--services--list-item">
-                <TranslatedLink href="/usluge/restoran">
-                  {t.common.restaurant}
-                </TranslatedLink>
-              </li>
-              <li className="header__navigation--item-link--services--list-item">
-                <TranslatedLink href="/usluge/brodska-marina">
-                  {t.common.shipMarina}
-                </TranslatedLink>
-              </li>
-              <li className="header__navigation--item-link--services--list-item">
-                <TranslatedLink href="/usluge/vinski-podrum">
-                  {t.common.wineCellar}{" "}
-                </TranslatedLink>
-              </li>
-            </ul>
+            <ServicesSubmenu />
           </li>
 
           <li className="header__navigation--item">
@@ -168,15 +135,6 @@ const Header = ({ openForm }) => {
               {t.common.gallery}
             </TranslatedLink>
           </li>
-         
-          {/* <li className="header__navigation--item">
-            <TranslatedLink
-              href="/vesti"
-              className="header__navigation--item-link"
-            >
-              {t.common.news}
-            </TranslatedLink>
-          </li> */}
 
           <li className="header__navigation--item">
             <TranslatedLink
@@ -186,36 +144,40 @@ const Header = ({ openForm }) => {
               {t.common.contact}
             </TranslatedLink>
           </li>
-          <li className="header__navigation--item">
-            <TranslatedLink
-              href=""
-              className="header__navigation--item-link"
-              onClick={openForm}
-            >
-              {t.common.booking}
-            </TranslatedLink>
-          </li>
         </ul>
+        <div className="header__main-logo">
+          <TranslatedLink href="/">
+            <Image
+              className="header__logo"
+              src={logo}
+              width={"auto"}
+              height={50}
+              alt="Hotel Svetionik logo"
+            />
+          </TranslatedLink>
+        </div>
 
-        <div className="header__language">
-        <button onClick={() => setLocale("sr")}>
-          <Image src={flagSerbia} alt="Serbian flag" />
-        </button>
+        <div className="header__language-and-reservation">
+          <button
+            className="header__reservation-button"
+            type="button"
+            onClick={openForm}
+          >
+            {t.common.booking}
+          </button>
+          <div className="header__language">
+            <button onClick={() => setLocale("sr")}>
+              <Image src={flagSerbia} alt="Serbian flag" />
+            </button>
 
-        <button onClick={() => setLocale("en")}>
-          <Image src={flagBritain} alt="British flag" />
-        </button>
-      </div>
+            <button onClick={() => setLocale("en")}>
+              <Image src={flagBritain} alt="British flag" />
+            </button>
+          </div>
+        </div>
       </nav>
 
       <div className="mobileheader__content">
-        <TranslatedLink
-          className="mobileheader__logo"
-          href="/"
-          onClick={closeHamburgerMenu}
-        >
-          <Image src={logo} alt="Hotel Svetionik logo" />
-        </TranslatedLink>
         <nav className="mobileheader__navigation">
           <div className="mobileheader__navigation--hamburger">
             <input
@@ -243,6 +205,15 @@ const Header = ({ openForm }) => {
               <li className="mobileheader__navigation--list-item">
                 <TranslatedLink
                   onClick={closeHamburgerMenu}
+                  href="/"
+                  className="mobileheader__navigation--list-item-link"
+                >
+                  {t.common.home}
+                </TranslatedLink>
+              </li>
+              <li className="mobileheader__navigation--list-item">
+                <TranslatedLink
+                  onClick={closeHamburgerMenu}
                   href="/o-nama"
                   className="mobileheader__navigation--list-item-link"
                 >
@@ -256,7 +227,7 @@ const Header = ({ openForm }) => {
                   type="checkbox"
                   id="services--toggle"
                 />
-                <div>
+                <div className="subservice-test">
                   <TranslatedLink
                     onClick={closeHamburgerMenu}
                     href="/usluge"
@@ -266,140 +237,138 @@ const Header = ({ openForm }) => {
                   </TranslatedLink>
                   <label
                     htmlFor="services--toggle"
-                    className="mobileheader__navigation--list--arrow mobileheader__navigation--list-services--arrow"
+                    className={
+                      isServicesListOpened
+                        ? "mobileheader__navigation--list--arrow mobileheader__navigation--list--arrow--opened"
+                        : "mobileheader__navigation--list--arrow"
+                    }
                     onClick={() =>
                       setIsServicesListOpened(!isServicesListOpened)
                     }
                   >
-                    &#9658;
+                    &#129170;
                   </label>
                 </div>
 
-                <ul className="mobileheader__navigation--list">
-                  <li className="mobileheader__navigation--heading">
-                    {t.common.services}
-                  </li>
-                  <li className="mobileheader__navigation--list-item mobileheader__navigation--rooms">
+                <ul
+                  ref={servicesSubmenuHeight}
+                  style={
+                    isServicesListOpened
+                      ? { height: servicesSubmenuHeight.current.scrollHeight }
+                      : { height: "0px" }
+                  }
+                  className={
+                    isServicesListOpened
+                      ? "mobileheader__navigation-submenu mobileheader__navigation-submenu--opened"
+                      : "mobileheader__navigation-submenu"
+                  }
+                >
+                  <li className="mobileheader__submenu-list-item">
                     <input
                       type="checkbox"
                       id="rooms--toggle"
                       onChange={() => {}}
                       checked={isHamburgerOpened ? isRoomsListOpened : false}
                     />
-                    <div>
+                    <div className="subservice-test">
                       <TranslatedLink
                         onClick={closeHamburgerMenu}
                         href="/usluge/sobe"
-                        className="mobileheader__navigation--list-item-link "
+                        className="mobileheader__submenu-list-item-link "
                       >
                         {t.common.roomsBooking}
                       </TranslatedLink>
 
                       <label
                         htmlFor="rooms--toggle"
-                        className="mobileheader__navigation--list--arrow"
+                        className={
+                          isRoomsListOpened
+                            ? "mobileheader__navigation--list--arrow mobileheader__navigation--list--arrow--opened"
+                            : "mobileheader__navigation--list--arrow"
+                        }
                         onClick={() => setIsRoomsListOpened(!isRoomsListOpened)}
                       >
-                        &#9658;
+                        &#129170;
                       </label>
                     </div>
 
-                    <ul className="mobileheader__navigation--list mobileheader__navigation--list-rooms">
-                      <li className="mobileheader__navigation--heading">
-                        {t.common.roomsBooking}
-                      </li>
-                      <li className="mobileheader__navigation--list-item">
+                    <ul
+                      ref={roomsSubmenuHeight}
+                      style={
+                        isRoomsListOpened
+                          ? { height: roomsSubmenuHeight.current.scrollHeight }
+                          : { height: "0px" }
+                      }
+                      className={
+                        isRoomsListOpened
+                          ? "mobileheader__navigation-submenu mobileheader__navigation-submenu--opened"
+                          : "mobileheader__navigation-submenu"
+                      }
+                    >
+                      <li className="mobileheader__submenu-list-item">
                         <TranslatedLink
                           onClick={closeHamburgerMenu}
                           href="/usluge/sobe/standardna-soba"
-                          className="mobileheader__navigation--list-item-link"
+                          className="mobileheader__submenu-list-item-link"
                         >
                           {t.common.standardRoom}
                         </TranslatedLink>
                       </li>
-                      <li className="mobileheader__navigation--list-item">
+                      <li className="mobileheader__submenu-list-item">
                         <TranslatedLink
                           onClick={closeHamburgerMenu}
                           href="/usluge/sobe/soba-sa-dodatnim-lezajem"
-                          className="mobileheader__navigation--list-item-link"
+                          className="mobileheader__submenu-list-item-link"
                         >
                           {t.common.roomWithExtraBed}
                         </TranslatedLink>
                       </li>
-                      <li className="mobileheader__navigation--list-item">
+                      <li className="mobileheader__submenu-list-item">
                         <TranslatedLink
                           onClick={closeHamburgerMenu}
                           href="/usluge/sobe/superior-apartman-sa-djakuzijem"
-                          className="mobileheader__navigation--list-item-link"
+                          className="mobileheader__submenu-list-item-link"
                         >
                           {t.common.superiorApartment}
                         </TranslatedLink>
                       </li>
-                      <li
-                        className="mobileheader__navigation--list-item"
-                        onClick={() => setIsRoomsListOpened(false)}
-                      >
-                        <label
-                          className="mobileheader__navigation--list--arrow"
-                          htmlFor="rooms--toggle"
-                        >
-                          &larr;
-                        </label>
-                        <span className="mobileheader__navigation--list--go-back">
-                          {t.buttons.goBack}
-                        </span>
-                      </li>
                     </ul>
                   </li>
-                  <li className="mobileheader__navigation--list-item">
+                  <li className="mobileheader__submenu-list-item">
                     <TranslatedLink
                       onClick={closeHamburgerMenu}
                       href="/usluge/proslave"
-                      className="mobileheader__navigation--list-item-link"
+                      className="mobileheader__submenu-list-item-link"
                     >
                       {t.common.weddingCelebrations}
                     </TranslatedLink>
                   </li>
-                  <li className="mobileheader__navigation--list-item">
+                  <li className="mobileheader__submenu-list-item">
                     <TranslatedLink
                       onClick={closeHamburgerMenu}
                       href="/usluge/restoran"
-                      className="mobileheader__navigation--list-item-link"
+                      className="mobileheader__submenu-list-item-link"
                     >
                       {t.common.restaurant}
                     </TranslatedLink>
                   </li>
-                  <li className="mobileheader__navigation--list-item">
+                  <li className="mobileheader__submenu-list-item">
                     <TranslatedLink
                       onClick={closeHamburgerMenu}
                       href="/usluge/vinski-podrum"
-                      className="mobileheader__navigation--list-item-link"
+                      className="mobileheader__submenu-list-item-link"
                     >
                       {t.common.wineCellar}
                     </TranslatedLink>
                   </li>
-                  <li className="mobileheader__navigation--list-item">
+                  <li className="mobileheader__submenu-list-item">
                     <TranslatedLink
                       onClick={closeHamburgerMenu}
                       href="/usluge/brodska-marina"
-                      className="mobileheader__navigation--list-item-link"
+                      className="mobileheader__submenu-list-item-link"
                     >
                       {t.common.shipMarina}
                     </TranslatedLink>
-                  </li>
-                  <li
-                    className="mobileheader__navigation--list-item "
-                    onClick={() => setIsServicesListOpened(false)}
-                  >
-                    <label
-                      className="mobileheader__navigation--list--arrow"
-                      htmlFor="services--toggle"
-                    >
-                      &larr;
-                    </label>
-                    <span className="mobileheader__navigation--list--go-back">
-                      {t.buttons.goBack}
-                    </span>
                   </li>
                 </ul>
               </li>
@@ -410,15 +379,6 @@ const Header = ({ openForm }) => {
                   className="mobileheader__navigation--list-item-link"
                 >
                   {t.common.gallery}
-                </TranslatedLink>
-              </li>
-              <li className="mobileheader__navigation--list-item">
-                <TranslatedLink
-                  onClick={closeHamburgerMenu}
-                  href="/vesti"
-                  className="mobileheader__navigation--list-item-link"
-                >
-                  {t.common.news}
                 </TranslatedLink>
               </li>
               <li className="mobileheader__navigation--list-item">
@@ -441,20 +401,97 @@ const Header = ({ openForm }) => {
                   {t.common.booking}
                 </TranslatedLink>
               </li>
-              <li className="mobileheader__navigation--list-item">
-                <div className="mobileheader__navigation--language">
-                  <button onClick={() => setLocale("sr")}>
-                    <Image src={flagSerbia} alt="Serbian flag" />
-                  </button>
+              <li className="mobileheader__additional-info">
+                <address className="mobileheader__address">
+                  <span>Hotel Svetionik</span>
+                  <span>Zabreških partizana 30</span>
+                  <span>11500, Obrenovac</span>
+                  <span>Srbija</span>
+                </address>
 
-                  <button onClick={() => setLocale("en")}>
-                    <Image src={flagBritain} alt="British flag" />
-                  </button>
-                </div>
+                <a
+                  href="https://goo.gl/maps/XMqbpMmLQgFx5qL29"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="backlink"
+                >
+                  {t.common.showMap}
+                </a>
+              </li>
+              <li className="mobileheader__contact-info">
+                <p>
+                  {t.common.info}:{" "}
+                  <a className="backlink" href={`tel:${infoPhoneNumber}`}>
+                    {displayedInfoPhoneNumber}
+                  </a>
+                </p>
+                <p>
+                  {t.common.restaurant}:{" "}
+                  <a className="backlink" href={`tel:${restaurantPhoneNumber}`}>
+                    {displayedRestaurantPhoneNumber}
+                  </a>
+                </p>
+                <p>
+                  {t.common.roomsBooking}:{" "}
+                  <a className="backlink" href={`tel:${bookingPhoneNumber}`}>
+                    {displayedBookingPhoneNumber}
+                  </a>
+                </p>
+                <p>
+                  E-mail:{" "}
+                  <a className="backlink" href={`mailto:${hotelEmailAddress}`}>
+                    {hotelEmailAddress}
+                  </a>
+                </p>
+              </li>
+              <li className="mobileheader__social">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063594339967"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Image
+                    className="mobileheader__social-image"
+                    src={facebook}
+                    alt="Facebook logo"
+                    width={"40"}
+                    height={"40"}
+                  />
+                </a>
+                <a
+                  href="https://www.instagram.com/svetionik_obrenovac_na_savi/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Image
+                    className="mobileheader__social-image"
+                    src={instagram}
+                    alt="Instagram logo"
+                    width={"40"}
+                    height={"40"}
+                  />
+                </a>
               </li>
             </ul>
           </div>
         </nav>
+        <TranslatedLink
+          className="mobileheader__logo"
+          href="/"
+          onClick={closeHamburgerMenu}
+        >
+          <Image src={logo} alt="Hotel Svetionik logo" />
+        </TranslatedLink>
+
+        <div className="mobileheader__navigation--language">
+          <button onClick={() => setLocale("sr")}>
+            <Image src={flagSerbia} alt="Serbian flag" />
+          </button>
+
+          <button onClick={() => setLocale("en")}>
+            <Image src={flagBritain} alt="British flag" />
+          </button>
+        </div>
       </div>
     </header>
   );

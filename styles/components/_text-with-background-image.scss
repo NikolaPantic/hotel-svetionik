@@ -1,0 +1,46 @@
+.text-with-background-image {
+  width: 100%;
+  min-height: 50vh;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(
+      to left,
+      rgba($color-black, 0.1),
+      rgba($color-black, 0.1)
+    ),
+    url("../../public/images/celebrations/banquet-hall-14.jpg");
+  background-attachment: fixed;
+  @include centerBackgroundImage;
+
+  &__content-wrapper {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $color-white;
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      padding: 1rem;
+    }
+
+    .text-with-background-image__heading {
+      font-family: "Marcellus", serif;
+      font-size: 40px;
+      margin-bottom: 40px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .text-with-background-image__description {
+      font-size: 20px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+}

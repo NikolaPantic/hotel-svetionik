@@ -37,6 +37,83 @@ const en = {
     roomContent: "Room content",
     maybeInterested: "Maybe you are interested",
     info: "Info",
+    home: "Home",
+    introTextHeading: "Discover the beauty of our hotel",
+    introText1:
+      "At Hotel Svetionik you will enjoy the flavors of national and international cuisine, the sunset from your room and the perfect harmony between luxury and relaxation.",
+    introText2:
+      "Visit us and discover your corner, perfect for escaping from everyday life.",
+    roomPerson2: "1-2 persons",
+    roomPerson4: "1-4 persons",
+    roomPerson8: "1-8 persons",
+    doubleBed1: "1 double bed",
+    doubleBed2: "2 double bed",
+    еxtraBed: "1 extra bed",
+    extraBed2: "1-2 extra bed",
+    noExtraBed: "without extra bed",
+    withJacuzzi: "with jacuzzi",
+    noJacuzzi: "without jacuzzi",
+    hotelContentHeading: "Hotel content and services we offer",
+    hotelService1Heading: "2 halls for celebrations",
+    hotelService1Description:
+      "Organization of all kinds of celebrations for up to 400 people",
+    hotelService2Heading: "Restaurant",
+    hotelService2Description:
+      "A rich menu of national and international cuisine",
+    hotelService3Heading: "Comfortable apartments",
+    hotelService3Description:
+      "Capacity 1-8 people, with the option of a jacuzzi",
+    hotelService4Heading: "Wine cellar",
+    hotelService4Description:
+      "More than 60 varieties of wine from premium producers",
+    hotelService5Heading: "Boat marina",
+    hotelService5Description: "For guests who come to us by water",
+    hotelService6Heading: "Parking for hotel guests",
+    hotelService6Description:
+      "Parking for guests, with a capacity of 100 vehicles",
+    hotelService7Heading: "Playground for children",
+    hotelService7Description: "That even our youngest guests enjoy",
+    hotelService8Heading: "A wedding on the river bank",
+    hotelService8Description: "For moments to remember forever",
+    celebrationsForAllKindOccasions: "Celebrations for all kinds of occasions",
+    organizeImportantEvent:
+      "Organize your dream wedding, christening, coming-of-age, company celebration, or any event important to you in an environment where every detail exudes elegance and charm.",
+    roomBooking: "Room booking",
+    submenuCelebrationsDescription:
+      "All kinds of celebrations up to 400 people",
+    submenuRestaurantDescription: "Restaurant with a view of the river",
+    submenuMarinaDescription: "Boat marina for 20 boats",
+    submenuWineCellarDescription:
+      "More than 60 varieties of wine for lovers of good taste",
+    showMap: "Show map",
+    spaciousAndComfortable:
+      "Spacious and comfortable accommodation for your dream vacation",
+    markYourImportantDay:
+      "Mark your important day with the most beautiful view from this side of the river",
+    anchorTheVessel:
+      "Anchor the vessel and indulge in a relaxing view of the Sava River",
+    wideSelectionOfDishes:
+      "A wide selection of national and international dishes",
+    rusticWithStyle: "Rustic with style",
+    celebrationsFromDreams: "Celebrations from dreams",
+    wineForEveryTaste: "Wine for every taste",
+    roomsInhotel: "hotel rooms",
+    personsPerRoom: "persons per room",
+    apartmentsWithJacuzzi: "apartments with jacuzzi",
+    celebrationHalls: "celebration halls",
+    maximumNumberOfGuests: "maximum number of guests",
+    uponRequest: "upon request",
+    celebrationInTheWineCellar: "celebration in the wine cellar",
+    differentDishes: "different dishes",
+    seats: "seats",
+    diningRooms: "dining rooms",
+    forFree: "free",
+    forHotelGuests: "for hootel guests",
+    multiDayRental: "multi-day rental",
+    varietiesOfWine: "varieties of wine",
+    unlimited: "unlimited",
+    enjoyingGoodTastes: "enjoying good tastes",
+    berthsForVessels: "berths for vessels",
   },
 
   carousel: {
@@ -116,6 +193,8 @@ const en = {
       text3: "here",
       text4: "or you can call us",
       text5: "by phone",
+      text6:
+        "All rooms have a mini bar, LCD TV with domestic and foreign channels, air conditioning, hair dryer and accessories for personal hygiene.",
     },
 
     additionalServices: {
@@ -124,7 +203,7 @@ const en = {
       card1Text:
         "Organization of all kinds of celebrations up to 400 people. 2 wedding halls, the possibility of organizing celebrations in the restaurant or wine cellar.",
       card2Text:
-        "Restaurant with a capacity of up to 150 seats. Sitting inside or outside by the river. A varied menu with a rich selection of drinks.",
+        "Restaurant with a capacity of up to 200 seats. Sitting inside or outside by the river. A varied menu with a rich selection of drinks.",
       card3Text:
         "Boat marina with boat dock. The possibility of renting on a daily and monthly basis.",
       card4Text:

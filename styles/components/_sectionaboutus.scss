@@ -1,12 +1,55 @@
 .section-about-us {
+  @media only screen and (max-width: 1024px) {
+    padding-bottom: 50px !important;
+  }
 
-  .heading-secondary{
-    text-align: left;
-    border-bottom: 1px solid $color-black;
+  .carousel-item {
+    height: 400px;
+    width: auto;
+
+    @media only screen and (max-width: 768px) {
+      height: 200px;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+
+    @media only screen and (max-width: 768px) {
+      padding: 3rem 1rem;
+    }
+
+    .section-about-us__intro-image {
+      color: $color-primary;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    .section-about-us__intro-text {
+      font-family: "Marcellus", serif;
+      font-weight: 700;
+      line-height: 1.2;
+      font-size: 30px;
+      max-width: 900px;
+      text-align: center;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
   }
 
   &__box {
-    padding:2rem 0;
+    padding: 2rem 0;
     flex: 1;
     display: flex;
     justify-content: space-between;
@@ -14,35 +57,39 @@
     @media only screen and (max-width: 1024px) {
       flex-direction: column;
     }
-
   }
 
-  &__content{
-    padding:1rem;
+  &__content {
+    padding: 1rem;
     flex: 0 0 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     align-self: stretch;
+
+    p {
+      margin-bottom: 10px;
+    }
   }
 
-  &__images{
-    display: flex;
-    justify-content: space-between;
-  }
+  &__image {
+    position: relative;
 
-  &__outer-image{
-    flex:0 0 50%;
-  }
-  &__inner-images{
-    flex:0 0 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 100%;
+      width: 100%;
+      background-color: $color-primary-light;
+    }
 
-  .flex-row-reverse{
-    flex-direction:row-reverse;
+    img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
   }
 }

@@ -10,6 +10,7 @@ import wineCellar4 from "../../../public/images/wine-cellar/wine-cellar-wine-bot
 import en from "../../../locales/en";
 import sr from "../../../locales/sr";
 import { smoothScrollToForm } from "../../../helpers/helperFunctions";
+import PageLayout from "../../../layout/PageLayout/PageLayout";
 
 const WineCellar = () => {
   const { locale } = useRouter();
@@ -36,33 +37,41 @@ const WineCellar = () => {
         />
       </Head>
       <article className="pagewinecellar">
-        <ServiceLayout
-          currentService="wine-cellar"
-          serviceLayoutHeading={t.common.wineCellar}
-          serviceLayoutText={[
-            t.pages.wineCellar.subheading1,
-            t.pages.wineCellar.subheading2,
-            t.pages.wineCellar.subheading3,
-          ]}
+        <PageLayout
+          heading={t.common.wineCellar}
+          pageLayoutSummary={
+            "Prepustite se neodoljivim ukusima vrhunskih sorti vina"
+          }
+          backgroundImageUrl={wineCellar2}
         >
-          <div className="section-buttons">
-            <NavigationButton
-              navigationButtonLabel={t.common.contact}
-              onButtonClick={smoothScrollToForm}
-              darkMode={true}
-            />
-            <NavigationButton
-              navigationButtonLabel={t.common.gallery}
-              navigationButtonLink="/galerija#vinski-podrum"
-            />
-          </div>
-          <section className="pagewinecellar__images">
-            <Image src={wineCellar1} alt="Hotel Svetionik vinski podrum" />
-            <Image src={wineCellar3} alt="Hotel Svetionik vinski podrum" />
-            <Image src={wineCellar4} alt="Hotel Svetionik vinski podrum" />
-            <Image src={wineCellar2} alt="Hotel Svetionik vinski podrum" />
-          </section>
-        </ServiceLayout>
+          <ServiceLayout
+            currentService="wine-cellar"
+            serviceLayoutHeading={t.common.wineForEveryTaste}
+            serviceLayoutText={[
+              t.pages.wineCellar.subheading1,
+              t.pages.wineCellar.subheading2,
+              t.pages.wineCellar.subheading3,
+            ]}
+          >
+            <div className="section-buttons">
+              <NavigationButton
+                navigationButtonLabel={t.common.contact}
+                onButtonClick={smoothScrollToForm}
+                darkMode={true}
+              />
+              <NavigationButton
+                navigationButtonLabel={t.common.gallery}
+                navigationButtonLink="/galerija#vinski-podrum"
+              />
+            </div>
+            <section className="pagewinecellar__images">
+              <Image src={wineCellar1} alt="Hotel Svetionik vinski podrum" />
+              <Image src={wineCellar3} alt="Hotel Svetionik vinski podrum" />
+              <Image src={wineCellar4} alt="Hotel Svetionik vinski podrum" />
+              <Image src={wineCellar2} alt="Hotel Svetionik vinski podrum" />
+            </section>
+          </ServiceLayout>
+        </PageLayout>
       </article>
     </>
   );

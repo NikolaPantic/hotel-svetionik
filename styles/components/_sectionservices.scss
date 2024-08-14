@@ -1,4 +1,7 @@
 .sectionservices {
+  &__description {
+    text-align: center;
+  }
 
   &__services {
     flex: 1;
@@ -8,6 +11,10 @@
     flex-wrap: wrap;
 
     @media only screen and (max-width: 1024px) {
+      padding: 1rem;
+    }
+
+    @media only screen and (max-width: 768px) {
       flex-direction: column;
     }
   }

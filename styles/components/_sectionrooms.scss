@@ -1,41 +1,36 @@
 .section-rooms {
   justify-content: space-around;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
 
-  .heading-secondary{
-position: relative;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
-&:before,&:after{
-    content:"";
-position: absolute;
-height:100%;
-width:40%;
-top:50%;
-left:0;
-border-top: 1px solid black;
-}
-&:after{
-  right:0;
-  left:auto;
-}
-}
-  
-  
-  &__text {
-    width: 95%;
-    padding: 1rem;
+  &__heading-and-text {
+    flex: 1;
+    .section-rooms__text {
+      box-sizing: border-box;
+      width: 95%;
+      padding: 0 1rem;
+      text-align: center;
+      margin-bottom: 1rem;
 
-    & button {
-      background-color: transparent;
-      border: none;
-      padding: 0;
+      @media only screen and (max-width: 768px) {
+        text-align: left;
+      }
+
+      & button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+      }
     }
   }
+
   &__rooms {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 1rem;
-        width: 100%;
-    
+    flex: 1.5;
 
     @media only screen and (max-width: 768px) {
       flex-wrap: wrap;

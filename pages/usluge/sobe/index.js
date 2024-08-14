@@ -5,8 +5,10 @@ import RoomCard from "../../../components/RoomCard/RoomCard";
 import singleRoom from "../../../public/images/rooms/single/single-room-card.jpg";
 import doubleRoom from "../../../public/images/rooms/double/double-room-card.jpg";
 import superiorRoom from "../../../public/images/rooms/superior/superior-room-card.jpg";
+import roomDecoration from "../../../public/images/rooms/common/room-decoration-2.jpg";
 import en from "../../../locales/en";
 import sr from "../../../locales/sr";
+import PageLayout from "../../../layout/PageLayout/PageLayout";
 
 const Rooms = () => {
   const { locale } = useRouter();
@@ -30,46 +32,52 @@ const Rooms = () => {
         />
       </Head>
       <article className="pagerooms">
-        <ServiceLayout
-          currentService="rooms"
-          serviceLayoutHeading={t.common.rooms}
-          serviceLayoutText={[
-            t.pages.rooms.subheading1,
-            t.pages.rooms.subheading2,
-          ]}
+        <PageLayout
+          heading={t.common.rooms}
+          pageLayoutSummary={t.common.spaciousAndComfortable}
+          backgroundImageUrl={roomDecoration}
         >
-          <div className="pagerooms__roomcards">
-            <RoomCard
-              reversed={true}
-              roomCardLink={{
-                pathname: "/usluge/sobe/[singleRoom]",
-                query: { singleRoom: "standardna-soba" },
-              }}
-              roomCardHeading={t.common.standardRoom}
-              roomCardImage={singleRoom}
-              roomCardText={t.pages.rooms.text1}
-            />
-            <RoomCard
-              roomCardLink={{
-                pathname: "/usluge/sobe/[singleRoom]",
-                query: { singleRoom: "soba-sa-dodatnim-lezajem" },
-              }}
-              roomCardHeading={t.common.roomWithExtraBed}
-              roomCardImage={doubleRoom}
-              roomCardText={t.pages.rooms.text2}
-            />
-            <RoomCard
-              reversed={true}
-              roomCardLink={{
-                pathname: "/usluge/sobe/[singleRoom]",
-                query: { singleRoom: "superior-apartman-sa-djakuzijem" },
-              }}
-              roomCardHeading={t.common.superiorApartment}
-              roomCardImage={superiorRoom}
-              roomCardText={t.pages.rooms.text3}
-            />
-          </div>
-        </ServiceLayout>
+          <ServiceLayout
+            currentService="rooms"
+            serviceLayoutHeading="Odabir soba"
+            serviceLayoutText={[
+              t.pages.rooms.subheading1,
+              t.pages.rooms.subheading2,
+            ]}
+          >
+            <div className="pagerooms__roomcards container">
+              <RoomCard
+                reversed={true}
+                roomCardLink={{
+                  pathname: "/usluge/sobe/[singleRoom]",
+                  query: { singleRoom: "standardna-soba" },
+                }}
+                roomCardHeading={t.common.standardRoom}
+                roomCardImage={singleRoom}
+                roomCardText={t.pages.rooms.text1}
+              />
+              <RoomCard
+                roomCardLink={{
+                  pathname: "/usluge/sobe/[singleRoom]",
+                  query: { singleRoom: "soba-sa-dodatnim-lezajem" },
+                }}
+                roomCardHeading={t.common.roomWithExtraBed}
+                roomCardImage={doubleRoom}
+                roomCardText={t.pages.rooms.text2}
+              />
+              <RoomCard
+                reversed={true}
+                roomCardLink={{
+                  pathname: "/usluge/sobe/[singleRoom]",
+                  query: { singleRoom: "superior-apartman-sa-djakuzijem" },
+                }}
+                roomCardHeading={t.common.superiorApartment}
+                roomCardImage={superiorRoom}
+                roomCardText={t.pages.rooms.text3}
+              />
+            </div>
+          </ServiceLayout>
+        </PageLayout>
       </article>
     </>
   );

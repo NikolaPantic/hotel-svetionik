@@ -4,58 +4,11 @@
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(
-    to left,
-    rgba($color-white, 0.9),
-    rgba($color-grey-light, 0.9)
-  ),
-  url("../../public/images/hotel/hotel-svetionik.jpg");
-background-attachment: fixed;
-@include centerBackgroundImage;
-
-.fixed-image{
-  background-image: linear-gradient(
-    to left,
-    rgba($color-white, 0.1),
-    rgba($color-grey-light, 0.1)
-  ),
-  url("../../public/images/restaurant/restaurant-outside-menu.jpg");
-background-attachment: fixed;
-height:100vh;
-width: 100%;
-@include centerBackgroundImage;}
-
-.fixed-image-2{
-    background-image: linear-gradient(
       to left,
-      rgba($color-white, 0.1),
-      rgba($color-grey-light, 0.1)
+      rgba($color-white, 0.9),
+      rgba($color-grey-light, 0.9)
     ),
-    url("../../public/images/celebrations/banquet-hall-14.jpg");
+    url("../../public/images/hotel/hotel-svetionik.jpg");
   background-attachment: fixed;
-  height:100vh;
-  width: 100%;
   @include centerBackgroundImage;
-}
-
-.ads{
-  width: 100%;
-  display: flex;
-justify-content: space-between;
-position:sticky;
-
-
-.fixed-image{
-  height:50rem;
-  flex: 0 0 25%;
-  background-image: linear-gradient(
-    to left,
-    rgba($color-white, 0.1),
-    rgba($color-grey-light, 0.1)
-  ),
-  url("../../public/images/celebrations/banquet-hall-14.jpg");
-background-attachment: fixed;
-@include centerBackgroundImage;
-}
-}
-
 }
