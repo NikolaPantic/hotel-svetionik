@@ -1,10 +1,7 @@
 .sectionservices {
-  background-image: linear-gradient(
-      to right,
-      rgba($color-white, 0.8),
-      rgba($color-white, 0.8)
-    ),
-    url("../../public/images/pexels-dmitry-zvolskiy-1721927.jpg");
+  &__description {
+    text-align: center;
+  }
 
   &__services {
     flex: 1;
@@ -14,6 +11,10 @@
     flex-wrap: wrap;
 
     @media only screen and (max-width: 1024px) {
+      padding: 1rem;
+    }
+
+    @media only screen and (max-width: 768px) {
       flex-direction: column;
     }
   }

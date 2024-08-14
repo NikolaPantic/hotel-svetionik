@@ -37,6 +37,76 @@ const sr = {
     roomContent: "Sadržaj sobe",
     maybeInterested: "Možda ste zainteresovani",
     info: "Informacije",
+    home: "Početna",
+    introTextHeading: "Otkrijte lepotu našeg hotela",
+    introText1:
+      "U Hotelu Svetionik uživaćete u ukusima nacionalne i internacionalne kuhinje, zalasku sunca iz vaše sobe i savršenoj harmoniji između luksuza i opuštanja.",
+    introText2:
+      "Posetite nas i otkrijte svoj kutak savršen za beg od svakodnevnice.",
+    roomPerson2: "1-2 osobe",
+    roomPerson4: "1-4 osobe",
+    roomPerson8: "1-8 osoba",
+    doubleBed1: "1 francuski ležaj",
+    doubleBed2: "2 francuska ležaja",
+    еxtraBed: "1 dodatni ležaj",
+    extraBed2: "1-2 dodatna ležaja",
+    noExtraBed: "bez dodatnog ležaja",
+    withJacuzzi: "sa đakuzijem",
+    noJacuzzi: "bez đakuzija",
+    hotelContentHeading: "Sadržaj hotela i usluge koje nudimo",
+    hotelService1Heading: "2 sale za proslave",
+    hotelService1Description: "Organizacija svih vrsta proslava do 400 osoba",
+    hotelService2Heading: "Restoran",
+    hotelService2Description: "Bogat meni nacionalne i internacionalne kuhinje",
+    hotelService3Heading: "Udobni apartmani",
+    hotelService3Description: "Kapaciteta 1-8 osoba, uz opciju sa đakuzijem",
+    hotelService4Heading: "Vinski podrum",
+    hotelService4Description: "Više od 60 sorti vina premium proizvođača",
+    hotelService5Heading: "Brodska marina",
+    hotelService5Description: "Za goste koji nam dolaze vodenim putem",
+    hotelService6Heading: "Parking za goste hotela",
+    hotelService6Description: "Parking za goste, kapaciteta 100 vozila",
+    hotelService7Heading: "Igralište za decu",
+    hotelService7Description: "Da i naši najmlađi gosti uživaju",
+    hotelService8Heading: "Venčanje na obali reke",
+    hotelService8Description: "Za trenutke koji se zauvek pamte",
+    celebrationsForAllKindOccasions: "Proslave za sve vrste prilika",
+    organizeImportantEvent:
+      "Organizujte venčanje iz snova, krštenje, punoletstvo, proslavu firme, ili neki vama bitan događaj u ambijentu gde svaki detalj odiše elegancijom i šarmom.",
+    roomBooking: "Izdavanje soba",
+    submenuCelebrationsDescription: "Sve vrste proslava do 400 ljudi",
+    submenuRestaurantDescription: "Restoran sa pogledom na reku",
+    submenuMarinaDescription: "Pristanište za brodove kapaciteta 20 plovila",
+    submenuWineCellarDescription:
+      "Više od 60 sorti vina za ljubitelje dobrog ukusa",
+    showMap: "Prikaži na mapi",
+    spaciousAndComfortable: "Prostran i udoban smeštaj za odmor iz snova",
+    markYourImportantDay:
+      "Obeležite vama bitan dan uz najlepši pogled sa ove strane reke",
+    anchorTheVessel:
+      "Usidrite plovilo i prepustite se opuštajućem pogledu na reku Savu",
+    wideSelectionOfDishes: "Bogat izbor nacionalnih i internacionalnih jela",
+    rusticWithStyle: "Rustika sa stilom",
+    celebrationsFromDreams: "Proslave iz snova",
+    wineForEveryTaste: "Vino za svačiji ukus",
+    roomsInhotel: "soba u hotelu",
+    personsPerRoom: "osoba po sobi",
+    apartmentsWithJacuzzi: "apartmana sa đakuzijem",
+    celebrationHalls: "svečane sale",
+    maximumNumberOfGuests: "maksimalan kapacitet gostiju",
+    uponRequest: "na upit",
+    celebrationInTheWineCellar: "proslava u vinskom podrumu",
+    differentDishes: "različitih jela",
+    seats: "mesta za sedenje",
+    diningRooms: "sale za obedovanje",
+    forFree: "besplatno",
+    forHotelGuests: "za goste hotela",
+    multiDayRental: "višednevni najam",
+    varietiesOfWine: "sorti vina",
+    unlimited: "neograničeno",
+    enjoyingGoodTastes: "uživanje u dobrim ukusima",
+    berthsForVessels: "mesta za plovila",
+    viewAllServices: "Pogledajte sve usluge",
   },
   carousel: {
     slide1Subheading: "Dobrodošli!",
@@ -114,14 +184,16 @@ const sr = {
       text3: "ovde",
       text4: "ili nas možete",
       text5: "pozvati telefonom",
+      text6:
+        "Sve sobe poseduju mini bar, LCD TV sa domaćim i stranim kanalima, klima uređaj, fen i pribor za ličnu higijenu.",
     },
     additionalServices: {
       heading: "Dodatne usluge",
-      text: "",
+      text: "Pored izdavanja soba, hotel Svetionik iz svoje ponude izdvaja i sledeće usluge:",
       card1Text:
         "Organizacija svih vrsta proslava do 400 ljudi. 2 sale za proslave, mogućnost organizovanja proslava u restoranu ili vinskom podrumu.",
       card2Text:
-        "Restoran kapaciteta do 150 mesta. Sedenje unutra ili napolju uz reku. Raznovrsni meni uz bogatu ponudu pića.",
+        "Restoran kapaciteta do 200 mesta. Sedenje unutra ili napolju uz reku. Raznovrsni meni uz bogatu ponudu pića.",
       card3Text:
         "Brodska marina sa pristanom za čamce. Mogućnost iznajmljivanja na dnevnom i mesečnom nivou.",
       card4Text:
@@ -213,9 +285,9 @@ const sr = {
     },
     restaurant: {
       subheading1:
-        'Naš restoran je prepoznatljiv po ambijentu koji predstavlja kombinaciju savremenog dizajna u koji su vešto uklopljeni rustični detalji. Sve je od prirodnih materijala, kao što su kamen, opeka, drvo i kovano gvožđe. Po toplom vremenu možete sesti u letnju baštu pored reke i uživati u fantastičnom pogledu. Ukoliko dočekate noćne časove, imaćete divan pogled na termoelektranu "Nikola Tesla", koja ukrašena noćnim svetlima asocira na usidreni prekookeanski brod, što doprinosi tome da vaš mini odmor kod nas bude savršen. Treba napomenuti i predusretljivo osoblje i ljubazne konobare, koji će učiniti sve da maksimalno izađu u susret svakoj vašoj želji.',
+        'Restoran hotela Svetionik je prepoznatljiv po ambijentu koji predstavlja kombinaciju savremenog dizajna u koji su vešto uklopljeni rustični detalji. Sve je od prirodnih materijala, kao što su kamen, opeka, drvo i kovano gvožđe. Po toplom vremenu možete sesti u letnju baštu pored reke i uživati u fantastičnom pogledu. Ukoliko dočekate noćne časove, imaćete divan pogled na termoelektranu "Nikola Tesla", koja ukrašena noćnim svetlima asocira na usidreni prekookeanski brod, što doprinosi tome da vaš mini odmor kod nas bude savršen. Treba napomenuti i predusretljivo osoblje i ljubazne konobare, koji će učiniti sve da maksimalno izađu u susret svakoj vašoj želji.',
       subheading2:
-        "Restoran je poznat po bogatom meniju nacionalne kuhinje, koju spremaju vrsni kuvari. Svega ima u izobilju: od predjela sa pršutom, kulenom, kajmakom, duvan čvarcima i slaninom, preko glavnog jela koje može biti sa roštilja, biftek, vešalica, pasta, špageti, specijalitet kuće... Mnogobrojni zadovoljni gosti sa zadovoljstvom ističu da položaj restorana na reci predstavlja idealnu kombinaciju sa našim vrhunskim jelima od različitih vrsta ribe: som, smuđ, pastrmka, kečiga, šaran...",
+        "Naš restoran je poznat po bogatom meniju nacionalne kuhinje, koju spremaju vrsni kuvari. Svega ima u izobilju: od predjela sa pršutom, kulenom, kajmakom, duvan čvarcima i slaninom, preko glavnog jela koje može biti sa roštilja, biftek, vešalica, pasta, špageti, specijalitet kuće... Mnogobrojni zadovoljni gosti sa zadovoljstvom ističu da položaj restorana na reci predstavlja idealnu kombinaciju sa našim vrhunskim jelima od različitih vrsta ribe: som, smuđ, pastrmka, kečiga, šaran...",
       subheading3:
         "Karta pića je bogata i obuhvata više od 60 sorti vrhunskih vina domaćih i stranih proizvođača, kao i druga alkoholna i bezalkoholna pića domaće i strane proizvodnje.",
       menuText: "Pogledajte celokupnu ponudu restorana",
@@ -232,7 +304,7 @@ const sr = {
       subheading1:
         "Raspolažemo sa ukupnim kapacitetom smeštaja od 15 smeštajnih jedinica: 6 standardnih soba, 7 soba sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sve sobe poseduju mini bar, LCD TV sa domaćim i stranim kanalima, klimu i fen.",
       subheading2:
-        "Radno vreme recepcije je od 08:00 do 23:00, dolazak gostiju od 23:00 do 08:00 je moguć samo uz prethodno potvrđenu rezervaciju. Prijava boravka je od 12:00, odjava do 10:00.",
+        "Radno vreme recepcije je od 08:00 do 23:00, dolazak gostiju u drugim terminima je moguć samo uz prethodno potvrđenu rezervaciju. Prijava boravka je od 12:00, odjava do 10:00.",
       text1:
         "Svetla i udobna soba kapaciteta 1-2 osobe. Za savršen odmor i miran san.",
       text2:

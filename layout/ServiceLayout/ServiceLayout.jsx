@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FormMini from "../../components/FormMini/FormMini";
 
 import ListServiceCardMini from "../../components/ListServiceCardMini/ListServiceCardMini";
@@ -7,10 +8,11 @@ const ServiceLayout = ({
   serviceLayoutHeading = "",
   serviceLayoutText = [],
   currentService = "",
+  horizontalImageUrl = "",
 }) => {
   return (
-    <div className="servicelayout">
-      <h1 className="heading-secondary">{serviceLayoutHeading}</h1>
+    <div className="servicelayout container">
+      <h2 className="heading-secondary">{serviceLayoutHeading}</h2>
 
       {serviceLayoutText ? (
         <div className="servicelayout__text">

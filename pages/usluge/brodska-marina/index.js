@@ -9,6 +9,7 @@ import marina1 from "../../../public/images/boat-marina/boat-marina-1.jpg";
 import sr from "../../../locales/sr";
 import en from "../../../locales/en";
 import { smoothScrollToForm } from "../../../helpers/helperFunctions";
+import PageLayout from "../../../layout/PageLayout/PageLayout";
 
 const Marina = () => {
   const { locale } = useRouter();
@@ -32,25 +33,31 @@ const Marina = () => {
         />
       </Head>
       <article className="pagemarina">
-        <ServiceLayout
-          currentService="marina"
-          serviceLayoutHeading={t.common.shipMarina}
-          serviceLayoutText={[
-            t.pages.boatMarina.subheading1,
-            t.pages.boatMarina.subheading2,
-          ]}
+        <PageLayout
+          heading={t.common.shipMarina}
+          pageLayoutSummary={t.common.anchorTheVessel}
+          backgroundImageUrl={marina1}
         >
-          <NavigationButton
-            navigationButtonLabel={t.common.contact}
-            onButtonClick={smoothScrollToForm}
-            darkMode={true}
-          />
+          <ServiceLayout
+            currentService="marina"
+            serviceLayoutHeading={t.common.shipMarina}
+            serviceLayoutText={[
+              t.pages.boatMarina.subheading1,
+              t.pages.boatMarina.subheading2,
+            ]}
+          >
+            <NavigationButton
+              navigationButtonLabel={t.common.contact}
+              onButtonClick={smoothScrollToForm}
+              darkMode={true}
+            />
 
-          <section className="pagemarina__images">
-            <Image src={marina} alt="hotel Svetionik brodska marina" />
-            <Image src={marina1} alt="hotel Svetionik brodska marina" />
-          </section>
-        </ServiceLayout>
+            <section className="pagemarina__images">
+              <Image src={marina} alt="hotel Svetionik brodska marina" />
+              <Image src={marina1} alt="hotel Svetionik brodska marina" />
+            </section>
+          </ServiceLayout>
+        </PageLayout>
       </article>
     </>
   );

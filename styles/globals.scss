@@ -5,13 +5,14 @@
 @import "base/base";
 @import "base/typography";
 
-@import "components/carousel";
 @import "components/footersection";
 @import "components/form";
 @import "components/formfield";
 @import "components/formmini";
 @import "components/formstatus";
 @import "components/galleryalbumcard";
+@import "components/hero-section";
+@import "components/hotel-content-card";
 @import "components/listservicecardmini";
 @import "components/navigationbutton";
 @import "components/navigationlink";
@@ -20,13 +21,17 @@
 @import "components/roomcard";
 @import "components/roomminicard";
 @import "components/sectionaboutus";
+@import "components/section-about-hotel";
 @import "components/sectioncontact";
 @import "components/sectiongallery";
+@import "components/section-hotel-content";
 @import "components/sectionnews";
 @import "components/sectionrooms";
 @import "components/sectionservices";
-@import "components/servicecard";
+@import "components/service-card";
 @import "components/servicecardmini";
+@import "components/servicessubmenu";
+@import "components/text-with-background-image";
 
 @import "layout/footer";
 @import "layout/header";

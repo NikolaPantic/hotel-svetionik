@@ -9,11 +9,13 @@ const PageLayout = ({
       <div
         className="pagelayout__heading"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(153,153,153, 0.7), rgba(10,10,10, 0.7)), url(${backgroundImageUrl.src})`,
+          backgroundImage: `linear-gradient(to right, rgba(20,20,20, 0.7), rgba(10,10,10, 0.7)), url(${backgroundImageUrl.src})`,
         }}
       >
-        <h1 className="heading-secondary">{heading}</h1>
-        <p className="pagelayout__heading--summary">{pageLayoutSummary}</p>
+        <div className="pagelayout__heading-wrapper">
+          <h1 className="heading-secondary">{heading}</h1>
+          <p className="pagelayout__heading--summary">{pageLayoutSummary}</p>
+        </div>
       </div>
       <div className="pagelayout__content">{children}</div>
     </div>

@@ -9,7 +9,8 @@
     align-self: flex-start;
     padding: 0.5rem 0;
     @media only screen and (max-width: 1024px) {
-      font-size: 1.2rem;
+      font-size: 14px;
+      font-weight: 600;
     }
   }
 
@@ -29,7 +30,7 @@
       height: 2rem;
       font-size: 1.2rem;
       &::placeholder {
-        font-size: 1rem;
+        font-size: 14px;
       }
     }
   }

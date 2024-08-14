@@ -1,0 +1,107 @@
+.section-hotel-content {
+  padding: 50px 0;
+
+  &__services-heading {
+    @media only screen and (max-width: 1024px) {
+      text-align: center;
+    }
+  }
+
+  &__main-content {
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 1024px) {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .section-hotel-content__services {
+      flex: 0 0 50%;
+
+      .section-hotel-content__service-list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+          width: 45%;
+        }
+      }
+    }
+    .section-hotel-content__images {
+      flex: 0 0 45%;
+      position: relative;
+
+      .section-hotel-content__image {
+        height: auto;
+        position: absolute;
+        width: 50%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+        border-radius: 2px;
+        z-index: 10;
+        transition: all 0.5s;
+        outline-offset: 0.3rem;
+
+        @media only screen and (max-width: 1024px) {
+          align-self: stretch;
+          position: relative;
+          width: 30%;
+          height: auto;
+          box-shadow: none;
+          border: none;
+          outline-offset: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+          width: 98%;
+          margin: 1%;
+        }
+
+        &--1 {
+          left: 0;
+          top: 30%;
+          @media only screen and (max-width: 1024px) {
+            top: auto;
+            left: auto;
+          }
+        }
+
+        &--2 {
+          right: 15%;
+          top: 35%;
+          @media only screen and (max-width: 1024px) {
+            top: auto;
+            right: auto;
+          }
+        }
+        &--3 {
+          left: 30%;
+          top: 10%;
+          @media only screen and (max-width: 1024px) {
+            top: auto;
+            left: auto;
+          }
+        }
+
+        &:hover {
+          transform: scale(1.2);
+          box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+          z-index: 11;
+
+          @media only screen and (max-width: 1024px) {
+            outline: none;
+            transform: none;
+            box-shadow: none;
+            z-index: 1;
+          }
+        }
+      }
+
+      &:hover &image:not(:hover) {
+        transform: scale(0.95) translateY(-0.5rem);
+      }
+    }
+  }
+}

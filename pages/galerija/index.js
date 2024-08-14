@@ -2,29 +2,27 @@ import Head from "next/head";
 import PageLayout from "../../layout/PageLayout/PageLayout";
 import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
-import food from "../../public/images/food.jpg";
 import gallery from "../../public/images/gallery.jpg";
 
 import restaurant1 from "../../public/images/restaurant/restaurant-inside-3.jpg";
 import restaurant2 from "../../public/images/restaurant/restaurant-inside-2.jpg";
 import restaurant3 from "../../public/images/restaurant/restaurant-inside-1.jpg";
-import restaurant4 from "../../public/images/restaurant/restaurant-inside-4.jpg";
-import restaurant5 from "../../public/images/restaurant/restaurant-inside-6.jpg";
-import restaurant6 from "../../public/images/restaurant/restaurant-inside-7.jpg";
-import restaurant7 from "../../public/images/restaurant/restaurant-inside-11.jpg";
-import restaurant8 from "../../public/images/restaurant/restaurant-outside-1.jpg";
-import restaurant9 from "../../public/images/restaurant/restaurant-outside-3.jpg";
-import restaurant10 from "../../public/images/restaurant/restaurant-outside-2.jpg";
-import restaurant11 from "../../public/images/restaurant/restaurant-outside-5.jpg";
-import restaurant12 from "../../public/images/restaurant/restaurant-outside-7.jpg";
-import restaurant13 from "../../public/images/restaurant/restaurant-outside-9.jpg";
-import restaurant14 from "../../public/images/restaurant/restaurant-outside-10.jpg";
-import restaurant16 from "../../public/images/restaurant/restaurant-outside-13.jpg";
-import restaurant17 from "../../public/images/restaurant/restaurant-outside-menu.jpg";
-import restaurant18 from "../../public/images/restaurant/restaurant-outside-view-2.jpg";
-import restaurant19 from "../../public/images/restaurant/restaurant-outside-15.jpg";
-import restaurant21 from "../../public/images/restaurant/restaurant-outside-3.jpg";
-import restaurant22 from "../../public/images/restaurant/restaurant-outside-11.jpg";
+import restaurant4 from "../../public/images/restaurant/restaurant-inside-12.jpg";
+import restaurant5 from "../../public/images/restaurant/restaurant-inside-13.jpg";
+import restaurant6 from "../../public/images/restaurant/restaurant-outside-1.jpg";
+import restaurant7 from "../../public/images/restaurant/restaurant-outside-3.jpg";
+import restaurant8 from "../../public/images/restaurant/restaurant-outside-2.jpg";
+import restaurant9 from "../../public/images/restaurant/restaurant-outside-5.jpg";
+import restaurant10 from "../../public/images/restaurant/restaurant-outside-7.jpg";
+import restaurant11 from "../../public/images/restaurant/restaurant-outside-9.jpg";
+import restaurant12 from "../../public/images/restaurant/restaurant-outside-10.jpg";
+import restaurant13 from "../../public/images/restaurant/restaurant-outside-13.jpg";
+import restaurant14 from "../../public/images/restaurant/restaurant-outside-15.jpg";
+import restaurant15 from "../../public/images/restaurant/restaurant-outside-3.jpg";
+import restaurant16 from "../../public/images/restaurant/restaurant-outside-11.jpg";
+import restaurant17 from "../../public/images/restaurant/restaurant-outside-16.jpg";
+import restaurant18 from "../../public/images/restaurant/restaurant-outside-17-medium.jpg";
+import restaurant19 from "../../public/images/restaurant/restaurant-outside-18.jpg";
 
 import wineCellar1 from "../../public/images/wine-cellar/wine-cellar.jpg";
 import wineCellar2 from "../../public/images/wine-cellar/wine-cellar-entrance.jpg";
@@ -84,6 +82,23 @@ import foodImage23 from "../../public/images/food/food-and-wine-7.jpg";
 import foodImage24 from "../../public/images/food/food-and-wine-8.jpg";
 import foodImage25 from "../../public/images/food/food-rakija.jpg";
 import foodImage26 from "../../public/images/food/food-rakija-2.jpg";
+import foodImage27 from "../../public/images/food/food-fish-4.jpg";
+import foodImage28 from "../../public/images/food/food-fish-5.jpg";
+import foodImage29 from "../../public/images/food/food-fish-6.jpg";
+import foodImage30 from "../../public/images/food/food-fish-7.jpg";
+import foodImage31 from "../../public/images/food/food-fish-8.jpg";
+import foodImage32 from "../../public/images/food/food-fish-9.jpg";
+import foodImage33 from "../../public/images/food/food-bbq.jpg";
+import foodImage34 from "../../public/images/food/food-bbq-2.jpg";
+import foodImage35 from "../../public/images/food/food-bbq-3.jpg";
+import foodImage36 from "../../public/images/food/food-salad-3.jpg";
+import foodImage37 from "../../public/images/food/food-pasta-3.jpg";
+import foodImage38 from "../../public/images/food/food-pasta-4.jpg";
+import foodImage39 from "../../public/images/food/food-cake-3.jpg";
+import foodImage40 from "../../public/images/food/food-cake-4.jpg";
+import foodImage41 from "../../public/images/food/food-starter.jpg";
+import foodImage42 from "../../public/images/food/food-starter-2.jpg";
+import foodImage43 from "../../public/images/food/food-starter-3.jpg";
 
 import celebrationsImage from "../../public/images/celebrations/banquet-hall.jpg";
 import celebrationsImage1 from "../../public/images/celebrations/banquet-hall-1.jpg";
@@ -107,6 +122,17 @@ import celebrationsImage18 from "../../public/images/celebrations/wine-cellar-ce
 import celebrationsImage19 from "../../public/images/celebrations/wine-cellar-celebration-2.jpg";
 import celebrationsImage20 from "../../public/images/celebrations/wine-cellar-celebration-3.jpg";
 import celebrationsImage21 from "../../public/images/celebrations/wine-cellar-celebration-6.jpg";
+import celebrationsImage22 from "../../public/images/celebrations/banquet-hall-black.jpg";
+import celebrationsImage23 from "../../public/images/celebrations/banquet-hall-black-2.jpg";
+import celebrationsImage24 from "../../public/images/celebrations/banquet-hall-black-3.jpg";
+import celebrationsImage25 from "../../public/images/celebrations/banquet-hall-black-4.jpg";
+import celebrationsImage26 from "../../public/images/celebrations/banquet-hall-black-5.jpg";
+import celebrationsImage27 from "../../public/images/celebrations/banquet-hall-black-6.jpg";
+import celebrationsImage28 from "../../public/images/celebrations/banquet-hall-black-7.jpg";
+import celebrationsImage29 from "../../public/images/celebrations/banquet-hall-black-8.jpg";
+import celebrationsImage30 from "../../public/images/celebrations/banquet-hall-black-9.jpg";
+import celebrationsImage31 from "../../public/images/celebrations/banquet-hall-black-10.jpg";
+import celebrationsImage32 from "../../public/images/celebrations/banquet-hall-black-11.jpg";
 
 import { useRouter } from "next/router";
 import en from "../../locales/en";
@@ -116,9 +142,24 @@ const Gallery = () => {
   const { locale } = useRouter();
   const t = locale === "en" ? en : sr;
 
-  const images = [food, food, food];
-
   const foodImages = [
+    foodImage27,
+    foodImage28,
+    foodImage29,
+    foodImage30,
+    foodImage31,
+    foodImage32,
+    foodImage33,
+    foodImage34,
+    foodImage35,
+    foodImage36,
+    foodImage37,
+    foodImage38,
+    foodImage41,
+    foodImage42,
+    foodImage43,
+    foodImage39,
+    foodImage40,
     foodImage,
     foodImage1,
     foodImage2,
@@ -149,26 +190,24 @@ const Gallery = () => {
   ];
 
   const restaurantImages = [
-    restaurant1,
     restaurant2,
+    restaurant1,
     restaurant3,
     restaurant4,
     restaurant5,
     restaurant6,
-    restaurant7,
     restaurant8,
     restaurant9,
     restaurant10,
     restaurant11,
     restaurant12,
+    restaurant18,
     restaurant13,
     restaurant14,
+    restaurant7,
     restaurant16,
     restaurant17,
-    restaurant18,
     restaurant19,
-    restaurant21,
-    restaurant22,
   ];
 
   const wineCellarImages = [
@@ -207,6 +246,17 @@ const Gallery = () => {
   ];
 
   const celebrationsImages = [
+    celebrationsImage22,
+    celebrationsImage23,
+    celebrationsImage24,
+    celebrationsImage25,
+    celebrationsImage26,
+    celebrationsImage27,
+    celebrationsImage28,
+    celebrationsImage29,
+    celebrationsImage30,
+    celebrationsImage31,
+    celebrationsImage32,
     celebrationsImage,
     celebrationsImage1,
     celebrationsImage2,
@@ -254,55 +304,57 @@ const Gallery = () => {
           backgroundImageUrl={gallery}
           pageLayoutSummary={t.pages.gallery.subheading}
         >
-          <section className="pagegallery__album" id="proslave">
-            <h2 className="heading-small">{t.common.weddingCelebrations}</h2>
-            <div className="pagegallery__album--carousel">
-              <Carousel
-                images={celebrationsImages}
-                shouldMaximizeOnClick={true}
-                shouldLazyLoad={false}
-              />
-            </div>
-          </section>
-          <section className="pagegallery__album" id="restoran">
-            <h2 className="heading-small">
-              {t.common.restaurantAndSummerGarden}
-            </h2>
-            <div className="pagegallery__album--carousel">
-              <Carousel
-                images={restaurantImages}
-                shouldMaximizeOnClick={true}
-              />
-            </div>
-          </section>
+          <div className="pagegallery__albums-wrapper container">
+            <section className="pagegallery__album" id="proslave">
+              <h2 className="heading-small">{t.common.weddingCelebrations}</h2>
+              <div className="pagegallery__album--carousel">
+                <Carousel
+                  images={celebrationsImages}
+                  shouldMaximizeOnClick={true}
+                  shouldLazyLoad={false}
+                />
+              </div>
+            </section>
+            <section className="pagegallery__album" id="restoran">
+              <h2 className="heading-small">
+                {t.common.restaurantAndSummerGarden}
+              </h2>
+              <div className="pagegallery__album--carousel">
+                <Carousel
+                  images={restaurantImages}
+                  shouldMaximizeOnClick={true}
+                />
+              </div>
+            </section>
 
-          <section className="pagegallery__album" id="hrana">
-            <h2 className="heading-small">{t.common.food}</h2>
-            <div className="pagegallery__album--carousel">
-              <Carousel images={foodImages} shouldMaximizeOnClick={true} />
-            </div>
-          </section>
-          <section className="pagegallery__album" id="vinski-podrum">
-            <h2 className="heading-small">{t.common.wineCellar}</h2>
-            <div className="pagegallery__album--carousel">
-              <Carousel
-                images={wineCellarImages}
-                shouldMaximizeOnClick={true}
-              />
-            </div>
-          </section>
-          <section className="pagegallery__album" id="sobe">
-            <h2 className="heading-small">{t.common.rooms}</h2>
-            <div className="pagegallery__album--carousel">
-              <Carousel images={roomsImages} shouldMaximizeOnClick={true} />
-            </div>
-          </section>
-          {/* <section className="pagegallery__album" id="nagrade">
+            <section className="pagegallery__album" id="hrana">
+              <h2 className="heading-small">{t.common.food}</h2>
+              <div className="pagegallery__album--carousel">
+                <Carousel images={foodImages} shouldMaximizeOnClick={true} />
+              </div>
+            </section>
+            <section className="pagegallery__album" id="vinski-podrum">
+              <h2 className="heading-small">{t.common.wineCellar}</h2>
+              <div className="pagegallery__album--carousel">
+                <Carousel
+                  images={wineCellarImages}
+                  shouldMaximizeOnClick={true}
+                />
+              </div>
+            </section>
+            <section className="pagegallery__album" id="sobe">
+              <h2 className="heading-small">{t.common.rooms}</h2>
+              <div className="pagegallery__album--carousel">
+                <Carousel images={roomsImages} shouldMaximizeOnClick={true} />
+              </div>
+            </section>
+            {/* <section className="pagegallery__album" id="nagrade">
             <h2 className="heading-small">{t.common.awards}</h2>
             <div className="pagegallery__album--carousel">
               <Carousel images={images} shouldMaximizeOnClick={true} />
             </div>
           </section> */}
+          </div>
         </PageLayout>
       </article>
     </>
