@@ -1,0 +1,141 @@
+.services-submenu {
+  padding: 2rem;
+  width: 90vw;
+  min-height: 30rem;
+  position: absolute;
+  top: 3rem;
+  left: -240px;
+  background-color: $color-white;
+  transform: scaleY(0);
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: top;
+  transition: all 0.5s;
+  display: grid;
+  grid-template-columns: 40% 50%;
+  gap: 10%;
+  padding: 20px;
+  overflow-y: scroll;
+
+  @media only screen and (max-width: 1440px) {
+    left: -150px;
+  }
+
+  @media only screen and (min-width: 1650px) {
+    left: -20vw;
+  }
+
+  @media only screen and (min-width: 2000px) {
+    left: -25vw;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: left;
+  }
+
+  .services-submenu__card-heading {
+    font-size: 14px;
+    margin: 0;
+    text-align: left;
+    text-transform: none;
+  }
+
+  @media only screen and (min-width: 1650px) {
+    left: -20vw;
+  }
+
+  &__rooms {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .services-submenu__room-cards {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .services-submenu__room-card {
+        flex: 1 1 40%;
+        display: flex;
+        flex-direction: column;
+        max-height: 12rem;
+
+        &:nth-child(3) {
+          flex-basis: 100%;
+        }
+
+        .services-submenu__room-image {
+          border-radius: 10px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 100%;
+            height: auto;
+            transition: all 0.5s;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__other-services {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .services-submenu__service-cards {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .services-submenu__service-card {
+        flex: 0 0 45%;
+        padding: 10px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+
+        &:hover img {
+          transform: translate(-50%, -50%) scale(1.25);
+          filter: brightness(100%);
+        }
+
+        &:hover .services-submenu__service-description {
+          filter: brightness(80%);
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(1.2);
+          filter: brightness(70%);
+          transition: all 0.5s;
+        }
+        .services-submenu__service-description {
+          position: relative;
+          color: $color-white;
+          z-index: 1;
+          transition: all 0.5s;
+
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

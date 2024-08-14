@@ -1,0 +1,33 @@
+.hotel-content-card {
+  padding: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  &__icon {
+    width: 3rem;
+
+    @media only screen and (max-width: 1024px) {
+      width: 2rem;
+    }
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__heading {
+    font-size: 22px;
+    margin-bottom: 0;
+    text-align: left;
+
+    @media only screen and (max-width: 1024px) {
+      font-size: 16px;
+    }
+  }
+
+  &__description {
+    flex: 3;
+  }
+}

@@ -4,6 +4,12 @@
   align-items: center;
   align-self: stretch;
 
+  &__roomcards {
+    @media only screen and (max-width: 1024px) {
+      margin-bottom: 50px;
+    }
+  }
+
   &__introduction {
     max-width: 70%;
   }

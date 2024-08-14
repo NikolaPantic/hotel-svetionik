@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import CarouselComponent from "../components/Carousel/Carousel";
+import HeroSection from "../components/HeroSection/HeroSection.jsx";
 import SectionAboutUs from "../components/SectionAboutUs/SectionAboutUs.jsx";
 import SectionRooms from "../components/SectionRooms/SectionRooms";
 import SectionServices from "../components/SectionServices/SectionServices";
@@ -9,6 +9,9 @@ import SectionNews from "../components/SectionNews/SectionNews";
 import SectionContact from "../components/SectionContact/SectionContact";
 import sr from "../locales/sr";
 import en from "../locales/en";
+import TextWithBackgroundImage from "../components/TextWithBackgroundImage/TextWithBackgroundImage.jsx";
+import SectionHotelContent from "../components/SectionHotelContent/SectionHotelContent.jsx";
+import SectionAboutHotel from "../components/SectionAboutHotel/SectionAboutHotel.jsx";
 
 export default function Home() {
   const { locale } = useRouter();
@@ -30,13 +33,16 @@ export default function Home() {
           content={t.metadata.landingPage.title}
         />
       </Head>
-      <article className="landingpage">
-        <CarouselComponent />
+      <article className="landing-page">
+        <HeroSection />
         <SectionAboutUs />
+        <SectionAboutHotel />
+        <SectionHotelContent />
         <SectionRooms />
+        <TextWithBackgroundImage />
         <SectionServices />
         <SectionGallery />
-        <SectionNews />
+        {/* <SectionNews /> */}
         <SectionContact />
       </article>
     </div>

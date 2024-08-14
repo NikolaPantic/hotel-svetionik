@@ -5,26 +5,14 @@ import PageLayout from "../../layout/PageLayout/PageLayout";
 import NavigationButton from "../../components/NavigationButton/NavigationButton";
 import FormMini from "../../components/FormMini/FormMini";
 import reservation from "../../public/images/reservation.jpg";
-import room1 from "../../public/images/rooms/single/single-room-medium.jpg";
-import room2 from "../../public/images/rooms/double/double-room-medium.jpg";
-import room3 from "../../public/images/rooms/superior/superior-room-bathroom-2-medium.jpg";
-import room4 from "../../public/images/rooms/superior/superior-room-beds-medium.jpg";
-import weddingHall from "../../public/images/celebrations/banquet-hall-1-medium.jpg";
-import weddingHall1 from "../../public/images/celebrations/banquet-hall-5-medium.jpg";
-import weddingHall2 from "../../public/images/celebrations/banquet-hall-7-medium.jpg";
+import room3 from "../../public/images/rooms/superior/superior-room-7.jpg";
 import weddingHall3 from "../../public/images/celebrations/banquet-hall-2-medium.jpg";
-import restaurant1 from "../../public/images/restaurant/restaurant-inside-3-medium.jpg";
-import restaurant2 from "../../public/images/restaurant/restaurant-inside-7-medium.jpg";
-import restaurant3 from "../../public/images/restaurant/restaurant-outside-1-medium.jpg";
-import restaurant4 from "../../public/images/restaurant/restaurant-outside-view-2-medium.jpg";
+import restaurant4 from "../../public/images/restaurant/restaurant-inside-12.jpg";
 import wineCellar1 from "../../public/images/wine-cellar/wine-cellar-medium.jpg";
 import wineCellar2 from "../../public/images/wine-cellar/wine-cellar-4-medium.jpg";
 import wineCellar3 from "../../public/images/wine-cellar/wine-cellar-hall-medium.jpg";
 import wineCellar4 from "../../public/images/wine-cellar/wine-cellar-wall-1-medium.jpg";
-import boatMarina from "../../public/images/boat-marina/boat-marina.jpg";
-import boatMarina1 from "../../public/images/boat-marina/boat-marina-1.jpg";
-import boatMarina2 from "../../public/images/boat-marina/boat-marina-2.jpg";
-import boatMarina3 from "../../public/images/boat-marina/boat-marina-3.jpg";
+import boatMarina from "../../public/images/boat-marina/boat-marina-5.jpg";
 import en from "../../locales/en";
 import sr from "../../locales/sr";
 
@@ -57,12 +45,36 @@ const Services = () => {
           backgroundImageUrl={reservation}
           pageLayoutSummary={t.pages.services.subheading}
         >
-          <section className="pageservices__section">
-            <h2 className="heading-small">{t.common.roomsBooking}</h2>
-            <p className="pageservices__section--text">
-              {t.pages.services.text1}
-            </p>
-            <div className="pageservices__section--images">
+          <section className="pageservices__service-section container">
+            <div className="pageservices__service-content">
+              <h2 className="heading-small">{t.common.roomsBooking}</h2>
+              <p className="pageservices__service-description">
+                {t.pages.services.text1}
+              </p>
+              <div className="pageservices__additional-info">
+                <div className="pageservices__info-item">
+                  <span>15</span>
+                  <span>{t.common.roomsInhotel}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>1-8</span>
+                  <span>{t.common.personsPerRoom}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>2</span>
+                  <span>{t.common.apartmentsWithJacuzzi}</span>
+                </div>
+              </div>
+              <NavigationButton
+                navigationButtonLabel={t.buttons.details}
+                navigationButtonLink="/usluge/sobe"
+              />
+            </div>
+            <div className="pageservices__service-image">
+              <Image src={room3} alt="Hotel Svetionik izdavanje soba" />
+            </div>
+
+            {/* <div className="pageservices__section--images">
               <div className="pageservices__section--images--single-image">
                 <Image src={room1} alt="Hotel Svetionik jednokrevetna soba" />
               </div>
@@ -84,8 +96,8 @@ const Services = () => {
                   alt="Hotel Svetionik superior apartman sa đakuzijem"
                 />
               </div>
-            </div>
-            <div className="pageservices__section--buttons">
+            </div> */}
+            {/* <div className="pageservices__section--buttons">
               <NavigationButton
                 navigationButtonLabel={t.buttons.details}
                 navigationButtonLink="/usluge/sobe"
@@ -96,9 +108,202 @@ const Services = () => {
                 navigationButtonLabel={t.common.gallery}
                 navigationButtonLink="/galerija#sobe"
               />
+            </div> */}
+          </section>
+
+          <section className="pageservices__service-section container">
+            <div className="pageservices__service-content">
+              <h2 className="heading-small">{t.common.celebrations}</h2>
+              <p className="pageservices__service-description">
+                {t.pages.services.text2}
+              </p>
+              <div className="pageservices__additional-info">
+                <div className="pageservices__info-item">
+                  <span>2</span>
+                  <span>{t.common.celebrationHalls}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>400</span>
+                  <span>{t.common.maximumNumberOfGuests}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>{t.common.uponRequest}</span>
+                  <span>{t.common.celebrationInTheWineCellar}</span>
+                </div>
+              </div>
+              <NavigationButton
+                navigationButtonLabel={t.buttons.details}
+                navigationButtonLink="/usluge/proslave"
+              />
+            </div>
+            <div className="pageservices__service-image">
+              <Image src={weddingHall3} alt="Hotel Svetionik izdavanje soba" />
             </div>
           </section>
-          <section className="pageservices__section pageservices__section--celebrations">
+
+          <section className="pageservices__service-section container">
+            <div className="pageservices__service-content">
+              <h2 className="heading-small">{t.common.restaurant}</h2>
+              <p className="pageservices__service-description">
+                {t.pages.services.text3}
+              </p>
+              <div className="pageservices__additional-info">
+                <div className="pageservices__info-item">
+                  <span>50+</span>
+                  <span>{t.common.differentDishes}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>200</span>
+                  <span>{t.common.seats}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>2</span>
+                  <span>{t.common.diningRooms}</span>
+                </div>
+              </div>
+              <NavigationButton
+                navigationButtonLabel={t.buttons.details}
+                navigationButtonLink="/usluge/restoran"
+              />
+            </div>
+            <div className="pageservices__service-image">
+              <Image src={restaurant4} alt="Hotel Svetionik izdavanje soba" />
+            </div>
+
+            {/* <div className="pageservices__section--images">
+              <div className="pageservices__section--images--single-image">
+                <Image src={room1} alt="Hotel Svetionik jednokrevetna soba" />
+              </div>
+              <div className="pageservices__section--images--single-image">
+                <Image
+                  src={room2}
+                  alt="Hotel Svetionik soba sa pomoćnim ležajem"
+                />
+              </div>
+              <div className="pageservices__section--images--single-image">
+                <Image
+                  src={room3}
+                  alt="Hotel Svetionik superior apartman sa đakuzijem"
+                />
+              </div>
+              <div className="pageservices__section--images--single-image">
+                <Image
+                  src={room4}
+                  alt="Hotel Svetionik superior apartman sa đakuzijem"
+                />
+              </div>
+            </div> */}
+            {/* <div className="pageservices__section--buttons">
+              <NavigationButton
+                navigationButtonLabel={t.buttons.details}
+                navigationButtonLink="/usluge/sobe"
+                darkMode={true}
+              />
+
+              <NavigationButton
+                navigationButtonLabel={t.common.gallery}
+                navigationButtonLink="/galerija#sobe"
+              />
+            </div> */}
+          </section>
+
+          <section className="pageservices__service-section container">
+            <div className="pageservices__service-content">
+              <h2 className="heading-small">{t.common.shipMarina}</h2>
+              <p className="pageservices__service-description">
+                {t.pages.services.text4}
+              </p>
+              <div className="pageservices__additional-info">
+                <div className="pageservices__info-item">
+                  <span>{t.common.forFree}</span>
+                  <span>{t.common.forHotelGuests}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>20</span>
+                  <span>{t.common.berthsForVessels}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>{t.common.uponRequest}</span>
+                  <span>{t.common.multiDayRental}</span>
+                </div>
+              </div>
+              <NavigationButton
+                navigationButtonLabel={t.buttons.details}
+                navigationButtonLink="/usluge/brodska-marina"
+              />
+            </div>
+            <div className="pageservices__service-image">
+              <Image src={boatMarina} alt="Hotel Svetionik izdavanje soba" />
+            </div>
+          </section>
+
+          <section className="pageservices__service-section container">
+            <div className="pageservices__service-content">
+              <h2 className="heading-small">{t.common.wineCellar}</h2>
+              <p className="pageservices__service-description">
+                {t.pages.services.text5}
+              </p>
+              <div className="pageservices__additional-info">
+                <div className="pageservices__info-item">
+                  <span>60+</span>
+                  <span>{t.common.varietiesOfWine}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>60</span>
+                  <span>{t.common.seats}</span>
+                </div>
+                <div className="pageservices__info-item">
+                  <span>{t.common.unlimited}</span>
+                  <span>{t.common.enjoyingGoodTastes}</span>
+                </div>
+              </div>
+              <NavigationButton
+                navigationButtonLabel={t.buttons.details}
+                navigationButtonLink="/usluge/vinski-podrum"
+              />
+            </div>
+            <div className="pageservices__service-image">
+              <Image src={wineCellar1} alt="Hotel Svetionik vinski podrum" />
+            </div>
+
+            {/* <div className="pageservices__section--images">
+              <div className="pageservices__section--images--single-image">
+                <Image src={room1} alt="Hotel Svetionik jednokrevetna soba" />
+              </div>
+              <div className="pageservices__section--images--single-image">
+                <Image
+                  src={room2}
+                  alt="Hotel Svetionik soba sa pomoćnim ležajem"
+                />
+              </div>
+              <div className="pageservices__section--images--single-image">
+                <Image
+                  src={room3}
+                  alt="Hotel Svetionik superior apartman sa đakuzijem"
+                />
+              </div>
+              <div className="pageservices__section--images--single-image">
+                <Image
+                  src={room4}
+                  alt="Hotel Svetionik superior apartman sa đakuzijem"
+                />
+              </div>
+            </div> */}
+            {/* <div className="pageservices__section--buttons">
+              <NavigationButton
+                navigationButtonLabel={t.buttons.details}
+                navigationButtonLink="/usluge/sobe"
+                darkMode={true}
+              />
+
+              <NavigationButton
+                navigationButtonLabel={t.common.gallery}
+                navigationButtonLink="/galerija#sobe"
+              />
+            </div> */}
+          </section>
+
+          {/* <section className="pageservices__section pageservices__section--celebrations">
             <h2 className="heading-small">{t.common.celebrations}</h2>
             <p className="pageservices__section--text">
               {t.pages.services.text2}
@@ -216,7 +421,7 @@ const Services = () => {
                 navigationButtonLink="/galerija#vinski-podrum"
               />
             </div>
-          </section>
+          </section> */}
           <FormMini />
         </PageLayout>
       </article>

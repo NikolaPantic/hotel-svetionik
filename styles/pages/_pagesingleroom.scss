@@ -1,4 +1,8 @@
 .room {
+  .pagelayout__content {
+    padding-top: 0;
+  }
+
   &__content {
     padding: 2rem 0;
     display: flex;
@@ -129,6 +133,12 @@
           height: 1rem;
           width: auto;
         }
+      }
+    }
+
+    &--text {
+      @media only screen and (max-width: 1024px) {
+        padding: 0 1rem;
       }
     }
   }

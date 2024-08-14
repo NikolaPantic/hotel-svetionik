@@ -5,7 +5,7 @@ import PageLayout from "../../layout/PageLayout/PageLayout";
 import hotel from "../../public/images/hotel/hotel-svetionik-medium.jpg";
 import hotelBackgroundImage from "../../public/images/hotel/hotel-svetionik.jpg";
 import hotel2 from "../../public/images/hotel/hotel-svetionik-2-medium.jpg";
-import garden from "../../public/images/restaurant/restaurant-outside-8.jpg";
+import garden from "../../public/images/restaurant/restaurant-outside-17-medium.jpg";
 import food from "../../public/images/food/food-breakfast-medium.jpg";
 import weddingHall from "../../public/images/celebrations/banquet-hall-7-medium.jpg";
 import wineCellar from "../../public/images/wine-cellar/wine-cellar-medium.jpg";

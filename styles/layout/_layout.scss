@@ -1,8 +1,17 @@
 .layout {
-  margin-top: 15vh;
-  width: 90%;
+  width: 100%;
+  max-width: 100%;
 
   @media only screen and (max-width: 1024px) {
     margin-top: 10vh;
   }
+}
+
+.down-arrow {
+  height: 1rem;
+  width: 0.7rem;
+  background-image: url("../../public/svg/down-arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }

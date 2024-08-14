@@ -1,127 +1,95 @@
-.sectionaboutus {
-  background-image: linear-gradient(
-      to right,
-      rgba($color-white, 0.8),
-      rgba($color-white, 0.8)
-    ),
-    url("../../public/images/hotel-background.jpg");
+.section-about-us {
+  @media only screen and (max-width: 1024px) {
+    padding-bottom: 50px !important;
+  }
 
-  &__content {
+  .carousel-item {
+    height: 400px;
+    width: auto;
+
+    @media only screen and (max-width: 768px) {
+      height: 200px;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+
+    @media only screen and (max-width: 768px) {
+      padding: 3rem 1rem;
+    }
+
+    .section-about-us__intro-image {
+      color: $color-primary;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    .section-about-us__intro-text {
+      font-family: "Marcellus", serif;
+      font-weight: 700;
+      line-height: 1.2;
+      font-size: 30px;
+      max-width: 900px;
+      text-align: center;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__box {
+    padding: 2rem 0;
     flex: 1;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-self: stretch;
+    justify-content: space-between;
 
     @media only screen and (max-width: 1024px) {
       flex-direction: column;
     }
+  }
 
-    &--text-and-button {
-      flex: 0 0 33%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      align-self: stretch;
+  &__content {
+    padding: 1rem;
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    align-self: stretch;
+
+    p {
+      margin-bottom: 10px;
     }
+  }
 
-    &--text {
-      width: 95%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 0;
+  &__image {
+    position: relative;
 
-      & > p {
-        text-align: left;
-        align-self: stretch;
-      }
-    }
-
-    &--images {
-      position: relative;
-      flex: 0 0 50%;
-      align-self: stretch;
-
-      @media only screen and (max-width: 1024px) {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        padding: 2rem 0;
-      }
-      @media only screen and (max-width: 768px) {
-        flex-wrap: wrap;
-      }
-    }
-
-    &--image {
+    &:before {
+      content: "";
       position: absolute;
-      width: 50%;
-      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
-      border-radius: 2px;
-      z-index: 10;
-      transition: all 0.2s;
-      outline-offset: 0.3rem;
-
-      @media only screen and (max-width: 1024px) {
-        align-self: stretch;
-        position: relative;
-        width: 30%;
-        height: auto;
-        box-shadow: none;
-        border: none;
-        outline-offset: 0;
-      }
-
-      @media only screen and (max-width: 768px) {
-        width: 98%;
-        margin: 1%;
-      }
-
-      &--1 {
-        left: 0;
-        top: 30%;
-        @media only screen and (max-width: 1024px) {
-          top: auto;
-          left: auto;
-        }
-      }
-
-      &--2 {
-        right: 15%;
-        top: 35%;
-        @media only screen and (max-width: 1024px) {
-          top: auto;
-          right: auto;
-        }
-      }
-      &--3 {
-        left: 30%;
-        top: 10%;
-        @media only screen and (max-width: 1024px) {
-          top: auto;
-          left: auto;
-        }
-      }
-
-      &:hover {
-        outline: 0.2rem solid $color-primary;
-        transform: scale(1.05);
-        box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
-        z-index: 11;
-
-        @media only screen and (max-width: 1024px) {
-          outline: none;
-          transform: none;
-          box-shadow: none;
-          z-index: 1;
-        }
-      }
+      top: 20px;
+      left: 20px;
+      height: 100%;
+      width: 100%;
+      background-color: $color-primary-light;
     }
 
-    &:hover &image:not(:hover) {
-      transform: scale(0.95) translateY(-0.5rem);
+    img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
     }
   }
 }
