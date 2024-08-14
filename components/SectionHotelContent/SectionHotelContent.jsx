@@ -14,6 +14,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import sr from "../../locales/sr";
 import en from "../../locales/en";
+import Link from "next/link";
 
 const SectionHotelContent = () => {
   const { locale } = useRouter();
@@ -85,9 +86,9 @@ const SectionHotelContent = () => {
             </li>
           </ul>
 
-          <a className="backlink" href="/usluge">
-            Pogledajte sve usluge
-          </a>
+          <Link className="backlink" href="/usluge">
+            {t.common.viewAllServices}
+          </Link>
         </div>
         <div className="section-hotel-content__images">
           <Image

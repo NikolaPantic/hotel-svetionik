@@ -106,6 +106,7 @@ const sr = {
     unlimited: "neograničeno",
     enjoyingGoodTastes: "uživanje u dobrim ukusima",
     berthsForVessels: "mesta za plovila",
+    viewAllServices: "Pogledajte sve usluge",
   },
   carousel: {
     slide1Subheading: "Dobrodošli!",

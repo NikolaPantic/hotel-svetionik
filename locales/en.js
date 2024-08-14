@@ -114,6 +114,7 @@ const en = {
     unlimited: "unlimited",
     enjoyingGoodTastes: "enjoying good tastes",
     berthsForVessels: "berths for vessels",
+    viewAllServices: "View all services",
   },
 
   carousel: {

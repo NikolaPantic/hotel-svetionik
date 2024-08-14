@@ -67,7 +67,7 @@ const Restaurant = () => {
           >
             <div className="pagerestaurant__section">
               <div className="pagerestaurant__side-image">
-                <Image src={restaurantOutside} />
+                <Image src={restaurantOutside} alt="Hotel Svetionik restoran" />
               </div>
               <div className="pagerestaurant__main-content">
                 <p>{t.pages.restaurant.subheading2}</p>
@@ -80,7 +80,7 @@ const Restaurant = () => {
                 </div>
               </div>
               <div className="pagerestaurant__side-image">
-                <Image src={aperol} />
+                <Image src={aperol} alt="Hotel Svetionik restoran" />
               </div>
             </div>
 
@@ -91,13 +91,22 @@ const Restaurant = () => {
               </div>
               <div className="pagerestaurant__images">
                 <div className="pagerestaurant__single-image">
-                  <Image src={wineCellarDetails} />
+                  <Image
+                    src={wineCellarDetails}
+                    alt="Hotel Svetionik restoran"
+                  />
                 </div>
                 <div className="pagerestaurant__single-image">
-                  <Image src={restaurantInside} />
+                  <Image
+                    src={restaurantInside}
+                    alt="Hotel Svetionik restoran"
+                  />
                 </div>
                 <div className="pagerestaurant__single-image">
-                  <Image src={restaurantOutside1} />
+                  <Image
+                    src={restaurantOutside1}
+                    alt="Hotel Svetionik restoran"
+                  />
                 </div>
               </div>
             </div>
