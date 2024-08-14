@@ -115,7 +115,7 @@ const FormMini = () => {
                 ["invalid"]: false,
               }));
             }
-            const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+            const sanitizedValue = DOMPurify.sanitize(e.target.value);
             setName((prevState) => ({
               ...prevState,
               ["value"]: sanitizedValue,
@@ -135,7 +135,7 @@ const FormMini = () => {
                 ["invalid"]: false,
               }));
             }
-            const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+            const sanitizedValue = DOMPurify.sanitize(e.target.value);
             setPhone((prevState) => ({
               ...prevState,
               ["value"]: sanitizedValue,
@@ -155,7 +155,7 @@ const FormMini = () => {
                 ["invalid"]: false,
               }));
             }
-            const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+            const sanitizedValue = DOMPurify.sanitize(e.target.value);
             setEmail((prevState) => ({
               ...prevState,
               ["value"]: sanitizedValue,
@@ -176,7 +176,7 @@ const FormMini = () => {
                 ["invalid"]: false,
               }));
             }
-            const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+            const sanitizedValue = DOMPurify.sanitize(e.target.value);
             setMessage((prevState) => ({
               ...prevState,
               ["value"]: sanitizedValue,
