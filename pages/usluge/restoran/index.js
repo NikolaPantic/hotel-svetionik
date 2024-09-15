@@ -114,7 +114,7 @@ const Restaurant = () => {
               className="backlink pagerestaurant__menu"
               href="/assets/hotel-svetionik-jelovnik.pdf"
               target="_blank"
-              download
+              // download
             >
               <Image src={foodMenuIcon} alt="Food menu icon" />
               <p>{t.pages.restaurant.menuText}</p>
