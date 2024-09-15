@@ -67,7 +67,7 @@ const News = () => {
                         setInvalidEmail(false);
                       }
                       setSuccessfulEmail(false);
-                      const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+                      const sanitizedValue = DOMPurify.sanitize(e.target.value);
                       setEmail(sanitizedValue);
                     }}
                   />

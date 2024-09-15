@@ -152,7 +152,7 @@ const SectionContact = () => {
 
                 setName((prevState) => ({
                   ...prevState,
-                  ["value"]: e.target.value.trim(),
+                  ["value"]: e.target.value,
                 }));
               }}
               invalidField={name.invalid}
@@ -172,7 +172,7 @@ const SectionContact = () => {
 
                 setPhone((prevState) => ({
                   ...prevState,
-                  ["value"]: e.target.value.trim(),
+                  ["value"]: e.target.value,
                 }));
               }}
               invalidField={phone.invalid}
@@ -192,7 +192,7 @@ const SectionContact = () => {
 
                 setEmail((prevState) => ({
                   ...prevState,
-                  ["value"]: e.target.value.trim(),
+                  ["value"]: e.target.value,
                 }));
               }}
               invalidField={email.invalid}
@@ -213,7 +213,7 @@ const SectionContact = () => {
 
                 setMessage((prevState) => ({
                   ...prevState,
-                  ["value"]: e.target.value.trim(),
+                  ["value"]: e.target.value,
                 }));
               }}
               invalidField={message.invalid}

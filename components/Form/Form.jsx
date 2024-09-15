@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import DOMPurify from 'dompurify';
+import DOMPurify from "dompurify";
 import emailjs from "@emailjs/browser";
 import FormStatus from "../FormStatus/FormStatus";
 import en from "../../locales/en";
@@ -236,7 +236,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value);
                     setEmail((prevState) => ({
                       ...prevState,
                       ["value"]: sanitizedValue,
@@ -262,7 +262,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                         ["invalid"]: false,
                       }));
                     }
-                    const sanitizedValue = DOMPurify.sanitize(e.target.value.trim());
+                    const sanitizedValue = DOMPurify.sanitize(e.target.value);
                     setPhoneNumber((prevState) => ({
                       ...prevState,
                       ["value"]: sanitizedValue,
@@ -358,7 +358,7 @@ const Form = ({ formVisibility, closeForm = () => {} }) => {
                     const sanitizedValue = DOMPurify.sanitize(e.target.value);
                     setNumberOfNights((prevState) => ({
                       ...prevState,
-                      ["value"]:sanitizedValue,
+                      ["value"]: sanitizedValue,
                     }));
                   }}
                 />
