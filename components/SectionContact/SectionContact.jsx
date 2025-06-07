@@ -200,7 +200,7 @@ const SectionContact = () => {
             <FormField
               labelValue={t.form.message}
               fieldValue={message.value}
-              field="message"
+              fieldId="message"
               wide={true}
               placeholder={t.placeholders.message}
               onChangeFunction={(e) => {
