@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CtaBand, Facts, Feature, OtherServices, PageHero, SectionHead } from "@/components/blocks";
+import { CtaBand, Facts, Feature, OtherServices, PageHero, SectionHead, Tiles } from "@/components/blocks";
 import { Gallery } from "@/components/Gallery";
 import { JsonLd } from "@/components/JsonLd";
 import { getDict } from "@/content";
@@ -15,7 +15,7 @@ const labels = (lang: Lang) => {
 
 /* ---------------------------------------------------------------- Proslave */
 export const celebrationsMetadata = (lang: Lang) =>
-  pageMetadata(lang, "celebrations", getDict(lang).celebrations, img.banquetBg.src);
+  pageMetadata(lang, "celebrations", getDict(lang).celebrations);
 
 export function CelebrationsPage({ lang }: { lang: Lang }) {
   const t = getDict(lang);
@@ -43,10 +43,23 @@ export function CelebrationsPage({ lang }: { lang: Lang }) {
           </Feature>
         </div>
       </section>
+      <section className="section section--wine" aria-labelledby="cel-types">
+        <div className="container">
+          <SectionHead eyebrow={c.hero.eyebrow} title={t.nav.celebrations} id="cel-types" />
+          <Tiles
+            lang={lang}
+            items={[
+              { route: "weddings", title: t.nav.weddings, text: t.landings.weddings.hero.sub, pic: img.wedding },
+              { route: "privateParties", title: t.nav.privateParties, text: t.landings.privateParties.hero.sub, pic: img.banquet13 },
+              { route: "wineCellar", title: t.nav.wineCellar, text: t.home.experiences.items.wineCellar, pic: img.cellarHall1 },
+            ]}
+          />
+        </div>
+      </section>
       <section className="section section--alt" aria-labelledby="cel-gallery">
         <div className="container">
           <SectionHead eyebrow={t.nav.gallery} title={t.galleryPage.albums.celebrations} id="cel-gallery" />
-          <Gallery images={lite(galleryAlbums.celebrations)} limit={12} alt={t.galleryPage.albums.celebrations} mosaic labels={labels(lang)} />
+          <Gallery images={lite(galleryAlbums.celebrations, lang)} limit={12} alt={t.galleryPage.albums.celebrations} mosaic labels={labels(lang)} />
           <p className="center" style={{ marginTop: 40 }}>
             <Link className="btn btn--ghost" href={`${href("gallery", lang)}#proslave`}>{t.ui.viewGallery}</Link>
           </p>
@@ -72,7 +85,7 @@ export function CelebrationsPage({ lang }: { lang: Lang }) {
 
 /* ---------------------------------------------------------------- Restoran */
 export const restaurantMetadata = (lang: Lang) =>
-  pageMetadata(lang, "restaurant", getDict(lang).restaurant, img.restTerrace.src);
+  pageMetadata(lang, "restaurant", getDict(lang).restaurant);
 
 export function RestaurantPage({ lang }: { lang: Lang }) {
   const t = getDict(lang);
@@ -90,7 +103,7 @@ export function RestaurantPage({ lang }: { lang: Lang }) {
             <div className="prose">{r.menu.p.map((p) => <p key={p}>{p}</p>)}</div>
             <div className="btn-row" style={{ marginTop: 32 }}>
               <a className="btn btn--solid" href={phones.restaurant.href}>{r.cta} · {phones.restaurant.label}</a>
-              <a className="btn btn--ghost" href="/assets/hotel-svetionik-jelovnik.pdf" target="_blank" rel="noopener">{r.menu.pdf}</a>
+              <Link className="btn btn--ghost" href={href("menu", lang)}>{r.menu.pdf}</Link>
             </div>
           </Feature>
         </div>
@@ -98,7 +111,7 @@ export function RestaurantPage({ lang }: { lang: Lang }) {
       <section className="section section--alt" aria-labelledby="food-gallery">
         <div className="container">
           <SectionHead eyebrow={t.nav.gallery} title={t.galleryPage.albums.food} id="food-gallery" />
-          <Gallery images={lite(galleryAlbums.food)} limit={12} alt={t.galleryPage.albums.food} mosaic labels={labels(lang)} />
+          <Gallery images={lite(galleryAlbums.food, lang)} limit={12} alt={t.galleryPage.albums.food} mosaic labels={labels(lang)} />
           <p className="center" style={{ marginTop: 40 }}>
             <Link className="btn btn--ghost" href={`${href("gallery", lang)}#hrana`}>{t.ui.viewGallery}</Link>
           </p>
@@ -112,7 +125,7 @@ export function RestaurantPage({ lang }: { lang: Lang }) {
 
 /* ---------------------------------------------------------------- Vinski podrum */
 export const wineCellarMetadata = (lang: Lang) =>
-  pageMetadata(lang, "wineCellar", getDict(lang).wineCellar, img.cellar3.src);
+  pageMetadata(lang, "wineCellar", getDict(lang).wineCellar);
 
 export function WineCellarPage({ lang }: { lang: Lang }) {
   const t = getDict(lang);
@@ -131,7 +144,7 @@ export function WineCellarPage({ lang }: { lang: Lang }) {
       <section className="section section--alt" aria-labelledby="cellar-gallery">
         <div className="container">
           <SectionHead eyebrow={w.events.eyebrow} title={w.events.title} text={w.events.text} id="cellar-gallery" />
-          <Gallery images={lite(galleryAlbums.wineCellar)} alt={t.nav.wineCellar} mosaic labels={labels(lang)} />
+          <Gallery images={lite(galleryAlbums.wineCellar, lang)} alt={t.nav.wineCellar} mosaic labels={labels(lang)} />
         </div>
       </section>
       <CtaBand lang={lang} title={w.events.title} text={w.events.text} phone={phones.info} />
@@ -142,7 +155,7 @@ export function WineCellarPage({ lang }: { lang: Lang }) {
 
 /* ---------------------------------------------------------------- Marina */
 export const marinaMetadata = (lang: Lang) =>
-  pageMetadata(lang, "marina", getDict(lang).marina, img.marina.src);
+  pageMetadata(lang, "marina", getDict(lang).marina);
 
 export function MarinaPage({ lang }: { lang: Lang }) {
   const t = getDict(lang);

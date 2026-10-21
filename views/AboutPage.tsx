@@ -7,7 +7,7 @@ import { img } from "@/lib/images";
 import { href, type Lang } from "@/lib/routes";
 import { pageMetadata } from "@/lib/seo";
 
-export const aboutMetadata = (lang: Lang) => pageMetadata(lang, "about", getDict(lang).about, img.hotelFront.src);
+export const aboutMetadata = (lang: Lang) => pageMetadata(lang, "about", getDict(lang).about);
 
 export default function AboutPage({ lang }: { lang: Lang }) {
   const t = getDict(lang);

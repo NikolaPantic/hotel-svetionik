@@ -16,9 +16,9 @@ type Props = { lang: Lang; t: Pick<Dict, "ui" | "nav"> };
 
 const menu: { key: RouteKey; sub?: RouteKey[] }[] = [
   { key: "about" },
-  { key: "rooms", sub: ["standardRoom", "extraBedRoom", "superiorSuite"] },
-  { key: "celebrations" },
-  { key: "restaurant" },
+  { key: "rooms", sub: ["standardRoom", "extraBedRoom", "superiorSuite", "stay"] },
+  { key: "celebrations", sub: ["weddings", "privateParties"] },
+  { key: "restaurant", sub: ["menu"] },
   { key: "wineCellar" },
   { key: "marina" },
   { key: "gallery" },

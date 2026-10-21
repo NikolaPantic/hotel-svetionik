@@ -6,7 +6,7 @@ import { href, type Lang, type RouteKey } from "@/lib/routes";
 import { pageMetadata } from "@/lib/seo";
 import { phones } from "@/lib/site";
 
-export const servicesMetadata = (lang: Lang) => pageMetadata(lang, "services", getDict(lang).services, img.banquetBlack.src);
+export const servicesMetadata = (lang: Lang) => pageMetadata(lang, "services", getDict(lang).services);
 
 const rows: { key: "rooms" | "celebrations" | "restaurant" | "wineCellar" | "marina"; pic: Pic; inset: Pic }[] = [
   { key: "rooms", pic: img.superiorWide, inset: img.singleCard },

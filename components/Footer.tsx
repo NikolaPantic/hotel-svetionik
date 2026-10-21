@@ -5,7 +5,7 @@ import { address, companyName, email, phones, social, taxId } from "@/lib/site";
 import { FacebookIcon, InstagramIcon, MailIcon, PhoneIcon, PinIcon } from "./icons";
 import { Logo } from "./Logo";
 
-const explore: RouteKey[] = ["about", "rooms", "celebrations", "restaurant", "wineCellar", "marina", "gallery", "contact", "booking"];
+const explore: RouteKey[] = ["about", "rooms", "stay", "celebrations", "weddings", "privateParties", "restaurant", "menu", "wineCellar", "marina", "gallery", "contact", "booking"];
 
 export function Footer({ lang, t }: { lang: Lang; t: Dict }) {
   return (

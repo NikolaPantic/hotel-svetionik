@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/blocks";
+import { ChatLinks } from "@/components/ChatLinks";
 import { BookingForm } from "@/components/forms";
 import { getDict } from "@/content";
 import { img } from "@/lib/images";
@@ -7,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 import { email, phones } from "@/lib/site";
 
 export const bookingMetadata = (lang: Lang) =>
-  pageMetadata(lang, "booking", getDict(lang).bookingPage, img.superiorWide.src);
+  pageMetadata(lang, "booking", getDict(lang).bookingPage);
 
 export default function BookingPage({ lang }: { lang: Lang }) {
   const t = getDict(lang);
@@ -29,6 +30,7 @@ export default function BookingPage({ lang }: { lang: Lang }) {
               })}
               <li><span className="label">{t.phones.email}</span><a href={`mailto:${email}`}>{email}</a></li>
             </ul>
+            <ChatLinks lang={lang} />
           </div>
           <div className="panel reveal">
             <BookingForm t={t.forms} roomLabels={[t.standardRoom.name, t.extraBedRoom.name, t.superiorSuite.name]} />

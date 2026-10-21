@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "og": "node scripts/generate-og.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^5.0.3",
@@ -23,6 +24,7 @@
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.4.2",
+    "sharp": "^0.35.5",
     "typescript": "^5.9.3"
   }
 }

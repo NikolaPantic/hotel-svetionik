@@ -50,6 +50,10 @@ const en: Dict = {
     gallery: "Gallery",
     contact: "Contact",
     booking: "Booking",
+    menu: "Menu",
+    weddings: "Wedding venue",
+    privateParties: "Christenings & birthdays",
+    stay: "Accommodation near Belgrade",
   },
   footer: {
     about: "Hotel, restaurant, banquet halls, wine cellar and boat marina on the Sava riverbank in Obrenovac, 30 km from Belgrade.",
@@ -161,7 +165,7 @@ const en: Dict = {
       eyebrow: "Our story",
       title: "More about us",
       p: [
-        "Hotel Svetionik opened in 2015 in Obrenovac, right on the bank of the Sava river. It holds a two-star rating and has 15 rooms for one to eight guests.",
+        "Hotel Svetionik opened in 2015 in Obrenovac, right on the bank of the Sava river. It has 15 rooms for one to eight guests.",
         "Thanks to its location and attentive service, Hotel Svetionik is an ideal place to rest and escape the crowds. The beautiful river view, paired with our well-known specialities, makes for a memorable stay.",
       ],
     },
@@ -340,7 +344,7 @@ const en: Dict = {
         "The menu celebrates Serbian cuisine: starters with prosciutto, kulen, kajmak and crackling, then grilled dishes, steak, pork neck, pasta and the house speciality.",
         "Our riverside setting is the perfect match for river fish: catfish, zander, trout, sterlet, carp… The drinks list includes more than 60 fine wines from local and international producers.",
       ],
-      pdf: "View the menu (PDF)",
+      pdf: "View the menu",
     },
     facts: [
       ["Capacity", "up to 200 seats"],
@@ -453,6 +457,109 @@ const en: Dict = {
       name: "Letters only",
     },
   },
+
+  menuPage: {
+    title: "Svetionik Restaurant Menu — Fish, Grill & Serbian Cuisine | Obrenovac",
+    description:
+      "The Svetionik restaurant menu on the Sava: house specialities, veal under the sač, river and sea fish, grilled dishes, pasta, breakfast until noon, desserts and a kids' menu.",
+    hero: { eyebrow: "Restaurant", title: "Menu", sub: "Serbian cooking, fish from river and sea and house specialities — daily from 8 am to 11 pm." },
+    intro: "To book a table or ask about prices and today's specials, please call the restaurant.",
+    drinksTitle: "Drinks",
+    pdf: "Download the menu (PDF, 34 MB)",
+  },
+
+  landings: {
+    weddings: {
+      title: "Wedding Venue near Belgrade on the Sava | Hotel Svetionik Obrenovac",
+      description:
+        "A wedding venue in Obrenovac, 30 km from Belgrade: a banquet hall for 400 guests, riverside ceremonies, an in-house kitchen, parking for 100 cars and rooms for guests.",
+      hero: { eyebrow: "Weddings", title: "Wedding venue on the Sava", sub: "A riverside ceremony and a reception for up to 400 guests — all in one place." },
+      lead: "A day you will remember deserves a place that understands it: a ceremony by the river, dinner in the banquet hall and a night in a jacuzzi suite — no transfers between venues.",
+      p: [
+        "Hotel Svetionik in Obrenovac is where couples from Obrenovac, Belgrade and the surrounding area celebrate their weddings. The banquet hall seats up to 400 guests and has its own kitchen and modern lighting; for smaller weddings there is the club hall for up to 120 guests and the wine cellar.",
+        "Hold your ceremony right on the bank of the Sava, under a wedding arch with a view of the river, then continue the celebration in the hall. We plan the menu together with you — from Serbian starters to fish specialities — and any food left over is packed for you to take home.",
+      ],
+      highlightsTitle: "Why Svetionik",
+      highlights: [
+        "Banquet hall for up to 400 guests",
+        "Ceremony on the bank of the Sava",
+        "In-house kitchen and a tailored menu",
+        "Club hall for 120 and wine cellar for 30",
+        "Rooms for the couple and guests",
+        "Free parking for 100 cars",
+      ],
+      faq: [
+        ["How many guests can the wedding venue host?", "The banquet hall seats up to 400 guests. For smaller weddings there is the club hall for up to 120, and the wine cellar for intimate parties of up to 30."],
+        ["Can we get married on the riverbank?", "Yes. We set up the ceremony on the bank of the Sava under a wedding arch, and the celebration continues in the hall or on the restaurant terrace."],
+        ["Can guests stay overnight?", "Yes, the hotel has 15 rooms for 1–8 guests, including superior apartments with jacuzzi — ideal for the newlyweds."],
+        ["How do I check availability and prices?", "Call +381 64 2709 001 or send an enquiry. We recommend booking early for the wedding season."],
+      ],
+    },
+    privateParties: {
+      title: "Venue for Christenings, Birthdays & Parties near Belgrade | Hotel Svetionik",
+      description:
+        "Halls for christenings, birthdays, coming-of-age and company parties in Obrenovac: from 30 to 400 guests, a riverside restaurant, wine cellar, playground and parking.",
+      hero: { eyebrow: "Celebrations", title: "Christenings & birthdays", sub: "A room to suit your party — from an intimate lunch in the wine cellar to a celebration for 400." },
+      lead: "Every celebration has its own size. At Svetionik you choose between the wine cellar for up to 30 guests, the club hall for 120, the banquet hall for 400 and the restaurant terrace right on the Sava.",
+      p: [
+        "We host christenings, birthdays, coming-of-age parties, baby celebrations, anniversaries, business lunches and company parties. Decoration, menu and seating are tailored to your event, and our staff take care of every detail.",
+        "Families appreciate the children's playground in front of the hotel, and guests have free parking for 100 cars.",
+      ],
+      highlightsTitle: "Event spaces",
+      highlights: [
+        "Wine cellar for up to 30 guests",
+        "Club hall for up to 120 guests",
+        "Banquet hall for up to 400 guests",
+        "Restaurant terrace on the Sava",
+        "Children's playground",
+        "Free parking for 100 cars",
+      ],
+      faq: [
+        ["Which hall is best for a christening or birthday?", "For smaller family parties we recommend the wine cellar (up to 30 guests) or the club hall (up to 120); for large celebrations the banquet hall for up to 400."],
+        ["Do you host company events?", "Yes — business lunches, presentations and team celebrations, with a menu and layout to suit you."],
+        ["Is it suitable for families with children?", "Yes. There is a playground in front of the hotel and a dedicated kids' menu."],
+        ["How do I book a date?", "Call +381 64 2709 001 or send an enquiry, and we will choose the hall, menu and decoration together."],
+      ],
+    },
+    stay: {
+      title: "Accommodation in Obrenovac near Belgrade | Hotel Svetionik on the Sava",
+      description:
+        "Hotel rooms in Obrenovac, 30 km from Belgrade: 15 rooms and apartments for 1–8 guests, free parking and Wi-Fi, a riverside restaurant. Check-in from 12:00.",
+      hero: { eyebrow: "Stay", title: "Accommodation near Belgrade", sub: "A quiet stay on the bank of the Sava, half an hour from Belgrade — for leisure, business or a stopover." },
+      lead: "Whether you are in Obrenovac on business, travelling through Serbia or coming to a celebration, Svetionik offers a comfortable room, free parking and a restaurant right on the river.",
+      p: [
+        "The hotel has 15 units: 6 standard rooms for 1–2 guests, 7 rooms with an extra bed for 1–4 guests and 2 superior apartments with jacuzzi for up to 8. Every room has air conditioning, an LCD TV, a minibar and free Wi-Fi.",
+        "Central Belgrade is about 30 km away via the “Miloš Veliki” motorway, and central Surčin 20 km. City bus 860MV terminates 600 m from the hotel and runs via Nikola Tesla Airport to the main bus station.",
+      ],
+      highlightsTitle: "At a glance",
+      highlights: [
+        "15 rooms and apartments for 1–8 guests",
+        "Free parking and Wi-Fi",
+        "Riverside restaurant, 8 am – 11 pm",
+        "Check-in from 12:00, check-out by 10:00",
+        "Reception 08:00–23:00",
+        "30 km from central Belgrade",
+      ],
+      faq: [
+        ["How far is the hotel from Belgrade and the airport?", "Central Belgrade is about 30 km away and central Surčin 20 km. City bus 860MV, which terminates 600 m from the hotel, runs via Nikola Tesla Airport."],
+        ["Can I arrive late in the evening?", "Reception is open 08:00–23:00; arrivals outside these hours require a confirmed reservation."],
+        ["Is parking free?", "Yes, parking for 100 cars is free for hotel guests."],
+        ["Is there a restaurant?", "Yes, the restaurant is open daily from 8 am to 11 pm and breakfast is served until noon."],
+      ],
+    },
+  },
+
+  reviews: {
+    eyebrow: "Guest reviews",
+    title: "What our guests say",
+    placeholder: "Guest reviews from Google will appear here soon. In the meantime, you can read them on our Google profile — and share your own experience.",
+    read: "Read reviews on Google",
+    write: "Write a review",
+    basedOn: "based on",
+    reviewsWord: "reviews",
+  },
+  chat: { viber: "Viber", whatsapp: "WhatsApp", label: "Message us" },
+  price: { from: "from", perNight: "night" },
 
   notFound: {
     title: "Page not found",

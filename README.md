@@ -32,6 +32,17 @@ app/globals.css       dizajn sistem (tokeni svetle/tamne teme na vrhu)
 - JSON-LD: `Hotel` + `EventVenue` (adresa, geo, check-in/out, sadržaji, sobe), `HotelRoom`, `Restaurant`, `FAQPage`, `BreadcrumbList`.
 - `sitemap.xml` sa alternativnim jezicima i slikama.
 
+## Sadržaj koji se popunjava kasnije
+- **Google recenzije** — `content/reviews.ts`: ocena, broj recenzija i izabrane recenzije (doslovno).
+  Dok je prazno, na naslovnoj stoji placeholder sa linkovima ka Google profilu; ocena ulazi u Schema.org automatski.
+- **Cene „od“** — `roomPricesEur` u `lib/site.ts` (EUR po noći). Kada se upišu, prikazuju se na stranicama soba
+  i dodaju u Schema.org (`priceRange`, `offers`).
+- **Viber / WhatsApp** — `messaging` u `lib/site.ts` (trenutno 069 / 1018-518).
+- **Jelovnik** — `content/menu.ts` (prepisan iz PDF-a, bez cena; cena se upisuje kao `price` u RSD).
+
+## OG slike
+`npm run og` generiše slike 1200×630 za deljenje na mrežama u `public/og/` (fotografije se biraju u `scripts/generate-og.mjs`).
+
 ## Forme
 Rezervacija i kontakt šalju se preko EmailJS-a (isti servis i šabloni kao ranije: `contact_service`,
 `reservation_template`, `contact_form`). EmailJS se učitava tek pri slanju. Javni ključ: `NEXT_PUBLIC_FORMJS_PUBLIC_KEY`.

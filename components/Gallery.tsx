@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 /** Minimalni podaci o slici za klijent (bez blurDataURL — manji HTML). */
-export type LiteImage = { src: string; width: number; height: number };
+export type LiteImage = { src: string; width: number; height: number; alt?: string };
 
 type Props = {
   images: readonly LiteImage[];
@@ -43,7 +43,7 @@ export function Gallery({ images, alt, mosaic, limit, labels }: Props) {
   // Swipe na telefonu
   const touchX = useRef<number | null>(null);
 
-  const caption = `${alt} — ${labels.photo} ${index + 1} ${labels.of} ${images.length}`;
+  const caption = images[index].alt ?? `${alt} — ${labels.photo} ${index + 1} ${labels.of} ${images.length}`;
 
   return (
     <>
@@ -54,11 +54,10 @@ export function Gallery({ images, alt, mosaic, limit, labels }: Props) {
             className="gallery__item reveal"
             key={src.src}
             onClick={() => open(i)}
-            aria-label={`${alt} — ${labels.photo} ${i + 1}`}
           >
             <Image
               src={src}
-              alt={`${alt} — ${labels.photo} ${i + 1}`}
+              alt={src.alt ?? `${alt} — ${labels.photo} ${i + 1}`}
               fill
               sizes={mosaic && i === 0 ? "(max-width: 860px) 100vw, 50vw" : "(max-width: 860px) 50vw, 25vw"}
               quality={60}

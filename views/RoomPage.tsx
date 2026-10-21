@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { PageHero, RoomCards, SectionHead } from "@/components/blocks";
+import { ChatLinks } from "@/components/ChatLinks";
 import { Gallery } from "@/components/Gallery";
 import { JsonLd } from "@/components/JsonLd";
 import { getDict } from "@/content";
 import { img, roomGalleries, type Pic, lite } from "@/lib/images";
 import { href, type Lang } from "@/lib/routes";
 import { graph, pageMetadata, roomSchema } from "@/lib/seo";
-import { ROOM_VALUES, phones } from "@/lib/site";
+import { ROOM_VALUES, phones, roomPricesEur } from "@/lib/site";
 
 export type RoomKey = "standardRoom" | "extraBedRoom" | "superiorSuite";
 
@@ -22,7 +23,7 @@ const formValue: Record<RoomKey, string> = {
 };
 
 export const roomMetadata = (lang: Lang, key: RoomKey) =>
-  pageMetadata(lang, key, getDict(lang)[key], heroPic[key].src);
+  pageMetadata(lang, key, getDict(lang)[key]);
 
 export default function RoomPage({ lang, room }: { lang: Lang; room: RoomKey }) {
   const t = getDict(lang);
@@ -47,6 +48,11 @@ export default function RoomPage({ lang, room }: { lang: Lang; room: RoomKey }) 
 
           <aside className="room-aside reveal" aria-label={t.room.basicInfo}>
             <p className="eyebrow">{t.room.basicInfo}</p>
+            {roomPricesEur[room] !== null && (
+              <p className="room-price">
+                <span>{t.price.from}</span> <strong>€{roomPricesEur[room]}</strong> <span>/ {t.price.perNight}</span>
+              </p>
+            )}
             <dl className="facts">
               <div><dt>{t.room.persons}</dt><dd>{r.persons}</dd></div>
               <div><dt>{t.room.bed}</dt><dd>{r.bed}</dd></div>
@@ -61,6 +67,7 @@ export default function RoomPage({ lang, room }: { lang: Lang; room: RoomKey }) 
               <br />
               {t.room.callForPrice}: <a href={phones.booking.href}>{phones.booking.label}</a>
             </p>
+            <ChatLinks lang={lang} className="chat-links--center" />
           </aside>
         </div>
       </section>

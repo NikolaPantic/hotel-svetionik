@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
 import type { StaticImageData } from "next/image";
 import { getDict } from "@/content";
+import { drinks, menu } from "@/content/menu";
+import { googleReviews } from "@/content/reviews";
 import { img } from "./images";
 import { href, parents, routes, type Lang, type RouteKey } from "./routes";
 import {
   SITE_NAME, SITE_URL, address, checkIn, checkOut, companyName, email, geo,
-  mapLink, openingHours, phones, social, taxId,
+  mapLink, openingHours, phones, roomPricesEur, social, taxId,
 } from "./site";
 
 const abs = (path: string) => new URL(path, SITE_URL).toString();
 
 type PageMeta = { title: string; description: string };
 
-export function pageMetadata(
-  lang: Lang,
-  key: RouteKey,
-  { title, description }: PageMeta,
-  image: StaticImageData = img.hotelExterior.src,
-): Metadata {
+/** OG slike 1200×630 generiše `npm run og` u public/og/<ruta>.jpg (vidi scripts/generate-og.mjs). */
+const ogImage = (key: RouteKey) => ({ url: `/og/${key}.jpg`, width: 1200, height: 630 });
+
+export function pageMetadata(lang: Lang, key: RouteKey, { title, description }: PageMeta): Metadata {
+  const image = ogImage(key);
   const url = href(key, lang);
   const d = getDict(lang);
   return {
@@ -39,9 +40,9 @@ export function pageMetadata(
       alternateLocale: lang === "sr" ? "en_US" : "sr_RS",
       title,
       description,
-      images: [{ url: image.src, width: image.width, height: image.height, alt: title }],
+      images: [{ ...image, alt: title }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [image.src] },
+    twitter: { card: "summary_large_image", title, description, images: [image.url] },
   };
 }
 
@@ -66,6 +67,14 @@ const hours = {
 
 export const hotelId = `${SITE_URL}/#hotel`;
 export const restaurantId = `${SITE_URL}/#restaurant`;
+
+const prices = Object.values(roomPricesEur).filter((p): p is number => p !== null);
+const priceRange = () =>
+  prices.length ? { priceRange: `€${Math.min(...prices)}–€${Math.max(...prices)}` } : {};
+const aggregateRating = () =>
+  googleReviews.rating !== null && googleReviews.count !== null
+    ? { aggregateRating: { "@type": "AggregateRating", ratingValue: googleReviews.rating, reviewCount: googleReviews.count, bestRating: 5 } }
+    : {};
 
 export function hotelSchema(lang: Lang) {
   const d = getDict(lang);
@@ -97,7 +106,8 @@ export function hotelSchema(lang: Lang) {
     address: postalAddress,
     geo: { "@type": "GeoCoordinates", latitude: geo.latitude, longitude: geo.longitude },
     hasMap: mapLink,
-    starRating: { "@type": "Rating", ratingValue: 2 },
+    ...priceRange(),
+    ...aggregateRating(),
     checkinTime: checkIn,
     checkoutTime: checkOut,
     numberOfRooms: 15,
@@ -134,7 +144,7 @@ export function restaurantSchema(lang: Lang) {
     address: postalAddress,
     geo: { "@type": "GeoCoordinates", latitude: geo.latitude, longitude: geo.longitude },
     servesCuisine: lang === "sr" ? ["Srpska", "Riblji specijaliteti", "Roštilj"] : ["Serbian", "Fish", "Grill"],
-    hasMenu: abs("/assets/hotel-svetionik-jelovnik.pdf"),
+    hasMenu: abs(routes.menu[lang]),
     acceptsReservations: "True",
     seatingCapacity: 200,
     openingHoursSpecification: hours,
@@ -158,6 +168,39 @@ export function roomSchema(lang: Lang, key: "standardRoom" | "extraBedRoom" | "s
     amenityFeature: r.features.map((name) => ({ "@type": "LocationFeatureSpecification", name, value: true })),
     smokingAllowed: false,
     containedInPlace: { "@id": hotelId },
+    ...(roomPricesEur[key] !== null && {
+      offers: {
+        "@type": "Offer",
+        price: roomPricesEur[key],
+        priceCurrency: "EUR",
+        unitText: lang === "sr" ? "noć" : "night",
+        url: abs(routes.booking[lang]),
+      },
+    }),
+  };
+}
+
+export function menuSchema(lang: Lang) {
+  const en = lang === "en";
+  return {
+    "@type": "Menu",
+    "@id": `${abs(routes.menu[lang])}#menu`,
+    name: en ? "Svetionik Restaurant Menu" : "Jelovnik restorana Svetionik",
+    url: abs(routes.menu[lang]),
+    inLanguage: lang,
+    hasMenuSection: [
+      ...menu.map((s) => ({
+        "@type": "MenuSection",
+        name: en ? s.en : s.sr,
+        hasMenuItem: s.items.map((it) => ({
+          "@type": "MenuItem",
+          name: en ? it.en : it.sr,
+          ...((en ? it.noteEn : it.noteSr) && { description: en ? it.noteEn : it.noteSr }),
+          ...(it.price && { offers: { "@type": "Offer", price: it.price, priceCurrency: "RSD" } }),
+        })),
+      })),
+      { "@type": "MenuSection", name: en ? "Drinks" : "Pića", description: drinks[lang].map(([k, v]) => `${k}: ${v}`).join(". ") },
+    ],
   };
 }
 

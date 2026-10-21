@@ -5,6 +5,7 @@ import { Gallery } from "@/components/Gallery";
 import { JsonLd } from "@/components/JsonLd";
 import { MapEmbed } from "@/components/MapEmbed";
 import { QuickBooking } from "@/components/QuickBooking";
+import { Reviews } from "@/components/Reviews";
 import { getDict } from "@/content";
 import { galleryAlbums, img, lite } from "@/lib/images";
 import { href, type Lang } from "@/lib/routes";
@@ -118,7 +119,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             items={[
               { route: "wineCellar", title: t.nav.wineCellar, text: h.experiences.items.wineCellar, pic: img.cellar3 },
               { route: "marina", title: t.nav.marina, text: h.experiences.items.marina, pic: img.marina },
-              { route: "celebrations", title: h.experiences.weddingTitle, text: h.experiences.items.celebrations, pic: img.celebrationView },
+              { route: "celebrations", title: h.experiences.weddingTitle, text: h.experiences.items.celebrations, pic: img.wedding },
             ]}
           />
         </div>
@@ -135,7 +136,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <div className="container">
           <SectionHead eyebrow={h.gallery.eyebrow} title={h.gallery.title} id="gallery-title" />
           <Gallery
-            images={lite(highlights)}
+            images={lite(highlights, lang)}
             alt="Hotel Svetionik"
             mosaic
             labels={{ close: t.ui.closeGallery, prev: t.ui.prev, next: t.ui.next, photo: t.ui.photo, of: t.ui.of }}
@@ -164,6 +165,8 @@ export default function HomePage({ lang }: { lang: Lang }) {
           <MapEmbed labels={{ show: t.ui.showMap, note: t.ui.mapNote, title: t.ui.mapTitle, open: t.ui.openMap }} />
         </div>
       </section>
+
+      <Reviews lang={lang} />
 
       <section className="section section--alt" aria-labelledby="faq-title">
         <div className="container">

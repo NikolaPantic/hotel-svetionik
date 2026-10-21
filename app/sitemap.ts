@@ -17,9 +17,9 @@ const images: Partial<Record<RouteKey, string[]>> = {
   standardRoom: roomGalleries.standardRoom.slice(0, 4).map((i) => i.src),
   extraBedRoom: roomGalleries.extraBedRoom.slice(0, 4).map((i) => i.src),
   superiorSuite: roomGalleries.superiorSuite.slice(0, 4).map((i) => i.src),
-  celebrations: galleryAlbums.celebrations.slice(0, 4).map((i) => i.src),
-  restaurant: galleryAlbums.restaurant.slice(0, 4).map((i) => i.src),
-  wineCellar: galleryAlbums.wineCellar.slice(0, 4).map((i) => i.src),
+  celebrations: galleryAlbums.celebrations.slice(0, 4).map((i) => i.src.src),
+  restaurant: galleryAlbums.restaurant.slice(0, 4).map((i) => i.src.src),
+  wineCellar: galleryAlbums.wineCellar.slice(0, 4).map((i) => i.src.src),
   marina: [img.marina.src.src, img.marina4.src.src],
 };
 

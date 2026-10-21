@@ -48,6 +48,10 @@ const sr = {
     gallery: "Galerija",
     contact: "Kontakt",
     booking: "Rezervacija",
+    menu: "Jelovnik",
+    weddings: "Svadbeni salon",
+    privateParties: "Krštenja, rođendani i punoletstva",
+    stay: "Smeštaj u Obrenovcu",
   },
   footer: {
     about: "Hotel, restoran, sale za proslave, vinski podrum i brodska marina na obali Save u Obrenovcu, 30 km od Beograda.",
@@ -159,7 +163,7 @@ const sr = {
       eyebrow: "Naša priča",
       title: "Više o nama",
       p: [
-        "Hotel Svetionik, otvoren 2015. godine, nalazi se u Obrenovcu, na samoj obali reke Save. Kategorizovan je sa dve zvezdice i poseduje 15 smeštajnih jedinica, kapaciteta 1–8 osoba.",
+        "Hotel Svetionik, otvoren 2015. godine, nalazi se u Obrenovcu, na samoj obali reke Save. Poseduje 15 smeštajnih jedinica, kapaciteta 1–8 osoba.",
         "Svojom lokacijom i izuzetnom uslugom, hotel Svetionik predstavlja idealno mesto za odmor i beg od gužve. Predivan pogled na reku u kombinaciji sa našim nadaleko čuvenim specijalitetima pružiće užitak za pamćenje.",
       ],
     },
@@ -338,7 +342,7 @@ const sr = {
         "Naš restoran je poznat po bogatom meniju nacionalne kuhinje: od predjela sa pršutom, kulenom, kajmakom, duvan-čvarcima i slaninom, preko jela sa roštilja, bifteka, vešalice i pasta, do specijaliteta kuće.",
         "Položaj na reci savršeno prati naša jela od rečne ribe: som, smuđ, pastrmka, kečiga, šaran… Karta pića obuhvata više od 60 sorti vrhunskih vina domaćih i stranih proizvođača.",
       ],
-      pdf: "Pogledajte jelovnik (PDF)",
+      pdf: "Pogledajte jelovnik",
     },
     facts: [
       ["Kapacitet", "do 200 mesta"],
@@ -451,6 +455,109 @@ const sr = {
       name: "Dozvoljena su samo slova",
     },
   },
+
+  menuPage: {
+    title: "Jelovnik restorana Svetionik — riba, roštilj, domaća kuhinja | Obrenovac",
+    description:
+      "Jelovnik restorana Svetionik na Savi: specijaliteti kuće, teletina ispod sača, rečna i morska riba, roštilj, paste, doručak do 12h, dezerti i dečiji meni.",
+    hero: { eyebrow: "Restoran", title: "Jelovnik", sub: "Domaća kuhinja, riba sa reke i mora i specijaliteti kuće — svakog dana od 08 do 23h." },
+    intro: "Za rezervaciju stola i informacije o cenama i dnevnoj ponudi pozovite restoran.",
+    drinksTitle: "Pića",
+    pdf: "Preuzmi jelovnik (PDF, 34 MB)",
+  },
+
+  landings: {
+    weddings: {
+      title: "Svadbeni salon Obrenovac — venčanja na obali Save | Hotel Svetionik",
+      description:
+        "Svadbeni salon u Obrenovcu, 30 km od Beograda: banket sala do 400 gostiju, venčanje na obali Save, sopstvena kuhinja, parking za 100 vozila i smeštaj za goste.",
+      hero: { eyebrow: "Venčanja", title: "Svadbeni salon na Savi", sub: "Ceremonija na obali reke i proslava u sali za do 400 gostiju — sve na jednom mestu." },
+      lead: "Dan koji ćete pamtiti zaslužuje mesto koje ga razume: ceremonija uz reku, večera u svečanoj sali i noć u apartmanu sa đakuzijem — bez prevoza između lokacija.",
+      p: [
+        "Hotel Svetionik u Obrenovcu mesto je gde parovi iz Obrenovca, Beograda i okoline slave venčanja. Banket sala prima do 400 gostiju i ima sopstvenu kuhinju i savremenu rasvetu, a za manja venčanja tu su klub sala do 120 gostiju i vinski podrum.",
+        "Ceremoniju možete organizovati na samoj obali Save, uz venčani luk i pogled na reku, a zatim nastaviti proslavu u sali. Meni sastavljamo zajedno sa vama — od domaćih predjela do ribljih specijaliteta — a hrana koja ne bude utrošena biće vam upakovana za poneti.",
+      ],
+      highlightsTitle: "Zašto Svetionik",
+      highlights: [
+        "Banket sala do 400 gostiju",
+        "Ceremonija na obali Save",
+        "Sopstvena kuhinja i meni po dogovoru",
+        "Klub sala do 120 i vinski podrum do 30 gostiju",
+        "Smeštaj za mladence i goste u hotelu",
+        "Besplatan parking za 100 vozila",
+      ],
+      faq: [
+        ["Koliko gostiju prima svadbeni salon?", "Banket sala prima do 400 gostiju za stolom. Za manja venčanja tu je klub sala do 120 gostiju, a za intimne proslave vinski podrum do 30 gostiju."],
+        ["Da li je moguće venčanje na obali reke?", "Da. Ceremoniju organizujemo na obali Save, uz venčani luk, a proslava se nastavlja u sali ili na terasi restorana."],
+        ["Da li gosti mogu da prenoće u hotelu?", "Da, hotel ima 15 smeštajnih jedinica za 1–8 osoba, uključujući superior apartmane sa đakuzijem — idealne za mladence."],
+        ["Kako da proverim slobodne termine i cene?", "Pozovite 064 / 2709-001 ili pošaljite upit. Termine u sezoni venčanja preporučujemo da rezervišete na vreme."],
+      ],
+    },
+    privateParties: {
+      title: "Sala za krštenje, rođendan i punoletstvo Obrenovac | Hotel Svetionik",
+      description:
+        "Sale za krštenja, rođendane, punoletstva i proslave firmi u Obrenovcu: od 30 do 400 gostiju, restoran na Savi, vinski podrum, dečije igralište i parking.",
+      hero: { eyebrow: "Proslave", title: "Krštenja, rođendani i punoletstva", sub: "Sala po meri vaše proslave — od intimnog ručka u vinskom podrumu do zabave za 400 gostiju." },
+      lead: "Svaka proslava ima svoju meru. Zato u Svetioniku birate između vinskog podruma do 30 gostiju, klub sale do 120, banket sale do 400 i terase restorana na samoj obali Save.",
+      p: [
+        "Organizujemo krštenja, rođendane, punoletstva, rođenje deteta, godišnjice, poslovne ručkove i proslave firmi. Dekoracija, meni i raspored stolova prilagođavaju se vašem događaju, a naše osoblje brine o svakom detalju.",
+        "Za porodične proslave zgodno je što se ispred hotela nalazi dečije igralište, a gostima je na raspolaganju besplatan parking za 100 vozila.",
+      ],
+      highlightsTitle: "Prostori za proslave",
+      highlights: [
+        "Vinski podrum do 30 gostiju",
+        "Klub sala do 120 gostiju",
+        "Banket sala do 400 gostiju",
+        "Terasa restorana uz Savu",
+        "Dečije igralište ispred hotela",
+        "Besplatan parking za 100 vozila",
+      ],
+      faq: [
+        ["Koja sala je najbolja za krštenje ili rođendan?", "Za manje porodične proslave preporučujemo vinski podrum (do 30 gostiju) ili klub salu (do 120 gostiju), a za velike proslave banket salu do 400 gostiju."],
+        ["Da li organizujete proslave za firme?", "Da — poslovne ručkove, prezentacije i proslave kolektiva, uz meni i raspored po dogovoru."],
+        ["Da li je proslava pogodna za porodice sa decom?", "Jeste. Ispred hotela je dečije igralište, a za decu imamo i poseban meni."],
+        ["Kako da rezervišem termin?", "Pozovite 064 / 2709-001 ili pošaljite upit, pa ćemo zajedno odabrati salu, meni i dekoraciju."],
+      ],
+    },
+    stay: {
+      title: "Smeštaj u Obrenovcu — hotel na Savi kod Beograda | Hotel Svetionik",
+      description:
+        "Prenoćište i smeštaj u Obrenovcu, 30 km od Beograda: 15 soba i apartmana za 1–8 osoba, besplatan parking i Wi-Fi, restoran na Savi. Prijava od 12h.",
+      hero: { eyebrow: "Smeštaj", title: "Smeštaj u Obrenovcu", sub: "Mirno prenoćište na obali Save, pola sata od Beograda — za odmor, posao ili put." },
+      lead: "Bilo da ste u Obrenovcu poslovno, na putu kroz Srbiju ili dolazite na proslavu, Svetionik nudi udobnu sobu, besplatan parking i restoran na samoj obali reke.",
+      p: [
+        "Hotel ima 15 smeštajnih jedinica: 6 standardnih soba za 1–2 osobe, 7 soba sa dodatnim ležajem za 1–4 osobe i 2 superior apartmana sa đakuzijem za do 8 osoba. Sve sobe imaju klima uređaj, LCD TV, mini-bar i besplatan Wi-Fi.",
+        "Do centra Beograda je oko 30 km autoputem „Miloš Veliki“, a do centra Surčina 20 km. Na 600 metara od hotela je okretnica gradskog autobusa 860MV, koji saobraća preko aerodroma „Nikola Tesla“ do glavne autobuske stanice.",
+      ],
+      highlightsTitle: "Ukratko",
+      highlights: [
+        "15 soba i apartmana za 1–8 osoba",
+        "Besplatan parking i Wi-Fi",
+        "Restoran na obali Save, 08–23h",
+        "Prijava od 12h, odjava do 10h",
+        "Recepcija 08–23h",
+        "30 km od centra Beograda",
+      ],
+      faq: [
+        ["Koliko je hotel udaljen od Beograda i aerodroma?", "Do centra Beograda je oko 30 km, a do centra Surčina 20 km. Gradski autobus 860MV, sa okretnicom 600 m od hotela, saobraća preko aerodroma „Nikola Tesla“."],
+        ["Da li mogu da stignem kasno uveče?", "Recepcija radi od 08 do 23h; dolazak van tog vremena moguć je uz prethodno potvrđenu rezervaciju."],
+        ["Da li je parking besplatan?", "Da, parking za 100 vozila je besplatan za goste hotela."],
+        ["Da li hotel ima restoran?", "Da, restoran radi svaki dan od 08 do 23h, a doručak se služi do 12h."],
+      ],
+    },
+  },
+
+  reviews: {
+    eyebrow: "Utisci gostiju",
+    title: "Šta kažu naši gosti",
+    placeholder: "Uskoro ćemo ovde prikazati recenzije naših gostiju sa Google-a. Do tada ih možete pročitati na našem Google profilu — i podeliti svoj utisak.",
+    read: "Pročitajte recenzije na Google-u",
+    write: "Ostavite recenziju",
+    basedOn: "na osnovu",
+    reviewsWord: "recenzija",
+  },
+  chat: { viber: "Viber", whatsapp: "WhatsApp", label: "Pišite nam" },
+  price: { from: "od", perNight: "noć" },
 
   notFound: {
     title: "Stranica nije pronađena",

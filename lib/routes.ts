@@ -27,6 +27,13 @@ export const routes = {
   gallery: { sr: "/galerija", en: "/en/gallery" },
   contact: { sr: "/kontakt", en: "/en/contact" },
   booking: { sr: "/rezervacija", en: "/en/booking" },
+  menu: { sr: "/usluge/restoran/jelovnik", en: "/en/services/restaurant/menu" },
+  weddings: { sr: "/usluge/proslave/svadbeni-salon", en: "/en/services/celebrations/wedding-venue" },
+  privateParties: {
+    sr: "/usluge/proslave/krstenja-rodjendani-punoletstva",
+    en: "/en/services/celebrations/christenings-birthdays",
+  },
+  stay: { sr: "/smestaj-obrenovac", en: "/en/accommodation-near-belgrade" },
 } as const satisfies Record<string, Record<Lang, string>>;
 
 export type RouteKey = keyof typeof routes;
@@ -56,4 +63,8 @@ export const parents: Partial<Record<RouteKey, RouteKey[]>> = {
   gallery: ["home"],
   contact: ["home"],
   booking: ["home"],
+  menu: ["home", "services", "restaurant"],
+  weddings: ["home", "services", "celebrations"],
+  privateParties: ["home", "services", "celebrations"],
+  stay: ["home", "rooms"],
 };

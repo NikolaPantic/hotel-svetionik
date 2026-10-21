@@ -6,7 +6,7 @@ import type { Lang } from "@/lib/routes";
 import { pageMetadata } from "@/lib/seo";
 
 export const galleryMetadata = (lang: Lang) =>
-  pageMetadata(lang, "gallery", getDict(lang).galleryPage, img.banquetBlack.src);
+  pageMetadata(lang, "gallery", getDict(lang).galleryPage);
 
 /** Sidra su ista kao na starom sajtu (/galerija#proslave …). */
 const albums: { key: AlbumKey; id: string }[] = [
@@ -40,7 +40,7 @@ export default function GalleryPage({ lang }: { lang: Lang }) {
                 <h2 className="title title--sm" id={`${id}-title`}>{g.albums[key]}</h2>
                 <span>{galleryAlbums[key].length}</span>
               </div>
-              <Gallery images={lite(galleryAlbums[key])} alt={`${g.albums[key]} — Hotel Svetionik`} labels={labels} />
+              <Gallery images={lite(galleryAlbums[key], lang)} alt={`${g.albums[key]} — Hotel Svetionik`} labels={labels} />
             </section>
           ))}
         </div>

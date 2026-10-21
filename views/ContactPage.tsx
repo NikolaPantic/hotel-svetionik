@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/blocks";
+import { ChatLinks } from "@/components/ChatLinks";
 import { ContactForm } from "@/components/forms";
 import { FacebookIcon, InstagramIcon } from "@/components/icons";
 import { MapEmbed } from "@/components/MapEmbed";
@@ -9,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 import { address, email, mapLink, phones, social } from "@/lib/site";
 
 export const contactMetadata = (lang: Lang) =>
-  pageMetadata(lang, "contact", getDict(lang).contactPage, img.hotelFront.src);
+  pageMetadata(lang, "contact", getDict(lang).contactPage);
 
 export default function ContactPage({ lang }: { lang: Lang }) {
   const t = getDict(lang);
@@ -34,6 +35,7 @@ export default function ContactPage({ lang }: { lang: Lang }) {
               <li><span className="label">{t.phones.email}</span><a href={`mailto:${email}`}>{email}</a></li>
               <li><span className="label">{c.hoursLabel}</span><strong>{t.ui.hours}</strong></li>
             </ul>
+            <ChatLinks lang={lang} />
             <div className="socials" style={{ color: "var(--ink)" }}>
               <a href={social.facebook} target="_blank" rel="noopener" aria-label="Facebook" style={{ borderColor: "var(--line)" }}><FacebookIcon /></a>
               <a href={social.instagram} target="_blank" rel="noopener" aria-label="Instagram" style={{ borderColor: "var(--line)" }}><InstagramIcon /></a>

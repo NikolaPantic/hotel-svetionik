@@ -2,11 +2,12 @@ import { CtaBand, OtherServices, PageHero, RoomCards } from "@/components/blocks
 import { JsonLd } from "@/components/JsonLd";
 import { getDict } from "@/content";
 import { img, roomGalleries } from "@/lib/images";
-import type { Lang } from "@/lib/routes";
+import Link from "next/link";
+import { href, type Lang } from "@/lib/routes";
 import { graph, pageMetadata, roomSchema } from "@/lib/seo";
 import { phones } from "@/lib/site";
 
-export const roomsMetadata = (lang: Lang) => pageMetadata(lang, "rooms", getDict(lang).rooms, img.superiorWide.src);
+export const roomsMetadata = (lang: Lang) => pageMetadata(lang, "rooms", getDict(lang).rooms);
 
 export default function RoomsPage({ lang }: { lang: Lang }) {
   const t = getDict(lang);
@@ -20,6 +21,7 @@ export default function RoomsPage({ lang }: { lang: Lang }) {
             <p className="lead" style={{ fontSize: "clamp(20px, 2vw, 28px)" }}>{r.intro[0]}</p>
             <span className="rule" />
             <p className="muted">{r.intro[1]}</p>
+            <p style={{ marginTop: 18 }}><Link className="link-more" href={href("stay", lang)}>{t.nav.stay}</Link></p>
           </div>
           <RoomCards lang={lang} headingLevel={2} />
           <h2 className="visually-hidden">{r.amenitiesTitle}</h2>

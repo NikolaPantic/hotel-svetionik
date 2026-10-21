@@ -45,3 +45,19 @@ export const emailjsConfig = {
 
 /** Vrednosti tipa smeštaja u e-mailu ka hotelu — iste kao na starom sajtu (uvek na srpskom). */
 export const ROOM_VALUES = ["standardna soba", "soba sa dodatnim ležajem", "superior apartman"] as const;
+
+/**
+ * Cene "od" (EUR po noći). Kada se upišu brojevi, prikazuju se na stranicama soba
+ * i dodaju u Schema.org (priceRange / offers). null = cena se ne prikazuje.
+ */
+export const roomPricesEur: Record<"standardRoom" | "extraBedRoom" | "superiorSuite", number | null> = {
+  standardRoom: null,
+  extraBedRoom: null,
+  superiorSuite: null,
+};
+
+/** Viber / WhatsApp — broj za sobe i rezervacije. Proveriti da je broj aktivan na oba servisa. */
+export const messaging = {
+  viber: "viber://chat?number=%2B381691018518",
+  whatsapp: "https://wa.me/381691018518",
+} as const;
