@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hotel Svetionik — hotelsvetionik.rs
 
-## Getting Started
-
-First, run the development server:
+Next.js 16 (App Router, React 19, TypeScript), statički generisan sajt na srpskom i engleskom.
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
+npm run dev     # razvoj
+npm run build   # produkcijski build (sve stranice su statičke)
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Struktura
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+app/(sr)/…            srpske rute (/, /o-nama, /usluge/…) — root layout lang="sr"
+app/(en)/en/…         engleske rute (/en, /en/about-us, /en/services/…) — root layout lang="en"
+app/global-not-found  404 za ceo sajt
+app/sitemap.ts, robots.ts, manifest.ts, icon.svg
+views/                implementacija stranica (zajednička za oba jezika)
+components/           header, footer, galerija, forme, blokovi
+content/sr.ts, en.ts  SAV tekst sajta (izmene teksta rade se ovde)
+lib/routes.ts         svi URL-ovi (sr ↔ en) na jednom mestu
+lib/seo.ts            metadata + Schema.org (Hotel, HotelRoom, Restaurant, FAQ, Breadcrumbs)
+lib/images.ts         izbor fotografija i albumi galerije
+lib/site.ts           telefoni, adresa, koordinate, EmailJS
+app/globals.css       dizajn sistem (tokeni svetle/tamne teme na vrhu)
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## SEO
+- Isti URL-ovi kao na starom sajtu; stare adrese (`/en/o-nama`, `/vesti`, `/sr/...`) trajno se preusmeravaju (`next.config.ts`).
+- Svaka stranica ima svoj title, description, canonical, hreflang (sr/en/x-default), Open Graph i Twitter karticu.
+- JSON-LD: `Hotel` + `EventVenue` (adresa, geo, check-in/out, sadržaji, sobe), `HotelRoom`, `Restaurant`, `FAQPage`, `BreadcrumbList`.
+- `sitemap.xml` sa alternativnim jezicima i slikama.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Forme
+Rezervacija i kontakt šalju se preko EmailJS-a (isti servis i šabloni kao ranije: `contact_service`,
+`reservation_template`, `contact_form`). EmailJS se učitava tek pri slanju. Javni ključ: `NEXT_PUBLIC_FORMJS_PUBLIC_KEY`.
