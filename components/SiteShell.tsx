@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { ViewTransition, type ReactNode } from "react";
 import { getDict } from "@/content";
-import { sans, serif, serifItalic } from "@/lib/fonts";
+import { body, sans, serif, serifItalic } from "@/lib/fonts";
 import type { Lang } from "@/lib/routes";
 import { graph, hotelSchema, websiteSchema } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
@@ -33,7 +33,7 @@ export const shellViewport: Viewport = {
 export function SiteShell({ lang, children }: { lang: Lang; children: ReactNode }) {
   const t = getDict(lang);
   return (
-    <html lang={lang} className={`${serif.variable} ${serifItalic.variable} ${sans.variable}`} suppressHydrationWarning>
+    <html lang={lang} className={`${serif.variable} ${serifItalic.variable} ${body.variable} ${sans.variable}`} suppressHydrationWarning>
       <body>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <LogoSymbol />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { sans, serif, serifItalic } from "@/lib/fonts";
+import { body, sans, serif, serifItalic } from "@/lib/fonts";
 import { themeScript } from "@/lib/theme";
 import "./globals.css";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 /** Globalna 404 (sajt ima dva root layout-a — sr i en). */
 export default function GlobalNotFound() {
   return (
-    <html lang="sr" className={`${serif.variable} ${serifItalic.variable} ${sans.variable}`} suppressHydrationWarning>
+    <html lang="sr" className={`${serif.variable} ${serifItalic.variable} ${body.variable} ${sans.variable}`} suppressHydrationWarning>
       <body>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <main className="not-found" style={{ paddingTop: 80 }}>

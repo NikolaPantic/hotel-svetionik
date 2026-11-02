@@ -41,6 +41,7 @@
 
   --serif: var(--font-serif), "Palatino Linotype", Palatino, Georgia, serif;
   --serif-italic: var(--font-serif-italic), "Palatino Linotype", Palatino, Georgia, serif;
+  --body: var(--font-body), Georgia, "Times New Roman", serif;
   --sans: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
 
   --track: 0.16em;
@@ -110,10 +111,11 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(18px, 1.25vw, 20.5px);
-  line-height: 1.6;
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: clamp(17px, calc(11px + 0.5vw), 18.5px);
+  line-height: 1.72;
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
@@ -285,7 +287,9 @@ h1, h2, h3, h4 {
   gap: 16px;
   min-height: 56px;
   padding: 12px 0;
-  font-size: 21px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
   transition: color var(--t) var(--ease), padding var(--t) var(--ease);
 }
 .link-list a::after { content: "→"; font-family: var(--sans); font-size: 14px; color: var(--wine); transition: transform var(--t) var(--ease); }
@@ -848,7 +852,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 .tile:hover::before { inset: clamp(16px, 1.8vw, 24px); border-color: var(--gold-bright); }
 .tile__body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: clamp(28px, 2.8vw, 42px); text-align: center; }
 .tile h3 { font-size: clamp(28px, 2.4vw, 36px); font-weight: 500; }
-.tile p { margin: 10px auto 22px; max-width: 320px; font-size: 17px; color: rgba(255, 255, 255, 0.88); }
+.tile p { margin: 10px auto 22px; max-width: 320px; font-size: 16px; color: rgba(255, 255, 255, 0.88); }
 .tile .btn { min-height: 44px; padding: 0 22px; color: #fff; border-color: rgba(255, 255, 255, 0.65); }
 .tile:hover .btn { background: #fff; color: var(--deep); border-color: #fff; }
 
@@ -950,7 +954,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 .lightbox__top { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; font-family: var(--sans); font-size: 11px; letter-spacing: var(--track); }
 .lightbox__stage { position: relative; margin: 0 clamp(8px, 6vw, 96px); }
 .lightbox__stage img { object-fit: contain; }
-.lightbox__caption { padding: 14px 20px 22px; text-align: center; font-size: 17px; color: rgba(255, 255, 255, 0.85); }
+.lightbox__caption { padding: 14px 20px 22px; text-align: center; font-size: 16px; color: rgba(255, 255, 255, 0.85); }
 .lightbox button {
   width: 48px; height: 48px;
   display: grid; place-items: center;
@@ -986,7 +990,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 }
 .room-aside .facts { margin: 0 0 24px; padding-top: 0; border-top: 0; grid-template-columns: 1fr 1fr; }
 .room-aside .btn { width: 100%; }
-.room-aside__note { margin: 18px 0 0; font-size: 16px; color: var(--ink-soft); text-align: center; }
+.room-aside__note { margin: 18px 0 0; font-size: 15px; color: var(--ink-soft); text-align: center; }
 .room-aside__note a { color: var(--ink); }
 .checklist {
   list-style: none;
@@ -1003,6 +1007,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 .gift {
   margin: 28px 0 0;
   padding: 20px 24px;
+  line-height: 1.4;
   border-left: 2px solid var(--wine);
   background: var(--bg-alt);
   font-family: var(--serif-italic);
@@ -1032,7 +1037,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 :root[data-theme="dark"] .map iframe { filter: grayscale(1) invert(0.92) contrast(0.9); }
 .map__placeholder { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; }
 .map__placeholder .lead { font-size: 30px; margin-bottom: 8px; }
-.map__placeholder p { margin: 0 0 24px; font-size: 16px; }
+.map__placeholder p { margin: 0 0 24px; font-size: 15px; }
 
 .contact-list { list-style: none; margin: 30px 0 0; padding: 0; }
 .contact-list li { padding: 18px 0; border-bottom: 1px solid var(--line); }
@@ -1143,7 +1148,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
   border: 0;
   background: transparent;
   padding: 8px 0 4px;
-  font-size: 20px;
+  font-size: 18px;
   outline: none;
   resize: vertical;
   appearance: none;
@@ -1155,8 +1160,8 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 .form-field__error { margin-top: 6px; font-family: var(--sans); font-size: 11px; color: #a61e35; }
 :root[data-theme="dark"] .form-field__error { color: #f29aaa; }
 :root[data-theme="dark"] .form-field.is-invalid { border-color: #f29aaa; }
-.form-note { font-size: 16px; color: var(--ink-soft); margin: 6px 0 26px; }
-.form-status { margin: 18px 0 0; font-size: 17px; }
+.form-note { font-size: 15px; color: var(--ink-soft); margin: 6px 0 26px; }
+.form-status { margin: 18px 0 0; font-size: 16px; }
 .form-status--ok { color: var(--gold-text); }
 .form-status--err { color: #a61e35; }
 .panel {
@@ -1198,7 +1203,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 .section--deep .chat-link, .section--wine .chat-link { border-color: var(--deep-line); }
 
 /* Cena "od" */
-.room-price { margin: -6px 0 22px; font-size: 16px; color: var(--ink-soft); }
+.room-price { margin: -6px 0 22px; font-size: 15px; color: var(--ink-soft); }
 .room-price strong { font-family: var(--serif); font-weight: 500; font-size: 36px; color: var(--wine); }
 :root[data-theme="dark"] .room-price strong { color: var(--gold-text); }
 
@@ -1227,7 +1232,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
   max-width: 640px;
   margin: 34px auto 0;
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 /* Instagram */
@@ -1270,7 +1275,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 /* Nagrade */
 .awards { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
 .awards ul { list-style: none; margin: 0; padding: 0; }
-.awards li { padding: 20px 0; border-bottom: 1px solid var(--deep-line); font-size: 22px; }
+.awards li { padding: 20px 0; border-bottom: 1px solid var(--deep-line); font-family: var(--serif); font-weight: 600; font-size: 24px; }
 .awards li:first-child { border-top: 1px solid var(--deep-line); }
 .awards li span { display: block; font-family: var(--sans); font-size: 10.5px; letter-spacing: var(--track); text-transform: uppercase; color: var(--gold-bright); margin-top: 6px; }
 
@@ -1286,7 +1291,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 .menu-list__dots { flex: 1; border-bottom: 1px dotted var(--line); transform: translateY(-4px); min-width: 20px; }
 .menu-list__amount, .menu-list__price { font-family: var(--sans); font-size: 11px; letter-spacing: 0.06em; color: var(--ink-soft); white-space: nowrap; }
 .menu-list__price { color: var(--gold-text); }
-.menu-list__note { margin: 4px 0 0; font-size: 17px; color: var(--ink-soft); }
+.menu-list__note { margin: 4px 0 0; font-size: 15.5px; color: var(--ink-soft); }
 .menu-drinks { margin: 18px 0 0; display: grid; }
 .menu-drinks div { padding: 16px 0; border-bottom: 1px solid var(--line); }
 .menu-drinks dt { font-family: var(--serif); font-weight: 600; font-size: 22px; }
@@ -1297,7 +1302,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
   background: var(--deep-2);
   color: var(--on-deep-soft);
   padding: clamp(72px, 9vw, 130px) 0 32px;
-  font-size: 18px;
+  font-size: 16px;
   border-top: 3px solid var(--wine);
 }
 .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; }
