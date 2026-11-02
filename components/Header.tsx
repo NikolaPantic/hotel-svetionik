@@ -85,7 +85,7 @@ export function Header({ lang, t }: Props) {
       <header className={`site-header${solid ? " is-solid" : ""}`}>
         <div className="container site-header__inner">
           <div className="header-left">
-            <button
+            <button suppressHydrationWarning
               ref={toggleRef}
               className="menu-toggle"
               type="button"
@@ -97,7 +97,6 @@ export function Header({ lang, t }: Props) {
               <span className="menu-toggle__bars" aria-hidden="true" />
               <span className="menu-toggle__label" aria-hidden="true">{open ? t.ui.close : t.ui.menu}</span>
             </button>
-            <Link className="header-about" href={href("about", lang)}>{t.nav.about}</Link>
             <a className="header-phone" href={phones.info.href}>
               <PhoneIcon />
               <span>{phones.info.label}</span>

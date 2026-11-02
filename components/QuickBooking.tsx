@@ -26,29 +26,29 @@ export function QuickBooking({ action, t, rooms }: Props) {
   return (
     <div className="booking-bar">
       <div className="container">
-        <form onSubmit={onSubmit} action={action} aria-label={t.cta}>
+        <form suppressHydrationWarning onSubmit={onSubmit} action={action} aria-label={t.cta}>
           <div className="field">
             <label htmlFor="q-arrival">{t.arrival}</label>
-            <input id="q-arrival" name="arrival" type="date" ref={dateRef} />
+            <input suppressHydrationWarning id="q-arrival" name="arrival" type="date" ref={dateRef} />
           </div>
           <div className="field">
             <label htmlFor="q-nights">{t.nights}</label>
-            <input id="q-nights" name="nights" type="number" min={1} max={30} defaultValue={1} inputMode="numeric" />
+            <input suppressHydrationWarning id="q-nights" name="nights" type="number" min={1} max={30} defaultValue={1} inputMode="numeric" />
           </div>
           <div className="field">
             <label htmlFor="q-guests">{t.guests}</label>
-            <select id="q-guests" name="guests" defaultValue="2">
+            <select suppressHydrationWarning id="q-guests" name="guests" defaultValue="2">
               {Array.from({ length: 8 }, (_, i) => <option key={i}>{i + 1}</option>)}
             </select>
           </div>
           <div className="field">
             <label htmlFor="q-room">{t.room}</label>
-            <select id="q-room" name="room" defaultValue="">
+            <select suppressHydrationWarning id="q-room" name="room" defaultValue="">
               <option value="">{t.any}</option>
               {rooms.map((r) => <option key={r.value} value={r.value}>{r.label}</option>)}
             </select>
           </div>
-          <button className="btn btn--solid" type="submit">{t.cta}</button>
+          <button suppressHydrationWarning className="btn btn--solid" type="submit">{t.cta}</button>
         </form>
       </div>
     </div>

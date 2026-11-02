@@ -17,7 +17,7 @@ export function MapEmbed({ labels }: Props) {
           <div>
             <p className="lead">Obrenovac · Sava</p>
             <p className="muted">{labels.note}</p>
-            <button className="btn btn--ghost" type="button" onClick={() => setLoaded(true)}>{labels.show}</button>
+            <button suppressHydrationWarning className="btn btn--ghost" type="button" onClick={() => setLoaded(true)}>{labels.show}</button>
             <p style={{ margin: "18px 0 0" }}>
               <a className="link-more" href={mapLink} target="_blank" rel="noopener">{labels.open}</a>
             </p>

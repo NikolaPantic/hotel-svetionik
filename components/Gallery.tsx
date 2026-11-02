@@ -49,7 +49,7 @@ export function Gallery({ images, alt, mosaic, limit, labels }: Props) {
     <>
       <div className={`gallery${mosaic ? " gallery--mosaic" : ""}`}>
         {shown.map((src, i) => (
-          <button
+          <button suppressHydrationWarning
             type="button"
             className="gallery__item reveal"
             key={src.src}
@@ -81,12 +81,12 @@ export function Gallery({ images, alt, mosaic, limit, labels }: Props) {
       >
         <div className="lightbox__top">
           <span>{index + 1} / {images.length}</span>
-          <button type="button" onClick={() => dialog.current?.close()} aria-label={labels.close}>×</button>
+          <button suppressHydrationWarning type="button" onClick={() => dialog.current?.close()} aria-label={labels.close}>×</button>
         </div>
         <div className="lightbox__stage">
-          <button type="button" className="lightbox__prev" onClick={() => go(-1)} aria-label={labels.prev}>‹</button>
+          <button suppressHydrationWarning type="button" className="lightbox__prev" onClick={() => go(-1)} aria-label={labels.prev}>‹</button>
           <Image src={images[index]} alt={caption} fill sizes="100vw" quality={75} />
-          <button type="button" className="lightbox__next" onClick={() => go(1)} aria-label={labels.next}>›</button>
+          <button suppressHydrationWarning type="button" className="lightbox__next" onClick={() => go(1)} aria-label={labels.next}>›</button>
         </div>
         <p className="lightbox__caption">{caption}</p>
       </dialog>

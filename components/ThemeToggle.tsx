@@ -19,7 +19,7 @@ export function ThemeToggle({ label }: { label: string }) {
   };
 
   return (
-    <button className="theme-toggle" type="button" aria-label={label} title={label} onClick={toggle}>
+    <button suppressHydrationWarning className="theme-toggle" type="button" aria-label={label} title={label} onClick={toggle}>
       <MoonIcon />
       <SunIcon />
     </button>

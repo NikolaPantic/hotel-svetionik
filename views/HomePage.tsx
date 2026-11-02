@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Faq, SectionHead, Tiles, stagger } from "@/components/blocks";
 import { CountUp } from "@/components/CountUp";
+import { HeroSwap } from "@/components/HeroSwap";
 import { HoverFeature } from "@/components/HoverFeature";
 import { Instagram } from "@/components/Instagram";
 import { JsonLd } from "@/components/JsonLd";
@@ -27,26 +27,22 @@ export default function HomePage({ lang }: { lang: Lang }) {
   return (
     <>
       {/* ---------- Hero ---------- */}
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__media">
-          <Image src={img.hotelExterior.src} alt={img.hotelExterior.alt[lang]} fill preload sizes="100vw" quality={60} placeholder="blur" />
-        </div>
-        <div className="container hero__content">
-          <p className="eyebrow">{h.hero.eyebrow}</p>
-          <h1 id="hero-title">
-            {h.hero.title}
-            <span className="hero__sub">{h.hero.sub}</span>
-          </h1>
-          <nav aria-label={t.nav.services}>
-            <ul className="hero__words">
-              <li><Link href={href("rooms", lang)}>{lang === "sr" ? "Boravak" : "Stay"}</Link></li>
-              <li><Link href={href("celebrations", lang)}>{lang === "sr" ? "Proslave" : "Celebrate"}</Link></li>
-              <li><Link href={href("restaurant", lang)}>{lang === "sr" ? "Trpeza" : "Dine"}</Link></li>
-            </ul>
-          </nav>
-        </div>
-        <span className="hero__scroll" aria-hidden="true" />
-      </section>
+      <HeroSwap
+        image={img.hotelExterior.src}
+        alt={img.hotelExterior.alt[lang]}
+        navLabel={t.nav.services}
+        words={[
+          { href: href("rooms", lang), label: lang === "sr" ? "Boravak" : "Stay", image: img.superiorWide.src, alt: img.superiorWide.alt[lang] },
+          { href: href("celebrations", lang), label: lang === "sr" ? "Proslave" : "Celebrate", image: img.banquetBg.src, alt: img.banquetBg.alt[lang] },
+          { href: href("restaurant", lang), label: lang === "sr" ? "Trpeza" : "Dine", image: img.restTerrace.src, alt: img.restTerrace.alt[lang] },
+        ]}
+      >
+        <p className="eyebrow">{h.hero.eyebrow}</p>
+        <h1 id="hero-title">
+          {h.hero.title}
+          <span className="hero__sub">{h.hero.sub}</span>
+        </h1>
+      </HeroSwap>
 
       <QuickBooking
         action={href("booking", lang)}

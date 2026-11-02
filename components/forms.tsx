@@ -46,7 +46,7 @@ function StatusLine({ status, t, onReset }: { status: Status; t: FormT; onReset:
     return (
       <p className="form-status form-status--ok" role="status">
         {t.success}{" "}
-        <button type="button" className="text-link" style={{ background: "none", border: 0, padding: 0, cursor: "pointer" }} onClick={onReset}>
+        <button suppressHydrationWarning type="button" className="text-link" style={{ background: "none", border: 0, padding: 0, cursor: "pointer" }} onClick={onReset}>
           {t.again}
         </button>
       </p>
@@ -110,42 +110,42 @@ export function BookingForm({ t, roomLabels }: { t: FormT; roomLabels: string[] 
   };
 
   return (
-    <form ref={formRef} className="form-grid" onSubmit={onSubmit} noValidate id="forma">
+    <form suppressHydrationWarning ref={formRef} className="form-grid" onSubmit={onSubmit} noValidate id="forma">
       <Field id="first-name" label={t.firstName} error={errors["first-name"]}>
-        <input id="first-name" name="first-name" autoComplete="given-name" required {...aria("first-name", errors, "first-name")} />
+        <input suppressHydrationWarning id="first-name" name="first-name" autoComplete="given-name" required {...aria("first-name", errors, "first-name")} />
       </Field>
       <Field id="last-name" label={t.lastName} error={errors["last-name"]}>
-        <input id="last-name" name="last-name" autoComplete="family-name" required {...aria("last-name", errors, "last-name")} />
+        <input suppressHydrationWarning id="last-name" name="last-name" autoComplete="family-name" required {...aria("last-name", errors, "last-name")} />
       </Field>
       <Field id="email" label={t.email} error={errors.email}>
-        <input id="email" name="email" type="email" autoComplete="email" required {...aria("email", errors, "email")} />
+        <input suppressHydrationWarning id="email" name="email" type="email" autoComplete="email" required {...aria("email", errors, "email")} />
       </Field>
       <Field id="phone" label={t.phone} error={errors.phone}>
-        <input id="phone" name="phone" type="tel" autoComplete="tel" required {...aria("phone", errors, "phone")} />
+        <input suppressHydrationWarning id="phone" name="phone" type="tel" autoComplete="tel" required {...aria("phone", errors, "phone")} />
       </Field>
       <Field id="room-type" label={t.room} error={errors["room-type"]}>
-        <select id="room-type" name="room-type" defaultValue="" required {...aria("room-type", errors, "room-type")}>
+        <select suppressHydrationWarning id="room-type" name="room-type" defaultValue="" required {...aria("room-type", errors, "room-type")}>
           <option value="" disabled>{t.choose}</option>
           {ROOM_VALUES.map((v, i) => <option key={v} value={v}>{roomLabels[i]}</option>)}
         </select>
       </Field>
       <Field id="guests" label={t.guests}>
-        <select id="guests" name="guests" defaultValue="2">
+        <select suppressHydrationWarning id="guests" name="guests" defaultValue="2">
           {Array.from({ length: 8 }, (_, i) => <option key={i}>{i + 1}</option>)}
         </select>
       </Field>
       <Field id="arrival-date" label={t.arrival} error={errors["arrival-date"]}>
-        <input ref={dateRef} id="arrival-date" name="arrival-date" type="date" required {...aria("arrival-date", errors, "arrival-date")} />
+        <input suppressHydrationWarning ref={dateRef} id="arrival-date" name="arrival-date" type="date" required {...aria("arrival-date", errors, "arrival-date")} />
       </Field>
       <Field id="number-of-nights" label={t.nights} error={errors["number-of-nights"]}>
-        <input id="number-of-nights" name="number-of-nights" type="number" min={1} max={60} defaultValue={1} inputMode="numeric" required {...aria("number-of-nights", errors, "number-of-nights")} />
+        <input suppressHydrationWarning id="number-of-nights" name="number-of-nights" type="number" min={1} max={60} defaultValue={1} inputMode="numeric" required {...aria("number-of-nights", errors, "number-of-nights")} />
       </Field>
       <Field id="additional-info" label={t.notes} full>
-        <textarea id="additional-info" name="additional-info" rows={3} />
+        <textarea suppressHydrationWarning id="additional-info" name="additional-info" rows={3} />
       </Field>
       <div className="full">
         <p className="form-note">{t.privacy}</p>
-        <button className="btn btn--solid" type="submit" disabled={status === "sending"}>
+        <button suppressHydrationWarning className="btn btn--solid" type="submit" disabled={status === "sending"}>
           {status === "sending" ? t.sending : t.submit}
         </button>
         <StatusLine status={status} t={t} onReset={() => setStatus("idle")} />
@@ -188,22 +188,22 @@ export function ContactForm({ t }: { t: FormT }) {
   };
 
   return (
-    <form ref={formRef} className="form-grid" onSubmit={onSubmit} noValidate>
+    <form suppressHydrationWarning ref={formRef} className="form-grid" onSubmit={onSubmit} noValidate>
       <Field id="c-name" label={t.name} error={errors.name} full>
-        <input id="c-name" name="name" autoComplete="name" required {...aria("c-name", errors, "name")} />
+        <input suppressHydrationWarning id="c-name" name="name" autoComplete="name" required {...aria("c-name", errors, "name")} />
       </Field>
       <Field id="c-phone" label={t.phone} error={errors.phone}>
-        <input id="c-phone" name="phone" type="tel" autoComplete="tel" required {...aria("c-phone", errors, "phone")} />
+        <input suppressHydrationWarning id="c-phone" name="phone" type="tel" autoComplete="tel" required {...aria("c-phone", errors, "phone")} />
       </Field>
       <Field id="c-email" label={t.email} error={errors.email}>
-        <input id="c-email" name="email" type="email" autoComplete="email" required {...aria("c-email", errors, "email")} />
+        <input suppressHydrationWarning id="c-email" name="email" type="email" autoComplete="email" required {...aria("c-email", errors, "email")} />
       </Field>
       <Field id="c-message" label={t.message} error={errors.message} full>
-        <textarea id="c-message" name="message" rows={4} required {...aria("c-message", errors, "message")} />
+        <textarea suppressHydrationWarning id="c-message" name="message" rows={4} required {...aria("c-message", errors, "message")} />
       </Field>
       <div className="full">
         <p className="form-note">{t.privacy}</p>
-        <button className="btn btn--solid" type="submit" disabled={status === "sending"}>
+        <button suppressHydrationWarning className="btn btn--solid" type="submit" disabled={status === "sending"}>
           {status === "sending" ? t.sending : t.submit}
         </button>
         <StatusLine status={status} t={t} onReset={() => setStatus("idle")} />
