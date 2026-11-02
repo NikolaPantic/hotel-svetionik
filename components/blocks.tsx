@@ -7,6 +7,7 @@ import { img } from "@/lib/images";
 import { href, parents, type Lang, type RouteKey } from "@/lib/routes";
 import { breadcrumbSchema, graph } from "@/lib/seo";
 import { JsonLd } from "./JsonLd";
+import { Split } from "./Split";
 
 /** Redosled za postepeno pojavljivanje (koristi se u CSS-u kao --i). */
 export const stagger = (i: number) => ({ "--i": i }) as CSSProperties;
@@ -42,7 +43,7 @@ export function PageHero({
         </div>
         <div className="container hero__content">
           <p className="eyebrow">{eyebrow}</p>
-          <h1 id="page-title">{title}</h1>
+          <h1 id="page-title" className="split-intro"><Split text={title} /></h1>
           <p className="hero__sub">{sub}</p>
         </div>
       </section>
@@ -76,7 +77,7 @@ export function SectionHead({ eyebrow, title, text, id }: { eyebrow: string; tit
   return (
     <header className="section-head center">
       <p className="eyebrow reveal">{eyebrow}</p>
-      <h2 className="title reveal" style={stagger(1)} id={id}>{title}</h2>
+      <h2 className="title split" id={id}><Split text={title} /></h2>
       <span className="rule" />
       {text && <p className="muted reveal" style={stagger(2)}>{text}</p>}
     </header>
@@ -117,9 +118,9 @@ export function Feature({
           arch={arch}
         />
       </div>
-      <div className={`feature__text ${reverse ? "reveal-left" : "reveal-right"}`}>
+      <div className="feature__text stack">
         <p className="eyebrow">{eyebrow}</p>
-        <H className="title" id={id}>{title}</H>
+        <H className="title split" id={id}><Split text={title} /></H>
         <span className="rule" />
         {children}
       </div>
@@ -143,7 +144,7 @@ export function RoomCards({ lang, exclude, headingLevel = 3 }: { lang: Lang; exc
           <article className="card" key={k}>
             <Framed lang={lang} pic={roomPics[k]} sizes="(max-width: 860px) 100vw, 33vw" variant={i % 2 ? "deep" : "wine"} />
             {k === "superiorSuite" && <span className="card__tag">{t.room.jacuzzi}</span>}
-            <div className="card__body reveal" style={stagger(i)}>
+            <div className="card__body stack">
               <H><Link href={href(k, lang)}>{r.name}</Link></H>
               <ul className="specs">
                 <li>{r.persons} {lang === "sr" ? "osobe" : "guests"}</li>

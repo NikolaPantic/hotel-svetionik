@@ -60,7 +60,7 @@ export function HoverFeature({ image, alt, items, reverse, arch, intro, footer }
           </div>
         </div>
       </div>
-      <div className={`feature__text ${reverse ? "reveal-left" : "reveal-right"}`}>
+      <div className="feature__text stack">
         {intro}
         <ul className="link-list" onPointerEnter={arm} onFocusCapture={arm}>
           {items.map((it, i) => (

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Faq, SectionHead, Tiles, stagger } from "@/components/blocks";
 import { CountUp } from "@/components/CountUp";
 import { HeroSwap } from "@/components/HeroSwap";
+import { Split } from "@/components/Split";
 import { HoverFeature } from "@/components/HoverFeature";
 import { Instagram } from "@/components/Instagram";
 import { JsonLd } from "@/components/JsonLd";
@@ -39,7 +40,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
       >
         <p className="eyebrow">{h.hero.eyebrow}</p>
         <h1 id="hero-title">
-          {h.hero.title}
+          <span className="split-intro"><Split text={h.hero.title} /></span>
           <span className="hero__sub">{h.hero.sub}</span>
         </h1>
       </HeroSwap>
@@ -77,7 +78,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             intro={
               <>
                 <p className="eyebrow">{h.rooms.eyebrow}</p>
-                <h2 className="title" id="stay-title">{h.rooms.title}</h2>
+                <h2 className="title split" id="stay-title"><Split text={h.rooms.title} /></h2>
                 <span className="rule" />
                 <p className="muted">{h.rooms.text}</p>
               </>
@@ -132,7 +133,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             intro={
               <>
                 <p className="eyebrow">{h.events.eyebrow}</p>
-                <h2 className="title" id="events-title">{h.events.title}</h2>
+                <h2 className="title split" id="events-title"><Split text={h.events.title} /></h2>
                 <span className="rule" />
                 <p>{h.events.text}</p>
               </>
@@ -158,7 +159,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             intro={
               <>
                 <p className="eyebrow">{h.restaurant.eyebrow}</p>
-                <h2 className="title" id="restaurant-title">{h.restaurant.title}</h2>
+                <h2 className="title split" id="restaurant-title"><Split text={h.restaurant.title} /></h2>
                 <span className="rule" />
                 <p>{h.restaurant.text}</p>
               </>
@@ -185,9 +186,9 @@ export default function HomePage({ lang }: { lang: Lang }) {
       {/* ---------- Lokacija ---------- */}
       <section className="section section--alt" aria-labelledby="location-title">
         <div className="container split">
-          <div className="reveal-left">
+          <div className="stack">
             <p className="eyebrow">{h.location.eyebrow}</p>
-            <h2 className="title" id="location-title">{h.location.title}</h2>
+            <h2 className="title split" id="location-title"><Split text={h.location.title} /></h2>
             <span className="rule" />
             <p className="muted">{h.location.text}</p>
             <ul className="contact-list">

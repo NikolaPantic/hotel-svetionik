@@ -9,7 +9,7 @@ import { themeScript } from "@/lib/theme";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { JsonLd } from "./JsonLd";
-import { LogoSymbol } from "./Logo";
+import { Logo, LogoSymbol } from "./Logo";
 import { RevealObserver } from "./RevealObserver";
 
 export const shellMetadata: Metadata = {
@@ -37,6 +37,9 @@ export function SiteShell({ lang, children }: { lang: Lang; children: ReactNode 
       <body>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <LogoSymbol />
+        <div className="curtain" aria-hidden="true">
+          <Logo />
+        </div>
         <a className="skip-link" href="#main">{t.ui.skip}</a>
         <Header lang={lang} t={{ ui: t.ui, nav: t.nav }} />
         <ViewTransition>

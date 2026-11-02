@@ -20,7 +20,7 @@ export default function ContactPage({ lang }: { lang: Lang }) {
       <PageHero lang={lang} route="contact" pic={img.hotelRiver} {...c.hero} />
       <section className="section">
         <div className="container split">
-          <div className="reveal">
+          <div className="stack">
             <p className="eyebrow">{t.nav.contact}</p>
             <h2 className="title">Hotel Svetionik</h2>
             <span className="rule" />
@@ -41,7 +41,7 @@ export default function ContactPage({ lang }: { lang: Lang }) {
               <a href={social.instagram} target="_blank" rel="noopener" aria-label="Instagram" style={{ borderColor: "var(--line)" }}><InstagramIcon /></a>
             </div>
           </div>
-          <div className="panel reveal">
+          <div className="panel">
             <h2 className="title title--sm">{c.formTitle}</h2>
             <p className="muted" style={{ margin: "14px 0 18px" }}>{c.formText}</p>
             <ContactForm t={t.forms} />

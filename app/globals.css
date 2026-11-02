@@ -1438,6 +1438,184 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
   }
 }
 
+/* ==========================================================================
+   UVODNE ANIMACIJE (pri učitavanju stranice)
+   html.intro (jednom po sesiji) dodaje kratku zavesu sa logom; ostali uvod
+   se pomera za --intro. Glavna slika se iscrtava odmah (LCP nije odložen).
+   ========================================================================== */
+:root { --intro: 0s; }
+.intro { --intro: 0.95s; }
+
+/* Reči naslova u maski */
+.w { display: inline-block; overflow: clip; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+.w > span { display: inline-block; }
+
+.curtain { display: none; }
+
+@keyframes word-up { from { transform: translateY(108%); } to { transform: none; } }
+@keyframes intro-up { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes intro-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes intro-media { from { transform: scale(1.14); } to { transform: none; } }
+@keyframes intro-overlay { from { opacity: 0.35; } to { opacity: 0; } }
+@keyframes intro-eyebrow { from { opacity: 0; letter-spacing: 0.7em; } to { opacity: 1; letter-spacing: var(--track-wide); } }
+@keyframes intro-down { from { transform: translateY(-130%); } to { transform: none; } }
+@keyframes curtain-up { to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
+@keyframes curtain-logo { 0% { opacity: 0; transform: translateY(14px) scale(0.96); } 45%, 100% { opacity: 1; transform: none; } }
+@keyframes scroll-cue { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .intro .curtain {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: var(--wine-deep);
+    color: #fbf6f0;
+    pointer-events: none;
+    animation: curtain-up 0.85s var(--ease) 0.7s forwards;
+  }
+  .intro .curtain svg { width: clamp(150px, 18vw, 220px); animation: curtain-logo 0.8s var(--ease) both; }
+
+  /* Header i brend blok */
+  .site-header { animation: intro-down 0.9s var(--ease) both; animation-delay: calc(var(--intro) + 0.15s); }
+
+  /* Hero: slika "uplovljava", tamni sloj se razilazi */
+  .hero__media { animation: intro-media 2s var(--ease) both; animation-delay: var(--intro); }
+  .hero__content > .eyebrow { animation: intro-eyebrow 1.3s var(--ease) both; animation-delay: calc(var(--intro) + 0.25s); }
+  .split-intro .w > span { animation: word-up 1.1s var(--ease) both; animation-delay: calc(var(--intro) + 0.4s + var(--wi, 0) * 0.09s); }
+  .hero__sub { animation: intro-up 1s var(--ease) both; animation-delay: calc(var(--intro) + 0.85s); }
+  .hero__words li { animation: intro-up 0.9s var(--ease) both; animation-delay: calc(var(--intro) + 1.05s); }
+  .hero__words li:nth-child(2) { animation-delay: calc(var(--intro) + 1.15s); }
+  .hero__words li:nth-child(3) { animation-delay: calc(var(--intro) + 1.25s); }
+  .booking-bar { animation: intro-up 1s var(--ease) both; animation-delay: calc(var(--intro) + 1.3s); }
+  .breadcrumbs ol { animation: intro-fade 0.8s var(--ease) both; animation-delay: calc(var(--intro) + 0.9s); }
+
+  /* Indikator skrola — tačka putuje niz liniju */
+  .hero__scroll { overflow: hidden; background: rgba(255, 255, 255, 0.25); }
+  .hero__scroll::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, #fff, transparent);
+    animation: scroll-cue 2.2s var(--ease) infinite;
+  }
+
+  /* Naslovi sekcija: reč po reč pri skrolu (reverzibilno) */
+  @supports (animation-timeline: view()) {
+    .split .w > span {
+      animation: word-up linear both;
+      animation-timeline: view();
+      animation-range: entry calc(8% + var(--wi, 0) * 4%) cover calc(26% + var(--wi, 0) * 4%);
+    }
+  }
+  .rv-js .split .w > span { transform: translateY(108%); transition: transform 0.9s var(--ease); transition-delay: calc(var(--wi, 0) * 70ms); }
+  .rv-js .split.is-in .w > span { transform: none; }
+}
+
+/* ==========================================================================
+   AUTOMATSKO POJAVLJIVANJE SVIH ELEMENATA
+   Svako dete "stack" kolone i svaka stavka listi/činjenica/formi/footera
+   ulazi pri skrolu (reverzibilno). Stavke niže na ekranu prirodno kasne,
+   pa nastaje kaskada bez ručnog podešavanja.
+   ========================================================================== */
+@keyframes rv-soft { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    :is(
+    .stack > :not(.rule, .link-list, .prose, .facts, .checklist, .contact-list, .btn-row, .chat-links, .socials, .split),
+    .stack > .btn-row > *,
+    .chat-links > *,
+    .socials > *,
+    .prose > *,
+    .link-list > li,
+    .contact-list > li,
+    .facts > div,
+    .checklist > li,
+    .specs > li,
+    .amenities-line > li,
+    .menu-list > li,
+    .menu-drinks > div,
+    .menu-section__note,
+    .form-grid > *,
+    .panel > :not(form),
+    .room-aside > :not(.facts),
+    .duo figure > p,
+    .album__head,
+    .auto-reveal,
+    .footer-grid > *,
+    .footer-bottom,
+    .room-detail > div > h2,
+    .nav-panel__meta > *
+    ) {
+      animation: rv-soft linear both;
+      animation-timeline: view();
+      /* završava se kad element ceo uđe u ekran — radi i na samom dnu stranice */
+      animation-range: entry 0% entry 100%;
+    }
+    /* Kolona pored slike ulazi sa strane slike */
+    .feature:not(.feature--reverse) .stack > :is(.eyebrow, p, .btn) { animation-name: rv-right; }
+    .feature--reverse .stack > :is(.eyebrow, p, .btn) { animation-name: rv-left; }
+  }
+  .rv-js :is(
+    .stack > :not(.rule, .link-list, .prose, .facts, .checklist, .contact-list, .btn-row, .chat-links, .socials, .split),
+    .stack > .btn-row > *,
+    .chat-links > *,
+    .socials > *,
+    .prose > *,
+    .link-list > li,
+    .contact-list > li,
+    .facts > div,
+    .checklist > li,
+    .specs > li,
+    .amenities-line > li,
+    .menu-list > li,
+    .menu-drinks > div,
+    .menu-section__note,
+    .form-grid > *,
+    .panel > :not(form),
+    .room-aside > :not(.facts),
+    .duo figure > p,
+    .album__head,
+    .auto-reveal,
+    .footer-grid > *,
+    .footer-bottom,
+    .room-detail > div > h2,
+    .nav-panel__meta > *
+  ) {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  }
+  .rv-js :is(
+    .stack > :not(.rule, .link-list, .prose, .facts, .checklist, .contact-list, .btn-row, .chat-links, .socials, .split),
+    .stack > .btn-row > *,
+    .chat-links > *,
+    .socials > *,
+    .prose > *,
+    .link-list > li,
+    .contact-list > li,
+    .facts > div,
+    .checklist > li,
+    .specs > li,
+    .amenities-line > li,
+    .menu-list > li,
+    .menu-drinks > div,
+    .menu-section__note,
+    .form-grid > *,
+    .panel > :not(form),
+    .room-aside > :not(.facts),
+    .duo figure > p,
+    .album__head,
+    .auto-reveal,
+    .footer-grid > *,
+    .footer-bottom,
+    .room-detail > div > h2,
+    .nav-panel__meta > *
+  ).is-in { opacity: 1; transform: none; }
+}
+
 /* ---------- Prelazi između stranica (React ViewTransition) ---------- */
 ::view-transition-old(root) { animation: vt-out 0.28s var(--ease) both; }
 ::view-transition-new(root) { animation: vt-in 0.42s var(--ease) both; }

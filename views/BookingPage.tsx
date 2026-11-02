@@ -18,7 +18,7 @@ export default function BookingPage({ lang }: { lang: Lang }) {
       <PageHero lang={lang} route="booking" pic={img.superiorWide} {...b.hero} />
       <section className="section">
         <div className="container split" style={{ alignItems: "start" }}>
-          <div className="reveal">
+          <div className="stack">
             <p className="eyebrow">{t.nav.booking}</p>
             <h2 className="title">{t.ui.enquire}</h2>
             <span className="rule" />
@@ -32,7 +32,7 @@ export default function BookingPage({ lang }: { lang: Lang }) {
             </ul>
             <ChatLinks lang={lang} />
           </div>
-          <div className="panel reveal">
+          <div className="panel">
             <BookingForm t={t.forms} roomLabels={[t.standardRoom.name, t.extraBedRoom.name, t.superiorSuite.name]} />
           </div>
         </div>

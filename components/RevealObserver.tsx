@@ -3,7 +3,10 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const SELECTOR = ".reveal, .reveal-left, .reveal-right, .frame";
+const SELECTOR = [
+  ".reveal, .reveal-left, .reveal-right, .frame, .split",
+  ".stack > :not(.rule, .link-list, .prose, .facts, .checklist, .contact-list, .btn-row, .chat-links, .socials, .split), .stack > .btn-row > *, .chat-links > *, .socials > *, .prose > *, .link-list > li, .contact-list > li, .facts > div, .checklist > li, .specs > li, .amenities-line > li, .menu-list > li, .menu-drinks > div, .menu-section__note, .form-grid > *, .panel > :not(form), .room-aside > :not(.facts), .duo figure > p, .album__head, .auto-reveal, .footer-grid > *, .footer-bottom, .room-detail > div > h2, .nav-panel__meta > *",
+].join(", ");
 
 /**
  * Rezerva za pregledače bez CSS scroll-driven animacija.

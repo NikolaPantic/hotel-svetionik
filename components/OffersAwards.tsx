@@ -36,7 +36,7 @@ export function Awards({ lang }: { lang: Lang }) {
   return (
     <section className="section section--deep" aria-labelledby="awards-title">
       <div className="container awards">
-        <div className="reveal-left">
+        <div className="stack">
           <p className="eyebrow">{t.awards.eyebrow}</p>
           <h2 className="title" id="awards-title">{t.awards.title}</h2>
         </div>

@@ -46,7 +46,7 @@ export default function RoomPage({ lang, room }: { lang: Lang; room: RoomKey }) 
             <ul className="checklist">{r.features.map((f) => <li key={f}>{f}</li>)}</ul>
           </div>
 
-          <aside className="room-aside reveal" aria-label={t.room.basicInfo}>
+          <aside className="room-aside" aria-label={t.room.basicInfo}>
             <p className="eyebrow">{t.room.basicInfo}</p>
             {roomPricesEur[room] !== null && (
               <p className="room-price">

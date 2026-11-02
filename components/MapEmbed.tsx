@@ -9,7 +9,7 @@ type Props = { labels: { show: string; note: string; title: string; open: string
 export function MapEmbed({ labels }: Props) {
   const [loaded, setLoaded] = useState(false);
   return (
-    <div className="map reveal">
+    <div className="map auto-reveal">
       {loaded ? (
         <iframe src={mapEmbed} title={labels.title} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
       ) : (
