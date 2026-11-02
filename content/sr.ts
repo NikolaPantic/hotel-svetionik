@@ -16,6 +16,7 @@ const sr = {
     home: "Početna",
     breadcrumbs: "Putanja",
     learnMore: "Saznajte više",
+    moreAbout: "Više o nama",
     viewAll: "Pogledajte sve",
     details: "Detaljnije",
     enquire: "Pošaljite upit",
@@ -180,7 +181,26 @@ const sr = {
       title: "Kako do nas?",
       car: { title: "Automobilom", text: "Iz pravca Beograda najbrže ćete stići autoputem „Miloš Veliki“, a iz pravca Surčina preko Obrenovačkog mosta, pored termoelektrane „Nikola Tesla“." },
       bus: { title: "Gradskim prevozom", text: "Na 600 metara od hotela nalazi se okretnica gradskog autobusa 860MV, koji polazi sa glavne autobuske stanice i saobraća preko aerodroma i autoputa „Miloš Veliki“." },
+      river: { title: "Rekom", text: "Ako dolazite plovilom, pristan za čamce nalazi se tik ispod letnje bašte restorana. Javite nam se unapred i sačekaće vas slobodan vez." },
       distance: "Udaljeni smo 30 km od centra Beograda i 20 km od centra Surčina.",
+    },
+    values: {
+      eyebrow: "Gostoprimstvo",
+      title: "Ono što nas izdvaja",
+      items: [
+        ["Na samoj obali Save", "Restoran, letnja bašta i marina gledaju na reku, a opet ste na samo pola sata vožnje od centra Beograda — dovoljno blizu za posao, dovoljno daleko za pravi odmor."],
+        ["Sve na jednom mestu", "Smeštaj, restoran, sale za proslave, vinski podrum i pristan za čamce su pod istim krovom. Vi i vaši gosti ne morate nigde da idete — sve je na nekoliko koraka."],
+        ["Domaća kuhinja", "Kuhinja je okrenuta jelima koja se pamte: domaćim predjelima, specijalitetima sa roštilja i ribi sa reke, uz više od 60 sorti vina."],
+        ["Pažnja prema svakom gostu", "Bez obzira na to da li ostajete jednu noć ili slavite najvažniji dan, trudimo se da sve bude jednostavno, toplo i bez brige — od prvog poziva do odlaska."],
+      ],
+    },
+    area: {
+      eyebrow: "Okolina",
+      title: "Obrenovac i okolina",
+      p: [
+        "Obrenovac je mirna varoš na Savi, nadomak ušća Kolubare, sa prijatnim kejom, zelenilom i sportsko-rekreativnim sadržajima. Idealan je za odmor daleko od gradske gužve, a dovoljno blizu Beograda za jednodnevne izlete, poslovne sastanke ili posetu prijateljima.",
+        "Iz hotela možete prošetati uz reku, uživati u zalasku sunca na terasi ili krenuti put Beograda i aerodroma „Nikola Tesla“ autoputem „Miloš Veliki“. Rado ćemo vam preporučiti šta da obiđete — samo pitajte na recepciji.",
+      ],
     },
   },
 
@@ -213,6 +233,7 @@ const sr = {
     intro: [
       "Raspolažemo sa 15 smeštajnih jedinica: 6 standardnih soba, 7 soba sa pomoćnim ležajem i 2 superior apartmana sa đakuzijem. Sve sobe imaju mini-bar, LCD TV sa domaćim i stranim kanalima, klima uređaj i fen.",
       "Recepcija radi od 08:00 do 23:00; dolazak u drugim terminima moguć je samo uz prethodno potvrđenu rezervaciju. Prijava je od 12:00, odjava do 10:00.",
+      "Bilo da dolazite poslovno, na vikend u dvoje ili sa celom porodicom, izaberite sobu po meri: mirnu standardnu sobu za kratak boravak, prostranu sobu sa dodatnim ležajem za porodicu ili superior apartman sa đakuzijem za posebne prilike. Ujutru vas čeka doručak u restoranu, a uveče pogled na Savu sa terase.",
     ],
     count: { standardRoom: "6 soba", extraBedRoom: "7 soba", superiorSuite: "2 apartmana" },
     amenitiesTitle: "U svakoj sobi",
@@ -320,6 +341,16 @@ const sr = {
       ["Venčanje", "na obali Save"],
     ],
     cta: "Za slobodne termine pozovite",
+    steps: {
+      eyebrow: "Organizacija",
+      title: "Kako teče priprema proslave",
+      items: [
+        ["Razgovor i obilazak", "Pozovite nas ili dođite da zajedno obiđemo sale, terasu i vinski podrum i odaberemo prostor koji odgovara broju gostiju i atmosferi koju želite."],
+        ["Meni po vašoj meri", "Predlažemo meni od domaćih predjela, glavnih jela i ribljih specijaliteta, a zatim ga prilagođavamo vašim željama i gostima."],
+        ["Dekoracija i raspored", "Dogovaramo raspored stolova, dekoraciju i sve detalje — od ceremonije na obali Save do torte i muzike."],
+        ["Vaš dan", "Na dan proslave naše osoblje brine o svemu, a vi uživate sa najdražima. Gosti koji dolaze izdaleka mogu da prenoće u hotelu."],
+      ],
+    },
   },
 
   restaurant: {
@@ -344,6 +375,14 @@ const sr = {
       ],
       pdf: "Pogledajte jelovnik",
     },
+    groups: {
+      eyebrow: "Za društvo i porodicu",
+      title: "Ručak, večera ili proslava",
+      p: [
+        "Restoran je mesto za poslovni ručak, porodičnu nedelju ili večeru u dvoje uz zalazak sunca. Za veća društva pripremamo meni po dogovoru, a manje proslave organizujemo i u samom restoranu ili u vinskom podrumu.",
+        "Rezervacija stola nije obavezna, ali je preporučujemo vikendom i u sezoni — pozovite nas i sačuvaćemo vam najbolje mesto u bašti.",
+      ],
+    },
     facts: [
       ["Kapacitet", "do 200 mesta"],
       ["Ambijent", "sala i letnja bašta"],
@@ -367,6 +406,7 @@ const sr = {
       title: "Proslave do 30 gostiju",
       text: "Vinski podrum je idealno mesto za intimne proslave do 30 ljudi. Zakažite termin na vreme — na vama je samo da uživate.",
     },
+    visit: "Poseta podrumu je prijatan završetak ručka ili večere: naše osoblje će vas provesti među policama, ispričati nešto o vinarijama i pomoći vam da izaberete vino po svom ukusu — za uz jelo ili za poneti kući.",
     facts: [
       ["Sorte vina", "60+"],
       ["Vinarije", "domaće i strane"],
@@ -383,6 +423,7 @@ const sr = {
     p: [
       "Za goste koji do nas dolaze vodenim putem obezbedili smo mesto za plovilo u našoj brodskoj marini. Pristan za čamce nalazi se tik ispod restorana, u podnožju letnje bašte, pa će vam plovilo biti na oku dok uživate u ponudi naše kuhinje.",
       "Deo pristaništa rezervisan je za brodove usidrene tokom celog leta, a moguć je i višednevni najam mesta za vaše plovilo. Posetite nas sa Save, bezbedno se usidrite i uz predivan pogled uživajte u ručku, piću ili omiljenoj poslastici.",
+      "Najavite dolazak pozivom na 064 / 3635-555 — dogovorićemo vez, dužinu boravka i, po želji, sto u restoranu ili sobu u hotelu za vas i vaše društvo.",
     ],
     facts: [
       ["Kapacitet", "20 plovila"],

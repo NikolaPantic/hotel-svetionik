@@ -21,6 +21,7 @@ export default function RoomsPage({ lang }: { lang: Lang }) {
             <p className="lead" style={{ fontSize: "clamp(20px, 2vw, 28px)" }}>{r.intro[0]}</p>
             <span className="rule" />
             <p className="muted">{r.intro[1]}</p>
+            <p className="muted">{r.intro[2]}</p>
             <p style={{ marginTop: 18 }}><Link className="link-more" href={href("stay", lang)}>{t.nav.stay}</Link></p>
           </div>
           <RoomCards lang={lang} headingLevel={2} />

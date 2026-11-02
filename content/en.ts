@@ -18,6 +18,7 @@ const en: Dict = {
     home: "Home",
     breadcrumbs: "Breadcrumb",
     learnMore: "Discover",
+    moreAbout: "More about us",
     viewAll: "View all",
     details: "Details",
     enquire: "Send an enquiry",
@@ -182,7 +183,26 @@ const en: Dict = {
       title: "How to reach us",
       car: { title: "By car", text: "From Belgrade, take the “Miloš Veliki” motorway; from Surčin, cross the Obrenovac bridge next to the “Nikola Tesla” power plant." },
       bus: { title: "By public transport", text: "City bus 860MV terminates 600 m from the hotel. It departs from the main bus station and runs via the airport and the “Miloš Veliki” motorway." },
+      river: { title: "By river", text: "Arriving by boat? The dock is right below the restaurant's summer garden. Let us know in advance and a free berth will be waiting." },
       distance: "We are 30 km from central Belgrade and 20 km from central Surčin.",
+    },
+    values: {
+      eyebrow: "Hospitality",
+      title: "What sets us apart",
+      items: [
+        ["Right on the Sava", "The restaurant, summer garden and marina all look out over the river — and central Belgrade is still only half an hour away: close enough for business, far enough for a real break."],
+        ["Everything in one place", "Rooms, restaurant, banquet halls, wine cellar and boat dock under one roof. You and your guests never need to go anywhere else — everything is a few steps away."],
+        ["Home cooking", "Our kitchen focuses on dishes you remember: Serbian starters, grilled specialities and river fish, with more than 60 wines to match."],
+        ["Care for every guest", "Whether you stay one night or celebrate the most important day of your life, we keep everything simple, warm and worry-free — from the first call to check-out."],
+      ],
+    },
+    area: {
+      eyebrow: "The area",
+      title: "Obrenovac and around",
+      p: [
+        "Obrenovac is a quiet town on the Sava, close to where the Kolubara joins it, with a pleasant riverside promenade, green spaces and sports and leisure facilities. It is ideal for a break from city crowds, yet close enough to Belgrade for day trips, business meetings or visiting friends.",
+        "From the hotel you can stroll along the river, enjoy the sunset on the terrace or head to Belgrade and Nikola Tesla Airport via the “Miloš Veliki” motorway. We are happy to suggest what to see — just ask at reception.",
+      ],
     },
   },
 
@@ -215,6 +235,7 @@ const en: Dict = {
     intro: [
       "We have 15 units: 6 standard rooms, 7 rooms with an extra bed and 2 superior apartments with jacuzzi. Every room has a minibar, LCD TV with local and international channels, air conditioning and a hairdryer.",
       "Reception is open 08:00–23:00; arrivals outside these hours require a confirmed reservation. Check-in is from 12:00 and check-out by 10:00.",
+      "Whether you are travelling for work, on a weekend for two or with the whole family, choose the room that suits you: a quiet standard room for a short stay, a spacious room with an extra bed for families, or a superior apartment with jacuzzi for special occasions. Breakfast awaits in the restaurant, and in the evening, the view of the Sava from the terrace.",
     ],
     count: { standardRoom: "6 rooms", extraBedRoom: "7 rooms", superiorSuite: "2 apartments" },
     amenitiesTitle: "In every room",
@@ -322,6 +343,16 @@ const en: Dict = {
       ["Wedding", "on the riverbank"],
     ],
     cta: "For available dates call",
+    steps: {
+      eyebrow: "Planning",
+      title: "How we plan your celebration",
+      items: [
+        ["Meet and walk through", "Call us or visit so we can tour the halls, terrace and wine cellar together and choose the space that suits your guest list and the atmosphere you want."],
+        ["A menu made for you", "We propose a menu of Serbian starters, main courses and fish specialities, then tailor it to your wishes and your guests."],
+        ["Decoration and layout", "We agree the seating plan, decoration and every detail — from a ceremony on the riverbank to the cake and music."],
+        ["Your day", "On the day, our team takes care of everything while you enjoy time with your loved ones. Guests travelling from afar can stay overnight at the hotel."],
+      ],
+    },
   },
 
   restaurant: {
@@ -346,6 +377,14 @@ const en: Dict = {
       ],
       pdf: "View the menu",
     },
+    groups: {
+      eyebrow: "For friends and family",
+      title: "Lunch, dinner or a celebration",
+      p: [
+        "The restaurant is the place for a business lunch, a family Sunday or dinner for two at sunset. For larger groups we prepare a set menu on request, and smaller celebrations can be held in the restaurant itself or in the wine cellar.",
+        "Booking a table is not required, but we recommend it at weekends and in high season — call us and we will keep you the best spot in the garden.",
+      ],
+    },
     facts: [
       ["Capacity", "up to 200 seats"],
       ["Setting", "dining room & garden"],
@@ -369,6 +408,7 @@ const en: Dict = {
       title: "Celebrations for up to 30",
       text: "The wine cellar is ideal for intimate celebrations of up to 30 people. Book your date early — all you have to do is enjoy.",
     },
+    visit: "A visit to the cellar is a lovely way to end lunch or dinner: our staff will walk you through the racks, tell you a little about the wineries and help you choose a wine you will enjoy — with your meal or to take home.",
     facts: [
       ["Wines", "60+"],
       ["Wineries", "local & international"],
@@ -385,6 +425,7 @@ const en: Dict = {
     p: [
       "For guests arriving by water, we keep a berth for your boat in our marina. The dock lies just below the restaurant, at the foot of the summer garden, so your boat stays in view while you enjoy our kitchen.",
       "Part of the dock is reserved for boats moored for the whole summer, and multi-day berth rental is available. Visit us from the Sava, moor safely and enjoy lunch, a drink or a favourite dessert with a wonderful view.",
+      "Let us know you are coming on +381 64 3635 555 — we will arrange your berth, length of stay and, if you like, a table in the restaurant or a room at the hotel for you and your party.",
     ],
     facts: [
       ["Capacity", "20 boats"],

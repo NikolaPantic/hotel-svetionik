@@ -148,9 +148,6 @@ import marina3 from "@/public/images/boat-marina/boat-marina-3.jpg";
 import marina4 from "@/public/images/boat-marina/boat-marina-4.jpg";
 import marina5 from "@/public/images/boat-marina/boat-marina-5.jpg";
 
-// Getting here
-import driving from "@/public/images/driving.jpg";
-import bus from "@/public/images/bus.jpg";
 
 export type Pic = { src: StaticImageData; alt: Record<Lang, string> };
 const p = (src: StaticImageData, sr: string, en: string): Pic => ({ src, alt: { sr, en } });
@@ -197,8 +194,6 @@ export const img = {
   marina4: p(marina4, "Drveni pristan na Savi", "Wooden pier on the Sava"),
   marina2: p(marina2, "Pristan za čamce ispod letnje bašte", "Boat dock below the summer garden"),
 
-  driving: p(driving, "Dolazak automobilom do hotela", "Arriving at the hotel by car"),
-  bus: p(bus, "Gradski autobus 860MV", "City bus 860MV"),
 };
 
 export const roomGalleries = {

@@ -381,6 +381,7 @@ h1, h2, h3, h4 {
 .nav-open .menu-toggle__bars::after { top: 5px; transform: rotate(-45deg); }
 
 .header-phone { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; }
+.header-about { display: inline-flex; align-items: center; min-height: 44px; }
 .header-phone svg { width: 14px; height: 14px; }
 
 .lang { display: inline-flex; gap: 4px; }
@@ -428,7 +429,7 @@ h1, h2, h3, h4 {
 .nav-panel__menu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
   padding: calc(var(--header-h) + 40px) var(--gutter) 48px clamp(24px, 8vw, 140px);
   overflow-y: auto;
 }
@@ -713,6 +714,15 @@ figcaption {
   transition: inset var(--t-slow) var(--ease);
 }
 a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px, 1.5vw, 20px); }
+
+/* Promena slike na hover/fokus stavke liste (HoverFeature, meni) */
+.frame--swap .frame__img img,
+.nav-panel__image img { opacity: 0; transition: opacity 0.7s var(--ease); }
+.frame--swap .frame__img img.is-active,
+.nav-panel__image img.is-active { opacity: 1; }
+.link-list a.is-current { color: var(--wine); padding-left: 8px; }
+.link-list a.is-current::after { transform: translateX(6px); }
+:root[data-theme="dark"] .link-list a.is-current { color: var(--gold-text); }
 .frame--arch .frame__img,
 .frame--arch::before,
 .frame--arch .frame__img::after { border-radius: 999px 999px 0 0; }
@@ -1040,6 +1050,31 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 :root[data-theme="dark"] .contact-list a:hover { color: var(--gold-text); }
 
 .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(36px, 4vw, 64px); }
+.duo--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* Vrednosti / koraci (numerisane kolone) */
+.values {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(28px, 3vw, 48px);
+  counter-reset: none;
+}
+.values li { padding-top: 24px; border-top: 1px solid var(--line); }
+.section--deep .values li { border-color: var(--deep-line); }
+.values__num {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: var(--track-wide);
+  color: var(--gold-text);
+}
+.section--deep .values__num { color: var(--gold-bright); }
+.values h3 { font-size: clamp(24px, 2vw, 30px); margin-bottom: 12px; }
+.values p { margin: 0; }
 .duo figure { margin: 0; }
 .duo .frame { margin-right: var(--frame-off); }
 .duo .frame__img { --ratio: 16 / 10; }
@@ -1404,7 +1439,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
-  .header-phone span, .lang { display: none; }
+  .header-phone span, .lang, .header-about { display: none; }
   .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .stat:nth-child(3) { border-right: 0; }
   .stat:nth-child(-n + 3) { border-bottom: 1px solid var(--deep-line); }
@@ -1418,6 +1453,8 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
   .insta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .reviews { grid-template-columns: 1fr; }
   .awards { grid-template-columns: 1fr; }
+  .values { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .duo--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 860px) {
@@ -1428,7 +1465,7 @@ a:hover .frame__img::after, .frame:hover .frame__img::after { inset: clamp(12px,
   .nav-panel { grid-template-columns: 1fr; }
   .nav-panel__image { display: none; }
   .nav-panel__menu { padding-left: var(--gutter); justify-content: flex-start; }
-  .feature, .split, .duo { grid-template-columns: 1fr; }
+  .feature, .split, .duo, .duo--3, .values { grid-template-columns: 1fr; }
   .feature--reverse .feature__media { order: 0; }
   .feature__media, .feature--reverse .feature__media { padding: 0 var(--frame-off) var(--frame-off) 0; }
   .feature__media .frame__img { --ratio: 4 / 3; }

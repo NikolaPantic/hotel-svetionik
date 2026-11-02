@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CtaBand, Facts, Feature, OtherServices, PageHero, SectionHead, Tiles } from "@/components/blocks";
+import { CtaBand, Facts, Feature, OtherServices, PageHero, SectionHead, Tiles, stagger } from "@/components/blocks";
 import { Gallery } from "@/components/Gallery";
 import { JsonLd } from "@/components/JsonLd";
 import { getDict } from "@/content";
@@ -43,6 +43,21 @@ export function CelebrationsPage({ lang }: { lang: Lang }) {
           </Feature>
         </div>
       </section>
+      <section className="section" aria-labelledby="cel-steps">
+        <div className="container">
+          <SectionHead eyebrow={c.steps.eyebrow} title={c.steps.title} id="cel-steps" />
+          <ol className="values values--steps">
+            {c.steps.items.map(([title, text], i) => (
+              <li className="reveal" style={stagger(i)} key={title}>
+                <span className="values__num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <h3>{title}</h3>
+                <p className="muted">{text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       <section className="section section--wine" aria-labelledby="cel-types">
         <div className="container">
           <SectionHead eyebrow={c.hero.eyebrow} title={t.nav.celebrations} id="cel-types" />
@@ -108,7 +123,19 @@ export function RestaurantPage({ lang }: { lang: Lang }) {
           </Feature>
         </div>
       </section>
-      <section className="section section--alt" aria-labelledby="food-gallery">
+      <section className="section section--alt" aria-labelledby="rest-groups">
+        <div className="container">
+          <Feature lang={lang} reverse pic={galleryAlbums.restaurant[13]} eyebrow={r.groups.eyebrow} title={r.groups.title} id="rest-groups">
+            <div className="prose">{r.groups.p.map((p) => <p key={p}>{p}</p>)}</div>
+            <div className="btn-row" style={{ marginTop: 30 }}>
+              <a className="btn btn--solid" href={phones.restaurant.href}>{r.cta} · {phones.restaurant.label}</a>
+              <Link className="btn btn--ghost" href={href("privateParties", lang)}>{t.nav.privateParties}</Link>
+            </div>
+          </Feature>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="food-gallery">
         <div className="container">
           <SectionHead eyebrow={t.nav.gallery} title={t.galleryPage.albums.food} id="food-gallery" />
           <Gallery images={lite(galleryAlbums.food, lang)} limit={12} alt={t.galleryPage.albums.food} mosaic labels={labels(lang)} />
@@ -136,7 +163,7 @@ export function WineCellarPage({ lang }: { lang: Lang }) {
       <section className="section">
         <div className="container">
           <Feature lang={lang} pic={img.cellarHall1} eyebrow={t.nav.wineCellar} title={w.hero.title}>
-            <div className="prose">{w.p.map((p) => <p key={p}>{p}</p>)}</div>
+            <div className="prose">{[...w.p, w.visit].map((p) => <p key={p}>{p}</p>)}</div>
             <Facts items={w.facts} />
           </Feature>
         </div>

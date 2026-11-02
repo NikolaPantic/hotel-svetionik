@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import type { Dict } from "@/content";
-import { img } from "@/lib/images";
+import { img, type Pic } from "@/lib/images";
 import { href, routeKeyFromPath, routes, type Lang, type RouteKey } from "@/lib/routes";
 import { address, email, phones } from "@/lib/site";
 import { PhoneIcon } from "./icons";
@@ -25,10 +25,30 @@ const menu: { key: RouteKey; sub?: RouteKey[] }[] = [
   { key: "contact" },
 ];
 
+/** Slika u meniju koja prati stavku pod mišem / fokusom. */
+const menuPics: Partial<Record<RouteKey, Pic>> = {
+  about: img.hotelFront,
+  rooms: img.superiorWide,
+  celebrations: img.banquetBg,
+  restaurant: img.restTerrace,
+  wineCellar: img.cellar3,
+  marina: img.marina,
+  gallery: img.banquetBlack,
+  contact: img.hotelSide,
+};
+
 export function Header({ lang, t }: Props) {
   const pathname = usePathname();
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
+  const [hovered, setHovered] = useState<RouteKey | null>(null);
+  // Slike se učitavaju tek kada se pređe preko stavke (ne sve odjednom).
+  const [seen, setSeen] = useState<RouteKey[]>([]);
+  const showPic = (key: RouteKey) => {
+    if (!menuPics[key]) return;
+    setHovered(key);
+    setSeen((s) => (s.includes(key) ? s : [...s, key]));
+  };
   const toggleRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -71,12 +91,13 @@ export function Header({ lang, t }: Props) {
               type="button"
               aria-expanded={open}
               aria-controls="site-nav"
+              aria-label={open ? t.ui.close : t.ui.menu}
               onClick={() => setMenu(!open)}
             >
               <span className="menu-toggle__bars" aria-hidden="true" />
-              <span className="menu-toggle__label">{open ? t.ui.close : t.ui.menu}</span>
-              <span className="visually-hidden">{open ? t.ui.close : t.ui.menu}</span>
+              <span className="menu-toggle__label" aria-hidden="true">{open ? t.ui.close : t.ui.menu}</span>
             </button>
+            <Link className="header-about" href={href("about", lang)}>{t.nav.about}</Link>
             <a className="header-phone" href={phones.info.href}>
               <PhoneIcon />
               <span>{phones.info.label}</span>
@@ -117,7 +138,7 @@ export function Header({ lang, t }: Props) {
         <nav className="nav-panel__menu" aria-label={t.ui.menu}>
           <ul>
             {menu.map(({ key, sub }, i) => (
-              <li key={key} style={{ "--i": i } as CSSProperties}>
+              <li key={key} style={{ "--i": i } as CSSProperties} onPointerEnter={() => showPic(key)} onFocusCapture={() => showPic(key)}>
                 <Link href={href(key, lang)} aria-current={current === key ? "page" : undefined}>
                   {t.nav[key as keyof Dict["nav"]]}
                 </Link>
@@ -146,7 +167,14 @@ export function Header({ lang, t }: Props) {
           </div>
         </nav>
         <div className="nav-panel__image">
-          {open && <Image src={img.hotelTower.src} alt="" fill sizes="50vw" />}
+          {open && (
+            <>
+              <Image src={img.hotelTower.src} alt="" className={hovered ? undefined : "is-active"} fill sizes="50vw" />
+              {seen.map((k) => (
+                <Image key={k} src={menuPics[k]!.src} alt="" className={hovered === k ? "is-active" : undefined} fill sizes="50vw" />
+              ))}
+            </>
+          )}
         </div>
       </div>
     </>
