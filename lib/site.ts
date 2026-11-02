@@ -2,7 +2,7 @@ export const SITE_URL = "https://www.hotelsvetionik.rs";
 export const SITE_NAME = "Hotel Svetionik";
 
 export const phones = {
-  info: { href: "tel:+381642709001", label: "064 / 2709-001", e164: "+381642709001" },
+  info: { href: "tel:+381643635555", label: "064 / 3635-555", e164: "+381643635555" },
   restaurant: { href: "tel:+381118755550", label: "011 / 8755-550", e164: "+381118755550" },
   booking: { href: "tel:+381691018518", label: "069 / 1018-518", e164: "+381691018518" },
 } as const;

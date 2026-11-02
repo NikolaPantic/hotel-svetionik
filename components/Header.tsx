@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import type { Dict } from "@/content";
 import { img } from "@/lib/images";
 import { href, routeKeyFromPath, routes, type Lang, type RouteKey } from "@/lib/routes";
@@ -77,9 +77,9 @@ export function Header({ lang, t }: Props) {
               <span className="menu-toggle__label">{open ? t.ui.close : t.ui.menu}</span>
               <span className="visually-hidden">{open ? t.ui.close : t.ui.menu}</span>
             </button>
-            <a className="header-phone" href={phones.booking.href}>
+            <a className="header-phone" href={phones.info.href}>
               <PhoneIcon />
-              <span>{phones.booking.label}</span>
+              <span>{phones.info.label}</span>
             </a>
           </div>
 
@@ -116,8 +116,8 @@ export function Header({ lang, t }: Props) {
       >
         <nav className="nav-panel__menu" aria-label={t.ui.menu}>
           <ul>
-            {menu.map(({ key, sub }) => (
-              <li key={key}>
+            {menu.map(({ key, sub }, i) => (
+              <li key={key} style={{ "--i": i } as CSSProperties}>
                 <Link href={href(key, lang)} aria-current={current === key ? "page" : undefined}>
                   {t.nav[key as keyof Dict["nav"]]}
                 </Link>

@@ -1,23 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Facts, Faq, Feature, RoomCards, SectionHead, Tiles } from "@/components/blocks";
-import { Gallery } from "@/components/Gallery";
+import { Faq, Feature, SectionHead, Tiles, stagger } from "@/components/blocks";
+import { CountUp } from "@/components/CountUp";
+import { Instagram } from "@/components/Instagram";
 import { JsonLd } from "@/components/JsonLd";
 import { MapEmbed } from "@/components/MapEmbed";
+import { Awards, Offers } from "@/components/OffersAwards";
 import { QuickBooking } from "@/components/QuickBooking";
 import { Reviews } from "@/components/Reviews";
 import { getDict } from "@/content";
-import { galleryAlbums, img, lite } from "@/lib/images";
+import { img } from "@/lib/images";
 import { href, type Lang } from "@/lib/routes";
 import { faqSchema, graph, pageMetadata, restaurantSchema } from "@/lib/seo";
 import { ROOM_VALUES, address, email, phones } from "@/lib/site";
 
 export const homeMetadata = (lang: Lang) => pageMetadata(lang, "home", getDict(lang).home);
 
-const highlights = [
-  galleryAlbums.hotel[1], galleryAlbums.restaurant[2], galleryAlbums.food[1], galleryAlbums.wineCellar[2],
-  galleryAlbums.celebrations[1], galleryAlbums.hotel[9], galleryAlbums.food[19], galleryAlbums.hotel[5],
-];
+const roomKeys = ["standardRoom", "extraBedRoom", "superiorSuite"] as const;
 
 export default function HomePage({ lang }: { lang: Lang }) {
   const t = getDict(lang);
@@ -25,6 +24,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
   return (
     <>
+      {/* ---------- Hero ---------- */}
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__media">
           <Image src={img.hotelExterior.src} alt={img.hotelExterior.alt[lang]} fill preload sizes="100vw" quality={60} placeholder="blur" />
@@ -35,6 +35,13 @@ export default function HomePage({ lang }: { lang: Lang }) {
             {h.hero.title}
             <span className="hero__sub">{h.hero.sub}</span>
           </h1>
+          <nav aria-label={t.nav.services}>
+            <ul className="hero__words">
+              <li><Link href={href("rooms", lang)}>{lang === "sr" ? "Boravak" : "Stay"}</Link></li>
+              <li><Link href={href("celebrations", lang)}>{lang === "sr" ? "Proslave" : "Celebrate"}</Link></li>
+              <li><Link href={href("restaurant", lang)}>{lang === "sr" ? "Trpeza" : "Dine"}</Link></li>
+            </ul>
+          </nav>
         </div>
         <span className="hero__scroll" aria-hidden="true" />
       </section>
@@ -42,114 +49,112 @@ export default function HomePage({ lang }: { lang: Lang }) {
       <QuickBooking
         action={href("booking", lang)}
         t={h.quick}
-        rooms={ROOM_VALUES.map((value, i) => ({ value, label: t[(["standardRoom", "extraBedRoom", "superiorSuite"] as const)[i]].name }))}
+        rooms={ROOM_VALUES.map((value, i) => ({ value, label: t[roomKeys[i]].name }))}
       />
 
+      {/* ---------- Uvod ---------- */}
       <section className="section intro" aria-labelledby="intro-title">
         <div className="container">
           <h2 className="eyebrow reveal" id="intro-title">{h.intro.eyebrow}</h2>
-          <p className="lead reveal" dangerouslySetInnerHTML={{ __html: h.intro.lead }} />
-          <span className="rule" style={{ marginInline: "auto" }} />
-          <p className="muted intro__body reveal">{h.intro.body}</p>
-          <div className="intro__media">
-            <figure className="reveal">
-              <Image src={img.restTerrace.src} alt={img.restTerrace.alt[lang]} sizes="(max-width: 860px) 100vw, 60vw" placeholder="blur" />
-              <figcaption>{h.intro.fig1}</figcaption>
-            </figure>
-            <figure className="reveal">
-              <Image src={img.superiorWide.src} alt={img.superiorWide.alt[lang]} sizes="(max-width: 860px) 100vw, 40vw" placeholder="blur" />
-              <figcaption>{h.intro.fig2}</figcaption>
-            </figure>
-          </div>
+          <p className="lead reveal" style={stagger(1)} dangerouslySetInnerHTML={{ __html: h.intro.lead }} />
+          <span className="rule" />
+          <p className="muted intro__body reveal" style={stagger(2)}>{h.intro.body}</p>
         </div>
       </section>
 
-      <div className="container">
-        <ul className="stats">
-          {h.stats.map(([n, l]) => (
-            <li className="stat" key={l}>
-              <strong>{n}</strong>
-              <span>{l}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <section className="section" aria-labelledby="rooms-title">
+      {/* ---------- Smeštaj (lista linkova + uokvirena slika) ---------- */}
+      <section className="section" style={{ paddingTop: 0 }} aria-labelledby="stay-title">
         <div className="container">
-          <SectionHead eyebrow={h.rooms.eyebrow} title={h.rooms.title} text={h.rooms.text} id="rooms-title" />
-          <RoomCards lang={lang} />
-          <ul className="amenities-line">
-            {t.rooms.amenities.map((a) => <li key={a}>{a}</li>)}
+          <Feature lang={lang} reverse pic={img.superiorWide} eyebrow={h.rooms.eyebrow} title={h.rooms.title} id="stay-title">
+            <p className="muted">{h.rooms.text}</p>
+            <ul className="link-list">
+              {roomKeys.map((k) => (
+                <li key={k}><Link href={href(k, lang)}>{t[k].name}</Link></li>
+              ))}
+              <li><Link href={href("stay", lang)}>{t.nav.stay}</Link></li>
+            </ul>
+            <Link className="btn btn--solid" href={href("rooms", lang)}>{t.ui.viewAll}</Link>
+          </Feature>
+        </div>
+      </section>
+
+      {/* ---------- Brojevi ---------- */}
+      <section className="section--deep" aria-label={lang === "sr" ? "Hotel u brojevima" : "The hotel in numbers"}>
+        <div className="container">
+          <ul className="stats">
+            {h.stats.map(([n, l], i) => (
+              <li className="stat reveal" style={stagger(i % 3)} key={l}>
+                <CountUp value={n} />
+                <span>{l}</span>
+              </li>
+            ))}
           </ul>
-          <p className="center" style={{ marginTop: 40 }}>
-            <Link className="btn btn--ghost" href={href("rooms", lang)}>{t.ui.viewAll}</Link>
-          </p>
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="events-title">
-        <div className="container">
-          <Feature lang={lang} pic={img.banquetBg} inset={img.banquet15} eyebrow={h.events.eyebrow} title={h.events.title} id="events-title">
-            <p>{h.events.text}</p>
-            <Facts items={h.events.facts} />
-            <Link className="btn btn--ghost" href={href("celebrations", lang)}>{t.ui.learnMore}</Link>
-          </Feature>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="restaurant-title">
-        <div className="container">
-          <Feature lang={lang} reverse pic={img.restInside12} inset={img.fish4} eyebrow={h.restaurant.eyebrow} title={h.restaurant.title} id="restaurant-title">
-            <p>{h.restaurant.text}</p>
-            <Facts items={t.restaurant.facts} />
-            <div className="btn-row">
-              <Link className="btn btn--ghost" href={href("restaurant", lang)}>{t.ui.learnMore}</Link>
-              <a className="btn btn--solid" href={phones.restaurant.href}>{t.restaurant.cta}</a>
-            </div>
-          </Feature>
-        </div>
-      </section>
-
-      <section className="section section--wine" aria-labelledby="exp-title">
+      {/* ---------- Iskustva ---------- */}
+      <section className="section" aria-labelledby="exp-title">
         <div className="container">
           <SectionHead eyebrow={h.experiences.eyebrow} title={h.experiences.title} text={h.experiences.text} id="exp-title" />
           <Tiles
             lang={lang}
             items={[
+              { route: "weddings", title: h.experiences.weddingTitle, text: h.experiences.items.celebrations, pic: img.wedding },
               { route: "wineCellar", title: t.nav.wineCellar, text: h.experiences.items.wineCellar, pic: img.cellar3 },
               { route: "marina", title: t.nav.marina, text: h.experiences.items.marina, pic: img.marina },
-              { route: "celebrations", title: h.experiences.weddingTitle, text: h.experiences.items.celebrations, pic: img.wedding },
             ]}
           />
         </div>
       </section>
 
-      <section className="section">
-        <figure className="container quote reveal">
-          <blockquote><p>{h.quote.text}</p></blockquote>
-          <figcaption>— {h.quote.cite}</figcaption>
-        </figure>
-      </section>
-
-      <section className="section section--alt" aria-labelledby="gallery-title">
+      {/* ---------- Proslave ---------- */}
+      <section className="section section--alt" aria-labelledby="events-title">
         <div className="container">
-          <SectionHead eyebrow={h.gallery.eyebrow} title={h.gallery.title} id="gallery-title" />
-          <Gallery
-            images={lite(highlights, lang)}
-            alt="Hotel Svetionik"
-            mosaic
-            labels={{ close: t.ui.closeGallery, prev: t.ui.prev, next: t.ui.next, photo: t.ui.photo, of: t.ui.of }}
-          />
-          <p className="center" style={{ marginTop: 40 }}>
-            <Link className="btn btn--ghost" href={href("gallery", lang)}>{t.ui.viewGallery}</Link>
-          </p>
+          <Feature lang={lang} reverse pic={img.banquetBg} eyebrow={h.events.eyebrow} title={h.events.title} id="events-title">
+            <p>{h.events.text}</p>
+            <ul className="link-list">
+              <li><Link href={href("weddings", lang)}>{t.nav.weddings}</Link></li>
+              <li><Link href={href("privateParties", lang)}>{t.nav.privateParties}</Link></li>
+              <li><Link href={href("celebrations", lang)}>{t.nav.celebrations}</Link></li>
+            </ul>
+            <a className="btn btn--solid" href={phones.info.href}>{t.ui.call} · {phones.info.label}</a>
+          </Feature>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="location-title">
+      {/* ---------- Restoran ---------- */}
+      <section className="section" aria-labelledby="restaurant-title">
+        <div className="container">
+          <Feature lang={lang} pic={img.restInside12} eyebrow={h.restaurant.eyebrow} title={h.restaurant.title} id="restaurant-title" arch>
+            <p>{h.restaurant.text}</p>
+            <ul className="link-list">
+              <li><Link href={href("menu", lang)}>{t.nav.menu}</Link></li>
+              <li><Link href={href("restaurant", lang)}>{t.nav.restaurant}</Link></li>
+              <li><Link href={href("wineCellar", lang)}>{t.nav.wineCellar}</Link></li>
+            </ul>
+            <a className="btn btn--solid" href={phones.restaurant.href}>{t.restaurant.cta} · {phones.restaurant.label}</a>
+          </Feature>
+        </div>
+      </section>
+
+      <Offers lang={lang} />
+
+      {/* ---------- Citat ---------- */}
+      <section className="section section--wine">
+        <figure className="container quote">
+          <blockquote className="reveal"><p>{h.quote.text}</p></blockquote>
+          <figcaption className="reveal" style={stagger(1)}>— {h.quote.cite}</figcaption>
+        </figure>
+      </section>
+
+      <Awards lang={lang} />
+      <Reviews lang={lang} />
+      <Instagram lang={lang} />
+
+      {/* ---------- Lokacija ---------- */}
+      <section className="section section--alt" aria-labelledby="location-title">
         <div className="container split">
-          <div className="reveal">
+          <div className="reveal-left">
             <p className="eyebrow">{h.location.eyebrow}</p>
             <h2 className="title" id="location-title">{h.location.title}</h2>
             <span className="rule" />
@@ -166,9 +171,8 @@ export default function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <Reviews lang={lang} />
-
-      <section className="section section--alt" aria-labelledby="faq-title">
+      {/* ---------- FAQ ---------- */}
+      <section className="section" aria-labelledby="faq-title">
         <div className="container">
           <SectionHead eyebrow="FAQ" title={h.faqTitle} id="faq-title" />
           <Faq items={h.faq} />

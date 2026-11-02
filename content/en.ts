@@ -64,7 +64,7 @@ const en: Dict = {
     taxId: "Tax ID",
   },
   phones: {
-    info: "Information, events, marina & wine cellar",
+    info: "Contact, events, marina & wine cellar",
     restaurant: "Restaurant reservations",
     booking: "Rooms, rates & availability",
     email: "Email",
@@ -373,7 +373,7 @@ const en: Dict = {
       ["Wines", "60+"],
       ["Wineries", "local & international"],
       ["Parties", "up to 30 guests"],
-      ["Bookings", "+381 64 2709 001"],
+      ["Bookings", "+381 64 3635 555"],
     ],
   },
 
@@ -390,7 +390,7 @@ const en: Dict = {
       ["Capacity", "20 boats"],
       ["Rental", "daily & multi-day"],
       ["Hotel guests", "free"],
-      ["Information", "+381 64 2709 001"],
+      ["Information", "+381 64 3635 555"],
     ],
   },
 
@@ -412,7 +412,7 @@ const en: Dict = {
   contactPage: {
     title: "Contact | Hotel Svetionik Obrenovac — Zabreških partizana 30",
     description:
-      "Hotel Svetionik, Zabreških partizana 30, Obrenovac, Serbia. Rooms: +381 69 1018 518, restaurant: +381 11 8755 550, events: +381 64 2709 001.",
+      "Hotel Svetionik, Zabreških partizana 30, Obrenovac, Serbia. Rooms: +381 69 1018 518, restaurant: +381 11 8755 550, events: +381 64 3635 555.",
     hero: { eyebrow: "Contact", title: "We are here for you", sub: "Email us, give us a call or visit us in person." },
     formTitle: "Contact form",
     formText: "Have a question? We are happy to help.",
@@ -492,7 +492,7 @@ const en: Dict = {
         ["How many guests can the wedding venue host?", "The banquet hall seats up to 400 guests. For smaller weddings there is the club hall for up to 120, and the wine cellar for intimate parties of up to 30."],
         ["Can we get married on the riverbank?", "Yes. We set up the ceremony on the bank of the Sava under a wedding arch, and the celebration continues in the hall or on the restaurant terrace."],
         ["Can guests stay overnight?", "Yes, the hotel has 15 rooms for 1–8 guests, including superior apartments with jacuzzi — ideal for the newlyweds."],
-        ["How do I check availability and prices?", "Call +381 64 2709 001 or send an enquiry. We recommend booking early for the wedding season."],
+        ["How do I check availability and prices?", "Call +381 64 3635 555 or send an enquiry. We recommend booking early for the wedding season."],
       ],
     },
     privateParties: {
@@ -518,7 +518,7 @@ const en: Dict = {
         ["Which hall is best for a christening or birthday?", "For smaller family parties we recommend the wine cellar (up to 30 guests) or the club hall (up to 120); for large celebrations the banquet hall for up to 400."],
         ["Do you host company events?", "Yes — business lunches, presentations and team celebrations, with a menu and layout to suit you."],
         ["Is it suitable for families with children?", "Yes. There is a playground in front of the hotel and a dedicated kids' menu."],
-        ["How do I book a date?", "Call +381 64 2709 001 or send an enquiry, and we will choose the hall, menu and decoration together."],
+        ["How do I book a date?", "Call +381 64 3635 555 or send an enquiry, and we will choose the hall, menu and decoration together."],
       ],
     },
     stay: {
@@ -552,13 +552,20 @@ const en: Dict = {
   reviews: {
     eyebrow: "Guest reviews",
     title: "What our guests say",
-    placeholder: "Guest reviews from Google will appear here soon. In the meantime, you can read them on our Google profile — and share your own experience.",
+    placeholder: "Guest ratings and reviews from Google will soon appear here automatically. In the meantime, read them on our Google profile — and share your own experience.",
     read: "Read reviews on Google",
     write: "Write a review",
     basedOn: "based on",
     reviewsWord: "reviews",
   },
   chat: { viber: "Viber", whatsapp: "WhatsApp", label: "Message us" },
+  instagram: {
+    eyebrow: "Follow us on Instagram",
+    follow: "Follow us",
+    placeholder: "The latest posts from our Instagram profile will soon appear here automatically.",
+  },
+  offers: { eyebrow: "Special offers", title: "Packages for you" },
+  awards: { eyebrow: "Recognition", title: "Awards & recommendations" },
   price: { from: "from", perNight: "night" },
 
   notFound: {

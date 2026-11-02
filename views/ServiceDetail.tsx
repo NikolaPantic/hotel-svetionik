@@ -30,10 +30,10 @@ export function CelebrationsPage({ lang }: { lang: Lang }) {
             <span className="rule" />
             <p className="muted">{c.intro[1]}</p>
           </div>
-          <Feature lang={lang} pic={img.banquetBlack} inset={img.banquet15} eyebrow={c.banquet.eyebrow} title={c.banquet.title}>
+          <Feature lang={lang} pic={img.banquetBlack} eyebrow={c.banquet.eyebrow} title={c.banquet.title}>
             <div className="prose">{c.banquet.p.map((p) => <p key={p}>{p}</p>)}</div>
           </Feature>
-          <Feature lang={lang} reverse pic={img.clubHall} inset={img.wedding} eyebrow={c.club.eyebrow} title={c.club.title}>
+          <Feature lang={lang} reverse pic={img.clubHall} eyebrow={c.club.eyebrow} title={c.club.title}>
             <div className="prose">{c.club.p.map((p) => <p key={p}>{p}</p>)}</div>
             <Facts items={c.facts} />
             <div className="btn-row">
@@ -95,11 +95,11 @@ export function RestaurantPage({ lang }: { lang: Lang }) {
       <PageHero lang={lang} route="restaurant" pic={img.restTerrace} {...r.hero} />
       <section className="section">
         <div className="container">
-          <Feature lang={lang} pic={img.restInside12} inset={img.waiter} eyebrow={r.ambience.eyebrow} title={r.ambience.title}>
+          <Feature lang={lang} pic={img.restInside12} eyebrow={r.ambience.eyebrow} title={r.ambience.title}>
             <div className="prose">{r.ambience.p.map((p) => <p key={p}>{p}</p>)}</div>
             <Facts items={r.facts} />
           </Feature>
-          <Feature lang={lang} reverse pic={img.fish5} inset={img.starter} eyebrow={r.menu.eyebrow} title={r.menu.title}>
+          <Feature lang={lang} reverse pic={img.fish5} eyebrow={r.menu.eyebrow} title={r.menu.title}>
             <div className="prose">{r.menu.p.map((p) => <p key={p}>{p}</p>)}</div>
             <div className="btn-row" style={{ marginTop: 32 }}>
               <a className="btn btn--solid" href={phones.restaurant.href}>{r.cta} · {phones.restaurant.label}</a>
@@ -135,7 +135,7 @@ export function WineCellarPage({ lang }: { lang: Lang }) {
       <PageHero lang={lang} route="wineCellar" pic={img.cellar3} {...w.hero} />
       <section className="section">
         <div className="container">
-          <Feature lang={lang} pic={img.cellarHall1} inset={img.cellar7} eyebrow={t.nav.wineCellar} title={w.hero.title}>
+          <Feature lang={lang} pic={img.cellarHall1} eyebrow={t.nav.wineCellar} title={w.hero.title}>
             <div className="prose">{w.p.map((p) => <p key={p}>{p}</p>)}</div>
             <Facts items={w.facts} />
           </Feature>
@@ -165,7 +165,7 @@ export function MarinaPage({ lang }: { lang: Lang }) {
       <PageHero lang={lang} route="marina" pic={img.marina} {...m.hero} />
       <section className="section">
         <div className="container">
-          <Feature lang={lang} pic={img.marina4} inset={img.marina2} eyebrow={t.nav.marina} title={m.hero.title}>
+          <Feature lang={lang} pic={img.marina4} eyebrow={t.nav.marina} title={m.hero.title}>
             <div className="prose">{m.p.map((p) => <p key={p}>{p}</p>)}</div>
             <Facts items={m.facts} />
             <a className="btn btn--solid" href={phones.info.href}>{t.ui.call} · {phones.info.label}</a>

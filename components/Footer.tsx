@@ -68,7 +68,7 @@ export function Footer({ lang, t }: { lang: Lang; t: Dict }) {
       </footer>
 
       <nav className="action-bar" aria-label={t.ui.quickActions}>
-        <a href={phones.booking.href}><PhoneIcon />{t.ui.call}</a>
+        <a href={phones.info.href}><PhoneIcon />{t.ui.call}</a>
         <a href="https://goo.gl/maps/4wsqikzjxaRH22zQ7" target="_blank" rel="noopener"><PinIcon />{t.ui.map}</a>
         <Link href={href("booking", lang)}>{t.ui.bookShort}</Link>
       </nav>

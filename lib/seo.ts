@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import type { StaticImageData } from "next/image";
 import { getDict } from "@/content";
 import { drinks, menu } from "@/content/menu";
-import { googleReviews } from "@/content/reviews";
 import { img } from "./images";
 import { href, parents, routes, type Lang, type RouteKey } from "./routes";
 import {
@@ -71,10 +70,6 @@ export const restaurantId = `${SITE_URL}/#restaurant`;
 const prices = Object.values(roomPricesEur).filter((p): p is number => p !== null);
 const priceRange = () =>
   prices.length ? { priceRange: `€${Math.min(...prices)}–€${Math.max(...prices)}` } : {};
-const aggregateRating = () =>
-  googleReviews.rating !== null && googleReviews.count !== null
-    ? { aggregateRating: { "@type": "AggregateRating", ratingValue: googleReviews.rating, reviewCount: googleReviews.count, bestRating: 5 } }
-    : {};
 
 export function hotelSchema(lang: Lang) {
   const d = getDict(lang);
@@ -107,7 +102,6 @@ export function hotelSchema(lang: Lang) {
     geo: { "@type": "GeoCoordinates", latitude: geo.latitude, longitude: geo.longitude },
     hasMap: mapLink,
     ...priceRange(),
-    ...aggregateRating(),
     checkinTime: checkIn,
     checkoutTime: checkOut,
     numberOfRooms: 15,

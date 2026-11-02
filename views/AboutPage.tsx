@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Feature, OtherServices, PageHero } from "@/components/blocks";
+import { Feature, Framed, OtherServices, PageHero, SectionHead, stagger } from "@/components/blocks";
 import { MapEmbed } from "@/components/MapEmbed";
 import { getDict } from "@/content";
 import { img } from "@/lib/images";
@@ -18,7 +17,7 @@ export default function AboutPage({ lang }: { lang: Lang }) {
 
       <section className="section">
         <div className="container">
-          <Feature lang={lang} pic={img.hotelSide} inset={img.hotelTower} eyebrow={a.story.eyebrow} title={a.story.title}>
+          <Feature lang={lang} pic={img.hotelSide} eyebrow={a.story.eyebrow} title={a.story.title}>
             <div className="prose">{a.story.p.map((p) => <p key={p}>{p}</p>)}</div>
           </Feature>
         </div>
@@ -26,7 +25,7 @@ export default function AboutPage({ lang }: { lang: Lang }) {
 
       <section className="section section--alt">
         <div className="container">
-          <Feature lang={lang} reverse pic={img.restTerrace} inset={img.breakfast} eyebrow={a.content.eyebrow} title={a.content.title}>
+          <Feature lang={lang} reverse pic={img.restTerrace} eyebrow={a.content.eyebrow} title={a.content.title}>
             <div className="prose">{a.content.p.map((p) => <p key={p}>{p}</p>)}</div>
             <p style={{ marginTop: 30 }}>
               <Link className="btn btn--ghost" href={href("services", lang)}>{t.nav.services}</Link>
@@ -37,18 +36,13 @@ export default function AboutPage({ lang }: { lang: Lang }) {
 
       <section className="section" aria-labelledby="directions-title">
         <div className="container">
-          <header className="section-head center">
-            <p className="eyebrow">{a.directions.eyebrow}</p>
-            <h2 className="title" id="directions-title">{a.directions.title}</h2>
-            <span className="rule" />
-            <p className="muted">{a.directions.distance}</p>
-          </header>
+          <SectionHead eyebrow={a.directions.eyebrow} title={a.directions.title} text={a.directions.distance} id="directions-title" />
           <div className="duo">
             {([["car", img.driving], ["bus", img.bus]] as const).map(([k, pic]) => (
-              <figure className="reveal" key={k}>
-                <Image src={pic.src} alt={pic.alt[lang]} sizes="(max-width: 860px) 100vw, 50vw" placeholder="blur" />
-                <h3>{a.directions[k].title}</h3>
-                <p className="muted">{a.directions[k].text}</p>
+              <figure key={k}>
+                <Framed lang={lang} pic={pic} sizes="(max-width: 860px) 100vw, 50vw" variant={k === "bus" ? "deep" : "wine"} />
+                <h3 className="reveal">{a.directions[k].title}</h3>
+                <p className="muted reveal" style={stagger(1)}>{a.directions[k].text}</p>
               </figure>
             ))}
           </div>

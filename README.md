@@ -33,8 +33,11 @@ app/globals.css       dizajn sistem (tokeni svetle/tamne teme na vrhu)
 - `sitemap.xml` sa alternativnim jezicima i slikama.
 
 ## Sadržaj koji se popunjava kasnije
-- **Google recenzije** — `content/reviews.ts`: ocena, broj recenzija i izabrane recenzije (doslovno).
-  Dok je prazno, na naslovnoj stoji placeholder sa linkovima ka Google profilu; ocena ulazi u Schema.org automatski.
+- **Google recenzije** — Places API (New): env `GOOGLE_PLACES_API_KEY` i `GOOGLE_PLACE_ID` (samo server).
+  Bez njih se prikazuje placeholder; podaci se keširaju 1h.
+- **Instagram** — Instagram API: env `INSTAGRAM_ACCESS_TOKEN` (dugotrajni token, obnoviti na 60 dana).
+  Bez tokena placeholder sa fotografijama hotela koje vode na profil.
+- **Paketi i priznanja** — `content/offers.ts`; sekcije se pojavljuju na naslovnoj kad se upiše bar jedna stavka.
 - **Cene „od“** — `roomPricesEur` u `lib/site.ts` (EUR po noći). Kada se upišu, prikazuju se na stranicama soba
   i dodaju u Schema.org (`priceRange`, `offers`).
 - **Viber / WhatsApp** — `messaging` u `lib/site.ts` (trenutno 069 / 1018-518).

@@ -62,7 +62,7 @@ const sr = {
     taxId: "PIB",
   },
   phones: {
-    info: "Informacije, proslave, marina i vinski podrum",
+    info: "Kontakt, proslave, marina i vinski podrum",
     restaurant: "Rezervacije u restoranu",
     booking: "Sobe, cene i dostupnost",
     email: "E-mail",
@@ -371,7 +371,7 @@ const sr = {
       ["Sorte vina", "60+"],
       ["Vinarije", "domaće i strane"],
       ["Proslave", "do 30 gostiju"],
-      ["Rezervacije", "064 / 2709-001"],
+      ["Rezervacije", "064 / 3635-555"],
     ],
   },
 
@@ -388,7 +388,7 @@ const sr = {
       ["Kapacitet", "20 plovila"],
       ["Najam", "dnevni i višednevni"],
       ["Za goste hotela", "besplatno"],
-      ["Informacije", "064 / 2709-001"],
+      ["Informacije", "064 / 3635-555"],
     ],
   },
 
@@ -410,7 +410,7 @@ const sr = {
   contactPage: {
     title: "Kontakt | Hotel Svetionik Obrenovac — Zabreških partizana 30",
     description:
-      "Hotel Svetionik, Zabreških partizana 30, Obrenovac. Sobe: 069/1018-518, restoran: 011/8755-550, proslave: 064/2709-001, svetionikdoo@gmail.com.",
+      "Hotel Svetionik, Zabreških partizana 30, Obrenovac. Sobe: 069/1018-518, restoran: 011/8755-550, proslave: 064/3635-555, svetionikdoo@gmail.com.",
     hero: { eyebrow: "Kontakt", title: "Tu smo za vas", sub: "Pošaljite nam pitanje mejlom, pozovite telefonom ili nas posetite lično." },
     formTitle: "Kontakt forma",
     formText: "Imate dodatno pitanje? Tu smo da odgovorimo.",
@@ -490,7 +490,7 @@ const sr = {
         ["Koliko gostiju prima svadbeni salon?", "Banket sala prima do 400 gostiju za stolom. Za manja venčanja tu je klub sala do 120 gostiju, a za intimne proslave vinski podrum do 30 gostiju."],
         ["Da li je moguće venčanje na obali reke?", "Da. Ceremoniju organizujemo na obali Save, uz venčani luk, a proslava se nastavlja u sali ili na terasi restorana."],
         ["Da li gosti mogu da prenoće u hotelu?", "Da, hotel ima 15 smeštajnih jedinica za 1–8 osoba, uključujući superior apartmane sa đakuzijem — idealne za mladence."],
-        ["Kako da proverim slobodne termine i cene?", "Pozovite 064 / 2709-001 ili pošaljite upit. Termine u sezoni venčanja preporučujemo da rezervišete na vreme."],
+        ["Kako da proverim slobodne termine i cene?", "Pozovite 064 / 3635-555 ili pošaljite upit. Termine u sezoni venčanja preporučujemo da rezervišete na vreme."],
       ],
     },
     privateParties: {
@@ -516,7 +516,7 @@ const sr = {
         ["Koja sala je najbolja za krštenje ili rođendan?", "Za manje porodične proslave preporučujemo vinski podrum (do 30 gostiju) ili klub salu (do 120 gostiju), a za velike proslave banket salu do 400 gostiju."],
         ["Da li organizujete proslave za firme?", "Da — poslovne ručkove, prezentacije i proslave kolektiva, uz meni i raspored po dogovoru."],
         ["Da li je proslava pogodna za porodice sa decom?", "Jeste. Ispred hotela je dečije igralište, a za decu imamo i poseban meni."],
-        ["Kako da rezervišem termin?", "Pozovite 064 / 2709-001 ili pošaljite upit, pa ćemo zajedno odabrati salu, meni i dekoraciju."],
+        ["Kako da rezervišem termin?", "Pozovite 064 / 3635-555 ili pošaljite upit, pa ćemo zajedno odabrati salu, meni i dekoraciju."],
       ],
     },
     stay: {
@@ -550,13 +550,20 @@ const sr = {
   reviews: {
     eyebrow: "Utisci gostiju",
     title: "Šta kažu naši gosti",
-    placeholder: "Uskoro ćemo ovde prikazati recenzije naših gostiju sa Google-a. Do tada ih možete pročitati na našem Google profilu — i podeliti svoj utisak.",
+    placeholder: "Ocene i utisci gostiju sa Google-a uskoro će se ovde prikazivati automatski. Do tada ih pročitajte na našem Google profilu — i podelite svoj utisak.",
     read: "Pročitajte recenzije na Google-u",
     write: "Ostavite recenziju",
     basedOn: "na osnovu",
     reviewsWord: "recenzija",
   },
   chat: { viber: "Viber", whatsapp: "WhatsApp", label: "Pišite nam" },
+  instagram: {
+    eyebrow: "Pratite nas na Instagramu",
+    follow: "Zapratite nas",
+    placeholder: "Najnovije objave sa našeg Instagram profila uskoro će se ovde prikazivati automatski.",
+  },
+  offers: { eyebrow: "Posebne ponude", title: "Paketi za vas" },
+  awards: { eyebrow: "Priznanja", title: "Nagrade i preporuke" },
   price: { from: "od", perNight: "noć" },
 
   notFound: {

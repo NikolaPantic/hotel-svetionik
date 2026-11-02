@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import type { ReactNode } from "react";
+import { ViewTransition, type ReactNode } from "react";
 import { getDict } from "@/content";
 import { sans, serif, serifItalic } from "@/lib/fonts";
 import type { Lang } from "@/lib/routes";
@@ -39,7 +39,9 @@ export function SiteShell({ lang, children }: { lang: Lang; children: ReactNode 
         <LogoSymbol />
         <a className="skip-link" href="#main">{t.ui.skip}</a>
         <Header lang={lang} t={{ ui: t.ui, nav: t.nav }} />
-        <main id="main">{children}</main>
+        <ViewTransition>
+          <main id="main">{children}</main>
+        </ViewTransition>
         <Footer lang={lang} t={t} />
         <RevealObserver />
         <JsonLd data={graph(websiteSchema(lang), hotelSchema(lang))} />

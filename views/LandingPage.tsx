@@ -72,7 +72,7 @@ export default function LandingPage({ lang, page }: { lang: Lang; page: LandingK
           <div className="container--narrow center reveal" style={{ margin: "0 auto clamp(56px, 7vw, 100px)" }}>
             <p className="lead" style={{ fontSize: "clamp(20px, 2vw, 28px)" }}>{l.lead}</p>
           </div>
-          <Feature lang={lang} pic={c.feature} inset={c.inset} eyebrow={l.hero.eyebrow} title={l.highlightsTitle}>
+          <Feature lang={lang} pic={c.feature} eyebrow={l.hero.eyebrow} title={l.highlightsTitle}>
             <div className="prose">{l.p.map((p) => <p key={p}>{p}</p>)}</div>
             <ul className="checklist" style={{ margin: "30px 0 34px" }}>
               {l.highlights.map((h) => <li key={h}>{h}</li>)}
