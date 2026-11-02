@@ -77,7 +77,7 @@ export function SectionHead({ eyebrow, title, text, id }: { eyebrow: string; tit
   return (
     <header className="section-head center">
       <p className="eyebrow reveal">{eyebrow}</p>
-      <h2 className="title split" id={id}><Split text={title} /></h2>
+      <h2 className="title split-title" id={id}><Split text={title} /></h2>
       <span className="rule" />
       {text && <p className="muted reveal" style={stagger(2)}>{text}</p>}
     </header>
@@ -120,7 +120,7 @@ export function Feature({
       </div>
       <div className="feature__text stack">
         <p className="eyebrow">{eyebrow}</p>
-        <H className="title split" id={id}><Split text={title} /></H>
+        <H className="title split-title" id={id}><Split text={title} /></H>
         <span className="rule" />
         {children}
       </div>

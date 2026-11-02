@@ -78,7 +78,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             intro={
               <>
                 <p className="eyebrow">{h.rooms.eyebrow}</p>
-                <h2 className="title split" id="stay-title"><Split text={h.rooms.title} /></h2>
+                <h2 className="title split-title" id="stay-title"><Split text={h.rooms.title} /></h2>
                 <span className="rule" />
                 <p className="muted">{h.rooms.text}</p>
               </>
@@ -89,7 +89,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
       </section>
 
       {/* ---------- Brojevi ---------- */}
-      <section className="section--deep" aria-label={lang === "sr" ? "Hotel u brojevima" : "The hotel in numbers"}>
+      <section className="section--deep stats-band" aria-label={lang === "sr" ? "Hotel u brojevima" : "The hotel in numbers"}>
         <div className="container">
           <ul className="stats">
             {h.stats.map(([n, l], i) => (
@@ -133,7 +133,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             intro={
               <>
                 <p className="eyebrow">{h.events.eyebrow}</p>
-                <h2 className="title split" id="events-title"><Split text={h.events.title} /></h2>
+                <h2 className="title split-title" id="events-title"><Split text={h.events.title} /></h2>
                 <span className="rule" />
                 <p>{h.events.text}</p>
               </>
@@ -159,7 +159,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
             intro={
               <>
                 <p className="eyebrow">{h.restaurant.eyebrow}</p>
-                <h2 className="title split" id="restaurant-title"><Split text={h.restaurant.title} /></h2>
+                <h2 className="title split-title" id="restaurant-title"><Split text={h.restaurant.title} /></h2>
                 <span className="rule" />
                 <p>{h.restaurant.text}</p>
               </>
@@ -188,7 +188,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <div className="container split">
           <div className="stack">
             <p className="eyebrow">{h.location.eyebrow}</p>
-            <h2 className="title split" id="location-title"><Split text={h.location.title} /></h2>
+            <h2 className="title split-title" id="location-title"><Split text={h.location.title} /></h2>
             <span className="rule" />
             <p className="muted">{h.location.text}</p>
             <ul className="contact-list">
